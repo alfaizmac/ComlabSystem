@@ -52,6 +52,37 @@ namespace ComlabSystem
             FilterLastUnitCKB.CheckedChanged += FilterLastUnitCKB_CheckedChanged;
             FilterPasswordCBK.CheckedChanged += FilterPasswordCBK_CheckedChanged;
 
+
+
+            // Initialize PasswordToolTip
+            PasswordToolTIp = new ToolTip
+            {
+                ToolTipTitle = "Password Guidance",
+                ToolTipIcon = ToolTipIcon.Info,
+                IsBalloon = true
+            };
+
+            // Set the tooltip message
+            string tooltipMessage = "If you leave the password field empty, a random 8-character password will be generated automatically.";
+
+            // Associate the tooltip with the password fields
+            PasswordToolTIp.SetToolTip(PasswordTip, tooltipMessage);
+            PasswordToolTIp.SetToolTip(EditPasswordTip, tooltipMessage);
+
+            // Initialize EditStudentIDTBTT
+            EditStudentIDTBTT = new ToolTip
+            {
+                ToolTipTitle = "Student ID Guidance",
+                ToolTipIcon = ToolTipIcon.Info,
+                IsBalloon = true
+            };
+
+            // Set the tooltip message
+            string tooltipMessage2 = "Enter the Student ID and press Enter to auto-fill the other fields.";
+
+            // Associate the tooltip with the Student ID field
+            EditStudentIDTBTT.SetToolTip(EditStudentIDTip, tooltipMessage2);
+
         }
 
 
@@ -63,20 +94,58 @@ namespace ComlabSystem
             LoadUserListData();
             LoadEditDepartments();
             LoadFilterDepartments();
+            UserListDGV.BringToFront();
 
         }
+
+
+
+
+
+        //User Counts label
+        // Method to update the UserListCountsL label based on the count
+        private void UpdateUserCountLabel(int count)
+        {
+            UserListCountsL.Text = count.ToString("D2"); // Display as two digits if count is less than 10
+
+            // Adjust font size based on count
+            if (count < 100)
+            {
+                UserListCountsL.Location = new Point(3, -11);
+                guna2CirclePictureBox1.Location = new Point(86, 18);
+                label1.Location = new Point(116, 28);
+            }
+            else if (count >= 100 && count < 1000)
+            {
+                UserListCountsL.Location = new Point(3, -10);
+                guna2CirclePictureBox1.Location = new Point(120, 18);
+                label1.Location = new Point(150, 28);
+            }
+            else if (count >= 1000)
+            {
+                UserListCountsL.Location = new Point(3, -10);
+                guna2CirclePictureBox1.Location = new Point(185, 28);
+                label1.Location = new Point(116, 30);
+            }
+        }
+
+
+
+
+
 
         //UserDataGridView LIST
         private void LoadUserListData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                // Query to retrieve all user details
                 string query = @"
 SELECT 
     u.StudentID AS [Student ID],
+    u.UPassword AS [Password], 
     u.LastName AS [Last Name],
     u.FirstName AS [First Name],
-    u.UPassword AS [Password],  -- Use the correct column name here
     d.DepartmentName AS [Department],
     p.ProgramName AS [Program],
     y.YearLevelName AS [Year/Grade Level],
@@ -92,6 +161,9 @@ JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
 JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
 
+                // Query to count the total number of users
+                string countQuery = "SELECT COUNT(*) FROM UserList";
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -100,8 +172,17 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                     try
                     {
                         connection.Open();
+
+                        // Load user data into the DataTable
                         adapter.Fill(dataTable);
                         UserListDGV.DataSource = dataTable;
+
+                        // Get user count
+                        using (SqlCommand countCommand = new SqlCommand(countQuery, connection))
+                        {
+                            int userCount = (int)countCommand.ExecuteScalar(); // Execute the count query
+                            UpdateUserCountLabel(userCount); // Update the label with the user count
+                        }
 
                         // Set all columns to use AllCells mode and wrap text
                         foreach (DataGridViewColumn column in UserListDGV.Columns)
@@ -111,27 +192,33 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                             column.HeaderCell.Style.WrapMode = DataGridViewTriState.True;
                         }
 
-                        // Adding Edit button column
-                        DataGridViewImageColumn editColumn = new DataGridViewImageColumn
+                        // Check if Edit button column exists, if not, add it
+                        if (!UserListDGV.Columns.Contains("EditBC"))
                         {
-                            Name = "EditBC",
-                            HeaderText = "", // Empty header
-                            Image = ResizeImage(Properties.Resources.pencil, 20, 20), // Resized image
-                            AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
-                            Width = 25
-                        };
-                        UserListDGV.Columns.Add(editColumn);
+                            DataGridViewImageColumn editColumn = new DataGridViewImageColumn
+                            {
+                                Name = "EditBC",
+                                HeaderText = "", // Empty header
+                                Image = ResizeImage(Properties.Resources.pencil, 20, 20), // Resized image
+                                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                                Width = 25
+                            };
+                            UserListDGV.Columns.Add(editColumn);
+                        }
 
-                        // Adding Archive button column
-                        DataGridViewImageColumn archiveColumn = new DataGridViewImageColumn
+                        // Check if Archive button column exists, if not, add it
+                        if (!UserListDGV.Columns.Contains("ArchiveBC"))
                         {
-                            Name = "ArchiveBC",
-                            HeaderText = "", // Empty header
-                            Image = ResizeImage(Properties.Resources.archive, 20, 20), // Resized image
-                            AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
-                            Width = 25
-                        };
-                        UserListDGV.Columns.Add(archiveColumn);
+                            DataGridViewImageColumn archiveColumn = new DataGridViewImageColumn
+                            {
+                                Name = "ArchiveBC",
+                                HeaderText = "", // Empty header
+                                Image = ResizeImage(Properties.Resources.archive, 20, 20), // Resized image
+                                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                                Width = 25
+                            };
+                            UserListDGV.Columns.Add(archiveColumn);
+                        }
 
                         // Refresh layout after setting modes
                         UserListDGV.AutoResizeColumns();
@@ -143,6 +230,8 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                 }
             }
         }
+
+
 
         private void RefreshUserListData()
         {
@@ -226,12 +315,18 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
 
         private void UserStatisticPanelShow_Click(object sender, EventArgs e)
         {
-            StatisticPNL.BringToFront();
+            ArchiveUserListDGV.BringToFront();
+            UserListManageBtmsPL.Visible= false;
+            unLoadUserListData(); // Reload the active user list
+            LoadArchivedUserListData(); // Reload the archived user list
         }
 
         private void UserListPanelShow_Click(object sender, EventArgs e)
         {
-            UserPNL.BringToFront();
+            LoadUserListData();
+            UserListManageBtmsPL.Visible = true;
+            UserListDGV.BringToFront();
+            
         }
 
         private void UserListDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -239,18 +334,6 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
             // Ensure the row is valid and clicked on a cell, not a header
             if (e.RowIndex >= 0)
             {
-                // Handle Archive button click
-                if (e.ColumnIndex == UserListDGV.Columns["ArchiveBC"].Index)
-                {
-                    DialogResult archiveResult = MessageBox.Show("Do you want to Archive this row?", "Archive Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (archiveResult == DialogResult.Yes)
-                    {
-                        // Archive (hide) the row from UserListDGV
-                        UserListDGV.Rows[e.RowIndex].Visible = false;
-
-                        // Optionally transfer the row to UserArchiveDGV
-                    }
-                }
 
                 // Handle Edit button click
                 if (e.ColumnIndex == UserListDGV.Columns["EditBC"].Index)
@@ -480,6 +563,7 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                     MessageBox.Show("User added successfully!");
 
                     RefreshUserListData();
+                    LoadUserListData();
                     ViewUserListBtm.Checked = true;
                     hideUserManagePnl();
                     StudIDTB.Clear();
@@ -491,6 +575,7 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                     EmailTB.Clear();
                     ContactTB.Clear();
                     StudentPasswordTB.Clear(); // Clear the password textbox
+
                 }
             }
         }
@@ -537,18 +622,9 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
             UserAddPanel.Hide();
         }
 
+
+
         //EDIT Button
-
-        //SHow TIP on StudentID Textbox
-        private void EditStudentIDTB_Enter(object sender, EventArgs e)
-        {
-            EditStudentIDTBTT.Show("Enter the Student ID and press Enter to fill other fields.", EditStudentIDTB);
-        }
-
-        private void EditStudentIDTB_MouseHover(object sender, EventArgs e)
-        {
-            EditStudentIDTBTT.Show("Enter the Student ID and press Enter to fill other fields.", EditStudentIDTB);
-        }
 
         //Inputing the EDIT StudentID textbox
         private void EditStudentIDTB_KeyDown(object sender, KeyEventArgs e)
@@ -564,8 +640,8 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                 {
                     connection.Open();
 
-                    // Query to get user data based on StudentID
-                    string query = "SELECT u.LastName, u.FirstName, d.DepartmentName, p.ProgramName, y.YearLevelName, u.Email, u.ContactNo " +
+                    // Query to get user data based on StudentID, including UPassword
+                    string query = "SELECT u.LastName, u.FirstName, d.DepartmentName, p.ProgramName, y.YearLevelName, u.Email, u.ContactNo, u.UPassword " +
                                    "FROM UserList u " +
                                    "JOIN Department d ON u.DepartmentID = d.DepartmentID " +
                                    "JOIN Programs p ON u.ProgramID = p.ProgramID " +
@@ -588,6 +664,7 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                                 EditYearLevelCB.Text = reader["YearLevelName"].ToString(); // Set by YearLevelName
                                 EditEmailTB.Text = reader["Email"].ToString();
                                 EditContactTB.Text = reader["ContactNo"].ToString();
+                                EditStudentPasswordTB.Text = reader["UPassword"]?.ToString();
                             }
                             else
                             {
@@ -604,27 +681,305 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
         //CLicking the row button EDIT
         private void UserListDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && UserListDGV.Columns[e.ColumnIndex].Name == "EditBC")
+            if (e.RowIndex >= 0)
             {
-                // Show the UserEditPnl and bring it to front
-                UserEditPnl.Visible = true;
-                UserEditPnl.BringToFront();
-                EditUserBtm.Checked = true;
-
-                // Get the data from the selected row
                 DataGridViewRow row = UserListDGV.Rows[e.RowIndex];
+                string studentID = row.Cells["Student ID"].Value?.ToString();
 
-                // Populate the edit fields with the data from the selected row
-                EditStudentIDTB.Text = row.Cells["Student ID"].Value?.ToString();
-                EditLNameTB.Text = row.Cells["Last Name"].Value?.ToString();
-                EditFNameTB.Text = row.Cells["First Name"].Value?.ToString();
-                EditDepartmentCB.Text = row.Cells["Department"].Value?.ToString(); // Assuming ComboBox text is set by DepartmentName
-                EditProgramCB.Text = row.Cells["Program"].Value?.ToString();       // Assuming ComboBox text is set by ProgramName
-                EditYearLevelCB.Text = row.Cells["Year/Grade Level"].Value?.ToString(); // Assuming ComboBox text is set by YearLevelName
-                EditEmailTB.Text = row.Cells["Email"].Value?.ToString();
-                EditContactTB.Text = row.Cells["Contact"].Value?.ToString();
+                // Check if the Edit button was clicked
+                if (UserListDGV.Columns[e.ColumnIndex].Name == "EditBC")
+                {
+                    // Show the UserEditPnl and bring it to front
+                    UserEditPnl.Visible = true;
+                    UserEditPnl.BringToFront();
+                    EditUserBtm.Checked = true;
+
+                    // Populate the edit fields with the data from the selected row
+                    EditStudentIDTB.Text = row.Cells["Student ID"].Value?.ToString();
+                    EditLNameTB.Text = row.Cells["Last Name"].Value?.ToString();
+                    EditFNameTB.Text = row.Cells["First Name"].Value?.ToString();
+                    EditDepartmentCB.Text = row.Cells["Department"].Value?.ToString();
+                    EditProgramCB.Text = row.Cells["Program"].Value?.ToString();
+                    EditYearLevelCB.Text = row.Cells["Year/Grade Level"].Value?.ToString();
+                    EditEmailTB.Text = row.Cells["Email"].Value?.ToString();
+                    EditContactTB.Text = row.Cells["Contact"].Value?.ToString();
+                    EditStudentPasswordTB.Text = row.Cells["Password"].Value?.ToString();
+                }
+                // Check if the Archive button was clicked
+                if (UserListDGV.Columns[e.ColumnIndex].Name == "ArchiveBC")
+                {
+                    string archiveStudentID = UserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
+                    ArchiveUser(archiveStudentID);
+                    return; // Exit after archiving
+                }
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        // ARCHIVE CODES
+
+        private void ArchiveUser(string archiveStudentID)
+        {
+            // Confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to archive this user?", "Confirm Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update user ArchiveStatus to Archived
+                    string query = "UPDATE UserList SET ArchiveStatus = 'Archived' WHERE StudentID = @StudentID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StudentID", archiveStudentID);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("User archived successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            unLoadUserListData(); // Reload the active user list
+                            LoadArchivedUserListData(); // Reload the archived user list
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to archive user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void unLoadUserListData()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+SELECT 
+    u.StudentID AS [Student ID],
+    u.UPassword AS [Password],
+    u.LastName AS [Last Name],
+    u.FirstName AS [First Name],
+    d.DepartmentName AS [Department],
+    p.ProgramName AS [Program],
+    y.YearLevelName AS [Year/Grade Level],
+    u.Status AS [Status],
+    u.Email,
+    u.ContactNo AS [Contact],
+    u.DateRegistered AS [Date Registered],
+    u.LastLogin AS [Last Login],
+    u.TotalHoursUsed AS [Total Hours Used],
+    u.LastUnitUsed AS [Last Unit Used]
+FROM UserList u
+JOIN Department d ON u.DepartmentID = d.DepartmentID
+JOIN Programs p ON u.ProgramID = p.ProgramID
+JOIN YearLevels y ON u.YearLevelID = y.YearLevelID
+WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+
+                    try
+                    {
+                        connection.Open();
+                        adapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            UserListDGV.DataSource = dataTable;
+
+                            // Set all columns to use AllCells mode and wrap text
+                            foreach (DataGridViewColumn column in UserListDGV.Columns)
+                            {
+                                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                                column.HeaderCell.Style.WrapMode = DataGridViewTriState.True;
+                            }
+
+                            // Add Edit button column if not present
+                            if (UserListDGV.Columns["EditBC"] == null)
+                            {
+                                DataGridViewImageColumn editColumn = new DataGridViewImageColumn
+                                {
+                                    Name = "EditBC",
+                                    HeaderText = "",
+                                    Image = ResizeImage(Properties.Resources.pencil, 20, 20),
+                                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                                };
+                                UserListDGV.Columns.Add(editColumn);
+                            }
+
+                            // Add Archive button column if not present
+                            if (UserListDGV.Columns["ArchiveBC"] == null)
+                            {
+                                DataGridViewImageColumn archiveColumn = new DataGridViewImageColumn
+                                {
+                                    Name = "ArchiveBC",
+                                    HeaderText = "",
+                                    Image = ResizeImage(Properties.Resources.archive, 20, 20),
+                                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                                };
+                                UserListDGV.Columns.Add(archiveColumn);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No users found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            UserListDGV.DataSource = null; // Clear the DataGridView if no data
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading user data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void LoadArchivedUserListData()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+SELECT 
+    u.StudentID AS [Student ID],
+    u.UPassword AS [Password],
+    u.LastName AS [Last Name],
+    u.FirstName AS [First Name],
+    d.DepartmentName AS [Department],
+    p.ProgramName AS [Program],
+    y.YearLevelName AS [Year/Grade Level],
+    u.Status AS [Status],
+    u.Email,
+    u.ContactNo AS [Contact],
+    u.DateRegistered AS [Date Registered],
+    u.LastLogin AS [Last Login],
+    u.TotalHoursUsed AS [Total Hours Used],
+    u.LastUnitUsed AS [Last Unit Used]
+FROM UserList u
+JOIN Department d ON u.DepartmentID = d.DepartmentID
+JOIN Programs p ON u.ProgramID = p.ProgramID
+JOIN YearLevels y ON u.YearLevelID = y.YearLevelID
+WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+
+                    try
+                    {
+                        connection.Open();
+                        adapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            ArchiveUserListDGV.DataSource = dataTable;
+
+                            // Set all columns to use AllCells mode and wrap text
+                            foreach (DataGridViewColumn column in ArchiveUserListDGV.Columns)
+                            {
+                                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                                column.HeaderCell.Style.WrapMode = DataGridViewTriState.True;
+                            }
+
+                            // Add Unarchive button column if not present
+                            if (ArchiveUserListDGV.Columns["UnArchiveUserList"] == null)
+                            {
+                                DataGridViewImageColumn unarchiveColumn = new DataGridViewImageColumn
+                                {
+                                    Name = "UnArchiveUserList",
+                                    HeaderText = "",
+                                    Image = ResizeImage(Properties.Resources.unarchive, 20, 20),
+                                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells // Change to AllCells
+                                };
+                                ArchiveUserListDGV.Columns.Add(unarchiveColumn);
+                            }
+
+                            // Ensure the button column is last
+                            ArchiveUserListDGV.Columns["UnArchiveUserList"].DisplayIndex = ArchiveUserListDGV.Columns.Count - 1;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No archived users found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ArchiveUserListDGV.DataSource = null; // Clear the DataGridView if no data
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading archived user data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void ArchiveUserListDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && ArchiveUserListDGV.Columns[e.ColumnIndex].Name == "UnArchiveUserList")
+            {
+                string archiveStudentID = ArchiveUserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
+
+                
+                    UnarchiveUser(archiveStudentID);
+                
+            }
+        }
+        private void UnarchiveUser(string archiveStudentID)
+        {
+            // Confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to unarchive this user?", "Confirm Unarchive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update user ArchiveStatus back to Active
+                    string query = "UPDATE UserList SET ArchiveStatus = 'Active' WHERE StudentID = @StudentID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StudentID", archiveStudentID);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("User unarchived successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            unLoadUserListData(); // Reload the active user list
+                            LoadArchivedUserListData(); // Reload the archived user list
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to unarchive user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+  
+        
+
+
+
+
+
+
+
+
+
+
+
 
         //fill the other combo boxes
         private void LoadEditDepartments()
@@ -697,7 +1052,7 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                 EditProgramCB.SelectedIndex == -1 ||
                 EditYearLevelCB.SelectedIndex == -1) // Added YearLevelCB check
             {
-                MessageBox.Show("Please fill in all required fields: Last Name, First Name, Department, Program, and Year Level.", "Required Fields Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in all required fields: Last Name, First Name, Department, Program, and Year Level.", "Required Fields Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Cancel the execution if required fields are missing
             }
 
@@ -710,10 +1065,15 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                 int programID = GetProgramID(EditProgramCB.SelectedItem.ToString());
                 int yearLevelID = GetYearLevelID(EditYearLevelCB.SelectedItem.ToString());
 
-                // SQL Query to update user information
+                // Generate a random password if EditStudentPasswordTB is empty
+                string password = string.IsNullOrWhiteSpace(EditStudentPasswordTB.Text)
+                    ? GenerateRandomPassword()
+                    : EditStudentPasswordTB.Text;
+
+                // SQL Query to update user information including UPassword
                 string query = "UPDATE UserList SET LastName = @LastName, FirstName = @FirstName, DepartmentID = @DepartmentID, " +
-                               "ProgramID = @ProgramID, YearLevelID = @YearLevelID, Email = @Email, ContactNo = @ContactNo " +
-                               "WHERE StudentID = @StudentID";
+                               "ProgramID = @ProgramID, YearLevelID = @YearLevelID, Email = @Email, ContactNo = @ContactNo, " +
+                               "UPassword = @UPassword WHERE StudentID = @StudentID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -726,6 +1086,7 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                     command.Parameters.AddWithValue("@YearLevelID", yearLevelID);
                     command.Parameters.AddWithValue("@Email", EditEmailTB.Text);
                     command.Parameters.AddWithValue("@ContactNo", EditContactTB.Text);
+                    command.Parameters.AddWithValue("@UPassword", password);
 
                     // Execute the update query
                     int rowsAffected = command.ExecuteNonQuery();
@@ -737,6 +1098,8 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                         RefreshUserListData();
                         ViewUserListBtm.Checked = true;
                         hideUserManagePnl();
+
+                        // Clear input fields
                         EditStudentIDTB.Clear();
                         EditLNameTB.Clear();
                         EditFNameTB.Clear();
@@ -755,6 +1118,8 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
                 }
             }
         }
+
+
 
         private int GetDepartmentID(string departmentName)
         {
@@ -818,10 +1183,11 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
             EditYearLevelCB.Items.Clear();
             EditEmailTB.Clear();
             EditContactTB.Clear();
-            StudentPasswordTB.Clear();
+            EditStudentPasswordTB.Clear();
+
         }
 
-
+            
 
 
         //AUTO Email input
@@ -1058,6 +1424,21 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
             UserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
             UserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
             UserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
+
+            ArchiveUserListDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
+            ArchiveUserListDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
+            ArchiveUserListDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
+            ArchiveUserListDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
+            ArchiveUserListDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
+            ArchiveUserListDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
+            ArchiveUserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
+            ArchiveUserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
+            ArchiveUserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
+            ArchiveUserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+            ArchiveUserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
+            ArchiveUserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
+            ArchiveUserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+            ArchiveUserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
         }
 
 
@@ -1114,5 +1495,6 @@ JOIN YearLevels y ON u.YearLevelID = y.YearLevelID";
             }
         }
 
+        
     }  
 }
