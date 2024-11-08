@@ -29,42 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.Charts.WinForms.ChartFont chartFont17 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont18 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont19 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont20 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid7 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick7 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont21 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid8 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick8 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont22 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid9 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel3 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont23 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick9 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont24 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont25 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont26 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont27 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont28 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid10 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick10 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont29 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid11 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick11 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont30 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid12 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel4 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont31 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick12 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont32 = new Guna.Charts.WinForms.ChartFont();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -76,31 +79,6 @@
             this.UserListPanelShow = new Guna.UI2.WinForms.Guna2Button();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.UserEditPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.EditPasswordTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.EditStudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.EditStudentIDTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.EditUserSaveBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.UserEditCancelBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.EditContactTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.EditEmailTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.EditYearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.EditProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.EditDepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.EditFNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.EditLNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.UserFilterPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.FilterPasswordCBK = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label43 = new System.Windows.Forms.Label();
@@ -145,18 +123,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.SortButton = new Guna.UI2.WinForms.Guna2Button();
-            this.PrintToogleBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.UserFilterToggleBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.UserListManageBtmsPL = new Guna.UI2.WinForms.Guna2Panel();
-            this.EditUserBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.AddUserBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.ViewUserListBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
-            this.ArchiveUserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.UserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UserAddPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.PasswordTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.StudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -178,35 +144,67 @@
             this.label6 = new System.Windows.Forms.Label();
             this.LNameTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.StudIDTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.SortButton = new Guna.UI2.WinForms.Guna2Button();
+            this.PrintToogleBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.UserFilterToggleBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.UserListManageBtmsPL = new Guna.UI2.WinForms.Guna2Panel();
+            this.EditUserBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.AddUserBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
+            this.ArchiveUserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.UserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.UserEditPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.EditStudentIDTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.EditStudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditStudentIDTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.EditUserSaveBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.UserEditCancelBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.EditContactTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.EditEmailTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.EditYearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.EditProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.EditDepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.EditFNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.EditLNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.StatisticPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.gunaChart2 = new Guna.Charts.WinForms.GunaChart();
             this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
-            this.EditStudentIDTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
+            this.UserListPrintDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.UserListPNL.SuspendLayout();
             this.UserPNL.SuspendLayout();
-            this.UserEditPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EditPasswordTip)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             this.UserFilterPnl.SuspendLayout();
+            this.UserAddPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).BeginInit();
             this.UserListManageBtmsPL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.UserListsGridPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveUserListDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).BeginInit();
-            this.UserAddPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
-            this.StatisticPNL.SuspendLayout();
+            this.UserEditPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).BeginInit();
+            this.StatisticPNL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // UserSearchBar
@@ -388,7 +386,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UserPNL.BackColor = System.Drawing.Color.Transparent;
-            this.UserPNL.Controls.Add(this.UserEditPnl);
+            this.UserPNL.Controls.Add(this.UserAddPanel);
             this.UserPNL.Controls.Add(this.UserFilterPnl);
             this.UserPNL.Controls.Add(this.SortButton);
             this.UserPNL.Controls.Add(this.PrintToogleBtm);
@@ -398,7 +396,7 @@
             this.UserPNL.Controls.Add(this.guna2CirclePictureBox2);
             this.UserPNL.Controls.Add(this.UserSearchBar);
             this.UserPNL.Controls.Add(this.UserListsGridPNL);
-            this.UserPNL.Controls.Add(this.UserAddPanel);
+            this.UserPNL.Controls.Add(this.UserEditPnl);
             this.UserPNL.FillColor = System.Drawing.Color.White;
             this.UserPNL.Location = new System.Drawing.Point(28, 73);
             this.UserPNL.MaximumSize = new System.Drawing.Size(1627, 947);
@@ -410,450 +408,6 @@
             this.UserPNL.ShadowShift = 10;
             this.UserPNL.Size = new System.Drawing.Size(1627, 947);
             this.UserPNL.TabIndex = 12;
-            // 
-            // UserEditPnl
-            // 
-            this.UserEditPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserEditPnl.BackColor = System.Drawing.Color.Transparent;
-            this.UserEditPnl.Controls.Add(this.EditStudentIDTip);
-            this.UserEditPnl.Controls.Add(this.EditPasswordTip);
-            this.UserEditPnl.Controls.Add(this.label44);
-            this.UserEditPnl.Controls.Add(this.EditStudentPasswordTB);
-            this.UserEditPnl.Controls.Add(this.EditStudentIDTB);
-            this.UserEditPnl.Controls.Add(this.label14);
-            this.UserEditPnl.Controls.Add(this.EditUserSaveBtm);
-            this.UserEditPnl.Controls.Add(this.UserEditCancelBtm);
-            this.UserEditPnl.Controls.Add(this.EditContactTB);
-            this.UserEditPnl.Controls.Add(this.label23);
-            this.UserEditPnl.Controls.Add(this.EditEmailTB);
-            this.UserEditPnl.Controls.Add(this.label24);
-            this.UserEditPnl.Controls.Add(this.label25);
-            this.UserEditPnl.Controls.Add(this.EditYearLevelCB);
-            this.UserEditPnl.Controls.Add(this.label26);
-            this.UserEditPnl.Controls.Add(this.EditProgramCB);
-            this.UserEditPnl.Controls.Add(this.label27);
-            this.UserEditPnl.Controls.Add(this.EditDepartmentCB);
-            this.UserEditPnl.Controls.Add(this.label28);
-            this.UserEditPnl.Controls.Add(this.EditFNameTB);
-            this.UserEditPnl.Controls.Add(this.label29);
-            this.UserEditPnl.Controls.Add(this.EditLNameTB);
-            this.UserEditPnl.Controls.Add(this.label30);
-            this.UserEditPnl.Controls.Add(this.guna2CirclePictureBox5);
-            this.UserEditPnl.Controls.Add(this.label32);
-            this.UserEditPnl.FillColor = System.Drawing.Color.White;
-            this.UserEditPnl.Location = new System.Drawing.Point(1072, 83);
-            this.UserEditPnl.Name = "UserEditPnl";
-            this.UserEditPnl.Radius = 10;
-            this.UserEditPnl.ShadowColor = System.Drawing.Color.Black;
-            this.UserEditPnl.Size = new System.Drawing.Size(530, 645);
-            this.UserEditPnl.TabIndex = 20;
-            // 
-            // EditPasswordTip
-            // 
-            this.EditPasswordTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
-            this.EditPasswordTip.ImageRotate = 0F;
-            this.EditPasswordTip.Location = new System.Drawing.Point(465, 115);
-            this.EditPasswordTip.Name = "EditPasswordTip";
-            this.EditPasswordTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.EditPasswordTip.Size = new System.Drawing.Size(25, 26);
-            this.EditPasswordTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EditPasswordTip.TabIndex = 28;
-            this.EditPasswordTip.TabStop = false;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.White;
-            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label44.Location = new System.Drawing.Point(285, 118);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(79, 21);
-            this.label44.TabIndex = 27;
-            this.label44.Text = "Password";
-            // 
-            // EditStudentPasswordTB
-            // 
-            this.EditStudentPasswordTB.Animated = true;
-            this.EditStudentPasswordTB.BackColor = System.Drawing.Color.White;
-            this.EditStudentPasswordTB.BorderRadius = 10;
-            this.EditStudentPasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditStudentPasswordTB.DefaultText = "";
-            this.EditStudentPasswordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditStudentPasswordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditStudentPasswordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentPasswordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentPasswordTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditStudentPasswordTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditStudentPasswordTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentPasswordTB.Location = new System.Drawing.Point(280, 143);
-            this.EditStudentPasswordTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditStudentPasswordTB.Name = "EditStudentPasswordTB";
-            this.EditStudentPasswordTB.PasswordChar = '\0';
-            this.EditStudentPasswordTB.PlaceholderText = "";
-            this.EditStudentPasswordTB.SelectedText = "";
-            this.EditStudentPasswordTB.Size = new System.Drawing.Size(216, 50);
-            this.EditStudentPasswordTB.TabIndex = 26;
-            // 
-            // EditStudentIDTB
-            // 
-            this.EditStudentIDTB.Animated = true;
-            this.EditStudentIDTB.BackColor = System.Drawing.Color.White;
-            this.EditStudentIDTB.BorderRadius = 10;
-            this.EditStudentIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditStudentIDTB.DefaultText = "";
-            this.EditStudentIDTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditStudentIDTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditStudentIDTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentIDTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentIDTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentIDTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditStudentIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditStudentIDTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentIDTB.Location = new System.Drawing.Point(36, 143);
-            this.EditStudentIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditStudentIDTB.Name = "EditStudentIDTB";
-            this.EditStudentIDTB.PasswordChar = '\0';
-            this.EditStudentIDTB.PlaceholderText = "";
-            this.EditStudentIDTB.SelectedText = "";
-            this.EditStudentIDTB.Size = new System.Drawing.Size(216, 50);
-            this.EditStudentIDTB.TabIndex = 25;
-            this.EditStudentIDTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditStudentIDTB_KeyDown);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label14.Location = new System.Drawing.Point(41, 118);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 21);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "Student ID";
-            // 
-            // EditUserSaveBtm
-            // 
-            this.EditUserSaveBtm.Animated = true;
-            this.EditUserSaveBtm.BackColor = System.Drawing.Color.White;
-            this.EditUserSaveBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.EditUserSaveBtm.BorderRadius = 10;
-            this.EditUserSaveBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.EditUserSaveBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserSaveBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.EditUserSaveBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.EditUserSaveBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.EditUserSaveBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.EditUserSaveBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.EditUserSaveBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.EditUserSaveBtm.FillColor = System.Drawing.Color.Maroon;
-            this.EditUserSaveBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserSaveBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.EditUserSaveBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.EditUserSaveBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.EditUserSaveBtm.Location = new System.Drawing.Point(271, 555);
-            this.EditUserSaveBtm.Name = "EditUserSaveBtm";
-            this.EditUserSaveBtm.Size = new System.Drawing.Size(225, 45);
-            this.EditUserSaveBtm.TabIndex = 23;
-            this.EditUserSaveBtm.Text = "Save";
-            this.EditUserSaveBtm.Click += new System.EventHandler(this.EditUserSaveBtm_Click);
-            // 
-            // UserEditCancelBtm
-            // 
-            this.UserEditCancelBtm.Animated = true;
-            this.UserEditCancelBtm.BackColor = System.Drawing.Color.White;
-            this.UserEditCancelBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.UserEditCancelBtm.BorderRadius = 10;
-            this.UserEditCancelBtm.BorderThickness = 2;
-            this.UserEditCancelBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.UserEditCancelBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserEditCancelBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.UserEditCancelBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.UserEditCancelBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserEditCancelBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserEditCancelBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserEditCancelBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserEditCancelBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserEditCancelBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserEditCancelBtm.ForeColor = System.Drawing.Color.Maroon;
-            this.UserEditCancelBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.UserEditCancelBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.UserEditCancelBtm.Location = new System.Drawing.Point(36, 555);
-            this.UserEditCancelBtm.Name = "UserEditCancelBtm";
-            this.UserEditCancelBtm.Size = new System.Drawing.Size(225, 45);
-            this.UserEditCancelBtm.TabIndex = 22;
-            this.UserEditCancelBtm.Text = "Cancel";
-            this.UserEditCancelBtm.Click += new System.EventHandler(this.UserEditCancelBtm_Click);
-            // 
-            // EditContactTB
-            // 
-            this.EditContactTB.Animated = true;
-            this.EditContactTB.BackColor = System.Drawing.Color.White;
-            this.EditContactTB.BorderRadius = 10;
-            this.EditContactTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditContactTB.DefaultText = "";
-            this.EditContactTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditContactTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditContactTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditContactTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditContactTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditContactTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditContactTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditContactTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditContactTB.Location = new System.Drawing.Point(311, 458);
-            this.EditContactTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditContactTB.Name = "EditContactTB";
-            this.EditContactTB.PasswordChar = '\0';
-            this.EditContactTB.PlaceholderText = "";
-            this.EditContactTB.SelectedText = "";
-            this.EditContactTB.Size = new System.Drawing.Size(185, 50);
-            this.EditContactTB.TabIndex = 21;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.White;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label23.Location = new System.Drawing.Point(316, 433);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 21);
-            this.label23.TabIndex = 20;
-            this.label23.Text = "Contact";
-            // 
-            // EditEmailTB
-            // 
-            this.EditEmailTB.Animated = true;
-            this.EditEmailTB.BackColor = System.Drawing.Color.White;
-            this.EditEmailTB.BorderRadius = 10;
-            this.EditEmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditEmailTB.DefaultText = "";
-            this.EditEmailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditEmailTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditEmailTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditEmailTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditEmailTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditEmailTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditEmailTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditEmailTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditEmailTB.Location = new System.Drawing.Point(36, 458);
-            this.EditEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditEmailTB.Name = "EditEmailTB";
-            this.EditEmailTB.PasswordChar = '\0';
-            this.EditEmailTB.PlaceholderText = "";
-            this.EditEmailTB.SelectedText = "";
-            this.EditEmailTB.Size = new System.Drawing.Size(253, 50);
-            this.EditEmailTB.TabIndex = 19;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.White;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label24.Location = new System.Drawing.Point(41, 433);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(48, 21);
-            this.label24.TabIndex = 18;
-            this.label24.Text = "Email";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.White;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label25.Location = new System.Drawing.Point(361, 329);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 21);
-            this.label25.TabIndex = 17;
-            this.label25.Text = "Year Level";
-            // 
-            // EditYearLevelCB
-            // 
-            this.EditYearLevelCB.BackColor = System.Drawing.Color.Transparent;
-            this.EditYearLevelCB.BorderRadius = 10;
-            this.EditYearLevelCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EditYearLevelCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditYearLevelCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.EditYearLevelCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditYearLevelCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EditYearLevelCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.EditYearLevelCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditYearLevelCB.ItemHeight = 40;
-            this.EditYearLevelCB.Location = new System.Drawing.Point(356, 355);
-            this.EditYearLevelCB.Name = "EditYearLevelCB";
-            this.EditYearLevelCB.Size = new System.Drawing.Size(140, 46);
-            this.EditYearLevelCB.TabIndex = 16;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label26.Location = new System.Drawing.Point(202, 329);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(73, 21);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "Program";
-            // 
-            // EditProgramCB
-            // 
-            this.EditProgramCB.BackColor = System.Drawing.Color.Transparent;
-            this.EditProgramCB.BorderRadius = 10;
-            this.EditProgramCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EditProgramCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditProgramCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.EditProgramCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditProgramCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EditProgramCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.EditProgramCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditProgramCB.ItemHeight = 40;
-            this.EditProgramCB.Location = new System.Drawing.Point(197, 355);
-            this.EditProgramCB.Name = "EditProgramCB";
-            this.EditProgramCB.Size = new System.Drawing.Size(140, 46);
-            this.EditProgramCB.TabIndex = 14;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.White;
-            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label27.Location = new System.Drawing.Point(41, 329);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(98, 21);
-            this.label27.TabIndex = 13;
-            this.label27.Text = "Department";
-            // 
-            // EditDepartmentCB
-            // 
-            this.EditDepartmentCB.BackColor = System.Drawing.Color.Transparent;
-            this.EditDepartmentCB.BorderRadius = 10;
-            this.EditDepartmentCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EditDepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditDepartmentCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.EditDepartmentCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditDepartmentCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EditDepartmentCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.EditDepartmentCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditDepartmentCB.ItemHeight = 40;
-            this.EditDepartmentCB.Location = new System.Drawing.Point(36, 355);
-            this.EditDepartmentCB.Name = "EditDepartmentCB";
-            this.EditDepartmentCB.Size = new System.Drawing.Size(140, 46);
-            this.EditDepartmentCB.TabIndex = 12;
-            this.EditDepartmentCB.SelectedIndexChanged += new System.EventHandler(this.EditDepartmentCB_SelectedIndexChanged);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label28.Location = new System.Drawing.Point(63, 67);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(427, 17);
-            this.label28.TabIndex = 11;
-            this.label28.Text = "Update the selected user\'s information and save changes to the system.";
-            // 
-            // EditFNameTB
-            // 
-            this.EditFNameTB.Animated = true;
-            this.EditFNameTB.BackColor = System.Drawing.Color.White;
-            this.EditFNameTB.BorderRadius = 10;
-            this.EditFNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditFNameTB.DefaultText = "";
-            this.EditFNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditFNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditFNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditFNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditFNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditFNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditFNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditFNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditFNameTB.Location = new System.Drawing.Point(280, 249);
-            this.EditFNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditFNameTB.Name = "EditFNameTB";
-            this.EditFNameTB.PasswordChar = '\0';
-            this.EditFNameTB.PlaceholderText = "";
-            this.EditFNameTB.SelectedText = "";
-            this.EditFNameTB.Size = new System.Drawing.Size(216, 50);
-            this.EditFNameTB.TabIndex = 10;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label29.Location = new System.Drawing.Point(285, 224);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(88, 21);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "First Name";
-            // 
-            // EditLNameTB
-            // 
-            this.EditLNameTB.Animated = true;
-            this.EditLNameTB.BackColor = System.Drawing.Color.White;
-            this.EditLNameTB.BorderRadius = 10;
-            this.EditLNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditLNameTB.DefaultText = "";
-            this.EditLNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditLNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditLNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditLNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditLNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditLNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditLNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditLNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditLNameTB.Location = new System.Drawing.Point(36, 249);
-            this.EditLNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditLNameTB.Name = "EditLNameTB";
-            this.EditLNameTB.PasswordChar = '\0';
-            this.EditLNameTB.PlaceholderText = "";
-            this.EditLNameTB.SelectedText = "";
-            this.EditLNameTB.Size = new System.Drawing.Size(216, 50);
-            this.EditLNameTB.TabIndex = 8;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.White;
-            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label30.Location = new System.Drawing.Point(41, 224);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(86, 21);
-            this.label30.TabIndex = 7;
-            this.label30.Text = "Last Name";
-            // 
-            // guna2CirclePictureBox5
-            // 
-            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.White;
-            this.guna2CirclePictureBox5.Image = global::ComlabSystem.Properties.Resources.pencil;
-            this.guna2CirclePictureBox5.ImageRotate = 0F;
-            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(22, 30);
-            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
-            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(39, 32);
-            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox5.TabIndex = 6;
-            this.guna2CirclePictureBox5.TabStop = false;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.White;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label32.Location = new System.Drawing.Point(58, 22);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(178, 45);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "EDIT USER";
             // 
             // UserFilterPnl
             // 
@@ -1533,359 +1087,6 @@
             this.label20.TabIndex = 25;
             this.label20.Text = "Department";
             // 
-            // SortButton
-            // 
-            this.SortButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.SortButton.BorderRadius = 10;
-            this.SortButton.BorderThickness = 1;
-            this.SortButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.SortButton.CheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.SortButton.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.SortButton.CheckedState.Image = global::ComlabSystem.Properties.Resources.alphabetical_sorting_two;
-            this.SortButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SortButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SortButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SortButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SortButton.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.SortButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.SortButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.SortButton.Image = global::ComlabSystem.Properties.Resources.alphabetical_sorting;
-            this.SortButton.Location = new System.Drawing.Point(530, 37);
-            this.SortButton.Name = "SortButton";
-            this.SortButton.Size = new System.Drawing.Size(78, 46);
-            this.SortButton.TabIndex = 28;
-            this.SortButton.Text = "Sort";
-            this.SortButton.CheckedChanged += new System.EventHandler(this.SortButton_CheckedChanged);
-            // 
-            // PrintToogleBtm
-            // 
-            this.PrintToogleBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.PrintToogleBtm.BorderRadius = 10;
-            this.PrintToogleBtm.BorderThickness = 1;
-            this.PrintToogleBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.PrintToogleBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PrintToogleBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.PrintToogleBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.printer__3_;
-            this.PrintToogleBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PrintToogleBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PrintToogleBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PrintToogleBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PrintToogleBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.PrintToogleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PrintToogleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.PrintToogleBtm.Image = global::ComlabSystem.Properties.Resources.printer;
-            this.PrintToogleBtm.Location = new System.Drawing.Point(708, 37);
-            this.PrintToogleBtm.Name = "PrintToogleBtm";
-            this.PrintToogleBtm.Size = new System.Drawing.Size(78, 46);
-            this.PrintToogleBtm.TabIndex = 26;
-            this.PrintToogleBtm.Text = "Print";
-            this.PrintToogleBtm.CheckedChanged += new System.EventHandler(this.PrintToogleBtm_CheckedChanged);
-            // 
-            // UserFilterToggleBtm
-            // 
-            this.UserFilterToggleBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.UserFilterToggleBtm.BorderRadius = 10;
-            this.UserFilterToggleBtm.BorderThickness = 1;
-            this.UserFilterToggleBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.UserFilterToggleBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserFilterToggleBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.UserFilterToggleBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.funnel__3_;
-            this.UserFilterToggleBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserFilterToggleBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserFilterToggleBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserFilterToggleBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserFilterToggleBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserFilterToggleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.UserFilterToggleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.UserFilterToggleBtm.Image = global::ComlabSystem.Properties.Resources.funnel;
-            this.UserFilterToggleBtm.Location = new System.Drawing.Point(619, 37);
-            this.UserFilterToggleBtm.Name = "UserFilterToggleBtm";
-            this.UserFilterToggleBtm.Size = new System.Drawing.Size(78, 46);
-            this.UserFilterToggleBtm.TabIndex = 24;
-            this.UserFilterToggleBtm.Text = "Filter";
-            this.UserFilterToggleBtm.Click += new System.EventHandler(this.UserFilterToggleBtm_Click);
-            // 
-            // UserListManageBtmsPL
-            // 
-            this.UserListManageBtmsPL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserListManageBtmsPL.Controls.Add(this.EditUserBtm);
-            this.UserListManageBtmsPL.Controls.Add(this.AddUserBtm);
-            this.UserListManageBtmsPL.Controls.Add(this.ViewUserListBtm);
-            this.UserListManageBtmsPL.Location = new System.Drawing.Point(1258, 36);
-            this.UserListManageBtmsPL.Name = "UserListManageBtmsPL";
-            this.UserListManageBtmsPL.Size = new System.Drawing.Size(350, 46);
-            this.UserListManageBtmsPL.TabIndex = 14;
-            // 
-            // EditUserBtm
-            // 
-            this.EditUserBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.EditUserBtm.BorderRadius = 10;
-            this.EditUserBtm.BorderThickness = 2;
-            this.EditUserBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.EditUserBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.EditUserBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.EditUserBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.EditUserBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.EditUserBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.EditUserBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.EditUserBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.EditUserBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.EditUserBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserBtm.ForeColor = System.Drawing.Color.Maroon;
-            this.EditUserBtm.Image = global::ComlabSystem.Properties.Resources.user_gear__1_2;
-            this.EditUserBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.EditUserBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.EditUserBtm.Location = new System.Drawing.Point(4, 0);
-            this.EditUserBtm.Name = "EditUserBtm";
-            this.EditUserBtm.Size = new System.Drawing.Size(103, 45);
-            this.EditUserBtm.TabIndex = 16;
-            this.EditUserBtm.Text = "EDIT";
-            this.EditUserBtm.Click += new System.EventHandler(this.EditUserBtm_Click);
-            // 
-            // AddUserBtm
-            // 
-            this.AddUserBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.AddUserBtm.BorderRadius = 10;
-            this.AddUserBtm.BorderThickness = 2;
-            this.AddUserBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.AddUserBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.AddUserBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddUserBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.AddUserBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_plus__2_;
-            this.AddUserBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddUserBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddUserBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddUserBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddUserBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.AddUserBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddUserBtm.ForeColor = System.Drawing.Color.Maroon;
-            this.AddUserBtm.Image = global::ComlabSystem.Properties.Resources.user_plus__1_;
-            this.AddUserBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.AddUserBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddUserBtm.Location = new System.Drawing.Point(118, 0);
-            this.AddUserBtm.Name = "AddUserBtm";
-            this.AddUserBtm.Size = new System.Drawing.Size(103, 45);
-            this.AddUserBtm.TabIndex = 14;
-            this.AddUserBtm.Text = "ADD";
-            this.AddUserBtm.Click += new System.EventHandler(this.AddUserBtm_Click);
-            // 
-            // ViewUserListBtm
-            // 
-            this.ViewUserListBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.ViewUserListBtm.BorderRadius = 10;
-            this.ViewUserListBtm.BorderThickness = 2;
-            this.ViewUserListBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ViewUserListBtm.Checked = true;
-            this.ViewUserListBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.ViewUserListBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewUserListBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.ViewUserListBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_list;
-            this.ViewUserListBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ViewUserListBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ViewUserListBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ViewUserListBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ViewUserListBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.ViewUserListBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewUserListBtm.ForeColor = System.Drawing.Color.Maroon;
-            this.ViewUserListBtm.Image = global::ComlabSystem.Properties.Resources.user_list__1_;
-            this.ViewUserListBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.ViewUserListBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.ViewUserListBtm.Location = new System.Drawing.Point(232, 0);
-            this.ViewUserListBtm.Name = "ViewUserListBtm";
-            this.ViewUserListBtm.Size = new System.Drawing.Size(103, 45);
-            this.ViewUserListBtm.TabIndex = 13;
-            this.ViewUserListBtm.Text = "VIEW";
-            this.ViewUserListBtm.Click += new System.EventHandler(this.ViewUserListBtm_Click);
-            // 
-            // guna2Separator2
-            // 
-            this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.guna2Separator2.FillThickness = 2;
-            this.guna2Separator2.Location = new System.Drawing.Point(33, 95);
-            this.guna2Separator2.MaximumSize = new System.Drawing.Size(1570, 10);
-            this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1562, 10);
-            this.guna2Separator2.TabIndex = 12;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 3;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
-            // UserListsGridPNL
-            // 
-            this.UserListsGridPNL.Controls.Add(this.ArchiveUserListDGV);
-            this.UserListsGridPNL.Controls.Add(this.UserListDGV);
-            this.UserListsGridPNL.Location = new System.Drawing.Point(33, 105);
-            this.UserListsGridPNL.Name = "UserListsGridPNL";
-            this.UserListsGridPNL.Size = new System.Drawing.Size(1561, 810);
-            this.UserListsGridPNL.TabIndex = 16;
-            // 
-            // ArchiveUserListDGV
-            // 
-            this.ArchiveUserListDGV.AllowUserToAddRows = false;
-            this.ArchiveUserListDGV.AllowUserToDeleteRows = false;
-            this.ArchiveUserListDGV.AllowUserToResizeColumns = false;
-            this.ArchiveUserListDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ArchiveUserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.ArchiveUserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArchiveUserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ArchiveUserListDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArchiveUserListDGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ArchiveUserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArchiveUserListDGV.GridColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.Location = new System.Drawing.Point(0, 0);
-            this.ArchiveUserListDGV.MultiSelect = false;
-            this.ArchiveUserListDGV.Name = "ArchiveUserListDGV";
-            this.ArchiveUserListDGV.ReadOnly = true;
-            this.ArchiveUserListDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ArchiveUserListDGV.RowHeadersVisible = false;
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArchiveUserListDGV.RowTemplate.DividerHeight = 10;
-            this.ArchiveUserListDGV.RowTemplate.Height = 100;
-            this.ArchiveUserListDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArchiveUserListDGV.ShowCellErrors = false;
-            this.ArchiveUserListDGV.ShowCellToolTips = false;
-            this.ArchiveUserListDGV.ShowEditingIcon = false;
-            this.ArchiveUserListDGV.ShowRowErrors = false;
-            this.ArchiveUserListDGV.Size = new System.Drawing.Size(1561, 810);
-            this.ArchiveUserListDGV.TabIndex = 16;
-            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.ArchiveUserListDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ArchiveUserListDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.Height = 60;
-            this.ArchiveUserListDGV.ThemeStyle.ReadOnly = true;
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.Height = 100;
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.ArchiveUserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ArchiveUserListDGV_CellClick);
-            // 
-            // UserListDGV
-            // 
-            this.UserListDGV.AllowUserToAddRows = false;
-            this.UserListDGV.AllowUserToDeleteRows = false;
-            this.UserListDGV.AllowUserToResizeColumns = false;
-            this.UserListDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.UserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.UserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.UserListDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListDGV.DefaultCellStyle = dataGridViewCellStyle6;
-            this.UserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserListDGV.GridColor = System.Drawing.Color.White;
-            this.UserListDGV.Location = new System.Drawing.Point(0, 0);
-            this.UserListDGV.MultiSelect = false;
-            this.UserListDGV.Name = "UserListDGV";
-            this.UserListDGV.ReadOnly = true;
-            this.UserListDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UserListDGV.RowHeadersVisible = false;
-            this.UserListDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.UserListDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListDGV.RowTemplate.DividerHeight = 10;
-            this.UserListDGV.RowTemplate.Height = 100;
-            this.UserListDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListDGV.ShowCellErrors = false;
-            this.UserListDGV.ShowCellToolTips = false;
-            this.UserListDGV.ShowEditingIcon = false;
-            this.UserListDGV.ShowRowErrors = false;
-            this.UserListDGV.Size = new System.Drawing.Size(1561, 810);
-            this.UserListDGV.TabIndex = 15;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.UserListDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.UserListDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.UserListDGV.ThemeStyle.HeaderStyle.Height = 60;
-            this.UserListDGV.ThemeStyle.ReadOnly = true;
-            this.UserListDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.UserListDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.UserListDGV.ThemeStyle.RowsStyle.Height = 100;
-            this.UserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.UserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.UserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellClick);
-            this.UserListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellContentClick);
-            this.UserListDGV.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.UserListDGV_CellToolTipTextNeeded);
-            // 
             // UserAddPanel
             // 
             this.UserAddPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1910,7 +1111,6 @@
             this.UserAddPanel.Controls.Add(this.label6);
             this.UserAddPanel.Controls.Add(this.LNameTB);
             this.UserAddPanel.Controls.Add(this.label5);
-            this.UserAddPanel.Controls.Add(this.guna2CirclePictureBox3);
             this.UserAddPanel.Controls.Add(this.StudIDTB);
             this.UserAddPanel.Controls.Add(this.label4);
             this.UserAddPanel.Controls.Add(this.label3);
@@ -1933,6 +1133,7 @@
             this.PasswordTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PasswordTip.TabIndex = 29;
             this.PasswordTip.TabStop = false;
+            this.PasswordTip.Click += new System.EventHandler(this.PasswordTip_Click);
             // 
             // StudentPasswordTB
             // 
@@ -2020,7 +1221,7 @@
             this.AddDraftBtm.Name = "AddDraftBtm";
             this.AddDraftBtm.Size = new System.Drawing.Size(225, 45);
             this.AddDraftBtm.TabIndex = 22;
-            this.AddDraftBtm.Text = "Save as draft";
+            this.AddDraftBtm.Text = "Cancel";
             this.AddDraftBtm.Click += new System.EventHandler(this.AddDraftBtm_Click);
             // 
             // ContactTB
@@ -2188,7 +1389,7 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label7.Location = new System.Drawing.Point(63, 67);
+            this.label7.Location = new System.Drawing.Point(33, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(428, 17);
             this.label7.TabIndex = 11;
@@ -2266,19 +1467,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Last Name";
             // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.White;
-            this.guna2CirclePictureBox3.Image = global::ComlabSystem.Properties.Resources.plus_circle;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(22, 30);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(39, 32);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox3.TabIndex = 6;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
             // StudIDTB
             // 
             this.StudIDTB.Animated = true;
@@ -2321,11 +1509,768 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label3.Location = new System.Drawing.Point(58, 22);
+            this.label3.Location = new System.Drawing.Point(28, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 45);
             this.label3.TabIndex = 0;
             this.label3.Text = "ADD USER";
+            // 
+            // SortButton
+            // 
+            this.SortButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.SortButton.BorderRadius = 10;
+            this.SortButton.BorderThickness = 1;
+            this.SortButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.SortButton.CheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.SortButton.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.SortButton.CheckedState.Image = global::ComlabSystem.Properties.Resources.alphabetical_sorting_two;
+            this.SortButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SortButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SortButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SortButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SortButton.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.SortButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SortButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.SortButton.Image = global::ComlabSystem.Properties.Resources.alphabetical_sorting;
+            this.SortButton.Location = new System.Drawing.Point(530, 37);
+            this.SortButton.Name = "SortButton";
+            this.SortButton.Size = new System.Drawing.Size(78, 46);
+            this.SortButton.TabIndex = 28;
+            this.SortButton.Text = "Sort";
+            this.SortButton.CheckedChanged += new System.EventHandler(this.SortButton_CheckedChanged);
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
+            // 
+            // PrintToogleBtm
+            // 
+            this.PrintToogleBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.PrintToogleBtm.BorderRadius = 10;
+            this.PrintToogleBtm.BorderThickness = 1;
+            this.PrintToogleBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.PrintToogleBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.PrintToogleBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.printer__3_;
+            this.PrintToogleBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PrintToogleBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PrintToogleBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PrintToogleBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PrintToogleBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.PrintToogleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PrintToogleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.PrintToogleBtm.Image = global::ComlabSystem.Properties.Resources.printer;
+            this.PrintToogleBtm.Location = new System.Drawing.Point(708, 37);
+            this.PrintToogleBtm.Name = "PrintToogleBtm";
+            this.PrintToogleBtm.Size = new System.Drawing.Size(78, 46);
+            this.PrintToogleBtm.TabIndex = 26;
+            this.PrintToogleBtm.Text = "Print";
+            this.PrintToogleBtm.CheckedChanged += new System.EventHandler(this.PrintToogleBtm_CheckedChanged);
+            this.PrintToogleBtm.Click += new System.EventHandler(this.PrintToogleBtm_Click);
+            // 
+            // UserFilterToggleBtm
+            // 
+            this.UserFilterToggleBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.UserFilterToggleBtm.BorderRadius = 10;
+            this.UserFilterToggleBtm.BorderThickness = 1;
+            this.UserFilterToggleBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.UserFilterToggleBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserFilterToggleBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserFilterToggleBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.funnel__3_;
+            this.UserFilterToggleBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserFilterToggleBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserFilterToggleBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserFilterToggleBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserFilterToggleBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserFilterToggleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.UserFilterToggleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserFilterToggleBtm.Image = global::ComlabSystem.Properties.Resources.funnel;
+            this.UserFilterToggleBtm.Location = new System.Drawing.Point(619, 37);
+            this.UserFilterToggleBtm.Name = "UserFilterToggleBtm";
+            this.UserFilterToggleBtm.Size = new System.Drawing.Size(78, 46);
+            this.UserFilterToggleBtm.TabIndex = 24;
+            this.UserFilterToggleBtm.Text = "Filter";
+            this.UserFilterToggleBtm.Click += new System.EventHandler(this.UserFilterToggleBtm_Click);
+            // 
+            // UserListManageBtmsPL
+            // 
+            this.UserListManageBtmsPL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserListManageBtmsPL.Controls.Add(this.EditUserBtm);
+            this.UserListManageBtmsPL.Controls.Add(this.AddUserBtm);
+            this.UserListManageBtmsPL.Location = new System.Drawing.Point(1258, 36);
+            this.UserListManageBtmsPL.Name = "UserListManageBtmsPL";
+            this.UserListManageBtmsPL.Size = new System.Drawing.Size(350, 46);
+            this.UserListManageBtmsPL.TabIndex = 14;
+            // 
+            // EditUserBtm
+            // 
+            this.EditUserBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.EditUserBtm.BorderRadius = 10;
+            this.EditUserBtm.BorderThickness = 2;
+            this.EditUserBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.EditUserBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.EditUserBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUserBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.EditUserBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.pencil__1_;
+            this.EditUserBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditUserBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditUserBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditUserBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditUserBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.EditUserBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUserBtm.ForeColor = System.Drawing.Color.Maroon;
+            this.EditUserBtm.Image = global::ComlabSystem.Properties.Resources.pencil__2_;
+            this.EditUserBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.EditUserBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.EditUserBtm.Location = new System.Drawing.Point(118, 0);
+            this.EditUserBtm.Name = "EditUserBtm";
+            this.EditUserBtm.Size = new System.Drawing.Size(103, 45);
+            this.EditUserBtm.TabIndex = 16;
+            this.EditUserBtm.Text = "EDIT";
+            this.EditUserBtm.CheckedChanged += new System.EventHandler(this.EditUserBtm_CheckedChanged);
+            this.EditUserBtm.Click += new System.EventHandler(this.EditUserBtm_Click);
+            // 
+            // AddUserBtm
+            // 
+            this.AddUserBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.AddUserBtm.BorderRadius = 10;
+            this.AddUserBtm.BorderThickness = 2;
+            this.AddUserBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.AddUserBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.AddUserBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddUserBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.AddUserBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.plus__1_1;
+            this.AddUserBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddUserBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddUserBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddUserBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddUserBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.AddUserBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.AddUserBtm.ForeColor = System.Drawing.Color.Maroon;
+            this.AddUserBtm.Image = global::ComlabSystem.Properties.Resources.plus1;
+            this.AddUserBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.AddUserBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.AddUserBtm.Location = new System.Drawing.Point(232, 0);
+            this.AddUserBtm.Name = "AddUserBtm";
+            this.AddUserBtm.Size = new System.Drawing.Size(103, 45);
+            this.AddUserBtm.TabIndex = 14;
+            this.AddUserBtm.Text = "ADD";
+            this.AddUserBtm.CheckedChanged += new System.EventHandler(this.AddUserBtm_CheckedChanged);
+            this.AddUserBtm.Click += new System.EventHandler(this.AddUserBtm_Click);
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.guna2Separator2.FillThickness = 2;
+            this.guna2Separator2.Location = new System.Drawing.Point(33, 95);
+            this.guna2Separator2.MaximumSize = new System.Drawing.Size(1570, 10);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(1562, 10);
+            this.guna2Separator2.TabIndex = 12;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 3;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // UserListsGridPNL
+            // 
+            this.UserListsGridPNL.Controls.Add(this.UserListPrintDGV);
+            this.UserListsGridPNL.Controls.Add(this.UserListDGV);
+            this.UserListsGridPNL.Controls.Add(this.ArchiveUserListDGV);
+            this.UserListsGridPNL.Location = new System.Drawing.Point(33, 105);
+            this.UserListsGridPNL.Name = "UserListsGridPNL";
+            this.UserListsGridPNL.Size = new System.Drawing.Size(1561, 810);
+            this.UserListsGridPNL.TabIndex = 16;
+            // 
+            // ArchiveUserListDGV
+            // 
+            this.ArchiveUserListDGV.AllowUserToAddRows = false;
+            this.ArchiveUserListDGV.AllowUserToDeleteRows = false;
+            this.ArchiveUserListDGV.AllowUserToResizeColumns = false;
+            this.ArchiveUserListDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.ArchiveUserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.ArchiveUserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArchiveUserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.ArchiveUserListDGV.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArchiveUserListDGV.DefaultCellStyle = dataGridViewCellStyle18;
+            this.ArchiveUserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ArchiveUserListDGV.GridColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.Location = new System.Drawing.Point(0, 0);
+            this.ArchiveUserListDGV.MultiSelect = false;
+            this.ArchiveUserListDGV.Name = "ArchiveUserListDGV";
+            this.ArchiveUserListDGV.ReadOnly = true;
+            this.ArchiveUserListDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ArchiveUserListDGV.RowHeadersVisible = false;
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArchiveUserListDGV.RowTemplate.DividerHeight = 10;
+            this.ArchiveUserListDGV.RowTemplate.Height = 100;
+            this.ArchiveUserListDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArchiveUserListDGV.ShowCellErrors = false;
+            this.ArchiveUserListDGV.ShowCellToolTips = false;
+            this.ArchiveUserListDGV.ShowEditingIcon = false;
+            this.ArchiveUserListDGV.ShowRowErrors = false;
+            this.ArchiveUserListDGV.Size = new System.Drawing.Size(1561, 810);
+            this.ArchiveUserListDGV.TabIndex = 16;
+            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.ArchiveUserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.ArchiveUserListDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ArchiveUserListDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.ArchiveUserListDGV.ThemeStyle.HeaderStyle.Height = 60;
+            this.ArchiveUserListDGV.ThemeStyle.ReadOnly = true;
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.Height = 100;
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.ArchiveUserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ArchiveUserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ArchiveUserListDGV_CellClick);
+            // 
+            // UserListDGV
+            // 
+            this.UserListDGV.AllowUserToAddRows = false;
+            this.UserListDGV.AllowUserToDeleteRows = false;
+            this.UserListDGV.AllowUserToResizeColumns = false;
+            this.UserListDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.UserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.UserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.UserListDGV.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListDGV.DefaultCellStyle = dataGridViewCellStyle15;
+            this.UserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserListDGV.GridColor = System.Drawing.Color.White;
+            this.UserListDGV.Location = new System.Drawing.Point(0, 0);
+            this.UserListDGV.MultiSelect = false;
+            this.UserListDGV.Name = "UserListDGV";
+            this.UserListDGV.ReadOnly = true;
+            this.UserListDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UserListDGV.RowHeadersVisible = false;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListDGV.RowTemplate.DividerHeight = 10;
+            this.UserListDGV.RowTemplate.Height = 100;
+            this.UserListDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListDGV.ShowCellErrors = false;
+            this.UserListDGV.ShowCellToolTips = false;
+            this.UserListDGV.ShowEditingIcon = false;
+            this.UserListDGV.ShowRowErrors = false;
+            this.UserListDGV.Size = new System.Drawing.Size(1561, 810);
+            this.UserListDGV.TabIndex = 15;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.UserListDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.UserListDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.UserListDGV.ThemeStyle.HeaderStyle.Height = 60;
+            this.UserListDGV.ThemeStyle.ReadOnly = true;
+            this.UserListDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.UserListDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.UserListDGV.ThemeStyle.RowsStyle.Height = 100;
+            this.UserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.UserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.UserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellClick);
+            this.UserListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellContentClick);
+            this.UserListDGV.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.UserListDGV_CellToolTipTextNeeded);
+            // 
+            // UserEditPnl
+            // 
+            this.UserEditPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserEditPnl.BackColor = System.Drawing.Color.Transparent;
+            this.UserEditPnl.Controls.Add(this.EditStudentIDTip);
+            this.UserEditPnl.Controls.Add(this.label44);
+            this.UserEditPnl.Controls.Add(this.EditStudentPasswordTB);
+            this.UserEditPnl.Controls.Add(this.EditStudentIDTB);
+            this.UserEditPnl.Controls.Add(this.label14);
+            this.UserEditPnl.Controls.Add(this.EditUserSaveBtm);
+            this.UserEditPnl.Controls.Add(this.UserEditCancelBtm);
+            this.UserEditPnl.Controls.Add(this.EditContactTB);
+            this.UserEditPnl.Controls.Add(this.label23);
+            this.UserEditPnl.Controls.Add(this.EditEmailTB);
+            this.UserEditPnl.Controls.Add(this.label24);
+            this.UserEditPnl.Controls.Add(this.label25);
+            this.UserEditPnl.Controls.Add(this.EditYearLevelCB);
+            this.UserEditPnl.Controls.Add(this.label26);
+            this.UserEditPnl.Controls.Add(this.EditProgramCB);
+            this.UserEditPnl.Controls.Add(this.label27);
+            this.UserEditPnl.Controls.Add(this.EditDepartmentCB);
+            this.UserEditPnl.Controls.Add(this.label28);
+            this.UserEditPnl.Controls.Add(this.EditFNameTB);
+            this.UserEditPnl.Controls.Add(this.label29);
+            this.UserEditPnl.Controls.Add(this.EditLNameTB);
+            this.UserEditPnl.Controls.Add(this.label30);
+            this.UserEditPnl.Controls.Add(this.label32);
+            this.UserEditPnl.FillColor = System.Drawing.Color.White;
+            this.UserEditPnl.Location = new System.Drawing.Point(1072, 83);
+            this.UserEditPnl.Name = "UserEditPnl";
+            this.UserEditPnl.Radius = 10;
+            this.UserEditPnl.ShadowColor = System.Drawing.Color.Black;
+            this.UserEditPnl.Size = new System.Drawing.Size(530, 645);
+            this.UserEditPnl.TabIndex = 20;
+            // 
+            // EditStudentIDTip
+            // 
+            this.EditStudentIDTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
+            this.EditStudentIDTip.ImageRotate = 0F;
+            this.EditStudentIDTip.Location = new System.Drawing.Point(220, 115);
+            this.EditStudentIDTip.Name = "EditStudentIDTip";
+            this.EditStudentIDTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.EditStudentIDTip.Size = new System.Drawing.Size(25, 26);
+            this.EditStudentIDTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EditStudentIDTip.TabIndex = 29;
+            this.EditStudentIDTip.TabStop = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.Color.White;
+            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label44.Location = new System.Drawing.Point(285, 118);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 21);
+            this.label44.TabIndex = 27;
+            this.label44.Text = "Password";
+            // 
+            // EditStudentPasswordTB
+            // 
+            this.EditStudentPasswordTB.Animated = true;
+            this.EditStudentPasswordTB.BackColor = System.Drawing.Color.White;
+            this.EditStudentPasswordTB.BorderRadius = 10;
+            this.EditStudentPasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditStudentPasswordTB.DefaultText = "";
+            this.EditStudentPasswordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditStudentPasswordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditStudentPasswordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentPasswordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentPasswordTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditStudentPasswordTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditStudentPasswordTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentPasswordTB.Location = new System.Drawing.Point(280, 143);
+            this.EditStudentPasswordTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditStudentPasswordTB.Name = "EditStudentPasswordTB";
+            this.EditStudentPasswordTB.PasswordChar = '\0';
+            this.EditStudentPasswordTB.PlaceholderText = "";
+            this.EditStudentPasswordTB.SelectedText = "";
+            this.EditStudentPasswordTB.Size = new System.Drawing.Size(216, 50);
+            this.EditStudentPasswordTB.TabIndex = 26;
+            // 
+            // EditStudentIDTB
+            // 
+            this.EditStudentIDTB.Animated = true;
+            this.EditStudentIDTB.BackColor = System.Drawing.Color.White;
+            this.EditStudentIDTB.BorderRadius = 10;
+            this.EditStudentIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditStudentIDTB.DefaultText = "";
+            this.EditStudentIDTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditStudentIDTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditStudentIDTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentIDTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentIDTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentIDTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditStudentIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditStudentIDTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentIDTB.Location = new System.Drawing.Point(36, 143);
+            this.EditStudentIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditStudentIDTB.Name = "EditStudentIDTB";
+            this.EditStudentIDTB.PasswordChar = '\0';
+            this.EditStudentIDTB.PlaceholderText = "";
+            this.EditStudentIDTB.SelectedText = "";
+            this.EditStudentIDTB.Size = new System.Drawing.Size(216, 50);
+            this.EditStudentIDTB.TabIndex = 25;
+            this.EditStudentIDTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditStudentIDTB_KeyDown);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label14.Location = new System.Drawing.Point(41, 118);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 21);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Student ID";
+            // 
+            // EditUserSaveBtm
+            // 
+            this.EditUserSaveBtm.Animated = true;
+            this.EditUserSaveBtm.BackColor = System.Drawing.Color.White;
+            this.EditUserSaveBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.EditUserSaveBtm.BorderRadius = 10;
+            this.EditUserSaveBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.EditUserSaveBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUserSaveBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.EditUserSaveBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
+            this.EditUserSaveBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditUserSaveBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditUserSaveBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditUserSaveBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditUserSaveBtm.FillColor = System.Drawing.Color.Maroon;
+            this.EditUserSaveBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUserSaveBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.EditUserSaveBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.EditUserSaveBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.EditUserSaveBtm.Location = new System.Drawing.Point(271, 555);
+            this.EditUserSaveBtm.Name = "EditUserSaveBtm";
+            this.EditUserSaveBtm.Size = new System.Drawing.Size(225, 45);
+            this.EditUserSaveBtm.TabIndex = 23;
+            this.EditUserSaveBtm.Text = "Save";
+            this.EditUserSaveBtm.Click += new System.EventHandler(this.EditUserSaveBtm_Click);
+            // 
+            // UserEditCancelBtm
+            // 
+            this.UserEditCancelBtm.Animated = true;
+            this.UserEditCancelBtm.BackColor = System.Drawing.Color.White;
+            this.UserEditCancelBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.UserEditCancelBtm.BorderRadius = 10;
+            this.UserEditCancelBtm.BorderThickness = 2;
+            this.UserEditCancelBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.UserEditCancelBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserEditCancelBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.UserEditCancelBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
+            this.UserEditCancelBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserEditCancelBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserEditCancelBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserEditCancelBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserEditCancelBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserEditCancelBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserEditCancelBtm.ForeColor = System.Drawing.Color.Maroon;
+            this.UserEditCancelBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.UserEditCancelBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.UserEditCancelBtm.Location = new System.Drawing.Point(36, 555);
+            this.UserEditCancelBtm.Name = "UserEditCancelBtm";
+            this.UserEditCancelBtm.Size = new System.Drawing.Size(225, 45);
+            this.UserEditCancelBtm.TabIndex = 22;
+            this.UserEditCancelBtm.Text = "Cancel";
+            this.UserEditCancelBtm.Click += new System.EventHandler(this.UserEditCancelBtm_Click);
+            // 
+            // EditContactTB
+            // 
+            this.EditContactTB.Animated = true;
+            this.EditContactTB.BackColor = System.Drawing.Color.White;
+            this.EditContactTB.BorderRadius = 10;
+            this.EditContactTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditContactTB.DefaultText = "";
+            this.EditContactTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditContactTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditContactTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditContactTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditContactTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditContactTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditContactTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditContactTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditContactTB.Location = new System.Drawing.Point(311, 458);
+            this.EditContactTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditContactTB.Name = "EditContactTB";
+            this.EditContactTB.PasswordChar = '\0';
+            this.EditContactTB.PlaceholderText = "";
+            this.EditContactTB.SelectedText = "";
+            this.EditContactTB.Size = new System.Drawing.Size(185, 50);
+            this.EditContactTB.TabIndex = 21;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.White;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label23.Location = new System.Drawing.Point(316, 433);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 21);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "Contact";
+            // 
+            // EditEmailTB
+            // 
+            this.EditEmailTB.Animated = true;
+            this.EditEmailTB.BackColor = System.Drawing.Color.White;
+            this.EditEmailTB.BorderRadius = 10;
+            this.EditEmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditEmailTB.DefaultText = "";
+            this.EditEmailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditEmailTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditEmailTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditEmailTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditEmailTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditEmailTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditEmailTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditEmailTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditEmailTB.Location = new System.Drawing.Point(36, 458);
+            this.EditEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditEmailTB.Name = "EditEmailTB";
+            this.EditEmailTB.PasswordChar = '\0';
+            this.EditEmailTB.PlaceholderText = "";
+            this.EditEmailTB.SelectedText = "";
+            this.EditEmailTB.Size = new System.Drawing.Size(253, 50);
+            this.EditEmailTB.TabIndex = 19;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.White;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label24.Location = new System.Drawing.Point(41, 433);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 21);
+            this.label24.TabIndex = 18;
+            this.label24.Text = "Email";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.White;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label25.Location = new System.Drawing.Point(361, 329);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(83, 21);
+            this.label25.TabIndex = 17;
+            this.label25.Text = "Year Level";
+            // 
+            // EditYearLevelCB
+            // 
+            this.EditYearLevelCB.BackColor = System.Drawing.Color.Transparent;
+            this.EditYearLevelCB.BorderRadius = 10;
+            this.EditYearLevelCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EditYearLevelCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditYearLevelCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.EditYearLevelCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditYearLevelCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EditYearLevelCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.EditYearLevelCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditYearLevelCB.ItemHeight = 40;
+            this.EditYearLevelCB.Location = new System.Drawing.Point(356, 355);
+            this.EditYearLevelCB.Name = "EditYearLevelCB";
+            this.EditYearLevelCB.Size = new System.Drawing.Size(140, 46);
+            this.EditYearLevelCB.TabIndex = 16;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label26.Location = new System.Drawing.Point(202, 329);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 21);
+            this.label26.TabIndex = 15;
+            this.label26.Text = "Program";
+            // 
+            // EditProgramCB
+            // 
+            this.EditProgramCB.BackColor = System.Drawing.Color.Transparent;
+            this.EditProgramCB.BorderRadius = 10;
+            this.EditProgramCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EditProgramCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditProgramCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.EditProgramCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditProgramCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EditProgramCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.EditProgramCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditProgramCB.ItemHeight = 40;
+            this.EditProgramCB.Location = new System.Drawing.Point(197, 355);
+            this.EditProgramCB.Name = "EditProgramCB";
+            this.EditProgramCB.Size = new System.Drawing.Size(140, 46);
+            this.EditProgramCB.TabIndex = 14;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label27.Location = new System.Drawing.Point(41, 329);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(98, 21);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "Department";
+            // 
+            // EditDepartmentCB
+            // 
+            this.EditDepartmentCB.BackColor = System.Drawing.Color.Transparent;
+            this.EditDepartmentCB.BorderRadius = 10;
+            this.EditDepartmentCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EditDepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditDepartmentCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.EditDepartmentCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditDepartmentCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EditDepartmentCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.EditDepartmentCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditDepartmentCB.ItemHeight = 40;
+            this.EditDepartmentCB.Location = new System.Drawing.Point(36, 355);
+            this.EditDepartmentCB.Name = "EditDepartmentCB";
+            this.EditDepartmentCB.Size = new System.Drawing.Size(140, 46);
+            this.EditDepartmentCB.TabIndex = 12;
+            this.EditDepartmentCB.SelectedIndexChanged += new System.EventHandler(this.EditDepartmentCB_SelectedIndexChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label28.Location = new System.Drawing.Point(33, 69);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(427, 17);
+            this.label28.TabIndex = 11;
+            this.label28.Text = "Update the selected user\'s information and save changes to the system.";
+            // 
+            // EditFNameTB
+            // 
+            this.EditFNameTB.Animated = true;
+            this.EditFNameTB.BackColor = System.Drawing.Color.White;
+            this.EditFNameTB.BorderRadius = 10;
+            this.EditFNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditFNameTB.DefaultText = "";
+            this.EditFNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditFNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditFNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditFNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditFNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditFNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditFNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditFNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditFNameTB.Location = new System.Drawing.Point(280, 249);
+            this.EditFNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditFNameTB.Name = "EditFNameTB";
+            this.EditFNameTB.PasswordChar = '\0';
+            this.EditFNameTB.PlaceholderText = "";
+            this.EditFNameTB.SelectedText = "";
+            this.EditFNameTB.Size = new System.Drawing.Size(216, 50);
+            this.EditFNameTB.TabIndex = 10;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label29.Location = new System.Drawing.Point(285, 224);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(88, 21);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "First Name";
+            // 
+            // EditLNameTB
+            // 
+            this.EditLNameTB.Animated = true;
+            this.EditLNameTB.BackColor = System.Drawing.Color.White;
+            this.EditLNameTB.BorderRadius = 10;
+            this.EditLNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditLNameTB.DefaultText = "";
+            this.EditLNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditLNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditLNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditLNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditLNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditLNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditLNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditLNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditLNameTB.Location = new System.Drawing.Point(36, 249);
+            this.EditLNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditLNameTB.Name = "EditLNameTB";
+            this.EditLNameTB.PasswordChar = '\0';
+            this.EditLNameTB.PlaceholderText = "";
+            this.EditLNameTB.SelectedText = "";
+            this.EditLNameTB.Size = new System.Drawing.Size(216, 50);
+            this.EditLNameTB.TabIndex = 8;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.White;
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label30.Location = new System.Drawing.Point(41, 224);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(86, 21);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "Last Name";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.White;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label32.Location = new System.Drawing.Point(28, 24);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(178, 45);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "EDIT USER";
             // 
             // StatisticPNL
             // 
@@ -2349,83 +2294,146 @@
             // 
             // gunaChart2
             // 
-            chartFont1.FontName = "Arial";
-            this.gunaChart2.Legend.LabelFont = chartFont1;
+            chartFont17.FontName = "Arial";
+            this.gunaChart2.Legend.LabelFont = chartFont17;
             this.gunaChart2.Location = new System.Drawing.Point(1108, 36);
             this.gunaChart2.Name = "gunaChart2";
             this.gunaChart2.Size = new System.Drawing.Size(419, 260);
             this.gunaChart2.TabIndex = 1;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart2.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            this.gunaChart2.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart2.Tooltips.TitleFont = chartFont4;
-            this.gunaChart2.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            this.gunaChart2.XAxes.Ticks = tick1;
-            this.gunaChart2.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            this.gunaChart2.YAxes.Ticks = tick2;
-            this.gunaChart2.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            this.gunaChart2.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            this.gunaChart2.ZAxes.Ticks = tick3;
+            chartFont18.FontName = "Arial";
+            chartFont18.Size = 12;
+            chartFont18.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Title.Font = chartFont18;
+            chartFont19.FontName = "Arial";
+            this.gunaChart2.Tooltips.BodyFont = chartFont19;
+            chartFont20.FontName = "Arial";
+            chartFont20.Size = 9;
+            chartFont20.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Tooltips.TitleFont = chartFont20;
+            this.gunaChart2.XAxes.GridLines = grid7;
+            chartFont21.FontName = "Arial";
+            tick7.Font = chartFont21;
+            this.gunaChart2.XAxes.Ticks = tick7;
+            this.gunaChart2.YAxes.GridLines = grid8;
+            chartFont22.FontName = "Arial";
+            tick8.Font = chartFont22;
+            this.gunaChart2.YAxes.Ticks = tick8;
+            this.gunaChart2.ZAxes.GridLines = grid9;
+            chartFont23.FontName = "Arial";
+            pointLabel3.Font = chartFont23;
+            this.gunaChart2.ZAxes.PointLabels = pointLabel3;
+            chartFont24.FontName = "Arial";
+            tick9.Font = chartFont24;
+            this.gunaChart2.ZAxes.Ticks = tick9;
             // 
             // gunaChart1
             // 
-            chartFont9.FontName = "Arial";
-            this.gunaChart1.Legend.LabelFont = chartFont9;
+            chartFont25.FontName = "Arial";
+            this.gunaChart1.Legend.LabelFont = chartFont25;
             this.gunaChart1.Location = new System.Drawing.Point(40, 332);
             this.gunaChart1.Name = "gunaChart1";
             this.gunaChart1.Size = new System.Drawing.Size(1551, 580);
             this.gunaChart1.TabIndex = 0;
-            chartFont10.FontName = "Arial";
-            chartFont10.Size = 12;
-            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Title.Font = chartFont10;
-            chartFont11.FontName = "Arial";
-            this.gunaChart1.Tooltips.BodyFont = chartFont11;
-            chartFont12.FontName = "Arial";
-            chartFont12.Size = 9;
-            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Tooltips.TitleFont = chartFont12;
-            this.gunaChart1.XAxes.GridLines = grid4;
-            chartFont13.FontName = "Arial";
-            tick4.Font = chartFont13;
-            this.gunaChart1.XAxes.Ticks = tick4;
-            this.gunaChart1.YAxes.GridLines = grid5;
-            chartFont14.FontName = "Arial";
-            tick5.Font = chartFont14;
-            this.gunaChart1.YAxes.Ticks = tick5;
-            this.gunaChart1.ZAxes.GridLines = grid6;
-            chartFont15.FontName = "Arial";
-            pointLabel2.Font = chartFont15;
-            this.gunaChart1.ZAxes.PointLabels = pointLabel2;
-            chartFont16.FontName = "Arial";
-            tick6.Font = chartFont16;
-            this.gunaChart1.ZAxes.Ticks = tick6;
+            chartFont26.FontName = "Arial";
+            chartFont26.Size = 12;
+            chartFont26.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Title.Font = chartFont26;
+            chartFont27.FontName = "Arial";
+            this.gunaChart1.Tooltips.BodyFont = chartFont27;
+            chartFont28.FontName = "Arial";
+            chartFont28.Size = 9;
+            chartFont28.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Tooltips.TitleFont = chartFont28;
+            this.gunaChart1.XAxes.GridLines = grid10;
+            chartFont29.FontName = "Arial";
+            tick10.Font = chartFont29;
+            this.gunaChart1.XAxes.Ticks = tick10;
+            this.gunaChart1.YAxes.GridLines = grid11;
+            chartFont30.FontName = "Arial";
+            tick11.Font = chartFont30;
+            this.gunaChart1.YAxes.Ticks = tick11;
+            this.gunaChart1.ZAxes.GridLines = grid12;
+            chartFont31.FontName = "Arial";
+            pointLabel4.Font = chartFont31;
+            this.gunaChart1.ZAxes.PointLabels = pointLabel4;
+            chartFont32.FontName = "Arial";
+            tick12.Font = chartFont32;
+            this.gunaChart1.ZAxes.Ticks = tick12;
             // 
-            // EditStudentIDTip
+            // UserListPrintDGV
             // 
-            this.EditStudentIDTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
-            this.EditStudentIDTip.ImageRotate = 0F;
-            this.EditStudentIDTip.Location = new System.Drawing.Point(220, 115);
-            this.EditStudentIDTip.Name = "EditStudentIDTip";
-            this.EditStudentIDTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.EditStudentIDTip.Size = new System.Drawing.Size(25, 26);
-            this.EditStudentIDTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EditStudentIDTip.TabIndex = 29;
-            this.EditStudentIDTip.TabStop = false;
+            this.UserListPrintDGV.AllowUserToAddRows = false;
+            this.UserListPrintDGV.AllowUserToDeleteRows = false;
+            this.UserListPrintDGV.AllowUserToResizeColumns = false;
+            this.UserListPrintDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.UserListPrintDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.UserListPrintDGV.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListPrintDGV.DefaultCellStyle = dataGridViewCellStyle12;
+            this.UserListPrintDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserListPrintDGV.GridColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.Location = new System.Drawing.Point(0, 0);
+            this.UserListPrintDGV.MultiSelect = false;
+            this.UserListPrintDGV.Name = "UserListPrintDGV";
+            this.UserListPrintDGV.ReadOnly = true;
+            this.UserListPrintDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UserListPrintDGV.RowHeadersVisible = false;
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListPrintDGV.RowTemplate.DividerHeight = 10;
+            this.UserListPrintDGV.RowTemplate.Height = 100;
+            this.UserListPrintDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListPrintDGV.ShowCellErrors = false;
+            this.UserListPrintDGV.ShowCellToolTips = false;
+            this.UserListPrintDGV.ShowEditingIcon = false;
+            this.UserListPrintDGV.ShowRowErrors = false;
+            this.UserListPrintDGV.Size = new System.Drawing.Size(1561, 810);
+            this.UserListPrintDGV.TabIndex = 17;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.UserListPrintDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.Height = 60;
+            this.UserListPrintDGV.ThemeStyle.ReadOnly = true;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.Height = 100;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // UserUI
             // 
@@ -2446,23 +2454,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.UserListPNL.ResumeLayout(false);
             this.UserPNL.ResumeLayout(false);
-            this.UserEditPnl.ResumeLayout(false);
-            this.UserEditPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EditPasswordTip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             this.UserFilterPnl.ResumeLayout(false);
             this.UserFilterPnl.PerformLayout();
+            this.UserAddPanel.ResumeLayout(false);
+            this.UserAddPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).EndInit();
             this.UserListManageBtmsPL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.UserListsGridPNL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveUserListDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).EndInit();
-            this.UserAddPanel.ResumeLayout(false);
-            this.UserAddPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
-            this.StatisticPNL.ResumeLayout(false);
+            this.UserEditPnl.ResumeLayout(false);
+            this.UserEditPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).EndInit();
+            this.StatisticPNL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2475,7 +2481,6 @@
         private Guna.UI2.WinForms.Guna2Button ArchiveUserListBtm;
         private Guna.UI2.WinForms.Guna2Panel UserListPNL;
         private Guna.UI2.WinForms.Guna2ShadowPanel UserPNL;
-        private Guna.UI2.WinForms.Guna2Button ViewUserListBtm;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Panel UserListManageBtmsPL;
@@ -2487,7 +2492,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel UserAddPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private Guna.UI2.WinForms.Guna2TextBox StudIDTB;
         private Guna.UI2.WinForms.Guna2TextBox FNameTB;
         private System.Windows.Forms.Label label6;
@@ -2523,7 +2527,6 @@
         private System.Windows.Forms.Label label29;
         private Guna.UI2.WinForms.Guna2TextBox EditLNameTB;
         private System.Windows.Forms.Label label30;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
         private System.Windows.Forms.Label label32;
         private Guna.UI2.WinForms.Guna2ShadowPanel StatisticPNL;
         private Guna.Charts.WinForms.GunaChart gunaChart1;
@@ -2586,10 +2589,10 @@
         private System.Windows.Forms.Label label44;
         private Guna.UI2.WinForms.Guna2TextBox EditStudentPasswordTB;
         private Guna.UI2.WinForms.Guna2DataGridView ArchiveUserListDGV;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox EditPasswordTip;
         private System.Windows.Forms.ToolTip PasswordToolTIp;
         private Guna.UI2.WinForms.Guna2CirclePictureBox PasswordTip;
         private Guna.UI2.WinForms.Guna2CirclePictureBox EditStudentIDTip;
         private System.Windows.Forms.ToolTip EditStudentIDTBTT;
+        private Guna.UI2.WinForms.Guna2DataGridView UserListPrintDGV;
     }
 }
