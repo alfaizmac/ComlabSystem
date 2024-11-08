@@ -27,6 +27,16 @@ namespace ComlabSystem
             InitializeComponent();
             hideUserManagePnl();
 
+
+            // Attach event handlers for ComboBox actions
+            FilterProgramCB.Enter += ShowRequiredFields;
+            FilterYearLevelCB.Enter += ShowRequiredFields;
+
+            // Initially hide RequiredPicture and RequiredLabel
+            RequiredPicture.Visible = false;
+            RequiredLabel.Visible = false;
+
+
             //Automatic EMAIL input
             LNameTB.TextChanged += TextBoxes_TextChanged; // Subscribe to the TextChanged event
             FNameTB.TextChanged += TextBoxes_TextChanged; // Subscribe to the TextChanged event
@@ -89,6 +99,8 @@ namespace ComlabSystem
 
         private void UserUI_Load(object sender, EventArgs e)
         {
+
+            LoadArchivedUserListData(); // Reload the archived user list
 
             UserFilterPnl.Visible = false;
             LoadDepartments();
@@ -339,12 +351,15 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
         private void EditUserBtm_Click(object sender, EventArgs e)
         {
+            
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
+            cancelAddingUser();
         }
 
         private void UserStatisticPanelShow_Click(object sender, EventArgs e)
         {
+           
             hideUserManagePnl();
             UserFilterToggleBtm.Checked = false;
             uncheckedBtm();
@@ -354,18 +369,19 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
             unLoadUserListData(); // Reload the active user list
             LoadArchivedUserListData(); // Reload the archived user list
             ArchiveUserListPrintDGVFUnc();
+            cancelAddingUser();
+            ApplyFilters();
 
         }
 
         private void UserListPanelShow_Click(object sender, EventArgs e)
         {
-
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
             UserListManageBtmsPL.Visible = true;
             UserListDGV.BringToFront();
             UserListPrintDGVFUnc();
-
+            ApplyFilters();
         }
 
         private void UserListDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -392,6 +408,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 UserFilterPnl.Visible = true;
                 hideUserManagePnl();
                 uncheckedBtm();
+                cancelAddingUser();
             }
             else
             {
@@ -658,11 +675,20 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         }
 
         
-        //draft button
-        private void AddDraftBtm_Click(object sender, EventArgs e)
+        //Cancel adding user Functions
+
+        private void cancelAddingUser()
         {
-            // Check if StudIDTB has text
-            if (!string.IsNullOrWhiteSpace(StudIDTB.Text ))
+            // Check if all required fields contain text or selected values
+            if (!string.IsNullOrWhiteSpace(StudIDTB.Text) ||
+                !string.IsNullOrWhiteSpace(StudentPasswordTB.Text) ||
+                !string.IsNullOrWhiteSpace(LNameTB.Text) ||
+                !string.IsNullOrWhiteSpace(FNameTB.Text) ||
+                !string.IsNullOrWhiteSpace(EmailTB.Text) ||
+                !string.IsNullOrWhiteSpace(ContactTB.Text) ||
+                DepartmentCB.SelectedIndex != -1 ||
+                ProgramCB.SelectedIndex != -1 ||
+                YearLevelCB.SelectedIndex != -1)
             {
                 // Show confirmation dialog
                 DialogResult result = MessageBox.Show(
@@ -675,20 +701,81 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 // If the user chooses 'Yes', proceed to cancel; otherwise, do nothing
                 if (result == DialogResult.Yes)
                 {
-                    // Clear the textbox or perform any necessary actions to discharge adding
+                    // Clear the textboxes and reset combo boxes
                     StudIDTB.Clear();
+                    StudentPasswordTB.Clear();
                     LNameTB.Clear();
                     FNameTB.Clear();
-                    DepartmentCB.SelectedIndex = -1;
-                    ProgramCB.Items.Clear();
-                    YearLevelCB.Items.Clear();
                     EmailTB.Clear();
                     ContactTB.Clear();
-                    StudentPasswordTB.Clear();
-                    // Optionally, reset any other fields related to adding a user
-                    // Clear other input fields if needed, e.g., FirstNameTB.Clear(), LastNameTB.Clear(), etc.
+                    DepartmentCB.SelectedIndex = -1;
+                    ProgramCB.SelectedIndex = -1;
+                    YearLevelCB.SelectedIndex = -1;
 
-                    // Optionally, set the button text back to "Cancel" or "Save as Draft"
+                    AddUserBtm.Checked = false;
+                    UserAddPanel.Visible = false;
+                    uncheckedBtm();
+                    UserAddPanel.Hide();
+
+                }
+                else if (result == DialogResult.No)
+                {
+                    UserFilterToggleBtm.Checked = false;
+                    EditUserBtm.Checked = false;
+                    UserListManageBtmsPL.Visible = true;
+                    UserListPrintDGV.BringToFront();
+
+                    UserListDGV.BringToFront();
+                    UserListPrintDGVFUnc();
+
+                    hideUserManagePnl();
+                    EditUserBtm.Checked = false;
+                    UserFilterPnl.Visible = false;
+                    AddUserBtm.Checked = true;
+                    UserAddPanel.Visible = true;
+                    UserAddPanel.BringToFront();
+                    
+                }
+
+            }
+
+        }
+        private void AddDraftBtm_Click(object sender, EventArgs e)
+        {
+            // Check if all required fields contain text or selected values
+            if (!string.IsNullOrWhiteSpace(StudIDTB.Text) &&
+                !string.IsNullOrWhiteSpace(StudentPasswordTB.Text) &&
+                !string.IsNullOrWhiteSpace(LNameTB.Text) &&
+                !string.IsNullOrWhiteSpace(FNameTB.Text) &&
+                !string.IsNullOrWhiteSpace(EmailTB.Text) &&
+                !string.IsNullOrWhiteSpace(ContactTB.Text) &&
+                DepartmentCB.SelectedIndex != -1 &&
+                ProgramCB.SelectedIndex != -1 &&
+                YearLevelCB.SelectedIndex != -1)
+            {
+                // Show confirmation dialog
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to cancel adding this user?",
+                    "Confirm Cancel",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                // If the user chooses 'Yes', proceed to cancel; otherwise, do nothing
+                if (result == DialogResult.Yes)
+                {
+                    // Clear the textboxes and reset combo boxes
+                    StudIDTB.Clear();
+                    StudentPasswordTB.Clear();
+                    LNameTB.Clear();
+                    FNameTB.Clear();
+                    EmailTB.Clear();
+                    ContactTB.Clear();
+                    DepartmentCB.SelectedIndex = -1;
+                    ProgramCB.SelectedIndex = -1;
+                    YearLevelCB.SelectedIndex = -1;
+
+                    // Set the button text back to "Cancel"
                     AddDraftBtm.Text = "Cancel";
                 }
                 else
@@ -699,13 +786,16 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
             }
             else
             {
-                // Handle the case when StudIDTB has no text if needed
+                // Handle the case when not all fields are filled if needed
                 AddDraftBtm.Text = "Cancel"; // or any other action you want to implement
             }
+
+            // Additional actions to hide panel and reset toggle
             AddUserBtm.Checked = false;
             UserAddPanel.Visible = false;
             uncheckedBtm();
             UserAddPanel.Hide();
+
         }
 
 
@@ -773,6 +863,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 string studentID = row.Cells["Student ID"].Value?.ToString();
 
                 hideallpanel();
+                cancelAddingUser();
 
                 // Check if the Edit button was clicked
                 if (UserListDGV.Columns[e.ColumnIndex].Name == "EditBC")
@@ -1020,6 +1111,7 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             if (e.RowIndex >= 0 && ArchiveUserListDGV.Columns[e.ColumnIndex].Name == "UnArchiveUserList")
             {
                 hideallpanel();
+                cancelAddingUser();
                 string archiveStudentID = ArchiveUserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
 
 
@@ -1342,6 +1434,17 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             }
         }
 
+
+        private void ShowRequiredFields(object sender, EventArgs e)
+        {
+            // Check if FilterDepartmentCB has no selection (e.g., placeholder or -1)
+            if (FilterDepartmentCB.SelectedIndex < 0)
+            {
+                RequiredPicture.Visible = true;
+                RequiredLabel.Visible = true;
+            }
+        }
+
         private void FilterDepartmentCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Clear and reload ProgramCB and YearLevelCB based on selected department
@@ -1349,6 +1452,11 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             FilterYearLevelCB.Items.Clear();
 
             ApplyFilters();
+
+            RequiredPicture.Visible = false;
+            RequiredLabel.Visible = false;
+
+            // Hide RequiredPicture and RequiredLabel when FilterDepartmentCB has a valid selection
 
             if (FilterDepartmentCB.SelectedItem != null)
             {
@@ -1388,6 +1496,8 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                     }
                 }
             }
+
+
         }
 
 
@@ -1465,16 +1575,27 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             }
 
     // Apply the filter to the DataGridView
-    (UserListDGV.DataSource as DataTable).DefaultView.RowFilter = filter.ToString();
+            (UserListDGV.DataSource as DataTable).DefaultView.RowFilter = filter.ToString();
+            (ArchiveUserListDGV.DataSource as DataTable).DefaultView.RowFilter = filter.ToString();
         }
 
         private void FilterProgramCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (FilterDepartmentCB.SelectedIndex == -1)
+            {
+                RequiredPicture.Visible = true;
+                RequiredLabel.Visible = true;
+            }
             ApplyFilters();
         }
 
         private void FilterYearLevelCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (FilterDepartmentCB.SelectedIndex == -1)
+            {
+                RequiredPicture.Visible = true;
+                RequiredLabel.Visible = true;
+            }
             ApplyFilters();
         }
 
@@ -1562,8 +1683,7 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             ApplySearchFilter(UserSearchBar.Text);
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
-            uncheckedBtm();
-            hideUserManagePnl();
+
         }
         private void ApplySearchFilter(string searchText)
         {
@@ -1625,12 +1745,14 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
 
             EditUserBtm.Checked = false;
             AddUserBtm.Checked = false;
+
+            cancelAddingUser();
         }
 
         private void PrintToogleBtm_Click(object sender, EventArgs e)
         {
-            hideUserManagePnl();
-            UserFilterPnl.Visible = false;
+           
+
             Font extraBoldFont = new Font("Montserrat ExtraBold", 42);
 
             DGVPrinter printer = new DGVPrinter();
@@ -1691,11 +1813,10 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
         {
             if (EditUserBtm.Checked == true)
             {
-                UserEditPnl.Visible = false;
                 hideUserManagePnl();
                 UserEditPnl.Visible = true;
-                UserEditPnl.BringToFront();
                 UserFilterPnl.Visible = false;
+                UserEditPnl.BringToFront();
                 AddUserBtm.Checked = false;
             }
             else { UserEditPnl.Visible = false; }
