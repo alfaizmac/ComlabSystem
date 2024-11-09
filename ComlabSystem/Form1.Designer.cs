@@ -29,22 +29,8 @@
         private void InitializeComponent()
         {
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.AdminShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.UserShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.AdminFormPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.ShowAdminPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.AdminLoginBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.AdminPassTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.AdminNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.UserFormPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.ShowUserPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.RetryAttemptTimeLabel = new System.Windows.Forms.Label();
             this.UserLoginBtm = new Guna.UI2.WinForms.Guna2Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.UserPassTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -53,18 +39,32 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.AdminFormPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.AdminLoginBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.AdminPassTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.AdminNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.AdminFormDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.UnitName = new System.Windows.Forms.Label();
-            this.RetryAttemptTimeLabel = new System.Windows.Forms.Label();
             this.RetryAttemptMsgBox = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.WrongAttemptMsgBox = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.AdminShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.UserShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.ShowUserPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ShowAdminPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.UnitName = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
-            this.AdminFormPNL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.UserFormPNL.SuspendLayout();
+            this.AdminFormPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,64 +82,161 @@
             this.guna2Panel2.Size = new System.Drawing.Size(960, 1080);
             this.guna2Panel2.TabIndex = 1;
             // 
-            // guna2CircleButton1
+            // UserFormPNL
             // 
-            this.guna2CircleButton1.Animated = true;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
-            this.guna2CircleButton1.Image = global::ComlabSystem.Properties.Resources.shut_down;
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(45, 45);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(898, 1018);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(50, 50);
-            this.guna2CircleButton1.TabIndex = 4;
+            this.UserFormPNL.BackColor = System.Drawing.Color.Transparent;
+            this.UserFormPNL.Controls.Add(this.RetryAttemptTimeLabel);
+            this.UserFormPNL.Controls.Add(this.ShowUserPassBtm);
+            this.UserFormPNL.Controls.Add(this.UserLoginBtm);
+            this.UserFormPNL.Controls.Add(this.linkLabel1);
+            this.UserFormPNL.Controls.Add(this.UserPassTextBox);
+            this.UserFormPNL.Controls.Add(this.label4);
+            this.UserFormPNL.Controls.Add(this.UserIDTextBox);
+            this.UserFormPNL.Controls.Add(this.label3);
+            this.UserFormPNL.Controls.Add(this.label2);
+            this.UserFormPNL.Controls.Add(this.label1);
+            this.UserFormPNL.Controls.Add(this.guna2CirclePictureBox1);
+            this.UserFormPNL.FillColor = System.Drawing.Color.White;
+            this.UserFormPNL.Location = new System.Drawing.Point(263, 205);
+            this.UserFormPNL.Name = "UserFormPNL";
+            this.UserFormPNL.Radius = 15;
+            this.UserFormPNL.ShadowColor = System.Drawing.Color.Black;
+            this.UserFormPNL.Size = new System.Drawing.Size(487, 603);
+            this.UserFormPNL.TabIndex = 0;
             // 
-            // AdminShowBtm
+            // RetryAttemptTimeLabel
             // 
-            this.AdminShowBtm.Animated = true;
-            this.AdminShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AdminShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AdminShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AdminShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AdminShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.AdminShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AdminShowBtm.ForeColor = System.Drawing.Color.White;
-            this.AdminShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings__1_;
-            this.AdminShowBtm.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings;
-            this.AdminShowBtm.ImageSize = new System.Drawing.Size(45, 45);
-            this.AdminShowBtm.Location = new System.Drawing.Point(898, 12);
-            this.AdminShowBtm.Name = "AdminShowBtm";
-            this.AdminShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.AdminShowBtm.Size = new System.Drawing.Size(50, 50);
-            this.AdminShowBtm.TabIndex = 2;
-            this.AdminShowBtm.Click += new System.EventHandler(this.AdminShowBtm_Click);
+            this.RetryAttemptTimeLabel.AutoSize = true;
+            this.RetryAttemptTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.RetryAttemptTimeLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.RetryAttemptTimeLabel.Location = new System.Drawing.Point(64, 414);
+            this.RetryAttemptTimeLabel.Name = "RetryAttemptTimeLabel";
+            this.RetryAttemptTimeLabel.Size = new System.Drawing.Size(53, 13);
+            this.RetryAttemptTimeLabel.TabIndex = 10;
+            this.RetryAttemptTimeLabel.Text = "Password";
             // 
-            // UserShowBtm
+            // UserLoginBtm
             // 
-            this.UserShowBtm.Animated = true;
-            this.UserShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UserShowBtm.ForeColor = System.Drawing.Color.White;
-            this.UserShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.user_circle__3_;
-            this.UserShowBtm.Image = global::ComlabSystem.Properties.Resources.user_circle__2_;
-            this.UserShowBtm.ImageSize = new System.Drawing.Size(45, 45);
-            this.UserShowBtm.Location = new System.Drawing.Point(898, 12);
-            this.UserShowBtm.Name = "UserShowBtm";
-            this.UserShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.UserShowBtm.Size = new System.Drawing.Size(50, 50);
-            this.UserShowBtm.TabIndex = 1;
-            this.UserShowBtm.Click += new System.EventHandler(this.UserShowBtm_Click);
+            this.UserLoginBtm.Animated = true;
+            this.UserLoginBtm.AutoRoundedCorners = true;
+            this.UserLoginBtm.BorderRadius = 21;
+            this.UserLoginBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserLoginBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserLoginBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserLoginBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserLoginBtm.FillColor = System.Drawing.Color.Maroon;
+            this.UserLoginBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLoginBtm.ForeColor = System.Drawing.Color.White;
+            this.UserLoginBtm.Location = new System.Drawing.Point(156, 496);
+            this.UserLoginBtm.Name = "UserLoginBtm";
+            this.UserLoginBtm.Size = new System.Drawing.Size(180, 45);
+            this.UserLoginBtm.TabIndex = 8;
+            this.UserLoginBtm.Text = "Login";
+            this.UserLoginBtm.Click += new System.EventHandler(this.UserLoginBtm_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
+            this.linkLabel1.Location = new System.Drawing.Point(343, 414);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(91, 13);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Forgot password?";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Red;
+            // 
+            // UserPassTextBox
+            // 
+            this.UserPassTextBox.Animated = true;
+            this.UserPassTextBox.BorderRadius = 10;
+            this.UserPassTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UserPassTextBox.DefaultText = "";
+            this.UserPassTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserPassTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.UserPassTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserPassTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserPassTextBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.UserPassTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.UserPassTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserPassTextBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.UserPassTextBox.Location = new System.Drawing.Point(59, 360);
+            this.UserPassTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserPassTextBox.Name = "UserPassTextBox";
+            this.UserPassTextBox.PasswordChar = '\0';
+            this.UserPassTextBox.PlaceholderText = "********";
+            this.UserPassTextBox.SelectedText = "";
+            this.UserPassTextBox.Size = new System.Drawing.Size(375, 50);
+            this.UserPassTextBox.TabIndex = 6;
+            this.UserPassTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserPassTextBox_KeyDown);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label4.Location = new System.Drawing.Point(63, 335);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 21);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Password";
+            // 
+            // UserIDTextBox
+            // 
+            this.UserIDTextBox.Animated = true;
+            this.UserIDTextBox.BorderRadius = 10;
+            this.UserIDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UserIDTextBox.DefaultText = "";
+            this.UserIDTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserIDTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.UserIDTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserIDTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserIDTextBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.UserIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.UserIDTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserIDTextBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.UserIDTextBox.Location = new System.Drawing.Point(59, 264);
+            this.UserIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserIDTextBox.Name = "UserIDTextBox";
+            this.UserIDTextBox.PasswordChar = '\0';
+            this.UserIDTextBox.PlaceholderText = "e.g. C20210080";
+            this.UserIDTextBox.SelectedText = "";
+            this.UserIDTextBox.Size = new System.Drawing.Size(375, 50);
+            this.UserIDTextBox.TabIndex = 4;
+            this.UserIDTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserIDTextBox_KeyDown);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label3.Location = new System.Drawing.Point(63, 239);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Student ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label2.Location = new System.Drawing.Point(63, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(357, 42);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Enter your Student ID and password to access the\r\ncomputer unit. Thank you!";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label1.Location = new System.Drawing.Point(146, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 59);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Login";
             // 
             // AdminFormPNL
             // 
@@ -161,26 +258,6 @@
             this.AdminFormPNL.ShadowColor = System.Drawing.Color.Black;
             this.AdminFormPNL.Size = new System.Drawing.Size(487, 603);
             this.AdminFormPNL.TabIndex = 3;
-            // 
-            // ShowAdminPassBtm
-            // 
-            this.ShowAdminPassBtm.Animated = true;
-            this.ShowAdminPassBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ShowAdminPassBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ShowAdminPassBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ShowAdminPassBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ShowAdminPassBtm.FillColor = System.Drawing.Color.White;
-            this.ShowAdminPassBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ShowAdminPassBtm.ForeColor = System.Drawing.Color.White;
-            this.ShowAdminPassBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.eye__2_;
-            this.ShowAdminPassBtm.Image = global::ComlabSystem.Properties.Resources.eye__1_;
-            this.ShowAdminPassBtm.ImageSize = new System.Drawing.Size(25, 25);
-            this.ShowAdminPassBtm.Location = new System.Drawing.Point(399, 368);
-            this.ShowAdminPassBtm.Name = "ShowAdminPassBtm";
-            this.ShowAdminPassBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ShowAdminPassBtm.Size = new System.Drawing.Size(32, 34);
-            this.ShowAdminPassBtm.TabIndex = 10;
-            this.ShowAdminPassBtm.Click += new System.EventHandler(this.ShowAdminPassBtm_Click);
             // 
             // AdminLoginBtm
             // 
@@ -305,39 +382,91 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Administrator";
             // 
-            // guna2CirclePictureBox2
+            // AdminFormDialog
             // 
-            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings1;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(59, 40);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(93, 93);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 0;
-            this.guna2CirclePictureBox2.TabStop = false;
+            this.AdminFormDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.AdminFormDialog.Caption = "";
+            this.AdminFormDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.AdminFormDialog.Parent = this;
+            this.AdminFormDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.AdminFormDialog.Text = "";
             // 
-            // UserFormPNL
+            // RetryAttemptMsgBox
             // 
-            this.UserFormPNL.BackColor = System.Drawing.Color.Transparent;
-            this.UserFormPNL.Controls.Add(this.RetryAttemptTimeLabel);
-            this.UserFormPNL.Controls.Add(this.ShowUserPassBtm);
-            this.UserFormPNL.Controls.Add(this.UserLoginBtm);
-            this.UserFormPNL.Controls.Add(this.linkLabel1);
-            this.UserFormPNL.Controls.Add(this.UserPassTextBox);
-            this.UserFormPNL.Controls.Add(this.label4);
-            this.UserFormPNL.Controls.Add(this.UserIDTextBox);
-            this.UserFormPNL.Controls.Add(this.label3);
-            this.UserFormPNL.Controls.Add(this.label2);
-            this.UserFormPNL.Controls.Add(this.label1);
-            this.UserFormPNL.Controls.Add(this.guna2CirclePictureBox1);
-            this.UserFormPNL.FillColor = System.Drawing.Color.White;
-            this.UserFormPNL.Location = new System.Drawing.Point(263, 205);
-            this.UserFormPNL.Name = "UserFormPNL";
-            this.UserFormPNL.Radius = 15;
-            this.UserFormPNL.ShadowColor = System.Drawing.Color.Black;
-            this.UserFormPNL.Size = new System.Drawing.Size(487, 603);
-            this.UserFormPNL.TabIndex = 0;
+            this.RetryAttemptMsgBox.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.RetryAttemptMsgBox.Caption = null;
+            this.RetryAttemptMsgBox.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.RetryAttemptMsgBox.Parent = this;
+            this.RetryAttemptMsgBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.RetryAttemptMsgBox.Text = null;
+            // 
+            // WrongAttemptMsgBox
+            // 
+            this.WrongAttemptMsgBox.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.WrongAttemptMsgBox.Caption = null;
+            this.WrongAttemptMsgBox.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            this.WrongAttemptMsgBox.Parent = this;
+            this.WrongAttemptMsgBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.WrongAttemptMsgBox.Text = null;
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.Animated = true;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
+            this.guna2CircleButton1.Image = global::ComlabSystem.Properties.Resources.shut_down;
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(45, 45);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(898, 1018);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(50, 50);
+            this.guna2CircleButton1.TabIndex = 4;
+            // 
+            // AdminShowBtm
+            // 
+            this.AdminShowBtm.Animated = true;
+            this.AdminShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AdminShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AdminShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AdminShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AdminShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.AdminShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AdminShowBtm.ForeColor = System.Drawing.Color.White;
+            this.AdminShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings__1_;
+            this.AdminShowBtm.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings;
+            this.AdminShowBtm.ImageSize = new System.Drawing.Size(45, 45);
+            this.AdminShowBtm.Location = new System.Drawing.Point(898, 12);
+            this.AdminShowBtm.Name = "AdminShowBtm";
+            this.AdminShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.AdminShowBtm.Size = new System.Drawing.Size(50, 50);
+            this.AdminShowBtm.TabIndex = 2;
+            this.AdminShowBtm.Click += new System.EventHandler(this.AdminShowBtm_Click);
+            // 
+            // UserShowBtm
+            // 
+            this.UserShowBtm.Animated = true;
+            this.UserShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UserShowBtm.ForeColor = System.Drawing.Color.White;
+            this.UserShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.user_circle__3_;
+            this.UserShowBtm.Image = global::ComlabSystem.Properties.Resources.user_circle__2_;
+            this.UserShowBtm.ImageSize = new System.Drawing.Size(45, 45);
+            this.UserShowBtm.Location = new System.Drawing.Point(898, 12);
+            this.UserShowBtm.Name = "UserShowBtm";
+            this.UserShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.UserShowBtm.Size = new System.Drawing.Size(50, 50);
+            this.UserShowBtm.TabIndex = 1;
+            this.UserShowBtm.Click += new System.EventHandler(this.UserShowBtm_Click);
             // 
             // ShowUserPassBtm
             // 
@@ -359,127 +488,6 @@
             this.ShowUserPassBtm.TabIndex = 9;
             this.ShowUserPassBtm.Click += new System.EventHandler(this.ShowUserPassBtm_Click);
             // 
-            // UserLoginBtm
-            // 
-            this.UserLoginBtm.Animated = true;
-            this.UserLoginBtm.AutoRoundedCorners = true;
-            this.UserLoginBtm.BorderRadius = 21;
-            this.UserLoginBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserLoginBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserLoginBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserLoginBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserLoginBtm.FillColor = System.Drawing.Color.Maroon;
-            this.UserLoginBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserLoginBtm.ForeColor = System.Drawing.Color.White;
-            this.UserLoginBtm.Location = new System.Drawing.Point(156, 496);
-            this.UserLoginBtm.Name = "UserLoginBtm";
-            this.UserLoginBtm.Size = new System.Drawing.Size(180, 45);
-            this.UserLoginBtm.TabIndex = 8;
-            this.UserLoginBtm.Text = "Login";
-            this.UserLoginBtm.Click += new System.EventHandler(this.UserLoginBtm_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Maroon;
-            this.linkLabel1.Location = new System.Drawing.Point(343, 414);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(91, 13);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot password?";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Red;
-            // 
-            // UserPassTextBox
-            // 
-            this.UserPassTextBox.Animated = true;
-            this.UserPassTextBox.BorderRadius = 10;
-            this.UserPassTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UserPassTextBox.DefaultText = "";
-            this.UserPassTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserPassTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UserPassTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserPassTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserPassTextBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.UserPassTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.UserPassTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserPassTextBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.UserPassTextBox.Location = new System.Drawing.Point(59, 360);
-            this.UserPassTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.UserPassTextBox.Name = "UserPassTextBox";
-            this.UserPassTextBox.PasswordChar = '\0';
-            this.UserPassTextBox.PlaceholderText = "********";
-            this.UserPassTextBox.SelectedText = "";
-            this.UserPassTextBox.Size = new System.Drawing.Size(375, 50);
-            this.UserPassTextBox.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label4.Location = new System.Drawing.Point(63, 335);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 21);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Password";
-            // 
-            // UserIDTextBox
-            // 
-            this.UserIDTextBox.Animated = true;
-            this.UserIDTextBox.BorderRadius = 10;
-            this.UserIDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UserIDTextBox.DefaultText = "";
-            this.UserIDTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserIDTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UserIDTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserIDTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserIDTextBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.UserIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.UserIDTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserIDTextBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.UserIDTextBox.Location = new System.Drawing.Point(59, 264);
-            this.UserIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.UserIDTextBox.Name = "UserIDTextBox";
-            this.UserIDTextBox.PasswordChar = '\0';
-            this.UserIDTextBox.PlaceholderText = "e.g. C20210080";
-            this.UserIDTextBox.SelectedText = "";
-            this.UserIDTextBox.Size = new System.Drawing.Size(375, 50);
-            this.UserIDTextBox.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label3.Location = new System.Drawing.Point(63, 239);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Student ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label2.Location = new System.Drawing.Point(63, 147);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(357, 42);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Enter your Student ID and password to access the\r\ncomputer unit. Thank you!";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label1.Location = new System.Drawing.Point(146, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 59);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Login";
-            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Image = global::ComlabSystem.Properties.Resources.user_circle__1_;
@@ -492,14 +500,37 @@
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // AdminFormDialog
+            // ShowAdminPassBtm
             // 
-            this.AdminFormDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.AdminFormDialog.Caption = "";
-            this.AdminFormDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.AdminFormDialog.Parent = this;
-            this.AdminFormDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.AdminFormDialog.Text = "";
+            this.ShowAdminPassBtm.Animated = true;
+            this.ShowAdminPassBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ShowAdminPassBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ShowAdminPassBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ShowAdminPassBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ShowAdminPassBtm.FillColor = System.Drawing.Color.White;
+            this.ShowAdminPassBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ShowAdminPassBtm.ForeColor = System.Drawing.Color.White;
+            this.ShowAdminPassBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.eye__2_;
+            this.ShowAdminPassBtm.Image = global::ComlabSystem.Properties.Resources.eye__1_;
+            this.ShowAdminPassBtm.ImageSize = new System.Drawing.Size(25, 25);
+            this.ShowAdminPassBtm.Location = new System.Drawing.Point(399, 368);
+            this.ShowAdminPassBtm.Name = "ShowAdminPassBtm";
+            this.ShowAdminPassBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ShowAdminPassBtm.Size = new System.Drawing.Size(32, 34);
+            this.ShowAdminPassBtm.TabIndex = 10;
+            this.ShowAdminPassBtm.Click += new System.EventHandler(this.ShowAdminPassBtm_Click);
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings1;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(59, 40);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(93, 93);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 0;
+            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -523,35 +554,6 @@
             this.UnitName.TabIndex = 0;
             this.UnitName.Text = "Comlab 2 - PC 10";
             // 
-            // RetryAttemptTimeLabel
-            // 
-            this.RetryAttemptTimeLabel.AutoSize = true;
-            this.RetryAttemptTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RetryAttemptTimeLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.RetryAttemptTimeLabel.Location = new System.Drawing.Point(72, 414);
-            this.RetryAttemptTimeLabel.Name = "RetryAttemptTimeLabel";
-            this.RetryAttemptTimeLabel.Size = new System.Drawing.Size(79, 21);
-            this.RetryAttemptTimeLabel.TabIndex = 10;
-            this.RetryAttemptTimeLabel.Text = "Password";
-            // 
-            // RetryAttemptMsgBox
-            // 
-            this.RetryAttemptMsgBox.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.RetryAttemptMsgBox.Caption = null;
-            this.RetryAttemptMsgBox.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.RetryAttemptMsgBox.Parent = this;
-            this.RetryAttemptMsgBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.RetryAttemptMsgBox.Text = null;
-            // 
-            // WrongAttemptMsgBox
-            // 
-            this.WrongAttemptMsgBox.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.WrongAttemptMsgBox.Caption = null;
-            this.WrongAttemptMsgBox.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            this.WrongAttemptMsgBox.Parent = this;
-            this.WrongAttemptMsgBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.WrongAttemptMsgBox.Text = null;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,12 +565,12 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.guna2Panel2.ResumeLayout(false);
-            this.AdminFormPNL.ResumeLayout(false);
-            this.AdminFormPNL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.UserFormPNL.ResumeLayout(false);
             this.UserFormPNL.PerformLayout();
+            this.AdminFormPNL.ResumeLayout(false);
+            this.AdminFormPNL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -233,13 +233,13 @@ namespace ComlabSystem
             }
             else
             {
-                delayTimeInSeconds = 900;  // Keep 15-minute wait for subsequent attempts
+                delayTimeInSeconds = 180;  // Keep 15-minute wait for subsequent attempts
             }
         }
 
         private void ShowRetryMessage()
         {
-            RetryAttemptMsgBox.Text = $"Too many failed attempts. Please wait {delayTimeInSeconds / 60} minutes before trying again.";
+            RetryAttemptMsgBox.Text = $"Too many failed attempts. Please wait {delayTimeInSeconds/ 60} minutes before trying again.";
             RetryAttemptMsgBox.Show();
         }
 
@@ -409,6 +409,24 @@ namespace ComlabSystem
             {
                 e.SuppressKeyPress = true; // Optional: Prevents the 'ding' sound
                 AdminLoginBtm.PerformClick(); // Simulate button click
+            }
+        }
+
+        private void UserIDTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Check if the Enter key was pressed
+            {
+                e.SuppressKeyPress = true; // Optional: Prevents the 'ding' sound
+                UserLoginBtm.PerformClick(); // Simulate button click
+            }
+        }
+
+        private void UserPassTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Check if the Enter key was pressed
+            {
+                e.SuppressKeyPress = true; // Optional: Prevents the 'ding' sound
+                UserLoginBtm.PerformClick(); // Simulate button click
             }
         }
     }

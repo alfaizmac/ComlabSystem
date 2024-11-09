@@ -209,6 +209,9 @@ namespace ComlabSystem
 
 
 
+     
+
+
 
 
 
@@ -233,7 +236,7 @@ SELECT
     u.DateRegistered AS [Date Registered],
     u.LastLogin AS [Last Login],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Last Unit Used]
+    u.LastUnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -299,6 +302,21 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                             UserListDGV.Columns.Add(archiveColumn);
                         }
 
+                        // Change the font color of the "Status" column based on its value
+                        foreach (DataGridViewRow row in UserListDGV.Rows)
+                        {
+                            string status = row.Cells["Status"].Value?.ToString() ?? string.Empty; // Get status value
+
+                            if (status.Equals("Online", StringComparison.OrdinalIgnoreCase))
+                            {
+                                row.Cells["Status"].Style.ForeColor = Color.FromArgb(45, 198, 109); // RGB (45, 198, 109)
+                            }
+                            else if (status.Equals("Offline", StringComparison.OrdinalIgnoreCase))
+                            {
+                                row.Cells["Status"].Style.ForeColor = Color.FromArgb(60, 60, 60); // RGB (60, 60, 60)
+                            }
+                        }
+
                         // Refresh layout after setting modes
                         UserListDGV.AutoResizeColumns();
                     }
@@ -309,6 +327,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 }
             }
         }
+
 
 
 
@@ -395,6 +414,8 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
         private void UserStatisticPanelShow_Click(object sender, EventArgs e)
         {
+
+            UserStatusTBTM.Enabled = false;
             ArchivePrintToogleBtm.BringToFront();
             hideUserManagePnl();
             UserFilterToggleBtm.Checked = false;
@@ -412,6 +433,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
         private void UserListPanelShow_Click(object sender, EventArgs e)
         {
+            UserStatusTBTM.Enabled = true;
             PrintToogleBtm.BringToFront();
             NoArchiveListLabel.Visible = false;
             UserFilterToggleBtm.Checked = false;
@@ -966,7 +988,7 @@ SELECT
     u.DateRegistered AS [Date Registered],
     u.LastLogin AS [Last Login],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Last Unit Used]
+    u.LastUnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -993,6 +1015,23 @@ WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
                                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                                 column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                                 column.HeaderCell.Style.WrapMode = DataGridViewTriState.True;
+                            }
+
+                            // Change the font color of the "Status" column cells based on the status
+                            foreach (DataGridViewRow row in UserListDGV.Rows)
+                            {
+                                string status = row.Cells["Status"].Value.ToString(); // Get status value
+
+                                if (status == "Online")
+                                {
+                                    // Set font color to RGB (45, 198, 109) for Online
+                                    row.Cells["Status"].Style.ForeColor = Color.FromArgb(45, 198, 109);
+                                }
+                                else if (status == "Offline")
+                                {
+                                    // Set font color to RGB (60, 60, 60) for Offline
+                                    row.Cells["Status"].Style.ForeColor = Color.FromArgb(60, 60, 60);
+                                }
                             }
 
                             // Add Edit button column if not present
@@ -1034,6 +1073,7 @@ WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
             }
         }
 
+
         private void LoadArchivedUserListData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -1053,7 +1093,7 @@ SELECT
     u.DateRegistered AS [Date Registered],
     u.LastLogin AS [Last Login],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Last Unit Used]
+    u.LastUnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -1905,15 +1945,12 @@ SELECT
     u.DateRegistered AS [Date Registered],
     u.LastLogin AS [Last Login],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Last Unit Used]
+    u.LastUnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
 JOIN YearLevels y ON u.YearLevelID = y.YearLevelID
 WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
-
-                // Query to count the total number of non-archived users
-                
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -1928,7 +1965,6 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                         adapter.Fill(dataTable);
                         UserListPrintDGV.DataSource = dataTable;
 
-
                         // Set all columns to use AllCells mode and wrap text
                         foreach (DataGridViewColumn column in UserListPrintDGV.Columns)
                         {
@@ -1937,7 +1973,21 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                             column.HeaderCell.Style.WrapMode = DataGridViewTriState.True;
                         }
 
-                      
+                        // Loop through the rows to change font color based on the Status
+                        foreach (DataGridViewRow row in UserListPrintDGV.Rows)
+                        {
+                            string status = row.Cells["Status"].Value.ToString(); // Assuming "Status" column is named "Status"
+                            if (status == "Online")
+                            {
+                                // Change the font color for "Online" status to RGB(45, 198, 109)
+                                row.Cells["Status"].Style.ForeColor = Color.FromArgb(45, 198, 109);
+                            }
+                            else if (status == "Offline")
+                            {
+                                // Change the font color for "Offline" status to RGB(60, 60, 60)
+                                row.Cells["Status"].Style.ForeColor = Color.FromArgb(60, 60, 60);
+                            }
+                        }
 
                         // Refresh layout after setting modes
                         UserListPrintDGV.AutoResizeColumns();
@@ -1949,6 +1999,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 }
             }
         }
+
 
 
         private void ArchiveUserListPrintDGVFUnc()
@@ -1970,7 +2021,7 @@ SELECT
     u.DateRegistered AS [Date Registered],
     u.LastLogin AS [Last Login],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Last Unit Used]
+    u.LastUnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -2071,5 +2122,75 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
             // Print Preview of DataGridView
             printer.PrintPreviewDataGridView(UserListPrintDGV);
         }
+
+
+
+
+        //SHowing the Online and Offline
+        private void UserStatusTBTM_CheckedChanged(object sender, EventArgs e)
+        {
+            if (UserStatusTBTM.Checked)
+            {
+                // When checked, sort "Online" statuses at the top
+                SortDataGridViews("Online");
+                UserStatusTBTM.Text = "Online";
+            }
+            else
+            {
+                // When unchecked, sort "Offline" statuses at the top
+                SortDataGridViews("Offline");
+                UserStatusTBTM.Text = "Offline";
+            }
+        }
+
+        private void SortDataGridViews(string status)
+        {
+            // Apply sorting for UserListDGV
+            ApplySortingToDataGridView(UserListDGV, status);
+
+            // Apply sorting for ArchiveUserListDGV
+            ApplySortingToDataGridView(UserListPrintDGV, status);
+        }
+
+        private void ApplySortingToDataGridView(DataGridView dgv, string status)
+        {
+            // Assuming the "Status" column is named "Status" in all DataGridViews
+            if (status == "Online")
+            {
+                // Sort "Online" first
+                dgv.Sort(dgv.Columns["Status"], ListSortDirection.Descending); // Online first
+            }
+            else
+            {
+                // Sort "Offline" first
+                dgv.Sort(dgv.Columns["Status"], ListSortDirection.Ascending); // Offline first
+            }
+        }
+
+        private void UserListDGV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the column is the "Status" column (usually by index or name)
+            if (UserListDGV.Columns[e.ColumnIndex].Name == "Status")
+            {
+                // Check if the value is "Online" or "Offline"
+                if (e.Value != null)
+                {
+                    string status = e.Value.ToString();
+
+                    if (status.Equals("Online", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Set the font color to RGB(45, 198, 109) for "Online"
+                        e.CellStyle.ForeColor = Color.FromArgb(45, 198, 109);
+                    }
+                    else if (status.Equals("Offline", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Set the font color to RGB(60, 60, 60) for "Offline"
+                        e.CellStyle.ForeColor = Color.FromArgb(60, 60, 60);
+                    }
+                }
+            }
+        }
+
+
     }  
 }

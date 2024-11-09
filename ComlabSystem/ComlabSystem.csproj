@@ -669,5 +669,11 @@
   <ItemGroup>
     <None Include="Resources\computer-Black23.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online User unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online User checked.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

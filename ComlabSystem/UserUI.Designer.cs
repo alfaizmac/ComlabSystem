@@ -29,45 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.Charts.WinForms.ChartFont chartFont33 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont34 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont35 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont36 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid13 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick13 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont37 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid14 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick14 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont38 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid15 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel5 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont39 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick15 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont40 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont41 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont42 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont43 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont44 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid16 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick16 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont45 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid17 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick17 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont46 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid18 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel6 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont47 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick18 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont48 = new Guna.Charts.WinForms.ChartFont();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
             this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -79,30 +79,34 @@
             this.UserListPanelShow = new Guna.UI2.WinForms.Guna2Button();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.UserEditPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.EditStudentIDTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.EditStudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.EditStudentIDTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.EditUserSaveBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.UserEditCancelBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.EditContactTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.EditEmailTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.EditYearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.EditProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.EditDepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.EditFNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.EditLNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.UserStatusTBTM = new Guna.UI2.WinForms.Guna2Button();
+            this.ArchivePrintToogleBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.UserAddPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.AddRequiredPicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.AddRequiredLabel = new System.Windows.Forms.Label();
+            this.PasswordTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.StudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.UserAddBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.AddDraftBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.ContactTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.EmailTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.YearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.DepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.FNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.LNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.StudIDTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.UserFilterPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.RequiredPicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.FilterPasswordCBK = new Guna.UI2.WinForms.Guna2CustomCheckBox();
@@ -159,61 +163,58 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.NoArchiveListLabel = new System.Windows.Forms.Label();
+            this.UserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ArchiveUserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UserListPrintDGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.UserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.UserAddPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.PasswordTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.StudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.UserAddBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.AddDraftBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.ContactTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.EmailTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.YearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.DepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.FNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LNameTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.StudIDTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.UserEditPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.EditStudentIDTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.EditStudentPasswordTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditStudentIDTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.EditUserSaveBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.UserEditCancelBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.EditContactTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.EditEmailTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.EditYearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.EditProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.EditDepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.EditFNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.EditLNameTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.StatisticPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.gunaChart2 = new Guna.Charts.WinForms.GunaChart();
             this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
             this.SortToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.AddRequiredPicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.AddRequiredLabel = new System.Windows.Forms.Label();
-            this.ArchivePrintToogleBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.UserListPNL.SuspendLayout();
             this.UserPNL.SuspendLayout();
-            this.UserEditPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).BeginInit();
+            this.UserAddPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddRequiredPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).BeginInit();
             this.UserFilterPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).BeginInit();
             this.UserListManageBtmsPL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.UserListsGridPNL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveUserListDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).BeginInit();
-            this.UserAddPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).BeginInit();
+            this.UserEditPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).BeginInit();
             this.StatisticPNL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddRequiredPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // UserSearchBar
@@ -395,6 +396,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UserPNL.BackColor = System.Drawing.Color.Transparent;
+            this.UserPNL.Controls.Add(this.UserStatusTBTM);
             this.UserPNL.Controls.Add(this.ArchivePrintToogleBtm);
             this.UserPNL.Controls.Add(this.UserAddPanel);
             this.UserPNL.Controls.Add(this.UserFilterPnl);
@@ -419,434 +421,506 @@
             this.UserPNL.Size = new System.Drawing.Size(1627, 947);
             this.UserPNL.TabIndex = 12;
             // 
-            // UserEditPnl
+            // UserStatusTBTM
             // 
-            this.UserEditPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserEditPnl.BackColor = System.Drawing.Color.Transparent;
-            this.UserEditPnl.Controls.Add(this.EditStudentIDTip);
-            this.UserEditPnl.Controls.Add(this.label44);
-            this.UserEditPnl.Controls.Add(this.EditStudentPasswordTB);
-            this.UserEditPnl.Controls.Add(this.EditStudentIDTB);
-            this.UserEditPnl.Controls.Add(this.label14);
-            this.UserEditPnl.Controls.Add(this.EditUserSaveBtm);
-            this.UserEditPnl.Controls.Add(this.UserEditCancelBtm);
-            this.UserEditPnl.Controls.Add(this.EditContactTB);
-            this.UserEditPnl.Controls.Add(this.label23);
-            this.UserEditPnl.Controls.Add(this.EditEmailTB);
-            this.UserEditPnl.Controls.Add(this.label24);
-            this.UserEditPnl.Controls.Add(this.label25);
-            this.UserEditPnl.Controls.Add(this.EditYearLevelCB);
-            this.UserEditPnl.Controls.Add(this.label26);
-            this.UserEditPnl.Controls.Add(this.EditProgramCB);
-            this.UserEditPnl.Controls.Add(this.label27);
-            this.UserEditPnl.Controls.Add(this.EditDepartmentCB);
-            this.UserEditPnl.Controls.Add(this.label28);
-            this.UserEditPnl.Controls.Add(this.EditFNameTB);
-            this.UserEditPnl.Controls.Add(this.label29);
-            this.UserEditPnl.Controls.Add(this.EditLNameTB);
-            this.UserEditPnl.Controls.Add(this.label30);
-            this.UserEditPnl.Controls.Add(this.label32);
-            this.UserEditPnl.FillColor = System.Drawing.Color.White;
-            this.UserEditPnl.Location = new System.Drawing.Point(1072, 83);
-            this.UserEditPnl.Name = "UserEditPnl";
-            this.UserEditPnl.Radius = 10;
-            this.UserEditPnl.ShadowColor = System.Drawing.Color.Black;
-            this.UserEditPnl.Size = new System.Drawing.Size(530, 645);
-            this.UserEditPnl.TabIndex = 20;
+            this.UserStatusTBTM.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.UserStatusTBTM.BorderRadius = 10;
+            this.UserStatusTBTM.BorderThickness = 1;
+            this.UserStatusTBTM.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.UserStatusTBTM.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserStatusTBTM.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserStatusTBTM.CheckedState.Image = global::ComlabSystem.Properties.Resources.Online_User_checked;
+            this.UserStatusTBTM.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserStatusTBTM.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserStatusTBTM.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserStatusTBTM.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserStatusTBTM.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserStatusTBTM.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.UserStatusTBTM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserStatusTBTM.Image = global::ComlabSystem.Properties.Resources.Online_User_unchecked;
+            this.UserStatusTBTM.ImageSize = new System.Drawing.Size(23, 23);
+            this.UserStatusTBTM.Location = new System.Drawing.Point(619, 37);
+            this.UserStatusTBTM.Name = "UserStatusTBTM";
+            this.UserStatusTBTM.Size = new System.Drawing.Size(78, 46);
+            this.UserStatusTBTM.TabIndex = 57;
+            this.UserStatusTBTM.Text = "Offline";
+            this.UserStatusTBTM.CheckedChanged += new System.EventHandler(this.UserStatusTBTM_CheckedChanged);
             // 
-            // EditStudentIDTip
+            // ArchivePrintToogleBtm
             // 
-            this.EditStudentIDTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
-            this.EditStudentIDTip.ImageRotate = 0F;
-            this.EditStudentIDTip.Location = new System.Drawing.Point(220, 115);
-            this.EditStudentIDTip.Name = "EditStudentIDTip";
-            this.EditStudentIDTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.EditStudentIDTip.Size = new System.Drawing.Size(25, 26);
-            this.EditStudentIDTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EditStudentIDTip.TabIndex = 29;
-            this.EditStudentIDTip.TabStop = false;
+            this.ArchivePrintToogleBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.ArchivePrintToogleBtm.BorderRadius = 10;
+            this.ArchivePrintToogleBtm.BorderThickness = 1;
+            this.ArchivePrintToogleBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ArchivePrintToogleBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ArchivePrintToogleBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.printer__3_;
+            this.ArchivePrintToogleBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ArchivePrintToogleBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ArchivePrintToogleBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ArchivePrintToogleBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ArchivePrintToogleBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.ArchivePrintToogleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.ArchivePrintToogleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ArchivePrintToogleBtm.Image = global::ComlabSystem.Properties.Resources.printer;
+            this.ArchivePrintToogleBtm.Location = new System.Drawing.Point(797, 36);
+            this.ArchivePrintToogleBtm.Name = "ArchivePrintToogleBtm";
+            this.ArchivePrintToogleBtm.Size = new System.Drawing.Size(78, 46);
+            this.ArchivePrintToogleBtm.TabIndex = 56;
+            this.ArchivePrintToogleBtm.Text = "Print";
+            this.ArchivePrintToogleBtm.Click += new System.EventHandler(this.ArchivePrintToogleBtm_Click);
             // 
-            // label44
+            // UserAddPanel
             // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.White;
-            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label44.Location = new System.Drawing.Point(285, 118);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(79, 21);
-            this.label44.TabIndex = 27;
-            this.label44.Text = "Password";
+            this.UserAddPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserAddPanel.BackColor = System.Drawing.Color.Transparent;
+            this.UserAddPanel.Controls.Add(this.AddRequiredPicture);
+            this.UserAddPanel.Controls.Add(this.AddRequiredLabel);
+            this.UserAddPanel.Controls.Add(this.PasswordTip);
+            this.UserAddPanel.Controls.Add(this.StudentPasswordTB);
+            this.UserAddPanel.Controls.Add(this.label2);
+            this.UserAddPanel.Controls.Add(this.UserAddBtm);
+            this.UserAddPanel.Controls.Add(this.AddDraftBtm);
+            this.UserAddPanel.Controls.Add(this.ContactTB);
+            this.UserAddPanel.Controls.Add(this.label12);
+            this.UserAddPanel.Controls.Add(this.EmailTB);
+            this.UserAddPanel.Controls.Add(this.label11);
+            this.UserAddPanel.Controls.Add(this.label10);
+            this.UserAddPanel.Controls.Add(this.YearLevelCB);
+            this.UserAddPanel.Controls.Add(this.label9);
+            this.UserAddPanel.Controls.Add(this.ProgramCB);
+            this.UserAddPanel.Controls.Add(this.label8);
+            this.UserAddPanel.Controls.Add(this.DepartmentCB);
+            this.UserAddPanel.Controls.Add(this.label7);
+            this.UserAddPanel.Controls.Add(this.FNameTB);
+            this.UserAddPanel.Controls.Add(this.label6);
+            this.UserAddPanel.Controls.Add(this.LNameTB);
+            this.UserAddPanel.Controls.Add(this.label5);
+            this.UserAddPanel.Controls.Add(this.StudIDTB);
+            this.UserAddPanel.Controls.Add(this.label4);
+            this.UserAddPanel.Controls.Add(this.label3);
+            this.UserAddPanel.FillColor = System.Drawing.Color.White;
+            this.UserAddPanel.Location = new System.Drawing.Point(1072, 83);
+            this.UserAddPanel.Name = "UserAddPanel";
+            this.UserAddPanel.Radius = 10;
+            this.UserAddPanel.ShadowColor = System.Drawing.Color.Black;
+            this.UserAddPanel.Size = new System.Drawing.Size(530, 645);
+            this.UserAddPanel.TabIndex = 17;
             // 
-            // EditStudentPasswordTB
+            // AddRequiredPicture
             // 
-            this.EditStudentPasswordTB.Animated = true;
-            this.EditStudentPasswordTB.BackColor = System.Drawing.Color.White;
-            this.EditStudentPasswordTB.BorderRadius = 10;
-            this.EditStudentPasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditStudentPasswordTB.DefaultText = "";
-            this.EditStudentPasswordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditStudentPasswordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditStudentPasswordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentPasswordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentPasswordTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditStudentPasswordTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditStudentPasswordTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentPasswordTB.Location = new System.Drawing.Point(280, 143);
-            this.EditStudentPasswordTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditStudentPasswordTB.Name = "EditStudentPasswordTB";
-            this.EditStudentPasswordTB.PasswordChar = '\0';
-            this.EditStudentPasswordTB.PlaceholderText = "";
-            this.EditStudentPasswordTB.SelectedText = "";
-            this.EditStudentPasswordTB.Size = new System.Drawing.Size(216, 50);
-            this.EditStudentPasswordTB.TabIndex = 26;
+            this.AddRequiredPicture.Image = global::ComlabSystem.Properties.Resources.info__5_;
+            this.AddRequiredPicture.ImageRotate = 0F;
+            this.AddRequiredPicture.Location = new System.Drawing.Point(42, 403);
+            this.AddRequiredPicture.Name = "AddRequiredPicture";
+            this.AddRequiredPicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.AddRequiredPicture.Size = new System.Drawing.Size(21, 21);
+            this.AddRequiredPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AddRequiredPicture.TabIndex = 97;
+            this.AddRequiredPicture.TabStop = false;
             // 
-            // EditStudentIDTB
+            // AddRequiredLabel
             // 
-            this.EditStudentIDTB.Animated = true;
-            this.EditStudentIDTB.BackColor = System.Drawing.Color.White;
-            this.EditStudentIDTB.BorderRadius = 10;
-            this.EditStudentIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditStudentIDTB.DefaultText = "";
-            this.EditStudentIDTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditStudentIDTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditStudentIDTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentIDTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditStudentIDTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentIDTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditStudentIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditStudentIDTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditStudentIDTB.Location = new System.Drawing.Point(36, 143);
-            this.EditStudentIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditStudentIDTB.Name = "EditStudentIDTB";
-            this.EditStudentIDTB.PasswordChar = '\0';
-            this.EditStudentIDTB.PlaceholderText = "";
-            this.EditStudentIDTB.SelectedText = "";
-            this.EditStudentIDTB.Size = new System.Drawing.Size(216, 50);
-            this.EditStudentIDTB.TabIndex = 25;
-            this.EditStudentIDTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditStudentIDTB_KeyDown);
+            this.AddRequiredLabel.AutoSize = true;
+            this.AddRequiredLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.AddRequiredLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.AddRequiredLabel.Location = new System.Drawing.Point(63, 404);
+            this.AddRequiredLabel.Name = "AddRequiredLabel";
+            this.AddRequiredLabel.Size = new System.Drawing.Size(108, 19);
+            this.AddRequiredLabel.TabIndex = 98;
+            this.AddRequiredLabel.Text = "Required to fill!";
             // 
-            // label14
+            // PasswordTip
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label14.Location = new System.Drawing.Point(41, 118);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 21);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "Student ID";
+            this.PasswordTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
+            this.PasswordTip.ImageRotate = 0F;
+            this.PasswordTip.Location = new System.Drawing.Point(465, 115);
+            this.PasswordTip.Name = "PasswordTip";
+            this.PasswordTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.PasswordTip.Size = new System.Drawing.Size(25, 26);
+            this.PasswordTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PasswordTip.TabIndex = 29;
+            this.PasswordTip.TabStop = false;
+            this.PasswordTip.Click += new System.EventHandler(this.PasswordTip_Click);
             // 
-            // EditUserSaveBtm
+            // StudentPasswordTB
             // 
-            this.EditUserSaveBtm.Animated = true;
-            this.EditUserSaveBtm.BackColor = System.Drawing.Color.White;
-            this.EditUserSaveBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.EditUserSaveBtm.BorderRadius = 10;
-            this.EditUserSaveBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.EditUserSaveBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserSaveBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.EditUserSaveBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.EditUserSaveBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.EditUserSaveBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.EditUserSaveBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.EditUserSaveBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.EditUserSaveBtm.FillColor = System.Drawing.Color.Maroon;
-            this.EditUserSaveBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditUserSaveBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.EditUserSaveBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.EditUserSaveBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.EditUserSaveBtm.Location = new System.Drawing.Point(271, 555);
-            this.EditUserSaveBtm.Name = "EditUserSaveBtm";
-            this.EditUserSaveBtm.Size = new System.Drawing.Size(225, 45);
-            this.EditUserSaveBtm.TabIndex = 23;
-            this.EditUserSaveBtm.Text = "Save";
-            this.EditUserSaveBtm.Click += new System.EventHandler(this.EditUserSaveBtm_Click);
+            this.StudentPasswordTB.Animated = true;
+            this.StudentPasswordTB.BackColor = System.Drawing.Color.White;
+            this.StudentPasswordTB.BorderRadius = 10;
+            this.StudentPasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StudentPasswordTB.DefaultText = "";
+            this.StudentPasswordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StudentPasswordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StudentPasswordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StudentPasswordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StudentPasswordTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.StudentPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.StudentPasswordTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.StudentPasswordTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.StudentPasswordTB.Location = new System.Drawing.Point(280, 143);
+            this.StudentPasswordTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentPasswordTB.Name = "StudentPasswordTB";
+            this.StudentPasswordTB.PasswordChar = '\0';
+            this.StudentPasswordTB.PlaceholderText = "";
+            this.StudentPasswordTB.SelectedText = "";
+            this.StudentPasswordTB.Size = new System.Drawing.Size(216, 50);
+            this.StudentPasswordTB.TabIndex = 25;
             // 
-            // UserEditCancelBtm
+            // label2
             // 
-            this.UserEditCancelBtm.Animated = true;
-            this.UserEditCancelBtm.BackColor = System.Drawing.Color.White;
-            this.UserEditCancelBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.UserEditCancelBtm.BorderRadius = 10;
-            this.UserEditCancelBtm.BorderThickness = 2;
-            this.UserEditCancelBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.UserEditCancelBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserEditCancelBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.UserEditCancelBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.UserEditCancelBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserEditCancelBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserEditCancelBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserEditCancelBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserEditCancelBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserEditCancelBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserEditCancelBtm.ForeColor = System.Drawing.Color.Maroon;
-            this.UserEditCancelBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.UserEditCancelBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.UserEditCancelBtm.Location = new System.Drawing.Point(36, 555);
-            this.UserEditCancelBtm.Name = "UserEditCancelBtm";
-            this.UserEditCancelBtm.Size = new System.Drawing.Size(225, 45);
-            this.UserEditCancelBtm.TabIndex = 22;
-            this.UserEditCancelBtm.Text = "Cancel";
-            this.UserEditCancelBtm.Click += new System.EventHandler(this.UserEditCancelBtm_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label2.Location = new System.Drawing.Point(285, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Password";
             // 
-            // EditContactTB
+            // UserAddBtm
             // 
-            this.EditContactTB.Animated = true;
-            this.EditContactTB.BackColor = System.Drawing.Color.White;
-            this.EditContactTB.BorderRadius = 10;
-            this.EditContactTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditContactTB.DefaultText = "";
-            this.EditContactTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditContactTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditContactTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditContactTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditContactTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditContactTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditContactTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditContactTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditContactTB.Location = new System.Drawing.Point(311, 458);
-            this.EditContactTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditContactTB.Name = "EditContactTB";
-            this.EditContactTB.PasswordChar = '\0';
-            this.EditContactTB.PlaceholderText = "";
-            this.EditContactTB.SelectedText = "";
-            this.EditContactTB.Size = new System.Drawing.Size(185, 50);
-            this.EditContactTB.TabIndex = 21;
+            this.UserAddBtm.Animated = true;
+            this.UserAddBtm.BackColor = System.Drawing.Color.White;
+            this.UserAddBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.UserAddBtm.BorderRadius = 10;
+            this.UserAddBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.UserAddBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAddBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.UserAddBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
+            this.UserAddBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserAddBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserAddBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserAddBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserAddBtm.FillColor = System.Drawing.Color.Maroon;
+            this.UserAddBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAddBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.UserAddBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.UserAddBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.UserAddBtm.Location = new System.Drawing.Point(271, 555);
+            this.UserAddBtm.Name = "UserAddBtm";
+            this.UserAddBtm.Size = new System.Drawing.Size(225, 45);
+            this.UserAddBtm.TabIndex = 23;
+            this.UserAddBtm.Text = "Add";
+            this.UserAddBtm.Click += new System.EventHandler(this.UserAddBtm_Click);
             // 
-            // label23
+            // AddDraftBtm
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.White;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label23.Location = new System.Drawing.Point(316, 433);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 21);
-            this.label23.TabIndex = 20;
-            this.label23.Text = "Contact";
+            this.AddDraftBtm.Animated = true;
+            this.AddDraftBtm.BackColor = System.Drawing.Color.White;
+            this.AddDraftBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.AddDraftBtm.BorderRadius = 10;
+            this.AddDraftBtm.BorderThickness = 2;
+            this.AddDraftBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.AddDraftBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddDraftBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.AddDraftBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
+            this.AddDraftBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddDraftBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddDraftBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddDraftBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddDraftBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.AddDraftBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddDraftBtm.ForeColor = System.Drawing.Color.Maroon;
+            this.AddDraftBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.AddDraftBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.AddDraftBtm.Location = new System.Drawing.Point(36, 555);
+            this.AddDraftBtm.Name = "AddDraftBtm";
+            this.AddDraftBtm.Size = new System.Drawing.Size(225, 45);
+            this.AddDraftBtm.TabIndex = 22;
+            this.AddDraftBtm.Text = "Cancel";
+            this.AddDraftBtm.Click += new System.EventHandler(this.AddDraftBtm_Click);
             // 
-            // EditEmailTB
+            // ContactTB
             // 
-            this.EditEmailTB.Animated = true;
-            this.EditEmailTB.BackColor = System.Drawing.Color.White;
-            this.EditEmailTB.BorderRadius = 10;
-            this.EditEmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditEmailTB.DefaultText = "";
-            this.EditEmailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditEmailTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditEmailTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditEmailTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditEmailTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditEmailTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditEmailTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditEmailTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditEmailTB.Location = new System.Drawing.Point(36, 458);
-            this.EditEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditEmailTB.Name = "EditEmailTB";
-            this.EditEmailTB.PasswordChar = '\0';
-            this.EditEmailTB.PlaceholderText = "";
-            this.EditEmailTB.SelectedText = "";
-            this.EditEmailTB.Size = new System.Drawing.Size(253, 50);
-            this.EditEmailTB.TabIndex = 19;
+            this.ContactTB.Animated = true;
+            this.ContactTB.BackColor = System.Drawing.Color.White;
+            this.ContactTB.BorderRadius = 10;
+            this.ContactTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ContactTB.DefaultText = "";
+            this.ContactTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ContactTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.ContactTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ContactTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ContactTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.ContactTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ContactTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.ContactTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.ContactTB.Location = new System.Drawing.Point(311, 458);
+            this.ContactTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContactTB.Name = "ContactTB";
+            this.ContactTB.PasswordChar = '\0';
+            this.ContactTB.PlaceholderText = "";
+            this.ContactTB.SelectedText = "";
+            this.ContactTB.Size = new System.Drawing.Size(185, 50);
+            this.ContactTB.TabIndex = 21;
             // 
-            // label24
+            // label12
             // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.White;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label24.Location = new System.Drawing.Point(41, 433);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(48, 21);
-            this.label24.TabIndex = 18;
-            this.label24.Text = "Email";
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label12.Location = new System.Drawing.Point(316, 433);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 21);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Contact";
             // 
-            // label25
+            // EmailTB
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.White;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label25.Location = new System.Drawing.Point(361, 329);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 21);
-            this.label25.TabIndex = 17;
-            this.label25.Text = "Year Level";
+            this.EmailTB.Animated = true;
+            this.EmailTB.BackColor = System.Drawing.Color.White;
+            this.EmailTB.BorderRadius = 10;
+            this.EmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EmailTB.DefaultText = "";
+            this.EmailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EmailTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EmailTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmailTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmailTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EmailTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EmailTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EmailTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EmailTB.Location = new System.Drawing.Point(36, 458);
+            this.EmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmailTB.Name = "EmailTB";
+            this.EmailTB.PasswordChar = '\0';
+            this.EmailTB.PlaceholderText = "";
+            this.EmailTB.SelectedText = "";
+            this.EmailTB.Size = new System.Drawing.Size(253, 50);
+            this.EmailTB.TabIndex = 19;
             // 
-            // EditYearLevelCB
+            // label11
             // 
-            this.EditYearLevelCB.BackColor = System.Drawing.Color.Transparent;
-            this.EditYearLevelCB.BorderRadius = 10;
-            this.EditYearLevelCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EditYearLevelCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditYearLevelCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.EditYearLevelCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditYearLevelCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EditYearLevelCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.EditYearLevelCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditYearLevelCB.ItemHeight = 40;
-            this.EditYearLevelCB.Location = new System.Drawing.Point(356, 355);
-            this.EditYearLevelCB.Name = "EditYearLevelCB";
-            this.EditYearLevelCB.Size = new System.Drawing.Size(140, 46);
-            this.EditYearLevelCB.TabIndex = 16;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label11.Location = new System.Drawing.Point(41, 433);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 21);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Email";
             // 
-            // label26
+            // label10
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label26.Location = new System.Drawing.Point(202, 329);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(73, 21);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "Program";
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label10.Location = new System.Drawing.Point(361, 329);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 21);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Year Level";
             // 
-            // EditProgramCB
+            // YearLevelCB
             // 
-            this.EditProgramCB.BackColor = System.Drawing.Color.Transparent;
-            this.EditProgramCB.BorderRadius = 10;
-            this.EditProgramCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EditProgramCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditProgramCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.EditProgramCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditProgramCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EditProgramCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.EditProgramCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditProgramCB.ItemHeight = 40;
-            this.EditProgramCB.Location = new System.Drawing.Point(197, 355);
-            this.EditProgramCB.Name = "EditProgramCB";
-            this.EditProgramCB.Size = new System.Drawing.Size(140, 46);
-            this.EditProgramCB.TabIndex = 14;
+            this.YearLevelCB.BackColor = System.Drawing.Color.Transparent;
+            this.YearLevelCB.BorderRadius = 10;
+            this.YearLevelCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.YearLevelCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.YearLevelCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.YearLevelCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.YearLevelCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.YearLevelCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.YearLevelCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.YearLevelCB.ItemHeight = 40;
+            this.YearLevelCB.Location = new System.Drawing.Point(356, 355);
+            this.YearLevelCB.Name = "YearLevelCB";
+            this.YearLevelCB.Size = new System.Drawing.Size(140, 46);
+            this.YearLevelCB.TabIndex = 16;
             // 
-            // label27
+            // label9
             // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.White;
-            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label27.Location = new System.Drawing.Point(41, 329);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(98, 21);
-            this.label27.TabIndex = 13;
-            this.label27.Text = "Department";
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label9.Location = new System.Drawing.Point(202, 329);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 21);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Program";
             // 
-            // EditDepartmentCB
+            // ProgramCB
             // 
-            this.EditDepartmentCB.BackColor = System.Drawing.Color.Transparent;
-            this.EditDepartmentCB.BorderRadius = 10;
-            this.EditDepartmentCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.EditDepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EditDepartmentCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.EditDepartmentCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditDepartmentCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EditDepartmentCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.EditDepartmentCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditDepartmentCB.ItemHeight = 40;
-            this.EditDepartmentCB.Location = new System.Drawing.Point(36, 355);
-            this.EditDepartmentCB.Name = "EditDepartmentCB";
-            this.EditDepartmentCB.Size = new System.Drawing.Size(140, 46);
-            this.EditDepartmentCB.TabIndex = 12;
-            this.EditDepartmentCB.SelectedIndexChanged += new System.EventHandler(this.EditDepartmentCB_SelectedIndexChanged);
+            this.ProgramCB.BackColor = System.Drawing.Color.Transparent;
+            this.ProgramCB.BorderRadius = 10;
+            this.ProgramCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ProgramCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProgramCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.ProgramCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.ProgramCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ProgramCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.ProgramCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.ProgramCB.ItemHeight = 40;
+            this.ProgramCB.Location = new System.Drawing.Point(197, 355);
+            this.ProgramCB.Name = "ProgramCB";
+            this.ProgramCB.Size = new System.Drawing.Size(140, 46);
+            this.ProgramCB.TabIndex = 14;
             // 
-            // label28
+            // label8
             // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label28.Location = new System.Drawing.Point(35, 67);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(427, 17);
-            this.label28.TabIndex = 11;
-            this.label28.Text = "Update the selected user\'s information and save changes to the system.";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label8.Location = new System.Drawing.Point(41, 329);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 21);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Department";
             // 
-            // EditFNameTB
+            // DepartmentCB
             // 
-            this.EditFNameTB.Animated = true;
-            this.EditFNameTB.BackColor = System.Drawing.Color.White;
-            this.EditFNameTB.BorderRadius = 10;
-            this.EditFNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditFNameTB.DefaultText = "";
-            this.EditFNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditFNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditFNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditFNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditFNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditFNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditFNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditFNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditFNameTB.Location = new System.Drawing.Point(280, 249);
-            this.EditFNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditFNameTB.Name = "EditFNameTB";
-            this.EditFNameTB.PasswordChar = '\0';
-            this.EditFNameTB.PlaceholderText = "";
-            this.EditFNameTB.SelectedText = "";
-            this.EditFNameTB.Size = new System.Drawing.Size(216, 50);
-            this.EditFNameTB.TabIndex = 10;
+            this.DepartmentCB.BackColor = System.Drawing.Color.Transparent;
+            this.DepartmentCB.BorderRadius = 10;
+            this.DepartmentCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.DepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DepartmentCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.DepartmentCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.DepartmentCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DepartmentCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.DepartmentCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.DepartmentCB.ItemHeight = 40;
+            this.DepartmentCB.Location = new System.Drawing.Point(36, 355);
+            this.DepartmentCB.Name = "DepartmentCB";
+            this.DepartmentCB.Size = new System.Drawing.Size(140, 46);
+            this.DepartmentCB.TabIndex = 12;
             // 
-            // label29
+            // label7
             // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.White;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label29.Location = new System.Drawing.Point(285, 224);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(88, 21);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "First Name";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label7.Location = new System.Drawing.Point(35, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(428, 17);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Please fill in the required details below to add a new user to the system.";
             // 
-            // EditLNameTB
+            // FNameTB
             // 
-            this.EditLNameTB.Animated = true;
-            this.EditLNameTB.BackColor = System.Drawing.Color.White;
-            this.EditLNameTB.BorderRadius = 10;
-            this.EditLNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EditLNameTB.DefaultText = "";
-            this.EditLNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EditLNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EditLNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditLNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EditLNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditLNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EditLNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EditLNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EditLNameTB.Location = new System.Drawing.Point(36, 249);
-            this.EditLNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EditLNameTB.Name = "EditLNameTB";
-            this.EditLNameTB.PasswordChar = '\0';
-            this.EditLNameTB.PlaceholderText = "";
-            this.EditLNameTB.SelectedText = "";
-            this.EditLNameTB.Size = new System.Drawing.Size(216, 50);
-            this.EditLNameTB.TabIndex = 8;
+            this.FNameTB.Animated = true;
+            this.FNameTB.BackColor = System.Drawing.Color.White;
+            this.FNameTB.BorderRadius = 10;
+            this.FNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.FNameTB.DefaultText = "";
+            this.FNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.FNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.FNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.FNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.FNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.FNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.FNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.FNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.FNameTB.Location = new System.Drawing.Point(280, 249);
+            this.FNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FNameTB.Name = "FNameTB";
+            this.FNameTB.PasswordChar = '\0';
+            this.FNameTB.PlaceholderText = "";
+            this.FNameTB.SelectedText = "";
+            this.FNameTB.Size = new System.Drawing.Size(216, 50);
+            this.FNameTB.TabIndex = 10;
             // 
-            // label30
+            // label6
             // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.White;
-            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label30.Location = new System.Drawing.Point(41, 224);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(86, 21);
-            this.label30.TabIndex = 7;
-            this.label30.Text = "Last Name";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label6.Location = new System.Drawing.Point(285, 224);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 21);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "First Name";
             // 
-            // label32
+            // LNameTB
             // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.White;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label32.Location = new System.Drawing.Point(28, 22);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(178, 45);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "EDIT USER";
+            this.LNameTB.Animated = true;
+            this.LNameTB.BackColor = System.Drawing.Color.White;
+            this.LNameTB.BorderRadius = 10;
+            this.LNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LNameTB.DefaultText = "";
+            this.LNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.LNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.LNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.LNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.LNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.LNameTB.Location = new System.Drawing.Point(36, 249);
+            this.LNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LNameTB.Name = "LNameTB";
+            this.LNameTB.PasswordChar = '\0';
+            this.LNameTB.PlaceholderText = "";
+            this.LNameTB.SelectedText = "";
+            this.LNameTB.Size = new System.Drawing.Size(216, 50);
+            this.LNameTB.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label5.Location = new System.Drawing.Point(41, 224);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 21);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Last Name";
+            // 
+            // StudIDTB
+            // 
+            this.StudIDTB.Animated = true;
+            this.StudIDTB.BackColor = System.Drawing.Color.White;
+            this.StudIDTB.BorderRadius = 10;
+            this.StudIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StudIDTB.DefaultText = "";
+            this.StudIDTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StudIDTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StudIDTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StudIDTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StudIDTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.StudIDTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.StudIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.StudIDTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.StudIDTB.Location = new System.Drawing.Point(36, 143);
+            this.StudIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudIDTB.Name = "StudIDTB";
+            this.StudIDTB.PasswordChar = '\0';
+            this.StudIDTB.PlaceholderText = "";
+            this.StudIDTB.SelectedText = "";
+            this.StudIDTB.Size = new System.Drawing.Size(216, 50);
+            this.StudIDTB.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label4.Location = new System.Drawing.Point(41, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Student ID";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label3.Location = new System.Drawing.Point(28, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(179, 45);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ADD USER";
             // 
             // UserFilterPnl
             // 
@@ -899,7 +973,7 @@
             this.UserFilterPnl.Controls.Add(this.label19);
             this.UserFilterPnl.Controls.Add(this.label20);
             this.UserFilterPnl.Controls.Add(this.RequiredLabel);
-            this.UserFilterPnl.Location = new System.Drawing.Point(384, 99);
+            this.UserFilterPnl.Location = new System.Drawing.Point(468, 92);
             this.UserFilterPnl.Name = "UserFilterPnl";
             this.UserFilterPnl.Size = new System.Drawing.Size(557, 464);
             this.UserFilterPnl.TabIndex = 55;
@@ -1593,7 +1667,7 @@
             this.PrintToogleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.PrintToogleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.PrintToogleBtm.Image = global::ComlabSystem.Properties.Resources.printer;
-            this.PrintToogleBtm.Location = new System.Drawing.Point(708, 37);
+            this.PrintToogleBtm.Location = new System.Drawing.Point(797, 36);
             this.PrintToogleBtm.Name = "PrintToogleBtm";
             this.PrintToogleBtm.Size = new System.Drawing.Size(78, 46);
             this.PrintToogleBtm.TabIndex = 26;
@@ -1618,7 +1692,7 @@
             this.UserFilterToggleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.UserFilterToggleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.UserFilterToggleBtm.Image = global::ComlabSystem.Properties.Resources.funnel;
-            this.UserFilterToggleBtm.Location = new System.Drawing.Point(619, 37);
+            this.UserFilterToggleBtm.Location = new System.Drawing.Point(708, 36);
             this.UserFilterToggleBtm.Name = "UserFilterToggleBtm";
             this.UserFilterToggleBtm.Size = new System.Drawing.Size(78, 46);
             this.UserFilterToggleBtm.TabIndex = 24;
@@ -1719,9 +1793,9 @@
             // UserListsGridPNL
             // 
             this.UserListsGridPNL.Controls.Add(this.NoArchiveListLabel);
-            this.UserListsGridPNL.Controls.Add(this.ArchiveUserListDGV);
             this.UserListsGridPNL.Controls.Add(this.UserListPrintDGV);
             this.UserListsGridPNL.Controls.Add(this.UserListDGV);
+            this.UserListsGridPNL.Controls.Add(this.ArchiveUserListDGV);
             this.UserListsGridPNL.Location = new System.Drawing.Point(33, 105);
             this.UserListsGridPNL.Name = "UserListsGridPNL";
             this.UserListsGridPNL.Size = new System.Drawing.Size(1561, 810);
@@ -1739,34 +1813,113 @@
             this.NoArchiveListLabel.TabIndex = 18;
             this.NoArchiveListLabel.Text = "No Archive User";
             // 
+            // UserListDGV
+            // 
+            this.UserListDGV.AllowUserToAddRows = false;
+            this.UserListDGV.AllowUserToDeleteRows = false;
+            this.UserListDGV.AllowUserToResizeColumns = false;
+            this.UserListDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.UserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.UserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.UserListDGV.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListDGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.UserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserListDGV.GridColor = System.Drawing.Color.White;
+            this.UserListDGV.Location = new System.Drawing.Point(0, 0);
+            this.UserListDGV.MultiSelect = false;
+            this.UserListDGV.Name = "UserListDGV";
+            this.UserListDGV.ReadOnly = true;
+            this.UserListDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UserListDGV.RowHeadersVisible = false;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.UserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListDGV.RowTemplate.DividerHeight = 10;
+            this.UserListDGV.RowTemplate.Height = 100;
+            this.UserListDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListDGV.ShowCellErrors = false;
+            this.UserListDGV.ShowCellToolTips = false;
+            this.UserListDGV.ShowEditingIcon = false;
+            this.UserListDGV.ShowRowErrors = false;
+            this.UserListDGV.Size = new System.Drawing.Size(1561, 810);
+            this.UserListDGV.TabIndex = 15;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.UserListDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.UserListDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.UserListDGV.ThemeStyle.HeaderStyle.Height = 60;
+            this.UserListDGV.ThemeStyle.ReadOnly = true;
+            this.UserListDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.UserListDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.UserListDGV.ThemeStyle.RowsStyle.Height = 100;
+            this.UserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.UserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.UserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellClick);
+            this.UserListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellContentClick);
+            this.UserListDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.UserListDGV_CellFormatting);
+            this.UserListDGV.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.UserListDGV_CellToolTipTextNeeded);
+            // 
             // ArchiveUserListDGV
             // 
             this.ArchiveUserListDGV.AllowUserToAddRows = false;
             this.ArchiveUserListDGV.AllowUserToDeleteRows = false;
             this.ArchiveUserListDGV.AllowUserToResizeColumns = false;
             this.ArchiveUserListDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.ArchiveUserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.ArchiveUserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.ArchiveUserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.ArchiveUserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArchiveUserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArchiveUserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.ArchiveUserListDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArchiveUserListDGV.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArchiveUserListDGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.ArchiveUserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArchiveUserListDGV.GridColor = System.Drawing.Color.White;
             this.ArchiveUserListDGV.Location = new System.Drawing.Point(0, 0);
@@ -1781,7 +1934,7 @@
             this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Maroon;
             this.ArchiveUserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ArchiveUserListDGV.RowTemplate.DividerHeight = 10;
             this.ArchiveUserListDGV.RowTemplate.Height = 100;
@@ -1821,28 +1974,28 @@
             this.UserListPrintDGV.AllowUserToDeleteRows = false;
             this.UserListPrintDGV.AllowUserToResizeColumns = false;
             this.UserListPrintDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.UserListPrintDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.UserListPrintDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UserListPrintDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListPrintDGV.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListPrintDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.UserListPrintDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserListPrintDGV.GridColor = System.Drawing.Color.White;
             this.UserListPrintDGV.Location = new System.Drawing.Point(0, 0);
@@ -1890,513 +2043,434 @@
             this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // UserListDGV
+            // UserEditPnl
             // 
-            this.UserListDGV.AllowUserToAddRows = false;
-            this.UserListDGV.AllowUserToDeleteRows = false;
-            this.UserListDGV.AllowUserToResizeColumns = false;
-            this.UserListDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.UserListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            this.UserListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            this.UserListDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListDGV.DefaultCellStyle = dataGridViewCellStyle27;
-            this.UserListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserListDGV.GridColor = System.Drawing.Color.White;
-            this.UserListDGV.Location = new System.Drawing.Point(0, 0);
-            this.UserListDGV.MultiSelect = false;
-            this.UserListDGV.Name = "UserListDGV";
-            this.UserListDGV.ReadOnly = true;
-            this.UserListDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UserListDGV.RowHeadersVisible = false;
-            this.UserListDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.UserListDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserListDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListDGV.RowTemplate.DividerHeight = 10;
-            this.UserListDGV.RowTemplate.Height = 100;
-            this.UserListDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListDGV.ShowCellErrors = false;
-            this.UserListDGV.ShowCellToolTips = false;
-            this.UserListDGV.ShowEditingIcon = false;
-            this.UserListDGV.ShowRowErrors = false;
-            this.UserListDGV.Size = new System.Drawing.Size(1561, 810);
-            this.UserListDGV.TabIndex = 15;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.UserListDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.UserListDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.UserListDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.UserListDGV.ThemeStyle.HeaderStyle.Height = 60;
-            this.UserListDGV.ThemeStyle.ReadOnly = true;
-            this.UserListDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.UserListDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.UserListDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.UserListDGV.ThemeStyle.RowsStyle.Height = 100;
-            this.UserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.UserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.UserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellClick);
-            this.UserListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserListDGV_CellContentClick);
-            this.UserListDGV.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.UserListDGV_CellToolTipTextNeeded);
+            this.UserEditPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserEditPnl.BackColor = System.Drawing.Color.Transparent;
+            this.UserEditPnl.Controls.Add(this.EditStudentIDTip);
+            this.UserEditPnl.Controls.Add(this.label44);
+            this.UserEditPnl.Controls.Add(this.EditStudentPasswordTB);
+            this.UserEditPnl.Controls.Add(this.EditStudentIDTB);
+            this.UserEditPnl.Controls.Add(this.label14);
+            this.UserEditPnl.Controls.Add(this.EditUserSaveBtm);
+            this.UserEditPnl.Controls.Add(this.UserEditCancelBtm);
+            this.UserEditPnl.Controls.Add(this.EditContactTB);
+            this.UserEditPnl.Controls.Add(this.label23);
+            this.UserEditPnl.Controls.Add(this.EditEmailTB);
+            this.UserEditPnl.Controls.Add(this.label24);
+            this.UserEditPnl.Controls.Add(this.label25);
+            this.UserEditPnl.Controls.Add(this.EditYearLevelCB);
+            this.UserEditPnl.Controls.Add(this.label26);
+            this.UserEditPnl.Controls.Add(this.EditProgramCB);
+            this.UserEditPnl.Controls.Add(this.label27);
+            this.UserEditPnl.Controls.Add(this.EditDepartmentCB);
+            this.UserEditPnl.Controls.Add(this.label28);
+            this.UserEditPnl.Controls.Add(this.EditFNameTB);
+            this.UserEditPnl.Controls.Add(this.label29);
+            this.UserEditPnl.Controls.Add(this.EditLNameTB);
+            this.UserEditPnl.Controls.Add(this.label30);
+            this.UserEditPnl.Controls.Add(this.label32);
+            this.UserEditPnl.FillColor = System.Drawing.Color.White;
+            this.UserEditPnl.Location = new System.Drawing.Point(1072, 83);
+            this.UserEditPnl.Name = "UserEditPnl";
+            this.UserEditPnl.Radius = 10;
+            this.UserEditPnl.ShadowColor = System.Drawing.Color.Black;
+            this.UserEditPnl.Size = new System.Drawing.Size(530, 645);
+            this.UserEditPnl.TabIndex = 20;
             // 
-            // UserAddPanel
+            // EditStudentIDTip
             // 
-            this.UserAddPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserAddPanel.BackColor = System.Drawing.Color.Transparent;
-            this.UserAddPanel.Controls.Add(this.AddRequiredPicture);
-            this.UserAddPanel.Controls.Add(this.AddRequiredLabel);
-            this.UserAddPanel.Controls.Add(this.PasswordTip);
-            this.UserAddPanel.Controls.Add(this.StudentPasswordTB);
-            this.UserAddPanel.Controls.Add(this.label2);
-            this.UserAddPanel.Controls.Add(this.UserAddBtm);
-            this.UserAddPanel.Controls.Add(this.AddDraftBtm);
-            this.UserAddPanel.Controls.Add(this.ContactTB);
-            this.UserAddPanel.Controls.Add(this.label12);
-            this.UserAddPanel.Controls.Add(this.EmailTB);
-            this.UserAddPanel.Controls.Add(this.label11);
-            this.UserAddPanel.Controls.Add(this.label10);
-            this.UserAddPanel.Controls.Add(this.YearLevelCB);
-            this.UserAddPanel.Controls.Add(this.label9);
-            this.UserAddPanel.Controls.Add(this.ProgramCB);
-            this.UserAddPanel.Controls.Add(this.label8);
-            this.UserAddPanel.Controls.Add(this.DepartmentCB);
-            this.UserAddPanel.Controls.Add(this.label7);
-            this.UserAddPanel.Controls.Add(this.FNameTB);
-            this.UserAddPanel.Controls.Add(this.label6);
-            this.UserAddPanel.Controls.Add(this.LNameTB);
-            this.UserAddPanel.Controls.Add(this.label5);
-            this.UserAddPanel.Controls.Add(this.StudIDTB);
-            this.UserAddPanel.Controls.Add(this.label4);
-            this.UserAddPanel.Controls.Add(this.label3);
-            this.UserAddPanel.FillColor = System.Drawing.Color.White;
-            this.UserAddPanel.Location = new System.Drawing.Point(1072, 83);
-            this.UserAddPanel.Name = "UserAddPanel";
-            this.UserAddPanel.Radius = 10;
-            this.UserAddPanel.ShadowColor = System.Drawing.Color.Black;
-            this.UserAddPanel.Size = new System.Drawing.Size(530, 645);
-            this.UserAddPanel.TabIndex = 17;
+            this.EditStudentIDTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
+            this.EditStudentIDTip.ImageRotate = 0F;
+            this.EditStudentIDTip.Location = new System.Drawing.Point(220, 115);
+            this.EditStudentIDTip.Name = "EditStudentIDTip";
+            this.EditStudentIDTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.EditStudentIDTip.Size = new System.Drawing.Size(25, 26);
+            this.EditStudentIDTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EditStudentIDTip.TabIndex = 29;
+            this.EditStudentIDTip.TabStop = false;
             // 
-            // PasswordTip
+            // label44
             // 
-            this.PasswordTip.Image = global::ComlabSystem.Properties.Resources.info__3_;
-            this.PasswordTip.ImageRotate = 0F;
-            this.PasswordTip.Location = new System.Drawing.Point(465, 115);
-            this.PasswordTip.Name = "PasswordTip";
-            this.PasswordTip.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.PasswordTip.Size = new System.Drawing.Size(25, 26);
-            this.PasswordTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PasswordTip.TabIndex = 29;
-            this.PasswordTip.TabStop = false;
-            this.PasswordTip.Click += new System.EventHandler(this.PasswordTip_Click);
+            this.label44.AutoSize = true;
+            this.label44.BackColor = System.Drawing.Color.White;
+            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label44.Location = new System.Drawing.Point(285, 118);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 21);
+            this.label44.TabIndex = 27;
+            this.label44.Text = "Password";
             // 
-            // StudentPasswordTB
+            // EditStudentPasswordTB
             // 
-            this.StudentPasswordTB.Animated = true;
-            this.StudentPasswordTB.BackColor = System.Drawing.Color.White;
-            this.StudentPasswordTB.BorderRadius = 10;
-            this.StudentPasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.StudentPasswordTB.DefaultText = "";
-            this.StudentPasswordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.StudentPasswordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.StudentPasswordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StudentPasswordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StudentPasswordTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.StudentPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.StudentPasswordTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.StudentPasswordTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.StudentPasswordTB.Location = new System.Drawing.Point(280, 143);
-            this.StudentPasswordTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.StudentPasswordTB.Name = "StudentPasswordTB";
-            this.StudentPasswordTB.PasswordChar = '\0';
-            this.StudentPasswordTB.PlaceholderText = "";
-            this.StudentPasswordTB.SelectedText = "";
-            this.StudentPasswordTB.Size = new System.Drawing.Size(216, 50);
-            this.StudentPasswordTB.TabIndex = 25;
+            this.EditStudentPasswordTB.Animated = true;
+            this.EditStudentPasswordTB.BackColor = System.Drawing.Color.White;
+            this.EditStudentPasswordTB.BorderRadius = 10;
+            this.EditStudentPasswordTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditStudentPasswordTB.DefaultText = "";
+            this.EditStudentPasswordTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditStudentPasswordTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditStudentPasswordTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentPasswordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentPasswordTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditStudentPasswordTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditStudentPasswordTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentPasswordTB.Location = new System.Drawing.Point(280, 143);
+            this.EditStudentPasswordTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditStudentPasswordTB.Name = "EditStudentPasswordTB";
+            this.EditStudentPasswordTB.PasswordChar = '\0';
+            this.EditStudentPasswordTB.PlaceholderText = "";
+            this.EditStudentPasswordTB.SelectedText = "";
+            this.EditStudentPasswordTB.Size = new System.Drawing.Size(216, 50);
+            this.EditStudentPasswordTB.TabIndex = 26;
             // 
-            // label2
+            // EditStudentIDTB
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label2.Location = new System.Drawing.Point(285, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 21);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Password";
+            this.EditStudentIDTB.Animated = true;
+            this.EditStudentIDTB.BackColor = System.Drawing.Color.White;
+            this.EditStudentIDTB.BorderRadius = 10;
+            this.EditStudentIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditStudentIDTB.DefaultText = "";
+            this.EditStudentIDTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditStudentIDTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditStudentIDTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentIDTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditStudentIDTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentIDTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditStudentIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditStudentIDTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditStudentIDTB.Location = new System.Drawing.Point(36, 143);
+            this.EditStudentIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditStudentIDTB.Name = "EditStudentIDTB";
+            this.EditStudentIDTB.PasswordChar = '\0';
+            this.EditStudentIDTB.PlaceholderText = "";
+            this.EditStudentIDTB.SelectedText = "";
+            this.EditStudentIDTB.Size = new System.Drawing.Size(216, 50);
+            this.EditStudentIDTB.TabIndex = 25;
+            this.EditStudentIDTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditStudentIDTB_KeyDown);
             // 
-            // UserAddBtm
+            // label14
             // 
-            this.UserAddBtm.Animated = true;
-            this.UserAddBtm.BackColor = System.Drawing.Color.White;
-            this.UserAddBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.UserAddBtm.BorderRadius = 10;
-            this.UserAddBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.UserAddBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserAddBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.UserAddBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.UserAddBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserAddBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserAddBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserAddBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserAddBtm.FillColor = System.Drawing.Color.Maroon;
-            this.UserAddBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserAddBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UserAddBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.UserAddBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.UserAddBtm.Location = new System.Drawing.Point(271, 555);
-            this.UserAddBtm.Name = "UserAddBtm";
-            this.UserAddBtm.Size = new System.Drawing.Size(225, 45);
-            this.UserAddBtm.TabIndex = 23;
-            this.UserAddBtm.Text = "Add";
-            this.UserAddBtm.Click += new System.EventHandler(this.UserAddBtm_Click);
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label14.Location = new System.Drawing.Point(41, 118);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 21);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Student ID";
             // 
-            // AddDraftBtm
+            // EditUserSaveBtm
             // 
-            this.AddDraftBtm.Animated = true;
-            this.AddDraftBtm.BackColor = System.Drawing.Color.White;
-            this.AddDraftBtm.BorderColor = System.Drawing.Color.Maroon;
-            this.AddDraftBtm.BorderRadius = 10;
-            this.AddDraftBtm.BorderThickness = 2;
-            this.AddDraftBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.AddDraftBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddDraftBtm.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.AddDraftBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
-            this.AddDraftBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddDraftBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddDraftBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddDraftBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddDraftBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.AddDraftBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddDraftBtm.ForeColor = System.Drawing.Color.Maroon;
-            this.AddDraftBtm.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.AddDraftBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddDraftBtm.Location = new System.Drawing.Point(36, 555);
-            this.AddDraftBtm.Name = "AddDraftBtm";
-            this.AddDraftBtm.Size = new System.Drawing.Size(225, 45);
-            this.AddDraftBtm.TabIndex = 22;
-            this.AddDraftBtm.Text = "Cancel";
-            this.AddDraftBtm.Click += new System.EventHandler(this.AddDraftBtm_Click);
+            this.EditUserSaveBtm.Animated = true;
+            this.EditUserSaveBtm.BackColor = System.Drawing.Color.White;
+            this.EditUserSaveBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.EditUserSaveBtm.BorderRadius = 10;
+            this.EditUserSaveBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.EditUserSaveBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUserSaveBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.EditUserSaveBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
+            this.EditUserSaveBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditUserSaveBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditUserSaveBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditUserSaveBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditUserSaveBtm.FillColor = System.Drawing.Color.Maroon;
+            this.EditUserSaveBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditUserSaveBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.EditUserSaveBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.EditUserSaveBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.EditUserSaveBtm.Location = new System.Drawing.Point(271, 555);
+            this.EditUserSaveBtm.Name = "EditUserSaveBtm";
+            this.EditUserSaveBtm.Size = new System.Drawing.Size(225, 45);
+            this.EditUserSaveBtm.TabIndex = 23;
+            this.EditUserSaveBtm.Text = "Save";
+            this.EditUserSaveBtm.Click += new System.EventHandler(this.EditUserSaveBtm_Click);
             // 
-            // ContactTB
+            // UserEditCancelBtm
             // 
-            this.ContactTB.Animated = true;
-            this.ContactTB.BackColor = System.Drawing.Color.White;
-            this.ContactTB.BorderRadius = 10;
-            this.ContactTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ContactTB.DefaultText = "";
-            this.ContactTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ContactTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ContactTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ContactTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ContactTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.ContactTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ContactTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ContactTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.ContactTB.Location = new System.Drawing.Point(311, 458);
-            this.ContactTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ContactTB.Name = "ContactTB";
-            this.ContactTB.PasswordChar = '\0';
-            this.ContactTB.PlaceholderText = "";
-            this.ContactTB.SelectedText = "";
-            this.ContactTB.Size = new System.Drawing.Size(185, 50);
-            this.ContactTB.TabIndex = 21;
+            this.UserEditCancelBtm.Animated = true;
+            this.UserEditCancelBtm.BackColor = System.Drawing.Color.White;
+            this.UserEditCancelBtm.BorderColor = System.Drawing.Color.Maroon;
+            this.UserEditCancelBtm.BorderRadius = 10;
+            this.UserEditCancelBtm.BorderThickness = 2;
+            this.UserEditCancelBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.UserEditCancelBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserEditCancelBtm.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.UserEditCancelBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user_gear__2_;
+            this.UserEditCancelBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserEditCancelBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserEditCancelBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserEditCancelBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserEditCancelBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserEditCancelBtm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserEditCancelBtm.ForeColor = System.Drawing.Color.Maroon;
+            this.UserEditCancelBtm.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.UserEditCancelBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.UserEditCancelBtm.Location = new System.Drawing.Point(36, 555);
+            this.UserEditCancelBtm.Name = "UserEditCancelBtm";
+            this.UserEditCancelBtm.Size = new System.Drawing.Size(225, 45);
+            this.UserEditCancelBtm.TabIndex = 22;
+            this.UserEditCancelBtm.Text = "Cancel";
+            this.UserEditCancelBtm.Click += new System.EventHandler(this.UserEditCancelBtm_Click);
             // 
-            // label12
+            // EditContactTB
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label12.Location = new System.Drawing.Point(316, 433);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 21);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Contact";
+            this.EditContactTB.Animated = true;
+            this.EditContactTB.BackColor = System.Drawing.Color.White;
+            this.EditContactTB.BorderRadius = 10;
+            this.EditContactTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditContactTB.DefaultText = "";
+            this.EditContactTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditContactTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditContactTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditContactTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditContactTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditContactTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditContactTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditContactTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditContactTB.Location = new System.Drawing.Point(311, 458);
+            this.EditContactTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditContactTB.Name = "EditContactTB";
+            this.EditContactTB.PasswordChar = '\0';
+            this.EditContactTB.PlaceholderText = "";
+            this.EditContactTB.SelectedText = "";
+            this.EditContactTB.Size = new System.Drawing.Size(185, 50);
+            this.EditContactTB.TabIndex = 21;
             // 
-            // EmailTB
+            // label23
             // 
-            this.EmailTB.Animated = true;
-            this.EmailTB.BackColor = System.Drawing.Color.White;
-            this.EmailTB.BorderRadius = 10;
-            this.EmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EmailTB.DefaultText = "";
-            this.EmailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.EmailTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.EmailTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EmailTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.EmailTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.EmailTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.EmailTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.EmailTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.EmailTB.Location = new System.Drawing.Point(36, 458);
-            this.EmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EmailTB.Name = "EmailTB";
-            this.EmailTB.PasswordChar = '\0';
-            this.EmailTB.PlaceholderText = "";
-            this.EmailTB.SelectedText = "";
-            this.EmailTB.Size = new System.Drawing.Size(253, 50);
-            this.EmailTB.TabIndex = 19;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.White;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label23.Location = new System.Drawing.Point(316, 433);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 21);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "Contact";
             // 
-            // label11
+            // EditEmailTB
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label11.Location = new System.Drawing.Point(41, 433);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 21);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Email";
+            this.EditEmailTB.Animated = true;
+            this.EditEmailTB.BackColor = System.Drawing.Color.White;
+            this.EditEmailTB.BorderRadius = 10;
+            this.EditEmailTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditEmailTB.DefaultText = "";
+            this.EditEmailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditEmailTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditEmailTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditEmailTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditEmailTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditEmailTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditEmailTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditEmailTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditEmailTB.Location = new System.Drawing.Point(36, 458);
+            this.EditEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditEmailTB.Name = "EditEmailTB";
+            this.EditEmailTB.PasswordChar = '\0';
+            this.EditEmailTB.PlaceholderText = "";
+            this.EditEmailTB.SelectedText = "";
+            this.EditEmailTB.Size = new System.Drawing.Size(253, 50);
+            this.EditEmailTB.TabIndex = 19;
             // 
-            // label10
+            // label24
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label10.Location = new System.Drawing.Point(361, 329);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 21);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Year Level";
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.White;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label24.Location = new System.Drawing.Point(41, 433);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 21);
+            this.label24.TabIndex = 18;
+            this.label24.Text = "Email";
             // 
-            // YearLevelCB
+            // label25
             // 
-            this.YearLevelCB.BackColor = System.Drawing.Color.Transparent;
-            this.YearLevelCB.BorderRadius = 10;
-            this.YearLevelCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.YearLevelCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.YearLevelCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.YearLevelCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.YearLevelCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.YearLevelCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.YearLevelCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.YearLevelCB.ItemHeight = 40;
-            this.YearLevelCB.Location = new System.Drawing.Point(356, 355);
-            this.YearLevelCB.Name = "YearLevelCB";
-            this.YearLevelCB.Size = new System.Drawing.Size(140, 46);
-            this.YearLevelCB.TabIndex = 16;
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.White;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label25.Location = new System.Drawing.Point(361, 329);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(83, 21);
+            this.label25.TabIndex = 17;
+            this.label25.Text = "Year Level";
             // 
-            // label9
+            // EditYearLevelCB
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label9.Location = new System.Drawing.Point(202, 329);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 21);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Program";
+            this.EditYearLevelCB.BackColor = System.Drawing.Color.Transparent;
+            this.EditYearLevelCB.BorderRadius = 10;
+            this.EditYearLevelCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EditYearLevelCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditYearLevelCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.EditYearLevelCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditYearLevelCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EditYearLevelCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.EditYearLevelCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditYearLevelCB.ItemHeight = 40;
+            this.EditYearLevelCB.Location = new System.Drawing.Point(356, 355);
+            this.EditYearLevelCB.Name = "EditYearLevelCB";
+            this.EditYearLevelCB.Size = new System.Drawing.Size(140, 46);
+            this.EditYearLevelCB.TabIndex = 16;
             // 
-            // ProgramCB
+            // label26
             // 
-            this.ProgramCB.BackColor = System.Drawing.Color.Transparent;
-            this.ProgramCB.BorderRadius = 10;
-            this.ProgramCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ProgramCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProgramCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.ProgramCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.ProgramCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ProgramCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.ProgramCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.ProgramCB.ItemHeight = 40;
-            this.ProgramCB.Location = new System.Drawing.Point(197, 355);
-            this.ProgramCB.Name = "ProgramCB";
-            this.ProgramCB.Size = new System.Drawing.Size(140, 46);
-            this.ProgramCB.TabIndex = 14;
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label26.Location = new System.Drawing.Point(202, 329);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 21);
+            this.label26.TabIndex = 15;
+            this.label26.Text = "Program";
             // 
-            // label8
+            // EditProgramCB
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label8.Location = new System.Drawing.Point(41, 329);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 21);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Department";
+            this.EditProgramCB.BackColor = System.Drawing.Color.Transparent;
+            this.EditProgramCB.BorderRadius = 10;
+            this.EditProgramCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EditProgramCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditProgramCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.EditProgramCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditProgramCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EditProgramCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.EditProgramCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditProgramCB.ItemHeight = 40;
+            this.EditProgramCB.Location = new System.Drawing.Point(197, 355);
+            this.EditProgramCB.Name = "EditProgramCB";
+            this.EditProgramCB.Size = new System.Drawing.Size(140, 46);
+            this.EditProgramCB.TabIndex = 14;
             // 
-            // DepartmentCB
+            // label27
             // 
-            this.DepartmentCB.BackColor = System.Drawing.Color.Transparent;
-            this.DepartmentCB.BorderRadius = 10;
-            this.DepartmentCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.DepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DepartmentCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.DepartmentCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.DepartmentCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.DepartmentCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.DepartmentCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.DepartmentCB.ItemHeight = 40;
-            this.DepartmentCB.Location = new System.Drawing.Point(36, 355);
-            this.DepartmentCB.Name = "DepartmentCB";
-            this.DepartmentCB.Size = new System.Drawing.Size(140, 46);
-            this.DepartmentCB.TabIndex = 12;
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label27.Location = new System.Drawing.Point(41, 329);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(98, 21);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "Department";
             // 
-            // label7
+            // EditDepartmentCB
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label7.Location = new System.Drawing.Point(35, 67);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(428, 17);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Please fill in the required details below to add a new user to the system.";
+            this.EditDepartmentCB.BackColor = System.Drawing.Color.Transparent;
+            this.EditDepartmentCB.BorderRadius = 10;
+            this.EditDepartmentCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.EditDepartmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EditDepartmentCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.EditDepartmentCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditDepartmentCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EditDepartmentCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.EditDepartmentCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditDepartmentCB.ItemHeight = 40;
+            this.EditDepartmentCB.Location = new System.Drawing.Point(36, 355);
+            this.EditDepartmentCB.Name = "EditDepartmentCB";
+            this.EditDepartmentCB.Size = new System.Drawing.Size(140, 46);
+            this.EditDepartmentCB.TabIndex = 12;
+            this.EditDepartmentCB.SelectedIndexChanged += new System.EventHandler(this.EditDepartmentCB_SelectedIndexChanged);
             // 
-            // FNameTB
+            // label28
             // 
-            this.FNameTB.Animated = true;
-            this.FNameTB.BackColor = System.Drawing.Color.White;
-            this.FNameTB.BorderRadius = 10;
-            this.FNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FNameTB.DefaultText = "";
-            this.FNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.FNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.FNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.FNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.FNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.FNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.FNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.FNameTB.Location = new System.Drawing.Point(280, 249);
-            this.FNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FNameTB.Name = "FNameTB";
-            this.FNameTB.PasswordChar = '\0';
-            this.FNameTB.PlaceholderText = "";
-            this.FNameTB.SelectedText = "";
-            this.FNameTB.Size = new System.Drawing.Size(216, 50);
-            this.FNameTB.TabIndex = 10;
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label28.Location = new System.Drawing.Point(35, 67);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(427, 17);
+            this.label28.TabIndex = 11;
+            this.label28.Text = "Update the selected user\'s information and save changes to the system.";
             // 
-            // label6
+            // EditFNameTB
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label6.Location = new System.Drawing.Point(285, 224);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 21);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "First Name";
+            this.EditFNameTB.Animated = true;
+            this.EditFNameTB.BackColor = System.Drawing.Color.White;
+            this.EditFNameTB.BorderRadius = 10;
+            this.EditFNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditFNameTB.DefaultText = "";
+            this.EditFNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditFNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditFNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditFNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditFNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditFNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditFNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditFNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditFNameTB.Location = new System.Drawing.Point(280, 249);
+            this.EditFNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditFNameTB.Name = "EditFNameTB";
+            this.EditFNameTB.PasswordChar = '\0';
+            this.EditFNameTB.PlaceholderText = "";
+            this.EditFNameTB.SelectedText = "";
+            this.EditFNameTB.Size = new System.Drawing.Size(216, 50);
+            this.EditFNameTB.TabIndex = 10;
             // 
-            // LNameTB
+            // label29
             // 
-            this.LNameTB.Animated = true;
-            this.LNameTB.BackColor = System.Drawing.Color.White;
-            this.LNameTB.BorderRadius = 10;
-            this.LNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LNameTB.DefaultText = "";
-            this.LNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.LNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.LNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.LNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.LNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.LNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.LNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.LNameTB.Location = new System.Drawing.Point(36, 249);
-            this.LNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.LNameTB.Name = "LNameTB";
-            this.LNameTB.PasswordChar = '\0';
-            this.LNameTB.PlaceholderText = "";
-            this.LNameTB.SelectedText = "";
-            this.LNameTB.Size = new System.Drawing.Size(216, 50);
-            this.LNameTB.TabIndex = 8;
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label29.Location = new System.Drawing.Point(285, 224);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(88, 21);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "First Name";
             // 
-            // label5
+            // EditLNameTB
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label5.Location = new System.Drawing.Point(41, 224);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 21);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Last Name";
+            this.EditLNameTB.Animated = true;
+            this.EditLNameTB.BackColor = System.Drawing.Color.White;
+            this.EditLNameTB.BorderRadius = 10;
+            this.EditLNameTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditLNameTB.DefaultText = "";
+            this.EditLNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditLNameTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditLNameTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditLNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditLNameTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditLNameTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.EditLNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.EditLNameTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.EditLNameTB.Location = new System.Drawing.Point(36, 249);
+            this.EditLNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditLNameTB.Name = "EditLNameTB";
+            this.EditLNameTB.PasswordChar = '\0';
+            this.EditLNameTB.PlaceholderText = "";
+            this.EditLNameTB.SelectedText = "";
+            this.EditLNameTB.Size = new System.Drawing.Size(216, 50);
+            this.EditLNameTB.TabIndex = 8;
             // 
-            // StudIDTB
+            // label30
             // 
-            this.StudIDTB.Animated = true;
-            this.StudIDTB.BackColor = System.Drawing.Color.White;
-            this.StudIDTB.BorderRadius = 10;
-            this.StudIDTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.StudIDTB.DefaultText = "";
-            this.StudIDTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.StudIDTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.StudIDTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StudIDTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StudIDTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.StudIDTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.StudIDTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.StudIDTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.StudIDTB.Location = new System.Drawing.Point(36, 143);
-            this.StudIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.StudIDTB.Name = "StudIDTB";
-            this.StudIDTB.PasswordChar = '\0';
-            this.StudIDTB.PlaceholderText = "";
-            this.StudIDTB.SelectedText = "";
-            this.StudIDTB.Size = new System.Drawing.Size(216, 50);
-            this.StudIDTB.TabIndex = 5;
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.White;
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label30.Location = new System.Drawing.Point(41, 224);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(86, 21);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "Last Name";
             // 
-            // label4
+            // label32
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label4.Location = new System.Drawing.Point(41, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Student ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label3.Location = new System.Drawing.Point(28, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 45);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "ADD USER";
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.White;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label32.Location = new System.Drawing.Point(28, 22);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(178, 45);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "EDIT USER";
             // 
             // StatisticPNL
             // 
@@ -2420,71 +2494,71 @@
             // 
             // gunaChart2
             // 
-            chartFont33.FontName = "Arial";
-            this.gunaChart2.Legend.LabelFont = chartFont33;
+            chartFont1.FontName = "Arial";
+            this.gunaChart2.Legend.LabelFont = chartFont1;
             this.gunaChart2.Location = new System.Drawing.Point(1108, 36);
             this.gunaChart2.Name = "gunaChart2";
             this.gunaChart2.Size = new System.Drawing.Size(419, 260);
             this.gunaChart2.TabIndex = 1;
-            chartFont34.FontName = "Arial";
-            chartFont34.Size = 12;
-            chartFont34.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart2.Title.Font = chartFont34;
-            chartFont35.FontName = "Arial";
-            this.gunaChart2.Tooltips.BodyFont = chartFont35;
-            chartFont36.FontName = "Arial";
-            chartFont36.Size = 9;
-            chartFont36.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart2.Tooltips.TitleFont = chartFont36;
-            this.gunaChart2.XAxes.GridLines = grid13;
-            chartFont37.FontName = "Arial";
-            tick13.Font = chartFont37;
-            this.gunaChart2.XAxes.Ticks = tick13;
-            this.gunaChart2.YAxes.GridLines = grid14;
-            chartFont38.FontName = "Arial";
-            tick14.Font = chartFont38;
-            this.gunaChart2.YAxes.Ticks = tick14;
-            this.gunaChart2.ZAxes.GridLines = grid15;
-            chartFont39.FontName = "Arial";
-            pointLabel5.Font = chartFont39;
-            this.gunaChart2.ZAxes.PointLabels = pointLabel5;
-            chartFont40.FontName = "Arial";
-            tick15.Font = chartFont40;
-            this.gunaChart2.ZAxes.Ticks = tick15;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.gunaChart2.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Tooltips.TitleFont = chartFont4;
+            this.gunaChart2.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.gunaChart2.XAxes.Ticks = tick1;
+            this.gunaChart2.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.gunaChart2.YAxes.Ticks = tick2;
+            this.gunaChart2.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.gunaChart2.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.gunaChart2.ZAxes.Ticks = tick3;
             // 
             // gunaChart1
             // 
-            chartFont41.FontName = "Arial";
-            this.gunaChart1.Legend.LabelFont = chartFont41;
+            chartFont9.FontName = "Arial";
+            this.gunaChart1.Legend.LabelFont = chartFont9;
             this.gunaChart1.Location = new System.Drawing.Point(40, 332);
             this.gunaChart1.Name = "gunaChart1";
             this.gunaChart1.Size = new System.Drawing.Size(1551, 580);
             this.gunaChart1.TabIndex = 0;
-            chartFont42.FontName = "Arial";
-            chartFont42.Size = 12;
-            chartFont42.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Title.Font = chartFont42;
-            chartFont43.FontName = "Arial";
-            this.gunaChart1.Tooltips.BodyFont = chartFont43;
-            chartFont44.FontName = "Arial";
-            chartFont44.Size = 9;
-            chartFont44.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Tooltips.TitleFont = chartFont44;
-            this.gunaChart1.XAxes.GridLines = grid16;
-            chartFont45.FontName = "Arial";
-            tick16.Font = chartFont45;
-            this.gunaChart1.XAxes.Ticks = tick16;
-            this.gunaChart1.YAxes.GridLines = grid17;
-            chartFont46.FontName = "Arial";
-            tick17.Font = chartFont46;
-            this.gunaChart1.YAxes.Ticks = tick17;
-            this.gunaChart1.ZAxes.GridLines = grid18;
-            chartFont47.FontName = "Arial";
-            pointLabel6.Font = chartFont47;
-            this.gunaChart1.ZAxes.PointLabels = pointLabel6;
-            chartFont48.FontName = "Arial";
-            tick18.Font = chartFont48;
-            this.gunaChart1.ZAxes.Ticks = tick18;
+            chartFont10.FontName = "Arial";
+            chartFont10.Size = 12;
+            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Title.Font = chartFont10;
+            chartFont11.FontName = "Arial";
+            this.gunaChart1.Tooltips.BodyFont = chartFont11;
+            chartFont12.FontName = "Arial";
+            chartFont12.Size = 9;
+            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Tooltips.TitleFont = chartFont12;
+            this.gunaChart1.XAxes.GridLines = grid4;
+            chartFont13.FontName = "Arial";
+            tick4.Font = chartFont13;
+            this.gunaChart1.XAxes.Ticks = tick4;
+            this.gunaChart1.YAxes.GridLines = grid5;
+            chartFont14.FontName = "Arial";
+            tick5.Font = chartFont14;
+            this.gunaChart1.YAxes.Ticks = tick5;
+            this.gunaChart1.ZAxes.GridLines = grid6;
+            chartFont15.FontName = "Arial";
+            pointLabel2.Font = chartFont15;
+            this.gunaChart1.ZAxes.PointLabels = pointLabel2;
+            chartFont16.FontName = "Arial";
+            tick6.Font = chartFont16;
+            this.gunaChart1.ZAxes.Ticks = tick6;
             // 
             // SortToolTip
             // 
@@ -2495,52 +2569,6 @@
             this.SortToolTip.ShowAlways = true;
             this.SortToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.SortToolTip.ToolTipTitle = "Sort Column";
-            // 
-            // AddRequiredPicture
-            // 
-            this.AddRequiredPicture.Image = global::ComlabSystem.Properties.Resources.info__5_;
-            this.AddRequiredPicture.ImageRotate = 0F;
-            this.AddRequiredPicture.Location = new System.Drawing.Point(42, 403);
-            this.AddRequiredPicture.Name = "AddRequiredPicture";
-            this.AddRequiredPicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.AddRequiredPicture.Size = new System.Drawing.Size(21, 21);
-            this.AddRequiredPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AddRequiredPicture.TabIndex = 97;
-            this.AddRequiredPicture.TabStop = false;
-            // 
-            // AddRequiredLabel
-            // 
-            this.AddRequiredLabel.AutoSize = true;
-            this.AddRequiredLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.AddRequiredLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.AddRequiredLabel.Location = new System.Drawing.Point(63, 404);
-            this.AddRequiredLabel.Name = "AddRequiredLabel";
-            this.AddRequiredLabel.Size = new System.Drawing.Size(108, 19);
-            this.AddRequiredLabel.TabIndex = 98;
-            this.AddRequiredLabel.Text = "Required to fill!";
-            // 
-            // ArchivePrintToogleBtm
-            // 
-            this.ArchivePrintToogleBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.ArchivePrintToogleBtm.BorderRadius = 10;
-            this.ArchivePrintToogleBtm.BorderThickness = 1;
-            this.ArchivePrintToogleBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ArchivePrintToogleBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ArchivePrintToogleBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.printer__3_;
-            this.ArchivePrintToogleBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ArchivePrintToogleBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ArchivePrintToogleBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ArchivePrintToogleBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ArchivePrintToogleBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.ArchivePrintToogleBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.ArchivePrintToogleBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ArchivePrintToogleBtm.Image = global::ComlabSystem.Properties.Resources.printer;
-            this.ArchivePrintToogleBtm.Location = new System.Drawing.Point(708, 37);
-            this.ArchivePrintToogleBtm.Name = "ArchivePrintToogleBtm";
-            this.ArchivePrintToogleBtm.Size = new System.Drawing.Size(78, 46);
-            this.ArchivePrintToogleBtm.TabIndex = 56;
-            this.ArchivePrintToogleBtm.Text = "Print";
-            this.ArchivePrintToogleBtm.Click += new System.EventHandler(this.ArchivePrintToogleBtm_Click);
             // 
             // UserUI
             // 
@@ -2561,9 +2589,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.UserListPNL.ResumeLayout(false);
             this.UserPNL.ResumeLayout(false);
-            this.UserEditPnl.ResumeLayout(false);
-            this.UserEditPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).EndInit();
+            this.UserAddPanel.ResumeLayout(false);
+            this.UserAddPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddRequiredPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).EndInit();
             this.UserFilterPnl.ResumeLayout(false);
             this.UserFilterPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).EndInit();
@@ -2571,14 +2600,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.UserListsGridPNL.ResumeLayout(false);
             this.UserListsGridPNL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveUserListDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).EndInit();
-            this.UserAddPanel.ResumeLayout(false);
-            this.UserAddPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordTip)).EndInit();
+            this.UserEditPnl.ResumeLayout(false);
+            this.UserEditPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).EndInit();
             this.StatisticPNL.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.AddRequiredPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2711,5 +2739,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox AddRequiredPicture;
         private System.Windows.Forms.Label AddRequiredLabel;
         private Guna.UI2.WinForms.Guna2Button ArchivePrintToogleBtm;
+        private Guna.UI2.WinForms.Guna2Button UserStatusTBTM;
     }
 }
