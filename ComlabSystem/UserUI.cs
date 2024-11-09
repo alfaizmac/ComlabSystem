@@ -27,6 +27,8 @@ namespace ComlabSystem
             InitializeComponent();
             hideUserManagePnl();
 
+            // Attach the resize event to adjust label position on load or resize
+            this.Resize += UserUI_Resize2;
 
             // Attach event handlers for ComboBox actions
             FilterProgramCB.Enter += ShowRequiredFields;
@@ -35,6 +37,14 @@ namespace ComlabSystem
             // Initially hide RequiredPicture and RequiredLabel
             RequiredPicture.Visible = false;
             RequiredLabel.Visible = false;
+
+            // Attach event handlers for ComboBox actions
+            ProgramCB.Enter += AddShowRequiredFields;
+            YearLevelCB.Enter += AddShowRequiredFields;
+
+            // Initially hide RequiredPicture and RequiredLabel
+            AddRequiredPicture.Visible = false;
+            AddRequiredLabel.Visible = false;
 
 
             //Automatic EMAIL input
@@ -99,8 +109,10 @@ namespace ComlabSystem
 
         private void UserUI_Load(object sender, EventArgs e)
         {
+            NoArchiveListLabel.Visible = false;
+            //LoadArchivedUserListData(); // Reload the archived user list
 
-            LoadArchivedUserListData(); // Reload the archived user list
+            AdjustNoArchiveListLabelPosition();
 
             UserFilterPnl.Visible = false;
             LoadDepartments();
@@ -123,9 +135,30 @@ namespace ComlabSystem
         }
 
 
+        private void UserUI_Resize2(object sender, EventArgs e)
+        {
+            AdjustNoArchiveListLabelPosition();
+        }
 
-        //User Counts label
-        private void LoadUserCountFromDatabase()
+        private void AdjustNoArchiveListLabelPosition()
+        {
+            if (this.ParentForm != null && this.ParentForm.WindowState == FormWindowState.Maximized)
+            {
+                // Full-screen position
+                NoArchiveListLabel.Location = new Point(506, 300);
+            }
+            else
+            {
+                // Non-full-screen position
+                NoArchiveListLabel.Location = new Point(360, 250);
+            }
+        }
+    
+
+
+
+    //User Counts label
+    private void LoadUserCountFromDatabase()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -280,7 +313,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         private void RefreshUserListData()
         {
             // Clear existing columns
-            UserListDGV.Columns.Clear();
+            //UserListDGV.Columns.Clear();
 
             // Reload the user data
             LoadUserListData();
@@ -330,6 +363,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
 
 
+
         private void hideUserManagePnl()
         {
             UserAddPanel.Visible = false;
@@ -354,7 +388,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
             
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
-            cancelAddingUser();
+            
         }
 
         private void UserStatisticPanelShow_Click(object sender, EventArgs e)
@@ -376,6 +410,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
         private void UserListPanelShow_Click(object sender, EventArgs e)
         {
+            NoArchiveListLabel.Visible = false;
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
             UserListManageBtmsPL.Visible = true;
@@ -418,30 +453,42 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         }
 
 
-      
+
 
 
         private void SortButton_CheckedChanged(object sender, EventArgs e)
         {
-            // Check the state of the ToggleButton
-            if (SortButton.Checked)
+            // Define sort direction based on toggle button state
+            var sortDirection = SortButton.Checked
+                ? System.ComponentModel.ListSortDirection.Ascending
+                : System.ComponentModel.ListSortDirection.Descending;
+
+            // Sort UserListDGV if it has data and the Last Name column exists
+            if (UserListDGV.Columns.Contains("Last Name") && UserListDGV.Rows.Count > 0)
             {
-                // Sort LastName column A-Z
-                UserListDGV.Sort(UserListDGV.Columns["Last Name"], System.ComponentModel.ListSortDirection.Ascending);
+                UserListDGV.Sort(UserListDGV.Columns["Last Name"], sortDirection);
             }
-            else
+
+            // Sort ArchiveUserListDGV if it has data and the Last Name column exists
+            if (ArchiveUserListDGV.Columns.Contains("Last Name") && ArchiveUserListDGV.Rows.Count > 0)
             {
-                // Sort LastName column Z-A
-                UserListDGV.Sort(UserListDGV.Columns["Last Name"], System.ComponentModel.ListSortDirection.Descending);
+                ArchiveUserListDGV.Sort(ArchiveUserListDGV.Columns["Last Name"], sortDirection);
             }
-        
-    }
+
+            // Sort UserListPrintDGV if it has data and the Last Name column exists
+            if (UserListPrintDGV.Columns.Contains("Last Name") && UserListPrintDGV.Rows.Count > 0)
+            {
+                UserListPrintDGV.Sort(UserListPrintDGV.Columns["Last Name"], sortDirection);
+            }
+        }
+
+    
 
 
 
 
-        //PRINT FUNCTIONS
-        private void PrintToogleBtm_CheckedChanged(object sender, EventArgs e)
+    //PRINT FUNCTIONS
+    private void PrintToogleBtm_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -477,6 +524,9 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
             // Clear and reload ProgramCB and YearLevelCB based on selected department
             ProgramCB.Items.Clear();
             YearLevelCB.Items.Clear();
+
+            AddRequiredPicture.Visible = false;
+            AddRequiredLabel.Visible = false;
 
             if (DepartmentCB.SelectedItem != null)
             {
@@ -548,6 +598,12 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         private void UserAddBtm_Click(object sender, EventArgs e)
         {
             // Ensure all fields are filled
+            if (string.IsNullOrWhiteSpace(LNameTB.Text) || string.IsNullOrWhiteSpace(FNameTB.Text))
+            {
+                MessageBox.Show("Please enter both Last Name and First Name.");
+                return;
+            }
+
             if (DepartmentCB.SelectedItem == null || ProgramCB.SelectedItem == null || YearLevelCB.SelectedItem == null)
             {
                 MessageBox.Show("Please select a department, program, and year level.");
@@ -607,13 +663,13 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 {
                     command.Parameters.AddWithValue("@StudentID", studentID);
-                    command.Parameters.AddWithValue("@LastName", LNameTB.Text);
-                    command.Parameters.AddWithValue("@FirstName", FNameTB.Text);
+                    command.Parameters.AddWithValue("@LastName", LNameTB.Text.Trim());
+                    command.Parameters.AddWithValue("@FirstName", FNameTB.Text.Trim());
                     command.Parameters.AddWithValue("@DepartmentID", departmentId);
                     command.Parameters.AddWithValue("@ProgramID", programId);
                     command.Parameters.AddWithValue("@YearLevelID", yearLevelId);
-                    command.Parameters.AddWithValue("@Email", EmailTB.Text);
-                    command.Parameters.AddWithValue("@ContactNo", ContactTB.Text);
+                    command.Parameters.AddWithValue("@Email", EmailTB.Text.Trim());
+                    command.Parameters.AddWithValue("@ContactNo", ContactTB.Text.Trim());
                     command.Parameters.AddWithValue("@DateRegistered", DateTime.Now);
                     command.Parameters.AddWithValue("@UPassword", password); // Add the password parameter
 
@@ -624,6 +680,8 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                     LoadUserListData();
                     AddUserBtm.Checked = false;
                     hideUserManagePnl();
+
+                    // Clear form fields after adding user
                     StudIDTB.Clear();
                     LNameTB.Clear();
                     FNameTB.Clear();
@@ -634,7 +692,6 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                     ContactTB.Clear();
                     StudentPasswordTB.Clear(); // Clear the password textbox
                     LoadUserCountFromDatabase();
-
                 }
             }
         }
@@ -742,59 +799,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         }
         private void AddDraftBtm_Click(object sender, EventArgs e)
         {
-            // Check if all required fields contain text or selected values
-            if (!string.IsNullOrWhiteSpace(StudIDTB.Text) &&
-                !string.IsNullOrWhiteSpace(StudentPasswordTB.Text) &&
-                !string.IsNullOrWhiteSpace(LNameTB.Text) &&
-                !string.IsNullOrWhiteSpace(FNameTB.Text) &&
-                !string.IsNullOrWhiteSpace(EmailTB.Text) &&
-                !string.IsNullOrWhiteSpace(ContactTB.Text) &&
-                DepartmentCB.SelectedIndex != -1 &&
-                ProgramCB.SelectedIndex != -1 &&
-                YearLevelCB.SelectedIndex != -1)
-            {
-                // Show confirmation dialog
-                DialogResult result = MessageBox.Show(
-                    "Are you sure you want to cancel adding this user?",
-                    "Confirm Cancel",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
-
-                // If the user chooses 'Yes', proceed to cancel; otherwise, do nothing
-                if (result == DialogResult.Yes)
-                {
-                    // Clear the textboxes and reset combo boxes
-                    StudIDTB.Clear();
-                    StudentPasswordTB.Clear();
-                    LNameTB.Clear();
-                    FNameTB.Clear();
-                    EmailTB.Clear();
-                    ContactTB.Clear();
-                    DepartmentCB.SelectedIndex = -1;
-                    ProgramCB.SelectedIndex = -1;
-                    YearLevelCB.SelectedIndex = -1;
-
-                    // Set the button text back to "Cancel"
-                    AddDraftBtm.Text = "Cancel";
-                }
-                else
-                {
-                    // Do nothing if the user chooses 'No'
-                    return;
-                }
-            }
-            else
-            {
-                // Handle the case when not all fields are filled if needed
-                AddDraftBtm.Text = "Cancel"; // or any other action you want to implement
-            }
-
-            // Additional actions to hide panel and reset toggle
-            AddUserBtm.Checked = false;
-            UserAddPanel.Visible = false;
-            uncheckedBtm();
-            UserAddPanel.Hide();
+            cancelAddingUser();
 
         }
 
@@ -1015,7 +1020,6 @@ WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
                         }
                         else
                         {
-                            MessageBox.Show("No users found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             UserListDGV.DataSource = null; // Clear the DataGridView if no data
                         }
                     }
@@ -1093,8 +1097,8 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                         }
                         else
                         {
-                            MessageBox.Show("No archived users found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
+                            NoArchiveListLabel.BringToFront();
+                            NoArchiveListLabel.Visible = true;
 
                             ArchiveUserListDGV.DataSource = null; // Clear the DataGridView if no data
                         }
@@ -1293,6 +1297,7 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                         EditEmailTB.Clear();
                         EditContactTB.Clear();
                         EditStudentPasswordTB.Clear();
+                        LoadUserCountFromDatabase();
 
                     }
                     else
@@ -1445,6 +1450,19 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             }
         }
 
+        private void AddShowRequiredFields(object sender, EventArgs e)
+        {
+            // Check if FilterDepartmentCB has no selection (e.g., placeholder or -1)
+            if (DepartmentCB.SelectedIndex < 0)
+            {
+                AddRequiredPicture.Visible = true;
+                AddRequiredLabel.Visible = true;
+            }
+        }
+
+
+
+
         private void FilterDepartmentCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Clear and reload ProgramCB and YearLevelCB based on selected department
@@ -1574,10 +1592,24 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 filter.Append($"[Year/Grade Level] = '{yearLevel}'");
             }
 
-    // Apply the filter to the DataGridView
-            (UserListDGV.DataSource as DataTable).DefaultView.RowFilter = filter.ToString();
-            (ArchiveUserListDGV.DataSource as DataTable).DefaultView.RowFilter = filter.ToString();
+            // Check if UserListDGV has a valid DataTable and apply filter if possible
+            if (UserListDGV.DataSource is DataTable userTable)
+            {
+                userTable.DefaultView.RowFilter = filter.ToString();
+            }
+
+            // Check if ArchiveUserListDGV has a valid DataTable and apply filter if possible
+            if (ArchiveUserListDGV.DataSource is DataTable archiveTable)
+            {
+                archiveTable.DefaultView.RowFilter = filter.ToString();
+            }
+
+            if (UserListPrintDGV.DataSource is DataTable printTable)
+            {
+                printTable.DefaultView.RowFilter = filter.ToString();
+            }
         }
+
 
         private void FilterProgramCB_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1625,74 +1657,87 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
         // Method to update column visibility based on checkbox states
         private void UpdateColumnVisibility()
         {
-            // Set column visibility based on checkbox states
-            UserListDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
-            UserListDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
-            UserListDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
-            UserListDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
-            UserListDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
-            UserListDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
-            UserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
-            UserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
-            UserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
-            UserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
-            UserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-            UserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
-            UserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
-            UserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
+            // Check if UserListDGV has columns before updating visibility
+            if (UserListDGV.Columns.Count > 0)
+            {
+                UserListDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
+                UserListDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
+                UserListDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
+                UserListDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
+                UserListDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
+                UserListDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
+                UserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
+                UserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
+                UserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
+                UserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+                UserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
+                UserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
+                UserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+                UserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
+            }
 
-            // Set column visibility based on checkbox states
-            ArchiveUserListDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
-            ArchiveUserListDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
-            ArchiveUserListDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
-            ArchiveUserListDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
-            ArchiveUserListDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
-            ArchiveUserListDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
-            ArchiveUserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
-            ArchiveUserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
-            ArchiveUserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
-            ArchiveUserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
-            ArchiveUserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-            ArchiveUserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
-            ArchiveUserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
-            ArchiveUserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
+            // Check if ArchiveUserListDGV has columns before updating visibility
+            if (ArchiveUserListDGV.Columns.Count > 0)
+            {
+                ArchiveUserListDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
+                ArchiveUserListDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
+                ArchiveUserListDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
+                ArchiveUserListDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
+                ArchiveUserListDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
+                ArchiveUserListDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
+                ArchiveUserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
+                ArchiveUserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
+                ArchiveUserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
+                ArchiveUserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+                ArchiveUserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
+                ArchiveUserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
+                ArchiveUserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+                ArchiveUserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
+            }
 
-            // Set column visibility based on checkbox states
-            UserListPrintDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
-            UserListPrintDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
-            UserListPrintDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
-            UserListPrintDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
-            UserListPrintDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
-            UserListPrintDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
-            UserListPrintDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
-            UserListPrintDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
-            UserListPrintDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
-            UserListPrintDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
-            UserListPrintDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-            UserListPrintDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
-            UserListPrintDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
-            UserListPrintDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
-
+            // Check if UserListPrintDGV has columns before updating visibility
+            if (UserListPrintDGV.Columns.Count > 0)
+            {
+                UserListPrintDGV.Columns["Student ID"].Visible = FilterStudentCKB.Checked;
+                UserListPrintDGV.Columns["Last Name"].Visible = FilterLNameCKB.Checked;
+                UserListPrintDGV.Columns["First Name"].Visible = FilterFNameCKB.Checked;
+                UserListPrintDGV.Columns["Email"].Visible = FilterEmailCKB.Checked;
+                UserListPrintDGV.Columns["Contact"].Visible = FilterContactCKB.Checked;
+                UserListPrintDGV.Columns["Department"].Visible = FilterDepartmentCKB.Checked;
+                UserListPrintDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
+                UserListPrintDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
+                UserListPrintDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
+                UserListPrintDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+                UserListPrintDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
+                UserListPrintDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
+                UserListPrintDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+                UserListPrintDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
+            }
         }
 
 
 
-        //Search bar
+        // Search bar event handler
         private void UserSearchBar_TextChanged(object sender, EventArgs e)
         {
-            ApplySearchFilter(UserSearchBar.Text);
+            string searchText = UserSearchBar.Text;
+            ApplySearchFilter(UserListDGV, searchText);
+            ApplySearchFilter(ArchiveUserListDGV, searchText);
+            ApplySearchFilter(UserListPrintDGV, searchText);
+
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
-
         }
-        private void ApplySearchFilter(string searchText)
+
+        // Generalized method to apply search filter to any DataGridView
+        private void ApplySearchFilter(DataGridView gridView, string searchText)
         {
-            if (UserListDGV.DataSource is DataTable dataTable)
+            if (gridView.DataSource is DataTable dataTable)
             {
                 // Build filter expression for visible columns with valid DataPropertyName
                 var filterExpression = new List<string>();
 
-                foreach (DataGridViewColumn column in UserListDGV.Columns)
+                foreach (DataGridViewColumn column in gridView.Columns)
                 {
                     // Only consider visible columns and columns with a valid DataPropertyName for filtering
                     if (column.Visible && !string.IsNullOrEmpty(column.DataPropertyName))
@@ -1709,7 +1754,7 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                         }
                         else if (columnType == typeof(DateTime))
                         {
-                            // Optionally, you can implement a different filter for DateTime columns, 
+                            // Optionally, you can implement a different filter for DateTime columns,
                             // but for now we will skip it in this example
                             continue; // Skip DateTime columns
                         }
@@ -1731,6 +1776,7 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 }
             }
         }
+
 
         private void PasswordTip_Click(object sender, EventArgs e)
         {
@@ -1813,11 +1859,13 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
         {
             if (EditUserBtm.Checked == true)
             {
+                cancelAddingUser();
                 hideUserManagePnl();
                 UserEditPnl.Visible = true;
                 UserFilterPnl.Visible = false;
                 UserEditPnl.BringToFront();
                 AddUserBtm.Checked = false;
+                EditUserBtm.Checked = true
             }
             else { UserEditPnl.Visible = false; }
         }
@@ -1945,7 +1993,6 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
                         }
                         else
                         {
-                            MessageBox.Show("No users found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             UserListPrintDGV.DataSource = null; // Clear the DataGridView if no data
                         }
                     }
@@ -1955,6 +2002,11 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
                     }
                 }
             }
+        }
+
+        private void SortButton_MouseHover(object sender, EventArgs e)
+        {
+            SortToolTip.Show("Click to sort the Last Name column A-Z or Z-A.", SortButton);
         }
     }  
 }
