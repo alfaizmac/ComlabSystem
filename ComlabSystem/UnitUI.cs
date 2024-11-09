@@ -18,11 +18,11 @@ using DGVPrinterHelper;
 
 namespace ComlabSystem
 {
-    public partial class UserUI : UserControl
+    public partial class UnitUI : UserControl
     {
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
-        public UserUI()
+        public UnitUI()
         {
             InitializeComponent();
             hideUserManagePnl();

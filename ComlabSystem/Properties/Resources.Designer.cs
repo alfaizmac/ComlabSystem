@@ -323,6 +323,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap computer_Black23 {
+            get {
+                object obj = ResourceManager.GetObject("computer-Black23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computer_Black3 {
             get {
                 object obj = ResourceManager.GetObject("computer-Black3", resourceCulture);
@@ -333,9 +343,29 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap computer_Black4 {
+            get {
+                object obj = ResourceManager.GetObject("computer-Black4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computer_Marroon {
             get {
                 object obj = ResourceManager.GetObject("computer-Marroon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap computer_Marroon1 {
+            get {
+                object obj = ResourceManager.GetObject("computer-Marroon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

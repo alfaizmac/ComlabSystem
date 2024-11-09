@@ -188,6 +188,12 @@
     <Compile Include="user.Designer.cs">
       <DependentUpon>user.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnitUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UnitUI.Designer.cs">
+      <DependentUpon>UnitUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </Compile>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitUI.resx">
+      <DependentUpon>UnitUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserUI.resx">
       <DependentUpon>UserUI.cs</DependentUpon>
@@ -650,6 +659,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\info %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-Marroon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-Black4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-Black23.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -42,16 +42,16 @@ namespace ComlabSystem
 
         private void ComBtm_Click(object sender, EventArgs e)
         {
-            //ComUnitUI myControl = new ComUnitUI();
+            UnitUI myControl = new UnitUI();
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();
 
             // Set the Dock style of the UserControl to Fill, making it expand to fit the panel
-            //myControl.Dock = DockStyle.Fill;
+            myControl.Dock = DockStyle.Fill;
 
             // Add the UserControl to the panel
-            //MainPNL.Controls.Add(myControl);
+            MainPNL.Controls.Add(myControl);
         }
     }
 }

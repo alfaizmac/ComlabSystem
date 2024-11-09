@@ -22,7 +22,15 @@ namespace ComlabSystem
             InitializeComponent();
             UserPassTextBox.UseSystemPasswordChar = true;
             AdminPassTB.UseSystemPasswordChar = true;
+
+            UnitName.Text = Environment.MachineName;
+            retryTimer = new Timer();
+            retryTimer.Interval = 1000;  // Timer interval set to 1 second
+            retryTimer.Tick += RetryTimer_Tick;
+            RetryAttemptTimeLabel.Text = "";
         }
+
+
 
         private void UserShowBtm_Click(object sender, EventArgs e)
         {
@@ -90,33 +98,221 @@ namespace ComlabSystem
         }
 
 
+
+
+        //Student Login
+        private int retryAttempts = 5;
+        private int delayTimeInSeconds = 30; // Starts with 30 seconds
+        private Timer retryTimer;
+
         private void UserLoginBtm_Click(object sender, EventArgs e)
         {
-            OpenAuserUIAtBottomRight();
-
-
-       }
-        private void OpenAuserUIAtBottomRight()
-        {
-            // Create an instance of AuserUI
-            user auserUIForm = new user();
-
-            // Get the screen's working area (excluding taskbars and docked windows)
-            var screenWorkingArea = Screen.PrimaryScreen.WorkingArea;
-
-            // Set the form's StartPosition to Manual so we can set its location manually
-            auserUIForm.StartPosition = FormStartPosition.Manual;
-
-            // Position the form at the bottom-right corner of the screen
-            auserUIForm.Location = new System.Drawing.Point(
-                screenWorkingArea.Right - auserUIForm.Width,  // Align with the right edge of the screen
-                screenWorkingArea.Bottom - auserUIForm.Height // Align with the bottom edge of the screen
-            );
-
-            // Show the form
-            auserUIForm.Show();
-            this.Hide();
+            if (retryAttempts > 0)
+            {
+                AuthenticateUser();
+            }
+            else
+            {
+                StartRetryTimer();
+                ShowRetryMessage();
+            }
         }
+
+        private void AuthenticateUser()
+        {
+            string studentID = UserIDTextBox.Text.Trim();
+            string password = UserPassTextBox.Text.Trim();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM UserList WHERE StudentID = @StudentID", connection);
+                    cmd.Parameters.AddWithValue("@StudentID", studentID);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable userTable = new DataTable();
+                    adapter.Fill(userTable);
+
+                    if (userTable.Rows.Count > 0)
+                    {
+                        // Check if the password is correct
+                        var userRow = userTable.Rows[0];
+                        string storedPassword = userRow["UPassword"].ToString();
+
+                        if (storedPassword == password)
+                        {
+                            // Successful login - reset attempts and timer
+                            retryAttempts = 5;
+                            delayTimeInSeconds = 30; // Reset to 30 seconds for next time
+                            retryTimer.Stop();
+                            RetryAttemptTimeLabel.Text = "";
+
+                            // Update UserList table to set Status to "Online" and LastUnitUsed
+                            UpdateUserStatusAndUnit(studentID);
+
+                            // Insert successful login notification into Notifications table
+                            string lName = userRow["LastName"].ToString();
+                            string fName = userRow["FirstName"].ToString();
+                            InsertLoginNotification(studentID, lName, fName);
+
+                            // Show user form and hide login form
+                            Form userForm = new user();
+                            userForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Incorrect password
+                            retryAttempts--;
+                            WrongAttemptMsgBox.Text = "Wrong Password!";
+                            WrongAttemptMsgBox.Show();
+                            UserPassTextBox.Focus();
+                            HandleFailedLogin();
+                        }
+                    }
+                    else
+                    {
+                        // Incorrect student ID
+                        retryAttempts--;
+                        WrongAttemptMsgBox.Text = "Wrong Student ID!";
+                        WrongAttemptMsgBox.Show();
+                        UserIDTextBox.Focus();
+                        HandleFailedLogin();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+        private void HandleFailedLogin()
+        {
+            if (retryAttempts == 0)
+            {
+                StartRetryTimer();
+                LogUnsuccessfulAttempt(UserIDTextBox.Text.Trim());
+                ShowRetryMessage();
+            }
+            else
+            {
+                RetryAttemptTimeLabel.Text = $"Retry attempts left: {retryAttempts}";
+            }
+        }
+
+        private void StartRetryTimer()
+        {
+            retryTimer.Start();
+            RetryAttemptTimeLabel.Text = $"Wait {delayTimeInSeconds} seconds to retry.";
+        }
+
+        private void RetryTimer_Tick(object sender, EventArgs e)
+        {
+            if (delayTimeInSeconds > 0)
+            {
+                delayTimeInSeconds--;
+                RetryAttemptTimeLabel.Text = $"Wait {delayTimeInSeconds} seconds to retry.";
+            }
+            else
+            {
+                retryTimer.Stop();
+                retryAttempts = 5; // Reset attempts after waiting period
+                UpdateRetryDelay(); // Set the next delay time
+                RetryAttemptTimeLabel.Text = $"Retry attempts left: {retryAttempts}";
+            }
+        }
+
+        private void UpdateRetryDelay()
+        {
+            // Update delay time sequence: 30s -> 3m -> 15m
+            if (delayTimeInSeconds == 30)
+            {
+                delayTimeInSeconds = 180;  // Next wait time is 3 minutes (180 seconds)
+            }
+            else
+            {
+                delayTimeInSeconds = 900;  // Keep 15-minute wait for subsequent attempts
+            }
+        }
+
+        private void ShowRetryMessage()
+        {
+            RetryAttemptMsgBox.Text = $"Too many failed attempts. Please wait {delayTimeInSeconds / 60} minutes before trying again.";
+            RetryAttemptMsgBox.Show();
+        }
+
+        private void LogUnsuccessfulAttempt(string studentID)
+        {
+            string computerName = UnitName.Text; // Assuming UnitName label has been initialized
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
+                    cmd.Parameters.AddWithValue("@Message", $"Unsuccessful login attempt on computer unit name {computerName} by a user using a Student ID: {studentID}");
+                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to log unsuccessful attempt: " + ex.Message);
+                }
+            }
+        }
+
+        private void UpdateUserStatusAndUnit(string studentID)
+        {
+            string computerName = UnitName.Text; // Get the current computer unit name
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE UserList SET Status = @Status, LastUnitUsed = @LastUnitUsed WHERE StudentID = @StudentID", connection);
+                    cmd.Parameters.AddWithValue("@Status", "Online");
+                    cmd.Parameters.AddWithValue("@LastUnitUsed", $"Current Using ({computerName})");
+                    cmd.Parameters.AddWithValue("@StudentID", studentID);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update user status: " + ex.Message);
+                }
+            }
+        }
+
+        private void InsertLoginNotification(string studentID, string lastName, string firstName)
+        {
+            string computerName = UnitName.Text; // Get the current computer unit name
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
+                    cmd.Parameters.AddWithValue("@Message", $"{firstName} {lastName} (Student ID: {studentID}) has logged in on {computerName}.");
+                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to insert login notification: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+
+
+
 
         private void AdminLoginBtm_Click(object sender, EventArgs e)
         {
