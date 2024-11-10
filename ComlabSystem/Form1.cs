@@ -12,6 +12,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Management;
 using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace ComlabSystem
@@ -30,6 +31,12 @@ namespace ComlabSystem
             retryTimer.Interval = 1000;  // Timer interval set to 1 second
             retryTimer.Tick += RetryTimer_Tick;
             RetryAttemptTimeLabel.Text = "";
+
+
+            adminRetryTimer = new Timer();
+            adminRetryTimer.Interval = 1000; // Timer ticks every second
+            adminRetryTimer.Tick += AdminRetryTimer_Tick;
+
         }
 
 
@@ -47,7 +54,7 @@ namespace ComlabSystem
             string storage = GetTotalStorage();
             string availableStorage = GetAvailableStorage();
             string ipAddress = GetLocalIPAddress();
-            string status = "Online"; // Default status
+            string status = "Offline"; // Default status
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -83,7 +90,7 @@ namespace ComlabSystem
                     SqlCommand updateCmd = new SqlCommand(
                         @"UPDATE UnitList 
                   SET Ram = @Ram, Processor = @Processor, Storage = @Storage, 
-                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress 
+                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress, Status = @Status 
                   WHERE ComputerName = @ComputerName",
                         connection);
 
@@ -93,6 +100,7 @@ namespace ComlabSystem
                     updateCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
                     updateCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
                     updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    updateCmd.Parameters.AddWithValue("@Status", status);
 
                     updateCmd.ExecuteNonQuery();
                 }
@@ -162,6 +170,13 @@ namespace ComlabSystem
 
 
 
+
+
+
+
+
+
+
     private void UserShowBtm_Click(object sender, EventArgs e)
         {
             UserFormPNL.BringToFront();
@@ -180,7 +195,7 @@ namespace ComlabSystem
             AdminFormDialog.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
             AdminFormDialog.Icon = MessageDialogIcon.Warning;     // Question icon
             AdminFormDialog.Caption = "Administrator";
-            AdminFormDialog.Text = "Only Administrator is allowed here do you want to procced?";
+            AdminFormDialog.Text = "Only Admin is allowed here, do you want to procced?";
 
             AdminFormDialog.Style = MessageDialogStyle.Light;
 
@@ -230,6 +245,8 @@ namespace ComlabSystem
 
 
 
+
+
         //Student Login
         private int retryAttempts = 5;
         private int delayTimeInSeconds = 30; // Starts with 30 seconds
@@ -266,44 +283,39 @@ namespace ComlabSystem
 
                     if (userTable.Rows.Count > 0)
                     {
-                        // Check if the password is correct
                         var userRow = userTable.Rows[0];
                         string storedPassword = userRow["UPassword"].ToString();
                         string archiveStatus = userRow["ArchiveStatus"].ToString();
 
                         if (storedPassword == password)
                         {
-                            // Check if account is archived
                             if (archiveStatus == "Archived")
                             {
-                                // Show message if the account is archived
                                 WrongAttemptMsgBox.Text = "This account has been removed.";
                                 WrongAttemptMsgBox.Show();
                                 return;
                             }
 
-                            // Successful login - reset attempts and timer
                             retryAttempts = 5;
-                            delayTimeInSeconds = 30; // Reset to 30 seconds for next time
+                            delayTimeInSeconds = 30;
                             retryTimer.Stop();
                             RetryAttemptTimeLabel.Text = "";
 
-                            // Update UserList table to set Status to "Online" and LastUnitUsed
                             UpdateUserStatusAndUnit(studentID);
 
-                            // Insert successful login notification into Notifications table
+                            string userID = userRow["UserID"].ToString();
+                            UpdateUnitListUserID(userID);
+
                             string lName = userRow["LastName"].ToString();
                             string fName = userRow["FirstName"].ToString();
                             InsertLoginAction(studentID, lName, fName);
 
-                            // Show user form and hide login form
                             Form userForm = new user();
                             userForm.Show();
                             this.Hide();
                         }
                         else
                         {
-                            // Incorrect password
                             retryAttempts--;
                             WrongAttemptMsgBox.Text = "Wrong Password!";
                             WrongAttemptMsgBox.Show();
@@ -313,7 +325,6 @@ namespace ComlabSystem
                     }
                     else
                     {
-                        // Incorrect student ID
                         retryAttempts--;
                         WrongAttemptMsgBox.Text = "Wrong Student ID!";
                         WrongAttemptMsgBox.Show();
@@ -436,12 +447,25 @@ namespace ComlabSystem
                 try
                 {
                     connection.Open();
-                    // Insert into Logs table instead of Notifications table
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Logs (StudentID, Action, Timestamp) VALUES (@StudentID, @Action, @Timestamp)", connection);
-                    cmd.Parameters.AddWithValue("@StudentID", studentID);
-                    cmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName}.");
-                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    cmd.ExecuteNonQuery();
+
+                    // Retrieve UserID based on the StudentID
+                    SqlCommand userCmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
+                    userCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    int userID = (int)userCmd.ExecuteScalar();
+
+                    // Retrieve UnitID based on the computer name
+                    SqlCommand unitCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                    unitCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    int unitID = (int)unitCmd.ExecuteScalar();
+
+                    // Insert into Logs table
+                    SqlCommand logCmd = new SqlCommand(
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp) VALUES (@UnitID, @UserID, @Action, @Timestamp)", connection);
+                    logCmd.Parameters.AddWithValue("@UnitID", unitID);
+                    logCmd.Parameters.AddWithValue("@UserID", userID);
+                    logCmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName} at " + DateTime.Now + ".");
+                    logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    logCmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
@@ -450,93 +474,224 @@ namespace ComlabSystem
             }
         }
 
+        // New method to update UserID in the UnitList table based on the logged-in user's ID
+        private void UpdateUnitListUserID(string userID)
+        {
+            string computerName = UnitNameLabel.Text; // Current computer unit name
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE UnitList SET UserID = @UserID, Status = @Status WHERE ComputerName = @ComputerName", connection);
+                    cmd.Parameters.AddWithValue("@UserID", userID);
+                    cmd.Parameters.AddWithValue("@Status", "Online");
+                    cmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update UnitList UserID: " + ex.Message);
+
+                }
+            }
+        }
 
 
 
 
 
+
+
+
+
+
+        // Admin Login
+        private int adminRetryAttempts = 3;
+        private int adminDelayTimeInSeconds = 30; // Initial delay of 30 seconds for admin
+        private Timer adminRetryTimer;
 
 
         private void AdminLoginBtm_Click(object sender, EventArgs e)
         {
-            string username = AdminNameTB.Text;
-            string password = AdminPassTB.Text;
-
-            // Check specific hardcoded users first
-            if (username == "alfaizmac" && password == "1834561834561")
+            if (adminRetryAttempts > 0)
             {
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Admin dashboard = new Admin();
-                dashboard.Show();
-                this.Hide();
-            }
-            else if (username == "NBSPIsuperadmin" && password == "headadmin@128*")
-            {
-                MessageBox.Show("You successfully logged in as a head admin!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Admin dashboard = new Admin();
-                dashboard.Show();
-                this.Hide();
+                AuthenticateAdmin();
             }
             else
             {
-                // Validate against the database
-                if (IsUsernameValid(username))
+                StartAdminRetryTimer();
+                ShowAdminRetryMessage();
+            }
+        }
+        private void AuthenticateAdmin()
+        {
+            string adminName = AdminNameTB.Text.Trim();
+            string adminPassword = AdminPassTB.Text.Trim();
+            string computerName = UnitNameLabel.Text; // Get computer name
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
                 {
-                    // Username exists, so check if the password is correct
-                    if (ValidateAdminLogin(username, password))
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM AdminList WHERE UserName = @UserName", connection);
+                    cmd.Parameters.AddWithValue("@UserName", adminName);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable adminTable = new DataTable();
+                    adapter.Fill(adminTable);
+
+                    if (adminTable.Rows.Count > 0)
                     {
-                        MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Admin dashboard = new Admin();
-                        dashboard.Show();
-                        this.Hide();
+                        // Check password
+                        var adminRow = adminTable.Rows[0];
+                        string storedPassword = adminRow["Password"].ToString();
+
+                        if (storedPassword == adminPassword)
+                        {
+                            // Successful login
+                            adminRetryAttempts = 3;
+                            adminDelayTimeInSeconds = 30; // Reset to 30 seconds for next time
+                            adminRetryTimer.Stop();
+                            AdminRetryAttemptTimeLabel.Text = "";
+
+                            // Insert login success notification
+                            InsertAdminLoginNotification(adminName, computerName, true);
+
+                            // Show admin form and hide login form
+                            Form adminForm = new Admin();
+                            adminForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Incorrect password
+                            adminRetryAttempts--;
+                            RetryAttemptMsgBox.Text = "Wrong Password!";
+                            RetryAttemptMsgBox.Show();
+                            AdminPassTB.Focus();
+                            HandleAdminFailedLogin(adminName, computerName);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Incorrect password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        AdminPassTB.Focus();  // Focus on password textbox
+                        // Incorrect username
+                        adminRetryAttempts--;
+                        RetryAttemptMsgBox.Text = "Wrong User Name!";
+                        RetryAttemptMsgBox.Show();
+                        AdminNameTB.Focus();
+                        HandleAdminFailedLogin(adminName, computerName);
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Username does not exist.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    AdminNameTB.Focus();  // Focus on username textbox
+                    MessageBox.Show("An error occurred: " + ex.Message);
                 }
             }
         }
-        private bool IsUsernameValid(string username)
-        {
-            string query = "SELECT COUNT(*) FROM AdminList WHERE UserName = @username";
 
+        private void HandleAdminFailedLogin(string adminName, string computerName)
+        {
+            if (adminRetryAttempts == 0)
+            {
+                StartAdminRetryTimer();
+                LogAdminUnsuccessfulAttempt(adminName, computerName);
+                ShowAdminRetryMessage();
+            }
+            else
+            {
+                AdminRetryAttemptTimeLabel.Text = $"Retry attempts left: {adminRetryAttempts}";
+            }
+        }
+
+        private void StartAdminRetryTimer()
+        {
+            adminRetryTimer.Start();
+            AdminRetryAttemptTimeLabel.Text = $"Wait {adminDelayTimeInSeconds} seconds to retry.";
+        }
+
+        private void AdminRetryTimer_Tick(object sender, EventArgs e)
+        {
+            if (adminDelayTimeInSeconds > 0)
+            {
+                adminDelayTimeInSeconds--;
+                AdminRetryAttemptTimeLabel.Text = $"Wait {adminDelayTimeInSeconds} seconds to retry.";
+            }
+            else
+            {
+                adminRetryTimer.Stop();
+                adminRetryAttempts = 3; // Reset attempts after waiting period
+                UpdateAdminRetryDelay(); // Increase delay time for next attempt
+                AdminRetryAttemptTimeLabel.Text = $"Retry attempts left: {adminRetryAttempts}";
+            }
+        }
+
+        private void UpdateAdminRetryDelay()
+        {
+            // Set delay to 15 minutes after first 30-second delay
+            adminDelayTimeInSeconds = 900; // 15 minutes in seconds
+        }
+
+        private void ShowAdminRetryMessage()
+        {
+            RetryAttemptMsgBox.Text = $"Too many failed attempts. Please wait {adminDelayTimeInSeconds / 60} minutes before trying again.";
+            RetryAttemptMsgBox.Show();
+        }
+
+        private void LogAdminUnsuccessfulAttempt(string adminName, string computerName)
+        {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                try
                 {
-                    command.Parameters.AddWithValue("@username", username);
                     connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    return count > 0;  // Return true if username exists
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
+                    cmd.Parameters.AddWithValue("@Message", $"Unsuccessful admin login attempt on computer {computerName} by user {adminName}.");
+                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to log unsuccessful admin attempt: " + ex.Message);
                 }
             }
         }
 
-        // Method to validate the username and password in the database
-        private bool ValidateAdminLogin(string username, string password)
+        private void InsertAdminLoginNotification(string adminName, string computerName, bool isSuccess)
         {
-            string query = "SELECT COUNT(*) FROM AdminList WHERE UserName = @username AND Password = @password";
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                try
                 {
-                    command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password);
                     connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    return count > 0;  // Return true if credentials are valid
+                    string statusMessage = isSuccess ? "successfully logged in" : "unsuccessful login attempt";
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
+                    cmd.Parameters.AddWithValue("@Message", $"{adminName} {statusMessage} as admin on {computerName} at {DateTime.Now}.");
+                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to log admin login notification: " + ex.Message);
                 }
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+        //Keydown Functions
         private void AdminPassTB_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) // Check if the Enter key was pressed
@@ -572,6 +727,21 @@ namespace ComlabSystem
                 UserLoginBtm.PerformClick(); // Simulate button click
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //SYSTEM FUNCTIONS
 
     }
 

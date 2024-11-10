@@ -1828,14 +1828,8 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
 
         private void SortButton_Click(object sender, EventArgs e)
         {
-            hideUserManagePnl();
-            UserFilterToggleBtm.Checked = false;
-            UserFilterPnl.Visible = false;
 
-            EditUserBtm.Checked = false;
-            AddUserBtm.Checked = false;
 
-            cancelAddingUser();
         }
 
         private void PrintToogleBtm_Click(object sender, EventArgs e)
@@ -1909,13 +1903,78 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
         {
             if (EditUserBtm.Checked == true)
             {
-                cancelAddingUser();
                 hideUserManagePnl();
                 UserEditPnl.Visible = true;
                 UserFilterPnl.Visible = false;
                 UserEditPnl.BringToFront();
                 AddUserBtm.Checked = false;
-                EditUserBtm.Checked = true;
+
+                // Check if all required fields contain text or selected values
+                if (!string.IsNullOrWhiteSpace(StudIDTB.Text) ||
+                    !string.IsNullOrWhiteSpace(StudentPasswordTB.Text) ||
+                    !string.IsNullOrWhiteSpace(LNameTB.Text) ||
+                    !string.IsNullOrWhiteSpace(FNameTB.Text) ||
+                    !string.IsNullOrWhiteSpace(EmailTB.Text) ||
+                    !string.IsNullOrWhiteSpace(ContactTB.Text) ||
+                    DepartmentCB.SelectedIndex != -1 ||
+                    ProgramCB.SelectedIndex != -1 ||
+                    YearLevelCB.SelectedIndex != -1)
+                {
+                    // Show confirmation dialog
+                    DialogResult result = MessageBox.Show(
+                        "Are you sure you want to cancel adding this user?",
+                        "Confirm Cancel",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+
+                    // If the user chooses 'Yes', proceed to cancel; otherwise, do nothing
+                    if (result == DialogResult.Yes)
+                    {
+                        // Clear the textboxes and reset combo boxes
+                        StudIDTB.Clear();
+                        StudentPasswordTB.Clear();
+                        LNameTB.Clear();
+                        FNameTB.Clear();
+                        EmailTB.Clear();
+                        ContactTB.Clear();
+                        DepartmentCB.SelectedIndex = -1;
+                        ProgramCB.SelectedIndex = -1;
+                        YearLevelCB.SelectedIndex = -1;
+
+                        AddUserBtm.Checked = false;
+                        UserAddPanel.Visible = false;
+                        uncheckedBtm();
+                        UserAddPanel.Hide();
+
+                        hideUserManagePnl();
+                        UserEditPnl.Visible = true;
+                        UserFilterPnl.Visible = false;
+                        UserEditPnl.BringToFront();
+                        AddUserBtm.Checked = false;
+                        EditUserBtm.Checked = true;
+
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                        UserFilterToggleBtm.Checked = false;
+                        EditUserBtm.Checked = false;
+                        UserListManageBtmsPL.Visible = true;
+                        UserListPrintDGV.BringToFront();
+
+                        UserListDGV.BringToFront();
+                        UserListPrintDGVFUnc();
+
+                        hideUserManagePnl();
+                        EditUserBtm.Checked = false;
+                        UserFilterPnl.Visible = false;
+                        AddUserBtm.Checked = true;
+                        UserAddPanel.Visible = true;
+                        UserAddPanel.BringToFront();
+
+                    }
+
+                }
             }
             else { UserEditPnl.Visible = false; }
         }
