@@ -31,12 +31,25 @@ namespace ComlabSystem
             retryTimer.Interval = 1000;  // Timer interval set to 1 second
             retryTimer.Tick += RetryTimer_Tick;
             RetryAttemptTimeLabel.Text = "";
+            AdminRetryAttemptTimeLabel.Text = "";
 
 
             adminRetryTimer = new Timer();
             adminRetryTimer.Interval = 1000; // Timer ticks every second
             adminRetryTimer.Tick += AdminRetryTimer_Tick;
 
+
+            // Initialize and start the timer
+            loginTimeoutTimer = new Timer();
+            loginTimeoutTimer.Tick += LoginTimeoutTimer_Tick;
+            loginTimeoutTimer.Interval = 1000; // Tick every 1 second
+            loginTimeoutTimer.Start();
+
+
+            // Initialize and configure the timer
+            loginCheckTimer = new Timer();
+            loginCheckTimer.Interval = 1000; // Check every second
+            loginCheckTimer.Tick += LoginCheckTimer_Tick;
         }
 
 
@@ -44,9 +57,25 @@ namespace ComlabSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             InsertOrUpdateUnitInfo();
+            loginTimeoutTimer.Start();
+
+
+            loginCheckTimer.Start();
+            // Configure form properties to make it unclosable
+            this.TopMost = true; // Keep the form on top
+
+
+            //Hide Labels that wrong the login form
+            StudUserLoginL.Visible = false;
+            StudPassLoginL.Visible = false;
+            AdminUserLoginL.Visible = false;
+            AdminPassLoginL.Visible = false;
         }
         public void InsertOrUpdateUnitInfo()
         {
+            // Define low storage threshold in GB
+            const double lowStorageThreshold = 10.0; // 10 GB
+
             // Get computer information
             string computerName = Environment.MachineName;
             string ram = GetTotalRAM();
@@ -103,6 +132,24 @@ namespace ComlabSystem
                     updateCmd.Parameters.AddWithValue("@Status", status);
 
                     updateCmd.ExecuteNonQuery();
+                }
+
+                // Check if available storage is below threshold
+                double availableStorageValue = Convert.ToDouble(availableStorage.Replace(" GB", ""));
+                if (availableStorageValue < lowStorageThreshold)
+                {
+                    // Insert notification if storage is low
+                    SqlCommand notificationCmd = new SqlCommand(
+                        @"INSERT INTO Notifications (Message, Timestamp) 
+                  VALUES (@Message, @Timestamp)",
+                        connection);
+
+                    string notificationMessage = $"Warning: Storage on {computerName} is running low. " +
+                                                 $"Available storage is {availableStorageValue} GB. Please take action to free up space.";
+                    notificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
+                    notificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+
+                    notificationCmd.ExecuteNonQuery();
                 }
             }
         }
@@ -291,8 +338,9 @@ namespace ComlabSystem
                         {
                             if (archiveStatus == "Archived")
                             {
-                                WrongAttemptMsgBox.Text = "This account has been removed.";
-                                WrongAttemptMsgBox.Show();
+                                AccountRemovedMsgBox.Caption = "Account Removed";
+                                AccountRemovedMsgBox.Text = "The account you are trying to access has been removed. Please contact support.";
+                                AccountRemovedMsgBox.Show();
                                 return;
                             }
 
@@ -311,14 +359,19 @@ namespace ComlabSystem
                             InsertLoginAction(studentID, lName, fName);
 
                             Form userForm = new user();
+                            ResetLoginTimeoutTimer();
+
+                            userIsLoggedIn = true;
+                            loginCheckTimer.Stop(); // Stop the timer after successful login
+                            this.TopMost = false; // Allow other applications to come to the front
+
                             userForm.Show();
                             this.Hide();
                         }
                         else
                         {
                             retryAttempts--;
-                            WrongAttemptMsgBox.Text = "Wrong Password!";
-                            WrongAttemptMsgBox.Show();
+                            StudPassLoginL.Visible = true;
                             UserPassTextBox.Focus();
                             HandleFailedLogin();
                         }
@@ -326,8 +379,7 @@ namespace ComlabSystem
                     else
                     {
                         retryAttempts--;
-                        WrongAttemptMsgBox.Text = "Wrong Student ID!";
-                        WrongAttemptMsgBox.Show();
+                        StudUserLoginL.Visible = true;
                         UserIDTextBox.Focus();
                         HandleFailedLogin();
                     }
@@ -390,8 +442,9 @@ namespace ComlabSystem
 
         private void ShowRetryMessage()
         {
-            RetryAttemptMsgBox.Text = $"Too many failed attempts. Please wait {delayTimeInSeconds/ 60} minutes before trying again.";
-            RetryAttemptMsgBox.Show();
+            FailedAttempCountdownMsgBox.Caption = "Too many attempts.";
+            FailedAttempCountdownMsgBox.Text = $"Too many unsuccessful login attempts. Please wait {adminDelayTimeInSeconds / 60} minutes before trying again.";
+            FailedAttempCountdownMsgBox.Show();
         }
 
         private void LogUnsuccessfulAttempt(string studentID)
@@ -562,6 +615,12 @@ namespace ComlabSystem
 
                             // Show admin form and hide login form
                             Form adminForm = new Admin();
+                            ResetLoginTimeoutTimer();
+
+                            userIsLoggedIn = true;
+                            loginCheckTimer.Stop(); // Stop the timer after successful login
+                            this.TopMost = false; // Allow other applications to come to the front
+
                             adminForm.Show();
                             this.Hide();
                         }
@@ -569,8 +628,7 @@ namespace ComlabSystem
                         {
                             // Incorrect password
                             adminRetryAttempts--;
-                            RetryAttemptMsgBox.Text = "Wrong Password!";
-                            RetryAttemptMsgBox.Show();
+                            AdminPassLoginL.Visible = true;
                             AdminPassTB.Focus();
                             HandleAdminFailedLogin(adminName, computerName);
                         }
@@ -579,8 +637,7 @@ namespace ComlabSystem
                     {
                         // Incorrect username
                         adminRetryAttempts--;
-                        RetryAttemptMsgBox.Text = "Wrong User Name!";
-                        RetryAttemptMsgBox.Show();
+                        AdminUserLoginL.Visible = true;
                         AdminNameTB.Focus();
                         HandleAdminFailedLogin(adminName, computerName);
                     }
@@ -636,8 +693,9 @@ namespace ComlabSystem
 
         private void ShowAdminRetryMessage()
         {
-            RetryAttemptMsgBox.Text = $"Too many failed attempts. Please wait {adminDelayTimeInSeconds / 60} minutes before trying again.";
-            RetryAttemptMsgBox.Show();
+            FailedAttempCountdownMsgBox.Caption = "Too many attempts.";
+            FailedAttempCountdownMsgBox.Text = $"Too many unsuccessful login attempts. Please wait {adminDelayTimeInSeconds / 60} minutes before trying again.";
+            FailedAttempCountdownMsgBox.Show();
         }
 
         private void LogAdminUnsuccessfulAttempt(string adminName, string computerName)
@@ -678,9 +736,6 @@ namespace ComlabSystem
                 }
             }
         }
-
-
-
 
 
 
@@ -741,9 +796,112 @@ namespace ComlabSystem
 
 
 
+
         //SYSTEM FUNCTIONS
 
+        // Timer for the auto-shutdown
+        private Timer loginTimeoutTimer;
+        private int countdownTime = 180; // 3 minutes in seconds
+    
+
+    private void LoginTimeoutTimer_Tick(object sender, EventArgs e)
+    {
+        countdownTime--;
+
+        // Show countdown form at 2 minutes (120 seconds)
+        if (countdownTime == 120)
+        {
+            ShowCountdownForm();
+        }
+
+        // Check if time is up (3 minutes)
+        if (countdownTime <= 0)
+        {
+            loginTimeoutTimer.Stop();
+            InitiateShutdown();
+        }
     }
 
-  
+    // Show the countdown form to warn the user
+    private void ShowCountdownForm()
+    {
+        CountdownForm countdownForm = new CountdownForm();
+        countdownForm.Show();
+    }
+
+    // Initiate the shutdown process
+    private void InitiateShutdown()
+    {
+        try
+        {
+            // Command to shut down the computer
+            System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Failed to initiate shutdown: " + ex.Message);
+        }
+    }
+
+        private void ResetLoginTimeoutTimer()
+        {
+            countdownTime = 180; // Reset to 3 minutes
+            loginTimeoutTimer.Stop(); // Stop the timer
+        }
+
+
+
+
+        private Timer loginCheckTimer;
+        private bool userIsLoggedIn = false; // Set to true after successful login
+
+        // Timer tick event to keep Form1 on top and in focus
+        private void LoginCheckTimer_Tick(object sender, EventArgs e)
+        {
+            if (!this.Focused)
+            {
+                this.BringToFront();
+                this.Activate();
+            }
+        }
+        // Prevent the form from closing if the user is not logged in
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!userIsLoggedIn)
+            {
+                e.Cancel = true;
+                // Display the message box with a more detailed and helpful message
+                ClosingTheAppMsgBox.Text = "You need to sign in to access the system. Please enter your username and password to continue.";
+                ClosingTheAppMsgBox.Caption =  "Sign In Required";
+                ClosingTheAppMsgBox.Show();
+
+            }
+            else
+            {
+                base.OnFormClosing(e);
+            }
+        }
+
+
+        //Hide Labels that wrong the login form
+        private void UserIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            StudUserLoginL.Visible = false;
+        }
+
+        private void UserPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+            StudPassLoginL.Visible = false;
+        }
+
+        private void AdminNameTB_TextChanged(object sender, EventArgs e)
+        {
+            AdminUserLoginL.Visible = false;
+        }
+
+        private void AdminPassTB_TextChanged(object sender, EventArgs e)
+        {
+            AdminPassLoginL.Visible = false;
+        }
+    }
 }

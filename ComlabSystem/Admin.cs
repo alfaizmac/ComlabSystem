@@ -53,5 +53,16 @@ namespace ComlabSystem
             // Add the UserControl to the panel
             MainPNL.Controls.Add(myControl);
         }
+
+
+
+
+
+        private void SignOutBtm_Click(object sender, EventArgs e)
+        {
+            Form1 countdownForm = new Form1();
+            countdownForm.Show();
+            this.Close();
+        }
     }
 }
