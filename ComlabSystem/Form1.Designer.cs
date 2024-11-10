@@ -59,7 +59,7 @@
             this.ShowAdminPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.UnitName = new System.Windows.Forms.Label();
+            this.UnitNameLabel = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.UserFormPNL.SuspendLayout();
             this.AdminFormPNL.SuspendLayout();
@@ -535,24 +535,24 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackgroundImage = global::ComlabSystem.Properties.Resources.LlginFOrm;
-            this.guna2Panel1.Controls.Add(this.UnitName);
+            this.guna2Panel1.Controls.Add(this.UnitNameLabel);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(960, 1080);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // UnitName
+            // UnitNameLabel
             // 
-            this.UnitName.AutoSize = true;
-            this.UnitName.BackColor = System.Drawing.Color.Transparent;
-            this.UnitName.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UnitName.Location = new System.Drawing.Point(265, 770);
-            this.UnitName.Name = "UnitName";
-            this.UnitName.Size = new System.Drawing.Size(415, 65);
-            this.UnitName.TabIndex = 0;
-            this.UnitName.Text = "Comlab 2 - PC 10";
+            this.UnitNameLabel.AutoSize = true;
+            this.UnitNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.UnitNameLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.UnitNameLabel.Location = new System.Drawing.Point(265, 770);
+            this.UnitNameLabel.Name = "UnitNameLabel";
+            this.UnitNameLabel.Size = new System.Drawing.Size(415, 65);
+            this.UnitNameLabel.TabIndex = 0;
+            this.UnitNameLabel.Text = "Comlab 2 - PC 10";
             // 
             // Form1
             // 
@@ -564,6 +564,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.UserFormPNL.ResumeLayout(false);
             this.UserFormPNL.PerformLayout();
@@ -606,7 +607,7 @@
         private Guna.UI2.WinForms.Guna2MessageDialog AdminFormDialog;
         private Guna.UI2.WinForms.Guna2CircleButton ShowUserPassBtm;
         private Guna.UI2.WinForms.Guna2CircleButton ShowAdminPassBtm;
-        private System.Windows.Forms.Label UnitName;
+        private System.Windows.Forms.Label UnitNameLabel;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label RetryAttemptTimeLabel;
         private Guna.UI2.WinForms.Guna2MessageDialog RetryAttemptMsgBox;

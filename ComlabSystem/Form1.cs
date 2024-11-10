@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Management;
+using System.Net;
 
 
 namespace ComlabSystem
@@ -23,7 +25,7 @@ namespace ComlabSystem
             UserPassTextBox.UseSystemPasswordChar = true;
             AdminPassTB.UseSystemPasswordChar = true;
 
-            UnitName.Text = Environment.MachineName;
+            UnitNameLabel.Text = Environment.MachineName;
             retryTimer = new Timer();
             retryTimer.Interval = 1000;  // Timer interval set to 1 second
             retryTimer.Tick += RetryTimer_Tick;
@@ -31,8 +33,136 @@ namespace ComlabSystem
         }
 
 
+        //Automatically add the Specifications on UnitlIst
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            InsertOrUpdateUnitInfo();
+        }
+        public void InsertOrUpdateUnitInfo()
+        {
+            // Get computer information
+            string computerName = Environment.MachineName;
+            string ram = GetTotalRAM();
+            string processor = GetProcessorName();
+            string storage = GetTotalStorage();
+            string availableStorage = GetAvailableStorage();
+            string ipAddress = GetLocalIPAddress();
+            string status = "Online"; // Default status
 
-        private void UserShowBtm_Click(object sender, EventArgs e)
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Check if the computer is already in the UnitList
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                checkCmd.Parameters.AddWithValue("@ComputerName", computerName);
+
+                int recordCount = (int)checkCmd.ExecuteScalar();
+
+                if (recordCount == 0)
+                {
+                    // Insert new record if not found
+                    SqlCommand insertCmd = new SqlCommand(
+                        @"INSERT INTO UnitList (ComputerName, Ram, Processor, Storage, AvailableStorage, IPAddress, Status) 
+                  VALUES (@ComputerName, @Ram, @Processor, @Storage, @AvailableStorage, @IPAddress, @Status)",
+                        connection);
+
+                    insertCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    insertCmd.Parameters.AddWithValue("@Ram", ram);
+                    insertCmd.Parameters.AddWithValue("@Processor", processor);
+                    insertCmd.Parameters.AddWithValue("@Storage", storage);
+                    insertCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
+                    insertCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
+                    insertCmd.Parameters.AddWithValue("@Status", status);
+
+                    insertCmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    // Update existing record if found (keeping Status as-is)
+                    SqlCommand updateCmd = new SqlCommand(
+                        @"UPDATE UnitList 
+                  SET Ram = @Ram, Processor = @Processor, Storage = @Storage, 
+                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress 
+                  WHERE ComputerName = @ComputerName",
+                        connection);
+
+                    updateCmd.Parameters.AddWithValue("@Ram", ram);
+                    updateCmd.Parameters.AddWithValue("@Processor", processor);
+                    updateCmd.Parameters.AddWithValue("@Storage", storage);
+                    updateCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
+                    updateCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
+                    updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
+
+                    updateCmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private string GetTotalRAM()
+        {
+            double totalMemory = 0;
+            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Capacity FROM Win32_PhysicalMemory"))
+            {
+                foreach (ManagementObject obj in searcher.Get())
+                {
+                    totalMemory += Convert.ToDouble(obj["Capacity"]);
+                }
+            }
+            return $"{Math.Round(totalMemory / (1024 * 1024 * 1024), 2)} GB"; // Convert bytes to GB
+        }
+
+        private string GetProcessorName()
+        {
+            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Name FROM Win32_Processor"))
+            {
+                foreach (ManagementObject obj in searcher.Get())
+                {
+                    return obj["Name"].ToString();
+                }
+            }
+            return "Unknown Processor";
+        }
+
+        private string GetTotalStorage()
+        {
+            double totalStorage = 0;
+            foreach (var drive in System.IO.DriveInfo.GetDrives().Where(d => d.IsReady))
+            {
+                totalStorage += drive.TotalSize;
+            }
+            return $"{Math.Round(totalStorage / (1024 * 1024 * 1024), 2)} GB"; // Convert bytes to GB
+        }
+
+        private string GetAvailableStorage()
+        {
+            double availableStorage = 0;
+            foreach (var drive in System.IO.DriveInfo.GetDrives().Where(d => d.IsReady))
+            {
+                availableStorage += drive.AvailableFreeSpace;
+            }
+            return $"{Math.Round(availableStorage / (1024 * 1024 * 1024), 2)} GB"; // Convert bytes to GB
+        }
+
+        private string GetLocalIPAddress()
+        {
+            string ipAddress = "Not Available";
+            foreach (IPAddress address in Dns.GetHostAddresses(Dns.GetHostName()))
+            {
+                if (address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    ipAddress = address.ToString();
+                    break;
+                }
+            }
+            return ipAddress;
+        }
+    
+
+
+
+
+    private void UserShowBtm_Click(object sender, EventArgs e)
         {
             UserFormPNL.BringToFront();
             AdminShowBtm.BringToFront();
@@ -139,9 +269,19 @@ namespace ComlabSystem
                         // Check if the password is correct
                         var userRow = userTable.Rows[0];
                         string storedPassword = userRow["UPassword"].ToString();
+                        string archiveStatus = userRow["ArchiveStatus"].ToString();
 
                         if (storedPassword == password)
                         {
+                            // Check if account is archived
+                            if (archiveStatus == "Archived")
+                            {
+                                // Show message if the account is archived
+                                WrongAttemptMsgBox.Text = "This account has been removed.";
+                                WrongAttemptMsgBox.Show();
+                                return;
+                            }
+
                             // Successful login - reset attempts and timer
                             retryAttempts = 5;
                             delayTimeInSeconds = 30; // Reset to 30 seconds for next time
@@ -154,7 +294,7 @@ namespace ComlabSystem
                             // Insert successful login notification into Notifications table
                             string lName = userRow["LastName"].ToString();
                             string fName = userRow["FirstName"].ToString();
-                            InsertLoginNotification(studentID, lName, fName);
+                            InsertLoginAction(studentID, lName, fName);
 
                             // Show user form and hide login form
                             Form userForm = new user();
@@ -245,7 +385,7 @@ namespace ComlabSystem
 
         private void LogUnsuccessfulAttempt(string studentID)
         {
-            string computerName = UnitName.Text; // Assuming UnitName label has been initialized
+            string computerName = UnitNameLabel.Text; // Assuming UnitName label has been initialized
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -266,7 +406,7 @@ namespace ComlabSystem
 
         private void UpdateUserStatusAndUnit(string studentID)
         {
-            string computerName = UnitName.Text; // Get the current computer unit name
+            string computerName = UnitNameLabel.Text; // Get the current computer unit name
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -286,23 +426,26 @@ namespace ComlabSystem
             }
         }
 
-        private void InsertLoginNotification(string studentID, string lastName, string firstName)
+        // Updated method name and SQL query to log action in the Logs table
+        private void InsertLoginAction(string studentID, string lastName, string firstName)
         {
-            string computerName = UnitName.Text; // Get the current computer unit name
+            string computerName = UnitNameLabel.Text; // Get the current computer unit name
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
-                    cmd.Parameters.AddWithValue("@Message", $"{firstName} {lastName} (Student ID: {studentID}) has logged in on {computerName}.");
+                    // Insert into Logs table instead of Notifications table
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Logs (StudentID, Action, Timestamp) VALUES (@StudentID, @Action, @Timestamp)", connection);
+                    cmd.Parameters.AddWithValue("@StudentID", studentID);
+                    cmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName}.");
                     cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to insert login notification: " + ex.Message);
+                    MessageBox.Show("Failed to log login action: " + ex.Message);
                 }
             }
         }
@@ -429,6 +572,7 @@ namespace ComlabSystem
                 UserLoginBtm.PerformClick(); // Simulate button click
             }
         }
+
     }
 
   
