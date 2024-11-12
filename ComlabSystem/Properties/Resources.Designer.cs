@@ -63,6 +63,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3d_computer {
+            get {
+                object obj = ResourceManager.GetObject("3d-computer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admin_panel_settings {
             get {
                 object obj = ResourceManager.GetObject("admin-panel-settings", resourceCulture);
@@ -183,6 +193,36 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asdasdsa {
+            get {
+                object obj = ResourceManager.GetObject("asdasdsa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asdasdsa2 {
+            get {
+                object obj = ResourceManager.GetObject("asdasdsa2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asdasdsa23 {
+            get {
+                object obj = ResourceManager.GetObject("asdasdsa23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bar_chart {
             get {
                 object obj = ResourceManager.GetObject("bar-chart", resourceCulture);
@@ -256,6 +296,16 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap book2 {
             get {
                 object obj = ResourceManager.GetObject("book2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle {
+            get {
+                object obj = ResourceManager.GetObject("circle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +486,16 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap eye__2_ {
             get {
                 object obj = ResourceManager.GetObject("eye (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eye1 {
+            get {
+                object obj = ResourceManager.GetObject("eye1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -763,6 +823,26 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LockScreeen {
+            get {
+                object obj = ResourceManager.GetObject("LockScreeen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LockScreeen2 {
+            get {
+                object obj = ResourceManager.GetObject("LockScreeen2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logos {
             get {
                 object obj = ResourceManager.GetObject("logos", resourceCulture);
@@ -866,6 +946,16 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap password__1_1 {
             get {
                 object obj = ResourceManager.GetObject("password (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pause {
+            get {
+                object obj = ResourceManager.GetObject("pause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1063,6 +1153,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shut_down__2_ {
+            get {
+                object obj = ResourceManager.GetObject("shut-down (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sign_out {
             get {
                 object obj = ResourceManager.GetObject("sign-out", resourceCulture);
@@ -1103,6 +1203,36 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sign_out__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("sign-out (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sign_out__3_ {
+            get {
+                object obj = ResourceManager.GetObject("sign-out (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sign_out__3_1 {
+            get {
+                object obj = ResourceManager.GetObject("sign-out (3)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sign_out1 {
             get {
                 object obj = ResourceManager.GetObject("sign-out1", resourceCulture);
@@ -1123,6 +1253,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TimerBg {
+            get {
+                object obj = ResourceManager.GetObject("TimerBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trash {
             get {
                 object obj = ResourceManager.GetObject("trash", resourceCulture);
@@ -1136,6 +1276,66 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap unarchive {
             get {
                 object obj = ResourceManager.GetObject("unarchive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uNit_BG {
+            get {
+                object obj = ResourceManager.GetObject("uNit BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uNit_BG1 {
+            get {
+                object obj = ResourceManager.GetObject("uNit BG1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uNit_BG2 {
+            get {
+                object obj = ResourceManager.GetObject("uNit BG2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uNit_BG22 {
+            get {
+                object obj = ResourceManager.GetObject("uNit BG22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_2sdasd {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-2sdasd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_3 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1193,6 +1393,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap User_BG {
+            get {
+                object obj = ResourceManager.GetObject("User BG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_circle {
             get {
                 object obj = ResourceManager.GetObject("user-circle", resourceCulture);
@@ -1216,6 +1426,16 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap user_circle__2_ {
             get {
                 object obj = ResourceManager.GetObject("user-circle (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_circle__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("user-circle (2)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

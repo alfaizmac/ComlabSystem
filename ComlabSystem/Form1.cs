@@ -18,6 +18,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace ComlabSystem
 {
     public partial class Form1 : Form
+
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
         public Form1()
@@ -358,13 +359,19 @@ namespace ComlabSystem
                             string fName = userRow["FirstName"].ToString();
                             InsertLoginAction(studentID, lName, fName);
 
-                            Form userForm = new user();
+                            // Create instance of user form and pass Student ID to StudIDLabel
+                            user userForm = new user
+                            {
+                                StudentID = studentID // Pass the Student ID to the user form
+                            };
+
                             ResetLoginTimeoutTimer();
 
                             userIsLoggedIn = true;
                             loginCheckTimer.Stop(); // Stop the timer after successful login
                             this.TopMost = false; // Allow other applications to come to the front
 
+                            // Show the user form and hide the login form
                             userForm.Show();
                             this.Hide();
                         }
