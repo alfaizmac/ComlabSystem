@@ -90,6 +90,34 @@
             this.FLNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.UserPnL = new Guna.UI2.WinForms.Guna2Panel();
+            this.UserPausePnL = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.SignOutBtm = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.AllowShutDownL = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AllowSignOutL = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LockScreenStudIDLabel = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.UserNameL = new System.Windows.Forms.Label();
+            this.LockScreenStudPassLoginL = new System.Windows.Forms.Label();
+            this.ShutDownBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.UserLockScreenShowPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.UserLoginBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.LockScreenPassTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label26 = new System.Windows.Forms.Label();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -109,6 +137,13 @@
             this.guna2Panel10.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.UserPnL.SuspendLayout();
+            this.UserPausePnL.SuspendLayout();
+            this.guna2Panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            this.guna2Panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            this.guna2Panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -479,7 +514,7 @@
             this.ReportPnl.Controls.Add(this.label13);
             this.ReportPnl.Controls.Add(this.guna2Panel8);
             this.ReportPnl.FillColor = System.Drawing.Color.Transparent;
-            this.ReportPnl.Location = new System.Drawing.Point(139, 39);
+            this.ReportPnl.Location = new System.Drawing.Point(141, 47);
             this.ReportPnl.Name = "ReportPnl";
             this.ReportPnl.Size = new System.Drawing.Size(322, 287);
             this.ReportPnl.TabIndex = 38;
@@ -563,9 +598,9 @@
             this.ChangePasswordPNL.Controls.Add(this.label11);
             this.ChangePasswordPNL.Controls.Add(this.guna2Panel9);
             this.ChangePasswordPNL.FillColor = System.Drawing.Color.White;
-            this.ChangePasswordPNL.Location = new System.Drawing.Point(150, 9);
+            this.ChangePasswordPNL.Location = new System.Drawing.Point(153, 37);
             this.ChangePasswordPNL.Name = "ChangePasswordPNL";
-            this.ChangePasswordPNL.Size = new System.Drawing.Size(300, 328);
+            this.ChangePasswordPNL.Size = new System.Drawing.Size(300, 306);
             this.ChangePasswordPNL.TabIndex = 39;
             // 
             // StudPassLoginL
@@ -610,7 +645,7 @@
             this.ShowUserPassBtm.ForeColor = System.Drawing.Color.White;
             this.ShowUserPassBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.eye__2_;
             this.ShowUserPassBtm.Image = global::ComlabSystem.Properties.Resources.eye__1_;
-            this.ShowUserPassBtm.Location = new System.Drawing.Point(244, 159);
+            this.ShowUserPassBtm.Location = new System.Drawing.Point(244, 140);
             this.ShowUserPassBtm.Name = "ShowUserPassBtm";
             this.ShowUserPassBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.ShowUserPassBtm.Size = new System.Drawing.Size(25, 25);
@@ -632,7 +667,7 @@
             this.ChangePassSaveBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ChangePassSaveBtm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ChangePassSaveBtm.IndicateFocus = true;
-            this.ChangePassSaveBtm.Location = new System.Drawing.Point(94, 269);
+            this.ChangePassSaveBtm.Location = new System.Drawing.Point(94, 255);
             this.ChangePassSaveBtm.Name = "ChangePassSaveBtm";
             this.ChangePassSaveBtm.PressedColor = System.Drawing.Color.Red;
             this.ChangePassSaveBtm.Size = new System.Drawing.Size(109, 43);
@@ -645,7 +680,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label9.Location = new System.Drawing.Point(34, 197);
+            this.label9.Location = new System.Drawing.Point(34, 178);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 21);
             this.label9.TabIndex = 17;
@@ -668,7 +703,7 @@
             this.ConfirmNewPassTB.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ConfirmNewPassTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ConfirmNewPassTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.ConfirmNewPassTB.Location = new System.Drawing.Point(25, 220);
+            this.ConfirmNewPassTB.Location = new System.Drawing.Point(25, 201);
             this.ConfirmNewPassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ConfirmNewPassTB.Name = "ConfirmNewPassTB";
             this.ConfirmNewPassTB.PasswordChar = '●';
@@ -696,7 +731,7 @@
             this.NewPassTB.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.NewPassTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.NewPassTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.NewPassTB.Location = new System.Drawing.Point(25, 151);
+            this.NewPassTB.Location = new System.Drawing.Point(25, 132);
             this.NewPassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewPassTB.Name = "NewPassTB";
             this.NewPassTB.PasswordChar = '\0';
@@ -711,7 +746,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label10.Location = new System.Drawing.Point(34, 127);
+            this.label10.Location = new System.Drawing.Point(34, 108);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(116, 21);
             this.label10.TabIndex = 14;
@@ -823,7 +858,6 @@
             this.guna2Panel7.Controls.Add(this.guna2Panel2);
             this.guna2Panel7.Controls.Add(this.label1);
             this.guna2Panel7.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel7.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(600, 350);
@@ -978,19 +1012,420 @@
             this.guna2CirclePictureBox1.TabIndex = 37;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // UserPnL
+            // 
+            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
+            this.UserPnL.Controls.Add(this.ReportPnl);
+            this.UserPnL.Controls.Add(this.SideBar);
+            this.UserPnL.Controls.Add(this.guna2Panel1);
+            this.UserPnL.Controls.Add(this.guna2Panel7);
+            this.UserPnL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserPnL.Location = new System.Drawing.Point(0, 0);
+            this.UserPnL.Name = "UserPnL";
+            this.UserPnL.Size = new System.Drawing.Size(600, 350);
+            this.UserPnL.TabIndex = 44;
+            // 
+            // UserPausePnL
+            // 
+            this.UserPausePnL.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.UserPausePnL.Controls.Add(this.guna2Panel13);
+            this.UserPausePnL.Controls.Add(this.guna2Panel15);
+            this.UserPausePnL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserPausePnL.Location = new System.Drawing.Point(0, 0);
+            this.UserPausePnL.Name = "UserPausePnL";
+            this.UserPausePnL.Size = new System.Drawing.Size(600, 350);
+            this.UserPausePnL.TabIndex = 45;
+            // 
+            // guna2Panel13
+            // 
+            this.guna2Panel13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel13.BackgroundImage = global::ComlabSystem.Properties.Resources.LockScreeen2;
+            this.guna2Panel13.Controls.Add(this.label3);
+            this.guna2Panel13.Controls.Add(this.guna2CirclePictureBox2);
+            this.guna2Panel13.Controls.Add(this.SignOutBtm);
+            this.guna2Panel13.Controls.Add(this.AllowShutDownL);
+            this.guna2Panel13.Controls.Add(this.label7);
+            this.guna2Panel13.Controls.Add(this.AllowSignOutL);
+            this.guna2Panel13.Controls.Add(this.label15);
+            this.guna2Panel13.Controls.Add(this.label16);
+            this.guna2Panel13.Controls.Add(this.label17);
+            this.guna2Panel13.Controls.Add(this.label18);
+            this.guna2Panel13.Controls.Add(this.label19);
+            this.guna2Panel13.Controls.Add(this.guna2Panel14);
+            this.guna2Panel13.Controls.Add(this.LockScreenStudPassLoginL);
+            this.guna2Panel13.Controls.Add(this.ShutDownBtm);
+            this.guna2Panel13.Controls.Add(this.UserLockScreenShowPassBtm);
+            this.guna2Panel13.Controls.Add(this.guna2CirclePictureBox3);
+            this.guna2Panel13.Controls.Add(this.UserLoginBtm);
+            this.guna2Panel13.Controls.Add(this.label24);
+            this.guna2Panel13.Controls.Add(this.LockScreenPassTB);
+            this.guna2Panel13.Controls.Add(this.label25);
+            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel13.Location = new System.Drawing.Point(-360, 0);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.Size = new System.Drawing.Size(960, 350);
+            this.guna2Panel13.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(42, 1047);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(255, 17);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Please shutdown the computer properly.";
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.circle;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(15, 1043);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 39;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // SignOutBtm
+            // 
+            this.SignOutBtm.BackColor = System.Drawing.Color.Transparent;
+            this.SignOutBtm.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.SignOutBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.sign_out__3_;
+            this.SignOutBtm.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.SignOutBtm.Image = global::ComlabSystem.Properties.Resources.sign_out__2_1;
+            this.SignOutBtm.ImageOffset = new System.Drawing.Point(0, 0);
+            this.SignOutBtm.ImageRotate = 0F;
+            this.SignOutBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.SignOutBtm.Location = new System.Drawing.Point(918, 12);
+            this.SignOutBtm.Name = "SignOutBtm";
+            this.SignOutBtm.PressedState.Image = global::ComlabSystem.Properties.Resources.sign_out__3_1;
+            this.SignOutBtm.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.SignOutBtm.Size = new System.Drawing.Size(30, 30);
+            this.SignOutBtm.TabIndex = 25;
+            this.SignOutBtm.Click += new System.EventHandler(this.SignOutBtm_Click);
+            // 
+            // AllowShutDownL
+            // 
+            this.AllowShutDownL.AutoSize = true;
+            this.AllowShutDownL.BackColor = System.Drawing.Color.Transparent;
+            this.AllowShutDownL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.AllowShutDownL.ForeColor = System.Drawing.Color.White;
+            this.AllowShutDownL.Location = new System.Drawing.Point(597, 447);
+            this.AllowShutDownL.Name = "AllowShutDownL";
+            this.AllowShutDownL.Size = new System.Drawing.Size(49, 21);
+            this.AllowShutDownL.TabIndex = 24;
+            this.AllowShutDownL.Text = "00:00";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(309, 447);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(293, 21);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Inactivity triggers automatic shutdown in";
+            // 
+            // AllowSignOutL
+            // 
+            this.AllowSignOutL.AutoSize = true;
+            this.AllowSignOutL.BackColor = System.Drawing.Color.Transparent;
+            this.AllowSignOutL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.AllowSignOutL.ForeColor = System.Drawing.Color.White;
+            this.AllowSignOutL.Location = new System.Drawing.Point(568, 421);
+            this.AllowSignOutL.Name = "AllowSignOutL";
+            this.AllowSignOutL.Size = new System.Drawing.Size(49, 21);
+            this.AllowSignOutL.TabIndex = 22;
+            this.AllowSignOutL.Text = "00:00";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(309, 421);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(263, 21);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Inactivity allows others to sign out in";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(290, 383);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 25);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Note:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(291, 478);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(313, 21);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Thank you for ensuring a secure workspace.";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(291, 346);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(375, 21);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Please enter the current user’s password to continue.";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(287, 309);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(245, 30);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "This computer is in use.";
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel14.BackgroundImage = global::ComlabSystem.Properties.Resources.asdasdsa23;
+            this.guna2Panel14.Controls.Add(this.LockScreenStudIDLabel);
+            this.guna2Panel14.Controls.Add(this.label21);
+            this.guna2Panel14.Controls.Add(this.UserNameL);
+            this.guna2Panel14.Location = new System.Drawing.Point(295, 541);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(374, 129);
+            this.guna2Panel14.TabIndex = 16;
+            // 
+            // LockScreenStudIDLabel
+            // 
+            this.LockScreenStudIDLabel.AutoSize = true;
+            this.LockScreenStudIDLabel.BackColor = System.Drawing.Color.Transparent;
+            this.LockScreenStudIDLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LockScreenStudIDLabel.ForeColor = System.Drawing.Color.White;
+            this.LockScreenStudIDLabel.Location = new System.Drawing.Point(57, 57);
+            this.LockScreenStudIDLabel.Name = "LockScreenStudIDLabel";
+            this.LockScreenStudIDLabel.Size = new System.Drawing.Size(35, 25);
+            this.LockScreenStudIDLabel.TabIndex = 14;
+            this.LockScreenStudIDLabel.Text = "C2";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(13, 11);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(136, 30);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Current User";
+            // 
+            // UserNameL
+            // 
+            this.UserNameL.AutoSize = true;
+            this.UserNameL.BackColor = System.Drawing.Color.Transparent;
+            this.UserNameL.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameL.ForeColor = System.Drawing.Color.White;
+            this.UserNameL.Location = new System.Drawing.Point(58, 82);
+            this.UserNameL.Name = "UserNameL";
+            this.UserNameL.Size = new System.Drawing.Size(117, 25);
+            this.UserNameL.TabIndex = 15;
+            this.UserNameL.Text = "Mohammad";
+            // 
+            // LockScreenStudPassLoginL
+            // 
+            this.LockScreenStudPassLoginL.AutoSize = true;
+            this.LockScreenStudPassLoginL.BackColor = System.Drawing.Color.Transparent;
+            this.LockScreenStudPassLoginL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.LockScreenStudPassLoginL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.LockScreenStudPassLoginL.Location = new System.Drawing.Point(569, 716);
+            this.LockScreenStudPassLoginL.Name = "LockScreenStudPassLoginL";
+            this.LockScreenStudPassLoginL.Size = new System.Drawing.Size(87, 13);
+            this.LockScreenStudPassLoginL.TabIndex = 12;
+            this.LockScreenStudPassLoginL.Text = "Invalid Password";
+            // 
+            // ShutDownBtm
+            // 
+            this.ShutDownBtm.Animated = true;
+            this.ShutDownBtm.BackColor = System.Drawing.Color.Transparent;
+            this.ShutDownBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ShutDownBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ShutDownBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ShutDownBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ShutDownBtm.FillColor = System.Drawing.Color.Transparent;
+            this.ShutDownBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ShutDownBtm.ForeColor = System.Drawing.Color.White;
+            this.ShutDownBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
+            this.ShutDownBtm.Image = global::ComlabSystem.Properties.Resources.shut_down__2_;
+            this.ShutDownBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.ShutDownBtm.Location = new System.Drawing.Point(918, 1038);
+            this.ShutDownBtm.Name = "ShutDownBtm";
+            this.ShutDownBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ShutDownBtm.Size = new System.Drawing.Size(30, 30);
+            this.ShutDownBtm.TabIndex = 4;
+            // 
+            // UserLockScreenShowPassBtm
+            // 
+            this.UserLockScreenShowPassBtm.Animated = true;
+            this.UserLockScreenShowPassBtm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(208)))), ((int)(((byte)(213)))));
+            this.UserLockScreenShowPassBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserLockScreenShowPassBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserLockScreenShowPassBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserLockScreenShowPassBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserLockScreenShowPassBtm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(208)))), ((int)(((byte)(213)))));
+            this.UserLockScreenShowPassBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UserLockScreenShowPassBtm.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.UserLockScreenShowPassBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.eye__2_;
+            this.UserLockScreenShowPassBtm.Image = global::ComlabSystem.Properties.Resources.eye1;
+            this.UserLockScreenShowPassBtm.ImageSize = new System.Drawing.Size(25, 25);
+            this.UserLockScreenShowPassBtm.Location = new System.Drawing.Point(633, 742);
+            this.UserLockScreenShowPassBtm.Name = "UserLockScreenShowPassBtm";
+            this.UserLockScreenShowPassBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.UserLockScreenShowPassBtm.Size = new System.Drawing.Size(32, 34);
+            this.UserLockScreenShowPassBtm.TabIndex = 9;
+            this.UserLockScreenShowPassBtm.Click += new System.EventHandler(this.UserLockScreenShowPassBtm_Click);
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox3.Image = global::ComlabSystem.Properties.Resources.user_circle__2_1;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(295, 206);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(93, 93);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox3.TabIndex = 0;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // UserLoginBtm
+            // 
+            this.UserLoginBtm.Animated = true;
+            this.UserLoginBtm.AutoRoundedCorners = true;
+            this.UserLoginBtm.BackColor = System.Drawing.Color.Transparent;
+            this.UserLoginBtm.BorderRadius = 21;
+            this.UserLoginBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserLoginBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserLoginBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserLoginBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserLoginBtm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.UserLoginBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLoginBtm.ForeColor = System.Drawing.Color.White;
+            this.UserLoginBtm.Location = new System.Drawing.Point(392, 817);
+            this.UserLoginBtm.Name = "UserLoginBtm";
+            this.UserLoginBtm.Size = new System.Drawing.Size(180, 45);
+            this.UserLoginBtm.TabIndex = 8;
+            this.UserLoginBtm.Text = "Login";
+            this.UserLoginBtm.Click += new System.EventHandler(this.UserLoginBtm_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(382, 225);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(264, 59);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Lock Screen";
+            // 
+            // LockScreenPassTB
+            // 
+            this.LockScreenPassTB.Animated = true;
+            this.LockScreenPassTB.BackColor = System.Drawing.Color.Transparent;
+            this.LockScreenPassTB.BorderRadius = 20;
+            this.LockScreenPassTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LockScreenPassTB.DefaultText = "";
+            this.LockScreenPassTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.LockScreenPassTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.LockScreenPassTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LockScreenPassTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.LockScreenPassTB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(208)))), ((int)(((byte)(213)))));
+            this.LockScreenPassTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.LockScreenPassTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LockScreenPassTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.LockScreenPassTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.LockScreenPassTB.Location = new System.Drawing.Point(295, 733);
+            this.LockScreenPassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LockScreenPassTB.Name = "LockScreenPassTB";
+            this.LockScreenPassTB.PasswordChar = '\0';
+            this.LockScreenPassTB.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.LockScreenPassTB.PlaceholderText = "********";
+            this.LockScreenPassTB.SelectedText = "";
+            this.LockScreenPassTB.Size = new System.Drawing.Size(374, 54);
+            this.LockScreenPassTB.TabIndex = 6;
+            this.LockScreenPassTB.TextChanged += new System.EventHandler(this.LockScreenPassTB_TextChanged);
+            this.LockScreenPassTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LockScreenPassTB_KeyDown);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(311, 709);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(79, 21);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "Password";
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.BackgroundImage = global::ComlabSystem.Properties.Resources.LlginFOrm;
+            this.guna2Panel15.Controls.Add(this.label26);
+            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2Panel15.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(960, 350);
+            this.guna2Panel15.TabIndex = 0;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label26.Location = new System.Drawing.Point(265, 770);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(415, 65);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Comlab 2 - PC 10";
+            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 350);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2Panel7);
-            this.Controls.Add(this.ReportPnl);
-            this.Controls.Add(this.ChangePasswordPNL);
+            this.Controls.Add(this.UserPnL);
+            this.Controls.Add(this.UserPausePnL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(600, 350);
             this.Name = "user";
             this.Text = "user";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.user_FormClosing);
             this.Load += new System.EventHandler(this.user_Load);
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
@@ -1020,6 +1455,16 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.UserPnL.ResumeLayout(false);
+            this.UserPausePnL.ResumeLayout(false);
+            this.guna2Panel13.ResumeLayout(false);
+            this.guna2Panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            this.guna2Panel14.ResumeLayout(false);
+            this.guna2Panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            this.guna2Panel15.ResumeLayout(false);
+            this.guna2Panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1086,5 +1531,33 @@
         private System.Windows.Forms.Label StudPassLoginL;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private Guna.UI2.WinForms.Guna2Button PauseBtm;
+        private Guna.UI2.WinForms.Guna2Panel UserPnL;
+        private Guna.UI2.WinForms.Guna2Panel UserPausePnL;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2ImageButton SignOutBtm;
+        private System.Windows.Forms.Label AllowShutDownL;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label AllowSignOutL;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
+        private System.Windows.Forms.Label LockScreenStudIDLabel;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label UserNameL;
+        private System.Windows.Forms.Label LockScreenStudPassLoginL;
+        private Guna.UI2.WinForms.Guna2CircleButton ShutDownBtm;
+        private Guna.UI2.WinForms.Guna2CircleButton UserLockScreenShowPassBtm;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
+        private Guna.UI2.WinForms.Guna2Button UserLoginBtm;
+        private System.Windows.Forms.Label label24;
+        private Guna.UI2.WinForms.Guna2TextBox LockScreenPassTB;
+        private System.Windows.Forms.Label label25;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private System.Windows.Forms.Label label26;
     }
 }

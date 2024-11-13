@@ -29,45 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
             this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -163,9 +133,9 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.NoArchiveListLabel = new System.Windows.Forms.Label();
+            this.UserListPrintDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ArchiveUserListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.UserListPrintDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UserEditPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.EditStudentIDTip = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -190,9 +160,6 @@
             this.EditLNameTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.StatisticPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.gunaChart2 = new Guna.Charts.WinForms.GunaChart();
-            this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
             this.SortToolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -209,12 +176,11 @@
             this.UserListManageBtmsPL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.UserListsGridPNL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveUserListDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).BeginInit();
             this.UserEditPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).BeginInit();
-            this.StatisticPNL.SuspendLayout();
             this.SuspendLayout();
             // 
             // UserSearchBar
@@ -331,7 +297,7 @@
             this.ArchiveUserListBtm.Size = new System.Drawing.Size(149, 45);
             this.ArchiveUserListBtm.TabIndex = 15;
             this.ArchiveUserListBtm.Text = "ARCHIVE";
-            this.ArchiveUserListBtm.TextOffset = new System.Drawing.Point(20, 0);
+            this.ArchiveUserListBtm.TextOffset = new System.Drawing.Point(15, 0);
             this.ArchiveUserListBtm.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.ArchiveUserListBtm.Click += new System.EventHandler(this.UserStatisticPanelShow_Click);
             // 
@@ -383,7 +349,6 @@
             // UserListPNL
             // 
             this.UserListPNL.Controls.Add(this.UserPNL);
-            this.UserListPNL.Controls.Add(this.StatisticPNL);
             this.UserListPNL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserListPNL.Location = new System.Drawing.Point(0, 0);
             this.UserListPNL.Name = "UserListPNL";
@@ -1813,6 +1778,81 @@
             this.NoArchiveListLabel.TabIndex = 18;
             this.NoArchiveListLabel.Text = "No Archive User";
             // 
+            // UserListPrintDGV
+            // 
+            this.UserListPrintDGV.AllowUserToAddRows = false;
+            this.UserListPrintDGV.AllowUserToDeleteRows = false;
+            this.UserListPrintDGV.AllowUserToResizeColumns = false;
+            this.UserListPrintDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.UserListPrintDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.UserListPrintDGV.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListPrintDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.UserListPrintDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserListPrintDGV.GridColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.Location = new System.Drawing.Point(0, 0);
+            this.UserListPrintDGV.MultiSelect = false;
+            this.UserListPrintDGV.Name = "UserListPrintDGV";
+            this.UserListPrintDGV.ReadOnly = true;
+            this.UserListPrintDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.UserListPrintDGV.RowHeadersVisible = false;
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UserListPrintDGV.RowTemplate.DividerHeight = 10;
+            this.UserListPrintDGV.RowTemplate.Height = 100;
+            this.UserListPrintDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.UserListPrintDGV.ShowCellErrors = false;
+            this.UserListPrintDGV.ShowCellToolTips = false;
+            this.UserListPrintDGV.ShowEditingIcon = false;
+            this.UserListPrintDGV.ShowRowErrors = false;
+            this.UserListPrintDGV.Size = new System.Drawing.Size(1561, 810);
+            this.UserListPrintDGV.TabIndex = 17;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.UserListPrintDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.UserListPrintDGV.ThemeStyle.HeaderStyle.Height = 60;
+            this.UserListPrintDGV.ThemeStyle.ReadOnly = true;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.Height = 100;
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // UserListDGV
             // 
             this.UserListDGV.AllowUserToAddRows = false;
@@ -1967,81 +2007,6 @@
             this.ArchiveUserListDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ArchiveUserListDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.ArchiveUserListDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ArchiveUserListDGV_CellClick);
-            // 
-            // UserListPrintDGV
-            // 
-            this.UserListPrintDGV.AllowUserToAddRows = false;
-            this.UserListPrintDGV.AllowUserToDeleteRows = false;
-            this.UserListPrintDGV.AllowUserToResizeColumns = false;
-            this.UserListPrintDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.UserListPrintDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListPrintDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.UserListPrintDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListPrintDGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.UserListPrintDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserListPrintDGV.GridColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.Location = new System.Drawing.Point(0, 0);
-            this.UserListPrintDGV.MultiSelect = false;
-            this.UserListPrintDGV.Name = "UserListPrintDGV";
-            this.UserListPrintDGV.ReadOnly = true;
-            this.UserListPrintDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UserListPrintDGV.RowHeadersVisible = false;
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserListPrintDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UserListPrintDGV.RowTemplate.DividerHeight = 10;
-            this.UserListPrintDGV.RowTemplate.Height = 100;
-            this.UserListPrintDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.UserListPrintDGV.ShowCellErrors = false;
-            this.UserListPrintDGV.ShowCellToolTips = false;
-            this.UserListPrintDGV.ShowEditingIcon = false;
-            this.UserListPrintDGV.ShowRowErrors = false;
-            this.UserListPrintDGV.Size = new System.Drawing.Size(1561, 810);
-            this.UserListPrintDGV.TabIndex = 17;
-            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.UserListPrintDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.UserListPrintDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListPrintDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.UserListPrintDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.UserListPrintDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListPrintDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.UserListPrintDGV.ThemeStyle.HeaderStyle.Height = 60;
-            this.UserListPrintDGV.ThemeStyle.ReadOnly = true;
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.Height = 100;
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.UserListPrintDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // UserEditPnl
             // 
@@ -2472,94 +2437,6 @@
             this.label32.TabIndex = 0;
             this.label32.Text = "EDIT USER";
             // 
-            // StatisticPNL
-            // 
-            this.StatisticPNL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.StatisticPNL.BackColor = System.Drawing.Color.Transparent;
-            this.StatisticPNL.Controls.Add(this.gunaChart2);
-            this.StatisticPNL.Controls.Add(this.gunaChart1);
-            this.StatisticPNL.FillColor = System.Drawing.Color.White;
-            this.StatisticPNL.Location = new System.Drawing.Point(28, 73);
-            this.StatisticPNL.MaximumSize = new System.Drawing.Size(1627, 947);
-            this.StatisticPNL.MinimumSize = new System.Drawing.Size(1308, 763);
-            this.StatisticPNL.Name = "StatisticPNL";
-            this.StatisticPNL.Radius = 10;
-            this.StatisticPNL.ShadowColor = System.Drawing.Color.Black;
-            this.StatisticPNL.ShadowDepth = 200;
-            this.StatisticPNL.ShadowShift = 10;
-            this.StatisticPNL.Size = new System.Drawing.Size(1627, 947);
-            this.StatisticPNL.TabIndex = 14;
-            // 
-            // gunaChart2
-            // 
-            chartFont1.FontName = "Arial";
-            this.gunaChart2.Legend.LabelFont = chartFont1;
-            this.gunaChart2.Location = new System.Drawing.Point(1108, 36);
-            this.gunaChart2.Name = "gunaChart2";
-            this.gunaChart2.Size = new System.Drawing.Size(419, 260);
-            this.gunaChart2.TabIndex = 1;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart2.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            this.gunaChart2.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart2.Tooltips.TitleFont = chartFont4;
-            this.gunaChart2.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            this.gunaChart2.XAxes.Ticks = tick1;
-            this.gunaChart2.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            this.gunaChart2.YAxes.Ticks = tick2;
-            this.gunaChart2.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            this.gunaChart2.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            this.gunaChart2.ZAxes.Ticks = tick3;
-            // 
-            // gunaChart1
-            // 
-            chartFont9.FontName = "Arial";
-            this.gunaChart1.Legend.LabelFont = chartFont9;
-            this.gunaChart1.Location = new System.Drawing.Point(40, 332);
-            this.gunaChart1.Name = "gunaChart1";
-            this.gunaChart1.Size = new System.Drawing.Size(1551, 580);
-            this.gunaChart1.TabIndex = 0;
-            chartFont10.FontName = "Arial";
-            chartFont10.Size = 12;
-            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Title.Font = chartFont10;
-            chartFont11.FontName = "Arial";
-            this.gunaChart1.Tooltips.BodyFont = chartFont11;
-            chartFont12.FontName = "Arial";
-            chartFont12.Size = 9;
-            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Tooltips.TitleFont = chartFont12;
-            this.gunaChart1.XAxes.GridLines = grid4;
-            chartFont13.FontName = "Arial";
-            tick4.Font = chartFont13;
-            this.gunaChart1.XAxes.Ticks = tick4;
-            this.gunaChart1.YAxes.GridLines = grid5;
-            chartFont14.FontName = "Arial";
-            tick5.Font = chartFont14;
-            this.gunaChart1.YAxes.Ticks = tick5;
-            this.gunaChart1.ZAxes.GridLines = grid6;
-            chartFont15.FontName = "Arial";
-            pointLabel2.Font = chartFont15;
-            this.gunaChart1.ZAxes.PointLabels = pointLabel2;
-            chartFont16.FontName = "Arial";
-            tick6.Font = chartFont16;
-            this.gunaChart1.ZAxes.Ticks = tick6;
-            // 
             // SortToolTip
             // 
             this.SortToolTip.AutomaticDelay = 200;
@@ -2600,13 +2477,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.UserListsGridPNL.ResumeLayout(false);
             this.UserListsGridPNL.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserListDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveUserListDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UserListPrintDGV)).EndInit();
             this.UserEditPnl.ResumeLayout(false);
             this.UserEditPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EditStudentIDTip)).EndInit();
-            this.StatisticPNL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2665,9 +2541,6 @@
         private Guna.UI2.WinForms.Guna2TextBox EditLNameTB;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label32;
-        private Guna.UI2.WinForms.Guna2ShadowPanel StatisticPNL;
-        private Guna.Charts.WinForms.GunaChart gunaChart1;
-        private Guna.Charts.WinForms.GunaChart gunaChart2;
         private Guna.UI2.WinForms.Guna2Button UserFilterToggleBtm;
         private Guna.UI2.WinForms.Guna2Button PrintToogleBtm;
         private Guna.UI2.WinForms.Guna2Panel UserListsGridPNL;

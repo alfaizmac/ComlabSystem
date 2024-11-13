@@ -213,7 +213,6 @@ namespace ComlabSystem
             }
             return ipAddress;
         }
-    
 
 
 
@@ -225,7 +224,8 @@ namespace ComlabSystem
 
 
 
-    private void UserShowBtm_Click(object sender, EventArgs e)
+
+        private void UserShowBtm_Click(object sender, EventArgs e)
         {
             UserFormPNL.BringToFront();
             AdminShowBtm.BringToFront();
@@ -353,16 +353,18 @@ namespace ComlabSystem
                             UpdateUserStatusAndUnit(studentID);
 
                             string userID = userRow["UserID"].ToString();
-                            UpdateUnitListUserID(userID);
+                            
 
                             string lName = userRow["LastName"].ToString();
                             string fName = userRow["FirstName"].ToString();
                             InsertLoginAction(studentID, lName, fName);
+                            UpdateUnitListUserID(lName, fName);
 
                             // Create instance of user form and pass Student ID to StudIDLabel
                             user userForm = new user
                             {
-                                StudentID = studentID // Pass the Student ID to the user form
+                                StudentID = studentID, // Pass the Student ID to the user form
+                                LockScreenStudentID = studentID
                             };
 
                             ResetLoginTimeoutTimer();
@@ -535,7 +537,7 @@ namespace ComlabSystem
         }
 
         // New method to update UserID in the UnitList table based on the logged-in user's ID
-        private void UpdateUnitListUserID(string userID)
+        private void UpdateUnitListUserID(string lastName, string firstName)
         {
             string computerName = UnitNameLabel.Text; // Current computer unit name
 
@@ -545,8 +547,8 @@ namespace ComlabSystem
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand(
-                        "UPDATE UnitList SET UserID = @UserID, Status = @Status WHERE ComputerName = @ComputerName", connection);
-                    cmd.Parameters.AddWithValue("@UserID", userID);
+                        "UPDATE UnitList SET CurrentUser = @CurrentUser, Status = @Status WHERE ComputerName = @ComputerName", connection);
+                    cmd.Parameters.AddWithValue("@CurrentUser", $"{firstName} {lastName}");
                     cmd.Parameters.AddWithValue("@Status", "Online");
                     cmd.Parameters.AddWithValue("@ComputerName", computerName);
                     cmd.ExecuteNonQuery();
@@ -809,46 +811,46 @@ namespace ComlabSystem
         // Timer for the auto-shutdown
         private Timer loginTimeoutTimer;
         private int countdownTime = 180; // 3 minutes in seconds
-    
 
-    private void LoginTimeoutTimer_Tick(object sender, EventArgs e)
-    {
-        countdownTime--;
 
-        // Show countdown form at 2 minutes (120 seconds)
-        if (countdownTime == 120)
+        private void LoginTimeoutTimer_Tick(object sender, EventArgs e)
         {
-            ShowCountdownForm();
+            countdownTime--;
+
+            // Show countdown form at 2 minutes (120 seconds)
+            if (countdownTime == 120)
+            {
+                ShowCountdownForm();
+            }
+
+            // Check if time is up (3 minutes)
+            if (countdownTime <= 0)
+            {
+                loginTimeoutTimer.Stop();
+                InitiateShutdown();
+            }
         }
 
-        // Check if time is up (3 minutes)
-        if (countdownTime <= 0)
+        // Show the countdown form to warn the user
+        private void ShowCountdownForm()
         {
-            loginTimeoutTimer.Stop();
-            InitiateShutdown();
+            CountdownForm countdownForm = new CountdownForm();
+            countdownForm.Show();
         }
-    }
 
-    // Show the countdown form to warn the user
-    private void ShowCountdownForm()
-    {
-        CountdownForm countdownForm = new CountdownForm();
-        countdownForm.Show();
-    }
-
-    // Initiate the shutdown process
-    private void InitiateShutdown()
-    {
-        try
+        // Initiate the shutdown process
+        private void InitiateShutdown()
         {
-            // Command to shut down the computer
-            System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
+            try
+            {
+                // Command to shut down the computer
+                System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to initiate shutdown: " + ex.Message);
+            }
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Failed to initiate shutdown: " + ex.Message);
-        }
-    }
 
         private void ResetLoginTimeoutTimer()
         {
@@ -879,7 +881,7 @@ namespace ComlabSystem
                 e.Cancel = true;
                 // Display the message box with a more detailed and helpful message
                 ClosingTheAppMsgBox.Text = "You need to sign in to access the system. Please enter your username and password to continue.";
-                ClosingTheAppMsgBox.Caption =  "Sign In Required";
+                ClosingTheAppMsgBox.Caption = "Sign In Required";
                 ClosingTheAppMsgBox.Show();
 
             }

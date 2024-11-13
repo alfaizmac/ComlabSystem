@@ -22,6 +22,12 @@ namespace ComlabSystem
         public string StudentID
         {
             set { StudIDLabel.Text = value; }
+
+        }
+
+        public string LockScreenStudentID
+        {
+            set { LockScreenStudIDLabel.Text = value; }
         }
 
 
@@ -34,11 +40,13 @@ namespace ComlabSystem
 
             UnitNameLabel.Text = Environment.MachineName;
 
-
-
             CurrentPassTB.UseSystemPasswordChar = true;
             NewPassTB.UseSystemPasswordChar = true;
             ConfirmNewPassTB.UseSystemPasswordChar = true;
+            LockScreenPassTB.UseSystemPasswordChar = true;
+
+            SignOutBtm.Visible = true;
+            ShutDownBtm.Visible = false;
 
         }
 
@@ -54,7 +62,23 @@ namespace ComlabSystem
             // Set the form's location to the bottom-right corner of the screen
             this.Location = new Point(workingArea.Right - this.Width, workingArea.Bottom - this.Height);
 
-            InitializeTimer();
+
+            sharedTimer = new Timer();
+            sharedTimer.Interval = 1000; // Set interval to 1 second (1000 ms)
+            sharedTimer.Tick += Timer_Tick;
+            sharedTimer.Start();
+
+            LockScreenStudPassLoginL.Visible =false;
+
+
+            this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(600, 350);
+
+            TopMost = false;
+
+            // Hide UserPausePnL and show UserPnL
+            UserPausePnL.Visible = false;
+            UserPnL.Visible = true;
         }
 
 
@@ -68,18 +92,6 @@ namespace ComlabSystem
         // Timer variable to track time
         private static Timer sharedTimer;
         // Initialize Timer if not already initialized
-        private void InitializeTimer()
-        {
-            // Create a new Timer instance if it doesn't exist
-            if (sharedTimer == null)
-            {
-                sharedTimer = new Timer();
-                sharedTimer.Interval = 1000; // Set interval to 1 second (1000 ms)
-                sharedTimer.Tick += Timer_Tick;
-                sharedTimer.Start();
-            }
-        }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             // Increment seconds
@@ -111,7 +123,11 @@ namespace ComlabSystem
 
 
         }
-    
+
+
+
+
+
 
 
 
@@ -245,7 +261,6 @@ namespace ComlabSystem
         private void SignOutButtom_Click(object sender, EventArgs e)
         {
             ShowSignOutDialog();
-            UpdateLockScreenStatus();
         }
 
         private void ShowSignOutDialog()
@@ -264,6 +279,13 @@ namespace ComlabSystem
             {
                 // Call the method to update the database tables before signing out
                 UpdateSignOutStatus();
+
+                allowClose = true;
+
+                seconds = 0;
+                minutes = 0;
+                hours = 0;
+                sharedTimer.Stop();
 
                 // Code to sign out and show Form1
                 Form1 form1 = new Form1();
@@ -331,9 +353,10 @@ namespace ComlabSystem
 
                     // Update UnitList table: Set DateLastUsed to DateTime.Now and LastUserID to the retrieved UserID
                     SqlCommand updateUnitListCmd = new SqlCommand(
-                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID WHERE ComputerName = @ComputerName", connection);
+                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUser = @LastUser, CurrentUser = @CurrentUser WHERE ComputerName = @ComputerName", connection);
                     updateUnitListCmd.Parameters.AddWithValue("@DateLastUsed", currentDateTime);
-                    updateUnitListCmd.Parameters.AddWithValue("@LastUserID", userID);
+                    updateUnitListCmd.Parameters.AddWithValue("@LastUser", FLNameLabel.Text);
+                    updateUnitListCmd.Parameters.AddWithValue("@CurrentUser", "No Current User");
                     updateUnitListCmd.Parameters.AddWithValue("@ComputerName", computerName);
                     updateUnitListCmd.ExecuteNonQuery();
 
@@ -351,52 +374,7 @@ namespace ComlabSystem
                     MessageBox.Show("Failed to update sign-out status: " + ex.Message);
                 }
             }
-        }
-
-        private void UpdateLockScreenStatus()
-        {
-            // Get the StudentID from the StudIDLabel
-            string studentID = StudIDLabel.Text;
-            DateTime currentDateTime = DateTime.Now;
-            string computerName = UnitNameLabel.Text; // Assuming UnitNameLabel has the computer name
-
-            // Get the TimerLabel's text in HH:MM:SS format
-            string timerText = TimerLabel.Text;
-            TimeSpan sessionTime = ParseTimeToTimeSpan(timerText);  // Convert TimerLabel text to TimeSpan
-
-            // Calculate the total seconds used
-            int sessionTotalSeconds = (int)sessionTime.TotalSeconds;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Retrieve the current TotalHoursUsed value from UserList and UnitList
-                    string currentTotalUserTime = GetCurrentTotalHoursUsed(connection, "UserList", studentID);
-                    string currentTotalUnitTime = GetCurrentTotalHoursUsed(connection, "UnitList", computerName);
-
-                    // Add the session time to the current values
-                    TimeSpan currentUserTime = ParseTimeToTimeSpan(currentTotalUserTime);
-                    TimeSpan currentUnitTime = ParseTimeToTimeSpan(currentTotalUnitTime);
-
-                    TimeSpan newUserTotalTime = currentUserTime.Add(sessionTime);
-                    TimeSpan newUnitTotalTime = currentUnitTime.Add(sessionTime);
-
-                    // Update UserList table: Add TotalHoursUsed time
-                    UpdateTotalHoursUsed(connection, "UserList", studentID, newUserTotalTime);
-
-                    // Update UnitList table: Add TotalHoursUsed time
-                    UpdateTotalHoursUsed(connection, "UnitList", computerName, newUnitTotalTime);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to update sign-out status: " + ex.Message);
-                }
-            }
-        }
+        }    
 
 
         // Method to convert a time string in HH:MM:SS format to TimeSpan
@@ -470,11 +448,13 @@ namespace ComlabSystem
 
                             // Set the text of the FLNameLabel to display the full name
                             FLNameLabel.Text = $"{firstName} {lastName}";
+                            UserNameL.Text = $"{firstName} {lastName}";
                         }
                         else
                         {
                             // If no data is found, handle accordingly (e.g., clear the label or display a default message)
                             FLNameLabel.Text = "Name not found";
+                            UserNameL.Text = "Name not found";
                         }
                     }
                 }
@@ -488,7 +468,7 @@ namespace ComlabSystem
 
 
 
- 
+
 
 
 
@@ -617,10 +597,17 @@ namespace ComlabSystem
             }
         }
 
+
+
+
+
+
+
+
+        //Lock Screen COde
+
         private void PauseBtm_Click(object sender, EventArgs e)
         {
-            string studentID = StudIDLabel.Text.Trim();
-            string timer = TimerLabel.Text.Trim();
             // Configure the SignOutMSGDialog
             SignOutMSGDialog.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
             SignOutMSGDialog.Icon = MessageDialogIcon.Question;     // Question icon
@@ -634,17 +621,238 @@ namespace ComlabSystem
             // If the user clicks "Yes," show the PauseForm
             if (result == DialogResult.Yes)
             {
-                // Create instance of user form and pass Student ID to StudIDLabel
-                PauseForm pauseForm = new PauseForm
+                UserPnL.Visible = false;
+                UserPausePnL.Visible = true;
+                TopMost = true;
+                this.WindowState = FormWindowState.Maximized;
+                InitializeTimers();
+
+            }
+            else { return; }
+
+        }
+
+
+
+
+
+        private void UserLoginBtm_Click(object sender, EventArgs e)
+        {
+
+            string studentID = LockScreenStudIDLabel.Text;
+            string userPassword = LockScreenPassTB.Text;
+
+            // Connection to your database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
                 {
-                    StudentID = studentID, // Pass the Student ID to the user form
-                    Timer = timer
-                };
+                    connection.Open();
 
-                pauseForm.Show();
+                    // SQL command to verify StudentID and UPassword
+                    SqlCommand verifyCredentialsCmd = new SqlCommand(
+                        "SELECT COUNT(1) FROM UserList WHERE StudentID = @StudentID AND UPassword = @UPassword",
+                        connection);
 
+                    // Set the parameters
+                    verifyCredentialsCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    verifyCredentialsCmd.Parameters.AddWithValue("@UPassword", userPassword);
+
+                    // Execute the query
+                    int result = (int)verifyCredentialsCmd.ExecuteScalar();
+
+                    if (result == 1)
+                    {
+
+                        this.WindowState = FormWindowState.Normal;
+                        this.Size = new Size(600, 350);
+
+                        CountdownForm countdownForm = new CountdownForm
+                        {
+                            TopMost = false // Set CountdownForm as topmost
+                        };
+
+                        countdownForm.Hide();
+
+                        TopMost = false;
+
+                        // Hide UserPausePnL and show UserPnL
+                        UserPausePnL.Visible = false;
+                        UserPnL.Visible = true;
+
+                        LockScreenPassTB.Text = "";
+
+                        signOutTimeLeft = 10 * 60;  // Reset to 10 minutes
+                        shutDownTimeLeft = 15 * 60;  // Reset to 15 minutes
+                        signOutTimer.Stop();
+                        shutDownTimer.Stop();
+
+
+
+                    }
+                    else
+                    {
+                        LockScreenStudPassLoginL.Visible = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred during login: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+        }
+
+        private void UserLockScreenShowPassBtm_Click(object sender, EventArgs e)
+        {
+            // Toggle the visibility of the password
+            if (LockScreenPassTB.UseSystemPasswordChar)
+            {
+                // Show the password (set to false)
+                LockScreenPassTB.UseSystemPasswordChar = false;
+
+            }
+            else
+            {
+                // Hide the password (set to true)
+                LockScreenPassTB.UseSystemPasswordChar = true;
             }
         }
 
+        private void LockScreenPassTB_TextChanged(object sender, EventArgs e)
+        {
+            LockScreenStudPassLoginL.Visible = false;
+        }
+
+
+
+
+
+
+
+
+        //TImer auto shutdown
+
+
+        private Timer signOutTimer;
+        private Timer shutDownTimer;
+        private int signOutTimeLeft = 5 * 60;  // 10 minutes in seconds
+        private int shutDownTimeLeft = 15 * 60;  // 15 minutes in seconds
+        private void InitializeTimers()
+        {
+            // Initialize SignOut Timer
+            signOutTimer = new Timer();
+            signOutTimer.Interval = 1000;  // 1 second interval
+            signOutTimer.Tick += SignOutTimer_Tick;
+
+            // Initialize Shutdown Timer
+            shutDownTimer = new Timer();
+            shutDownTimer.Interval = 1000;  // 1 second interval
+            shutDownTimer.Tick += ShutDownTimer_Tick;
+
+            // Start both timers when the form loads
+            signOutTimer.Start();
+            shutDownTimer.Start();
+        }
+
+        private void SignOutTimer_Tick(object sender, EventArgs e)
+        {
+            // Decrease the time left for sign out
+            signOutTimeLeft--;
+
+            // Convert the time left to minutes and seconds
+            int minutes = signOutTimeLeft / 60;
+            int seconds = signOutTimeLeft % 60;
+
+            // Update the label
+            AllowSignOutL.Text = $"{minutes:D2}:{seconds:D2}";
+
+            // When time reaches zero, show the buttons
+            if (signOutTimeLeft <= 0)
+            {
+                signOutTimer.Stop();
+                SignOutBtm.Visible = true;
+                ShutDownBtm.Visible = true;
+            }
+        }
+
+        private void ShutDownTimer_Tick(object sender, EventArgs e)
+        {
+            // Decrease the time left for shutdown
+            shutDownTimeLeft--;
+
+            // Convert the time left to minutes and seconds
+            int minutes = shutDownTimeLeft / 60;
+            int seconds = shutDownTimeLeft % 60;
+
+            // Update the label
+            AllowShutDownL.Text = $"{minutes:D2}:{seconds:D2}";
+
+            // When time reaches 14 minutes (1 minute before shutdown), show the CountdownForm
+            if (shutDownTimeLeft == 60)
+            {
+                CountdownForm countdownForm = new CountdownForm
+                {
+                    TopMost = true // Set CountdownForm as topmost
+                };
+
+                countdownForm.Show(); // Show the countdown form
+
+                // Bring CountdownForm to the front explicitly in case other forms are topmost
+                countdownForm.BringToFront();
+
+            }
+
+            // When time reaches zero, shut down the computer
+            if (shutDownTimeLeft <= 0)
+            {
+                shutDownTimer.Stop();
+                ShutDownBtm.Visible = true;
+
+                // Code to shut down the computer
+                ShutDownComputer();
+            }
+        }
+
+        private void ShutDownComputer()
+        {
+            // You can use the Process.Start method to run a shutdown command
+            System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
+        }
+
+        private void SignOutBtm_Click(object sender, EventArgs e)
+        {
+            ShowSignOutDialog();
+        }
+
+
+
+
+
+
+
+        // Variable to control whether the form can be closed
+        private bool allowClose = false;
+        private void user_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!allowClose)
+            {
+                // Cancel the close action
+                e.Cancel = true;
+                MessageBox.Show("This form cannot be closed at this time.", "Close Blocked", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        // Method to allow closing the form programmatically
+
+        private void LockScreenPassTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Check if the Enter key was pressed
+            {
+                e.SuppressKeyPress = true; // Optional: Prevents the 'ding' sound
+                UserLoginBtm.PerformClick(); // Simulate button click
+            }
+        }
     }
 }

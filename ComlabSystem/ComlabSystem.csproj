@@ -180,12 +180,6 @@
       <DependentUpon>CountdownForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DGVPrinter.cs" />
-    <Compile Include="PauseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PauseForm.Designer.cs">
-      <DependentUpon>PauseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +194,12 @@
     <Compile Include="user.Designer.cs">
       <DependentUpon>user.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnitUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UnitUI.Designer.cs">
+      <DependentUpon>UnitUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,9 +211,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CountdownForm.resx">
       <DependentUpon>CountdownForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PauseForm.resx">
-      <DependentUpon>PauseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -230,6 +227,9 @@
     </Compile>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitUI.resx">
+      <DependentUpon>UnitUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserUI.resx">
       <DependentUpon>UserUI.cs</DependentUpon>
