@@ -188,6 +188,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LogsReportUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogsReportUI.Designer.cs">
+      <DependentUpon>LogsReportUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="LogsReportUI.resx">
+      <DependentUpon>LogsReportUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
     </EmbeddedResource>
@@ -755,6 +764,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shut-down %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-list-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-list-2 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-up %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-up %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-up %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-up %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

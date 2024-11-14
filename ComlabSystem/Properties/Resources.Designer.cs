@@ -283,6 +283,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap book__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("book (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book1 {
             get {
                 object obj = ResourceManager.GetObject("book1", resourceCulture);
@@ -296,6 +306,56 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap book2 {
             get {
                 object obj = ResourceManager.GetObject("book2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caret_down {
+            get {
+                object obj = ResourceManager.GetObject("caret-down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caret_up__1_ {
+            get {
+                object obj = ResourceManager.GetObject("caret-up (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caret_up__2_ {
+            get {
+                object obj = ResourceManager.GetObject("caret-up (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caret_up__3_ {
+            get {
+                object obj = ResourceManager.GetObject("caret-up (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap caret_up__4_ {
+            get {
+                object obj = ResourceManager.GetObject("caret-up (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +576,26 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap feedback__1_ {
             get {
                 object obj = ResourceManager.GetObject("feedback (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_list_2 {
+            get {
+                object obj = ResourceManager.GetObject("file-list-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_list_2__1_ {
+            get {
+                object obj = ResourceManager.GetObject("file-list-2 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

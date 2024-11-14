@@ -64,5 +64,19 @@ namespace ComlabSystem
             countdownForm.Show();
             this.Close();
         }
+
+        private void LogBtm_Click(object sender, EventArgs e)
+        {
+            LogsReportUI myControl = new LogsReportUI();
+
+            // Clear any existing controls in the panel (optional, if you want to replace the contents)
+            MainPNL.Controls.Clear();
+
+            // Set the Dock style of the UserControl to Fill, making it expand to fit the panel
+            myControl.Dock = DockStyle.Fill;
+
+            // Add the UserControl to the panel
+            MainPNL.Controls.Add(myControl);
+        }
     }
 }

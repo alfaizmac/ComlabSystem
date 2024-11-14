@@ -148,6 +148,9 @@
   <data name="pencil (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="users (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,14 +184,17 @@
   <data name="dashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="caret-up (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-up (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="x-square (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-square (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="uNit BG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uNit BG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-list-2 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-list-2 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flag (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flag (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,11 +202,17 @@
   <data name="asdasdsa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asdasdsa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="caret-up (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-up (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shut-down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shut-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pencil (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-circle (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-circle (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="funnel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\funnel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +238,11 @@
   <data name="book (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-list-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-list-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flag (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flag (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -240,6 +255,9 @@
   </data>
   <data name="sign-out1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-out1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shut-down (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shut-down (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -364,8 +382,8 @@
   <data name="feedback (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feedback (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-circle (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-circle (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Online User unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Online User unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bar-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -409,6 +427,9 @@
   <data name="user-plus (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-plus (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="shut-down (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shut-down (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="flag (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flag (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -423,6 +444,9 @@
   </data>
   <data name="users (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caret-up (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-up (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -456,9 +480,6 @@
   </data>
   <data name="uNit BG22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uNit BG22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Online User unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Online User unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="book (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -538,6 +559,9 @@
   <data name="flag (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flag (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="caret-up (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-up (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -568,8 +592,8 @@
   <data name="LockScreeen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LockScreeen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="book (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setting-config" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting-config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -616,7 +640,7 @@
   <data name="user (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shut-down (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shut-down (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caret-down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -57,6 +57,7 @@ namespace ComlabSystem
         //Automatically add the Specifications on UnitlIst
         private void Form1_Load(object sender, EventArgs e)
         {
+
             InsertOrUpdateUnitInfo();
             loginTimeoutTimer.Start();
 
@@ -71,6 +72,7 @@ namespace ComlabSystem
             StudPassLoginL.Visible = false;
             AdminUserLoginL.Visible = false;
             AdminPassLoginL.Visible = false;
+
         }
         public void InsertOrUpdateUnitInfo()
         {
@@ -570,6 +572,14 @@ namespace ComlabSystem
 
 
 
+
+
+
+
+
+
+
+
         // Admin Login
         private int adminRetryAttempts = 3;
         private int adminDelayTimeInSeconds = 30; // Initial delay of 30 seconds for admin
@@ -578,11 +588,12 @@ namespace ComlabSystem
 
         private void AdminLoginBtm_Click(object sender, EventArgs e)
         {
+
             if (adminRetryAttempts > 0)
             {
-                AuthenticateAdmin();
+               AuthenticateAdmin();
             }
-            else
+           else
             {
                 StartAdminRetryTimer();
                 ShowAdminRetryMessage();
@@ -745,6 +756,9 @@ namespace ComlabSystem
                 }
             }
         }
+
+
+
 
 
 

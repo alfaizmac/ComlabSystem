@@ -60,17 +60,17 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.AdminShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.UserShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.ShowUserPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.ShowAdminPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ShowUserPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.UnitNameLabel = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.UserFormPNL.SuspendLayout();
             this.AdminFormPNL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -547,38 +547,6 @@
             this.UserShowBtm.TabIndex = 1;
             this.UserShowBtm.Click += new System.EventHandler(this.UserShowBtm_Click);
             // 
-            // ShowUserPassBtm
-            // 
-            this.ShowUserPassBtm.Animated = true;
-            this.ShowUserPassBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ShowUserPassBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ShowUserPassBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ShowUserPassBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ShowUserPassBtm.FillColor = System.Drawing.Color.White;
-            this.ShowUserPassBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ShowUserPassBtm.ForeColor = System.Drawing.Color.White;
-            this.ShowUserPassBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.eye__2_;
-            this.ShowUserPassBtm.Image = global::ComlabSystem.Properties.Resources.eye__1_;
-            this.ShowUserPassBtm.ImageSize = new System.Drawing.Size(25, 25);
-            this.ShowUserPassBtm.Location = new System.Drawing.Point(399, 368);
-            this.ShowUserPassBtm.Name = "ShowUserPassBtm";
-            this.ShowUserPassBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ShowUserPassBtm.Size = new System.Drawing.Size(32, 34);
-            this.ShowUserPassBtm.TabIndex = 9;
-            this.ShowUserPassBtm.Click += new System.EventHandler(this.ShowUserPassBtm_Click);
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::ComlabSystem.Properties.Resources.user_circle__1_;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(59, 40);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(93, 93);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
             // ShowAdminPassBtm
             // 
             this.ShowAdminPassBtm.Animated = true;
@@ -610,6 +578,38 @@
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox2.TabIndex = 0;
             this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // ShowUserPassBtm
+            // 
+            this.ShowUserPassBtm.Animated = true;
+            this.ShowUserPassBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ShowUserPassBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ShowUserPassBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ShowUserPassBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ShowUserPassBtm.FillColor = System.Drawing.Color.White;
+            this.ShowUserPassBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ShowUserPassBtm.ForeColor = System.Drawing.Color.White;
+            this.ShowUserPassBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.eye__2_;
+            this.ShowUserPassBtm.Image = global::ComlabSystem.Properties.Resources.eye__1_;
+            this.ShowUserPassBtm.ImageSize = new System.Drawing.Size(25, 25);
+            this.ShowUserPassBtm.Location = new System.Drawing.Point(399, 368);
+            this.ShowUserPassBtm.Name = "ShowUserPassBtm";
+            this.ShowUserPassBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ShowUserPassBtm.Size = new System.Drawing.Size(32, 34);
+            this.ShowUserPassBtm.TabIndex = 9;
+            this.ShowUserPassBtm.Click += new System.EventHandler(this.ShowUserPassBtm_Click);
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::ComlabSystem.Properties.Resources.user_circle__1_;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(59, 40);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(93, 93);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -650,8 +650,8 @@
             this.UserFormPNL.PerformLayout();
             this.AdminFormPNL.ResumeLayout(false);
             this.AdminFormPNL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
