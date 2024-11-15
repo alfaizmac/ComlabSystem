@@ -97,12 +97,19 @@ namespace ComlabSystem
             UserPausePnL.Visible = false;
             UserPnL.Visible = true;
 
-            loginTimer = new Timer();
-            loginTimer.Interval = 1000; // 1 second interval
-            loginTimer.Tick += LoginTimer_Tick;
-            loginTimer.Start();
-            duration = TimeSpan.Zero; // Start with 0 duration
 
+
+
+            // Assuming the student details (ID, LastName, FirstName) are available from labels or session variables:
+            string studentID = StudIDLabel.Text;  // Or use session variable if applicable
+            string fName = FLNameLabel.Text;   // Assuming you have FirstNameLabel for the student's first name
+
+            // Insert login action into Logs and get the LogID
+            int logId = InsertLoginAction(studentID, fName);
+
+            // Start the session timer to track duration
+            loginTime = DateTime.Now;
+            StartSessionTimer(logId);
         }
 
 
@@ -337,11 +344,7 @@ namespace ComlabSystem
 
             if (result == DialogResult.Yes)
             {
-                // Stop the timer when the user signs out
-                loginTimer.Stop();
-                // Insert login action log with duration
-                InsertLoginAction();
-
+                sessionTimer.Stop();
                 UpdateSignOutStatus();
 
                 allowClose = true;
@@ -425,13 +428,15 @@ namespace ComlabSystem
                     updateUnitListCmd.Parameters.AddWithValue("@ComputerName", computerName);
                     updateUnitListCmd.ExecuteNonQuery();
 
-                    // Insert into the Logs table
+                    // Insert into the Logs table with TimeDuration
                     string logAction = $"{FLNameLabel.Text} sign out on Computer Name {computerName} at {currentDateTime}";
                     SqlCommand insertLogCmd = new SqlCommand(
-                        "INSERT INTO Logs (Action, UserID, UnitID) VALUES (@Action, @UserID, @UnitID)", connection);
+                        "INSERT INTO Logs (Action, UserID, UnitID, TimeDuration, ActionType) VALUES (@Action, @UserID, @UnitID, @TimeDuration, @ActionType)", connection);
                     insertLogCmd.Parameters.AddWithValue("@Action", logAction);
                     insertLogCmd.Parameters.AddWithValue("@UserID", userID);
                     insertLogCmd.Parameters.AddWithValue("@UnitID", unitID);  // Use the retrieved UnitID here
+                    insertLogCmd.Parameters.AddWithValue("@TimeDuration", sessionTime);  // Insert the session time as TimeDuration
+                    insertLogCmd.Parameters.AddWithValue("@ActionType", "Signout");
                     insertLogCmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -439,7 +444,8 @@ namespace ComlabSystem
                     MessageBox.Show("Failed to update sign-out status: " + ex.Message);
                 }
             }
-        }    
+        }
+
 
 
         // Method to convert a time string in HH:MM:SS format to TimeSpan
@@ -969,12 +975,12 @@ namespace ComlabSystem
                     int unitID = (int)unitCmd.ExecuteScalar();
 
                     SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, Duration, ActionType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @Duration, @ActionType)", connection);
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType)", connection);
                     logCmd.Parameters.AddWithValue("@UnitID", unitID);
                     logCmd.Parameters.AddWithValue("@UserID", userID);
                     logCmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName} at " + DateTime.Now + ".");
                     logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    logCmd.Parameters.AddWithValue("@Duration", TimeSpan.Zero);  // Set initial duration to 0
+                    logCmd.Parameters.AddWithValue("@TimeDuration", TimeSpan.Zero);  // Set initial duration to 0
                     logCmd.Parameters.AddWithValue("@ActionType", "Login");
 
                     // Get the inserted LogID for future updates
@@ -1001,106 +1007,84 @@ namespace ComlabSystem
 
 
 
+        // Add a Timer to track duration
+        private Timer sessionTimer;
+        private DateTime loginTime;
 
-        private Timer loginTimer;
-        private TimeSpan duration;
-
-        private void LoginTimer_Tick(object sender, EventArgs e)
+        // Insert login action into the Logs table
+        private int InsertLoginAction(string studentID, string fName)
         {
-            // Increment duration every second
-            duration = duration.Add(TimeSpan.FromSeconds(1));
-        }
-        private void InsertLoginAction()
-        {
-            string studentID = StudIDLabel.Text;
-            string fullName = FLNameLabel.Text;
-            string computerName = UnitNameLabel.Text;
-            string action = $"{fullName} has logged in on {computerName} at {DateTime.Now}.";
-            string actionType = "Login";
-            TimeSpan duration = this.duration; // Total time spent on the computer
+            string computerName = UnitNameLabel.Text;  // Get the computer name label text
 
-            // Get UnitID and UserID based on the labels
-            string unitID = GetUnitIDFromUnitName(computerName); // This function should return the correct UnitID
-            string userID = GetUserIDFromStudentID(studentID); // This function should return the correct UserID
-
-            // Insert the login action into the Logs table
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
 
-                    SqlCommand insertCmd = new SqlCommand(
-                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, ActionType, Duration) " +
-                        "VALUES (@UnitID, @UserID, @Action, @Timestamp, @ActionType, @Duration)", connection);
-
-                    insertCmd.Parameters.AddWithValue("@UnitID", unitID);
-                    insertCmd.Parameters.AddWithValue("@UserID", userID);
-                    insertCmd.Parameters.AddWithValue("@Action", action);
-                    insertCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    insertCmd.Parameters.AddWithValue("@ActionType", actionType);
-                    insertCmd.Parameters.AddWithValue("@Duration", duration); // Duration in time(7) format
-
-                    int rowsAffected = insertCmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Login action logged successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to log login action.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        private string GetUnitIDFromUnitName(string unitName)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT UnitID FROM UnitList WHERE ComputerName = @UnitName", connection);
-                    cmd.Parameters.AddWithValue("@UnitName", unitName);
-
-                    object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : null;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error fetching UnitID: " + ex.Message);
-                    return null;
-                }
-            }
-        }
-
-        private string GetUserIDFromStudentID(string studentID)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
+                    // Get the UserID for the StudentID
+                    SqlCommand cmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
                     cmd.Parameters.AddWithValue("@StudentID", studentID);
+                    int userID = (int)cmd.ExecuteScalar();
 
-                    object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : null;
+                    // Get the UnitID for the Computer Name
+                    SqlCommand unitCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                    unitCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    int unitID = (int)unitCmd.ExecuteScalar();
+
+                    // Insert the login action into the Logs table
+                    SqlCommand logCmd = new SqlCommand(
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType)", connection);
+                    logCmd.Parameters.AddWithValue("@UnitID", unitID);
+                    logCmd.Parameters.AddWithValue("@UserID", userID);
+                    logCmd.Parameters.AddWithValue("@Action", $"{fName} has logged in on {computerName} at " + DateTime.Now + ".");
+                    logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    logCmd.Parameters.AddWithValue("@TimeDuration", TimeSpan.Zero);  // Set initial duration to 0
+                    logCmd.Parameters.AddWithValue("@ActionType", "Login");
+
+                    // Get the inserted LogID for future updates
+                    int logId = (int)logCmd.ExecuteScalar();
+                    return logId;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error fetching UserID: " + ex.Message);
-                    return null;
+                    MessageBox.Show("Failed to log login action: " + ex.Message);
+                    return -1;
                 }
             }
         }
 
+        // Start the timer to track session duration
+        private void StartSessionTimer(int logId)
+        {
+            sessionTimer = new Timer();
+            sessionTimer.Interval = 1000; // 1 second interval
+            sessionTimer.Tick += (sender, e) => UpdateSessionDuration(logId);
+            sessionTimer.Start();
+        }
+
+        // Update session duration in the database every second
+        private void UpdateSessionDuration(int logId)
+        {
+            TimeSpan sessionDuration = DateTime.Now - loginTime;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "UPDATE Logs SET TimeDuration = @TimeDuration WHERE LogID = @LogID", connection);
+                    cmd.Parameters.AddWithValue("@TimeDuration", sessionDuration);
+                    cmd.Parameters.AddWithValue("@LogID", logId);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update session duration: " + ex.Message);
+                }
+            }
+        }
 
 
     }
