@@ -523,6 +523,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap envelope_simple {
+            get {
+                object obj = ResourceManager.GetObject("envelope-simple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
@@ -893,6 +903,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap list__2_ {
+            get {
+                object obj = ResourceManager.GetObject("list (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LlginFOrm {
             get {
                 object obj = ResourceManager.GetObject("LlginFOrm", resourceCulture);
@@ -1033,9 +1053,29 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password__2_ {
+            get {
+                object obj = ResourceManager.GetObject("password (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pause {
             get {
                 object obj = ResourceManager.GetObject("pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pause__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pause (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1306,6 +1346,16 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap sign_out__3_1 {
             get {
                 object obj = ResourceManager.GetObject("sign-out (3)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sign_out__4_ {
+            get {
+                object obj = ResourceManager.GetObject("sign-out (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

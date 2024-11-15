@@ -789,5 +789,20 @@
   <ItemGroup>
     <None Include="Resources\caret-down.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envelope-simple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out %284%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

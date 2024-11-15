@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace ComlabSystem
@@ -45,9 +46,25 @@ namespace ComlabSystem
             ConfirmNewPassTB.UseSystemPasswordChar = true;
             LockScreenPassTB.UseSystemPasswordChar = true;
 
-            SignOutBtm.Visible = true;
+            SignOutBtm.Visible = false;
             ShutDownBtm.Visible = false;
 
+
+
+            string MenuBtmtip = "Side Menu";
+            MenuToolTip.SetToolTip(MenuButton, MenuBtmtip);
+
+            string ReportBtmtip = "Report/Feedback";
+            MenuToolTip.SetToolTip(ReportButton, ReportBtmtip);
+
+            string ChangePasstip = "Change Password";
+            MenuToolTip.SetToolTip(ChangePasswordButton, ChangePasstip);
+
+            string LockScreenTip = "Lock Screen";
+            MenuToolTip.SetToolTip(PauseBtm, LockScreenTip);
+
+            string SignoutTIp = "Lock Screen";
+            MenuToolTip.SetToolTip(SignOutButtom, SignoutTIp);
         }
 
         private void user_Load(object sender, EventArgs e)
@@ -79,6 +96,13 @@ namespace ComlabSystem
             // Hide UserPausePnL and show UserPnL
             UserPausePnL.Visible = false;
             UserPnL.Visible = true;
+
+            loginTimer = new Timer();
+            loginTimer.Interval = 1000; // 1 second interval
+            loginTimer.Tick += LoginTimer_Tick;
+            loginTimer.Start();
+            duration = TimeSpan.Zero; // Start with 0 duration
+
         }
 
 
@@ -206,16 +230,32 @@ namespace ComlabSystem
             // Get the user ID (from previous logic, assuming it's retrieved and stored in userID)
             string studentID = StudIDLabel.Text;  // Assuming userID is the StudentID for now
 
-            // Get the user feedback from the TextBox
+            // Get the user input from the TextBox
             string feedback = SendReportFeedbackTB.Text;
             string fullName = FLNameLabel.Text; // Full name of the user
             string computerName = UnitNameLabel.Text; // Computer name (UnitNameLabel.Text)
             DateTime currentDateTime = DateTime.Now; // Get the current timestamp
 
-            // Format the issue description
-            string issueDescription = $"{fullName} has reported: \"{feedback}\" while using the computer named {computerName}.";
+            // Determine the message type based on the selected radio button
+            string messageType = string.Empty;
+            if (ReportRadioButton.Checked)
+            {
+                messageType = "Report";
+            }
+            else if (FeedbackRadioBtm.Checked)
+            {
+                messageType = "Feedback";
+            }
 
-            // Now, insert this into the Help_Desk table
+            if (string.IsNullOrEmpty(messageType))
+            {
+                MessageBox.Show("Please select either 'Report' or 'Feedback' before submitting.");
+                return;
+            }
+
+            // Format the issue description
+            string issueDescription = $"{fullName} has sent a {messageType}: \"{feedback}\" while using the computer named {computerName}.";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -229,20 +269,40 @@ namespace ComlabSystem
 
                     // Insert the report or feedback into the Help_Desk table
                     SqlCommand insertFeedbackCmd = new SqlCommand(
-                        "INSERT INTO Help_Desk (UserID, IssueDescription, Timestamp) " +
-                        "VALUES (@UserID, @IssueDescription, @Timestamp)", connection);
+                        "INSERT INTO Help_Desk (UserID, MessageType, IssueDescription, Timestamp) " +
+                        "VALUES (@UserID, @MessageType, @IssueDescription, @Timestamp)", connection);
 
                     insertFeedbackCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
+                    insertFeedbackCmd.Parameters.AddWithValue("@MessageType", messageType);  // 'Report' or 'Feedback'
                     insertFeedbackCmd.Parameters.AddWithValue("@IssueDescription", issueDescription);  // The formatted feedback
                     insertFeedbackCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);  // The current timestamp
 
                     // Execute the command
                     insertFeedbackCmd.ExecuteNonQuery();
 
+                    // Insert into Notifications table
+                    string notificationMessage = $"{fullName} has sent {messageType}.";
+                    SqlCommand insertNotificationCmd = new SqlCommand(
+                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind) " +
+                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind)", connection);
+
+                    insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
+                    insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);  // The notification message
+                    insertNotificationCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);  // The current timestamp
+                    insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Info");  // Notification type
+                    insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", $"{messageType}");  // Report/Feedback
+
+                    // Execute the command
+                    insertNotificationCmd.ExecuteNonQuery();
+
+                    // Hide the report panel and clear the feedback text box
                     ReportPnl.Hide();
                     SendReportFeedbackTB.Text = "";
-                    // Optionally, you can give a feedback message to the user confirming the submission
-                    MessageBox.Show("Your report/feedback has been sent successfully.");
+
+                    SideMenuDialogs.Icon = MessageDialogIcon.Information;
+                    SideMenuDialogs.Caption = "Success";
+                    SideMenuDialogs.Text = "Your " + messageType + " has been sent successfully.";
+                    SideMenuDialogs.Show();
                 }
                 catch (Exception ex)
                 {
@@ -277,7 +337,11 @@ namespace ComlabSystem
 
             if (result == DialogResult.Yes)
             {
-                // Call the method to update the database tables before signing out
+                // Stop the timer when the user signs out
+                loginTimer.Stop();
+                // Insert login action log with duration
+                InsertLoginAction();
+
                 UpdateSignOutStatus();
 
                 allowClose = true;
@@ -331,14 +395,14 @@ namespace ComlabSystem
                     // Update UnitList table: Add TotalHoursUsed time
                     UpdateTotalHoursUsed(connection, "UnitList", computerName, newUnitTotalTime);
 
-                    // Update UserList table: Set Status to 'Offline', LastLogin to DateTime.Now, and LastUnitUsed to the computer name
+                    // Update UserList table: Set Status to 'Offline', DateLastLogout to DateTime.Now, and UnitUsed to the computer name
                     SqlCommand updateUserListCmd = new SqlCommand(
-                        "UPDATE UserList SET Status = @Status, LastLogin = @LastLogin, LastUnitUsed = @LastUnitUsed " +
+                        "UPDATE UserList SET Status = @Status, UnitUsed = @UnitUsed, DateLastLogout = @DateLastLogout " +
                         "WHERE StudentID = @StudentID", connection);
                     updateUserListCmd.Parameters.AddWithValue("@Status", "Offline");
-                    updateUserListCmd.Parameters.AddWithValue("@LastLogin", currentDateTime);
-                    updateUserListCmd.Parameters.AddWithValue("@LastUnitUsed", $"Last Unit Used {computerName}");
+                    updateUserListCmd.Parameters.AddWithValue("@UnitUsed", $"Last Unit Used {computerName}");
                     updateUserListCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    updateUserListCmd.Parameters.AddWithValue("@DateLastLogout", currentDateTime);
                     updateUserListCmd.ExecuteNonQuery();
 
                     // Retrieve the UserID based on StudentID
@@ -353,9 +417,10 @@ namespace ComlabSystem
 
                     // Update UnitList table: Set DateLastUsed to DateTime.Now and LastUserID to the retrieved UserID
                     SqlCommand updateUnitListCmd = new SqlCommand(
-                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUser = @LastUser, CurrentUser = @CurrentUser WHERE ComputerName = @ComputerName", connection);
+                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID, CurrentUser = @CurrentUser, Status = @Status WHERE ComputerName = @ComputerName", connection);
                     updateUnitListCmd.Parameters.AddWithValue("@DateLastUsed", currentDateTime);
-                    updateUnitListCmd.Parameters.AddWithValue("@LastUser", FLNameLabel.Text);
+                    updateUnitListCmd.Parameters.AddWithValue("@LastUserID", userID);
+                    updateUnitListCmd.Parameters.AddWithValue("@Status", "Offline");
                     updateUnitListCmd.Parameters.AddWithValue("@CurrentUser", "No Current User");
                     updateUnitListCmd.Parameters.AddWithValue("@ComputerName", computerName);
                     updateUnitListCmd.ExecuteNonQuery();
@@ -530,13 +595,17 @@ namespace ComlabSystem
             // Step 1: Verify if New Password and Confirm New Password match
             if (NewPassTB.Text != ConfirmNewPassTB.Text)
             {
-                MessageBox.Show("The new passwords do not match. Please try again.", "Password Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SideMenuDialogs.Icon = MessageDialogIcon.Error;
+                SideMenuDialogs.Caption = "Password Mismatch";
+                SideMenuDialogs.Text = "The new passwords do not match. Please try again.";
+                SideMenuDialogs.Show();
                 return;
             }
 
             string studentID = StudIDLabel.Text;
             string currentPasswordInput = CurrentPassTB.Text;
             string newPassword = NewPassTB.Text;
+            string fullName = FLNameLabel.Text; // Full name of the student (e.g., "John Doe")
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -565,20 +634,39 @@ namespace ComlabSystem
                         }
                         reader.Close();
 
+
                         // Step 3: Update the password in the database
                         SqlCommand updatePasswordCmd = new SqlCommand(
                             "UPDATE UserList SET UPassword = @NewPassword WHERE UserID = @UserID", connection);
                         updatePasswordCmd.Parameters.AddWithValue("@NewPassword", newPassword);
                         updatePasswordCmd.Parameters.AddWithValue("@UserID", userID);
 
+                        SideMenuDialogs.Icon = MessageDialogIcon.Information;
+                        SideMenuDialogs.Caption = "Success";
+                        SideMenuDialogs.Text = "Password changed successfully.";
+                        SideMenuDialogs.Show();
+
                         int rowsAffected = updatePasswordCmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             ChangePasswordPNL.Hide();
                             CurrentPassTB.Text = "";
                             NewPassTB.Text = "";
                             ConfirmNewPassTB.Text = "";
+
+                            // Step 4: Insert a notification record into the Notifications table
+                            SqlCommand insertNotifCmd = new SqlCommand(
+                                "INSERT INTO Notifications (UserID, NotificationType, NotificationKind, Message, Timestamp) " +
+                                "VALUES (@UserID, @NotificationType, @NotificationKind, @Message, @Timestamp)", connection);
+
+                            insertNotifCmd.Parameters.AddWithValue("@UserID", userID);
+                            insertNotifCmd.Parameters.AddWithValue("@NotificationType", "Info");
+                            insertNotifCmd.Parameters.AddWithValue("@NotificationKind", "ChangePassword");
+                            insertNotifCmd.Parameters.AddWithValue("@Message", fullName + " changed to a new password: " + newPassword);
+                            insertNotifCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                            insertNotifCmd.ExecuteNonQuery();
+
                         }
                         else
                         {
@@ -682,8 +770,10 @@ namespace ComlabSystem
 
                         LockScreenPassTB.Text = "";
 
-                        signOutTimeLeft = 10 * 60;  // Reset to 10 minutes
+                        signOutTimeLeft = 30;  // Reset to 10 minutes
                         shutDownTimeLeft = 15 * 60;  // Reset to 15 minutes
+                        SignOutBtm.Visible = false;
+                        ShutDownBtm.Visible = false;
                         signOutTimer.Stop();
                         shutDownTimer.Stop();
 
@@ -738,7 +828,7 @@ namespace ComlabSystem
 
         private Timer signOutTimer;
         private Timer shutDownTimer;
-        private int signOutTimeLeft = 5 * 60;  // 10 minutes in seconds
+        private int signOutTimeLeft = 30;  // 10 minutes in seconds
         private int shutDownTimeLeft = 15 * 60;  // 15 minutes in seconds
         private void InitializeTimers()
         {
@@ -773,6 +863,7 @@ namespace ComlabSystem
             if (signOutTimeLeft <= 0)
             {
                 signOutTimer.Stop();
+                ShowSignoutButtonAvai.Show();
                 SignOutBtm.Visible = true;
                 ShutDownBtm.Visible = true;
             }
@@ -791,7 +882,7 @@ namespace ComlabSystem
             AllowShutDownL.Text = $"{minutes:D2}:{seconds:D2}";
 
             // When time reaches 14 minutes (1 minute before shutdown), show the CountdownForm
-            if (shutDownTimeLeft == 60)
+            if (shutDownTimeLeft == 860)
             {
                 CountdownForm countdownForm = new CountdownForm
                 {
@@ -854,5 +945,163 @@ namespace ComlabSystem
                 UserLoginBtm.PerformClick(); // Simulate button click
             }
         }
+
+
+
+
+
+        // Insert login action into the Logs table
+        private int InsertLoginAction(string studentID, string lastName, string firstName)
+        {
+            string computerName = UnitNameLabel.Text;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
+                    cmd.Parameters.AddWithValue("@StudentID", studentID);
+                    int userID = (int)cmd.ExecuteScalar();
+
+                    SqlCommand unitCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                    unitCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    int unitID = (int)unitCmd.ExecuteScalar();
+
+                    SqlCommand logCmd = new SqlCommand(
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, Duration, ActionType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @Duration, @ActionType)", connection);
+                    logCmd.Parameters.AddWithValue("@UnitID", unitID);
+                    logCmd.Parameters.AddWithValue("@UserID", userID);
+                    logCmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName} at " + DateTime.Now + ".");
+                    logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    logCmd.Parameters.AddWithValue("@Duration", TimeSpan.Zero);  // Set initial duration to 0
+                    logCmd.Parameters.AddWithValue("@ActionType", "Login");
+
+                    // Get the inserted LogID for future updates
+                    int logId = (int)logCmd.ExecuteScalar();
+                    return logId;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to log login action: " + ex.Message);
+                    return -1;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private Timer loginTimer;
+        private TimeSpan duration;
+
+        private void LoginTimer_Tick(object sender, EventArgs e)
+        {
+            // Increment duration every second
+            duration = duration.Add(TimeSpan.FromSeconds(1));
+        }
+        private void InsertLoginAction()
+        {
+            string studentID = StudIDLabel.Text;
+            string fullName = FLNameLabel.Text;
+            string computerName = UnitNameLabel.Text;
+            string action = $"{fullName} has logged in on {computerName} at {DateTime.Now}.";
+            string actionType = "Login";
+            TimeSpan duration = this.duration; // Total time spent on the computer
+
+            // Get UnitID and UserID based on the labels
+            string unitID = GetUnitIDFromUnitName(computerName); // This function should return the correct UnitID
+            string userID = GetUserIDFromStudentID(studentID); // This function should return the correct UserID
+
+            // Insert the login action into the Logs table
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand insertCmd = new SqlCommand(
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, ActionType, Duration) " +
+                        "VALUES (@UnitID, @UserID, @Action, @Timestamp, @ActionType, @Duration)", connection);
+
+                    insertCmd.Parameters.AddWithValue("@UnitID", unitID);
+                    insertCmd.Parameters.AddWithValue("@UserID", userID);
+                    insertCmd.Parameters.AddWithValue("@Action", action);
+                    insertCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    insertCmd.Parameters.AddWithValue("@ActionType", actionType);
+                    insertCmd.Parameters.AddWithValue("@Duration", duration); // Duration in time(7) format
+
+                    int rowsAffected = insertCmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Login action logged successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to log login action.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private string GetUnitIDFromUnitName(string unitName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "SELECT UnitID FROM UnitList WHERE ComputerName = @UnitName", connection);
+                    cmd.Parameters.AddWithValue("@UnitName", unitName);
+
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? result.ToString() : null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error fetching UnitID: " + ex.Message);
+                    return null;
+                }
+            }
+        }
+
+        private string GetUserIDFromStudentID(string studentID)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(
+                        "SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
+                    cmd.Parameters.AddWithValue("@StudentID", studentID);
+
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? result.ToString() : null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error fetching UserID: " + ex.Message);
+                    return null;
+                }
+            }
+        }
+
+
+
     }
 }

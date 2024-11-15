@@ -51,6 +51,8 @@ namespace ComlabSystem
             loginCheckTimer = new Timer();
             loginCheckTimer.Interval = 1000; // Check every second
             loginCheckTimer.Tick += LoginCheckTimer_Tick;
+
+
         }
 
 
@@ -73,6 +75,7 @@ namespace ComlabSystem
             AdminUserLoginL.Visible = false;
             AdminPassLoginL.Visible = false;
 
+
         }
         public void InsertOrUpdateUnitInfo()
         {
@@ -86,7 +89,6 @@ namespace ComlabSystem
             string storage = GetTotalStorage();
             string availableStorage = GetAvailableStorage();
             string ipAddress = GetLocalIPAddress();
-            string status = "Offline"; // Default status
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -102,8 +104,8 @@ namespace ComlabSystem
                 {
                     // Insert new record if not found
                     SqlCommand insertCmd = new SqlCommand(
-                        @"INSERT INTO UnitList (ComputerName, Ram, Processor, Storage, AvailableStorage, IPAddress, Status) 
-                  VALUES (@ComputerName, @Ram, @Processor, @Storage, @AvailableStorage, @IPAddress, @Status)",
+                        @"INSERT INTO UnitList (ComputerName, Ram, Processor, Storage, AvailableStorage, IPAddress, ) 
+                  VALUES (@ComputerName, @Ram, @Processor, @Storage, @AvailableStorage, @IPAddress )",
                         connection);
 
                     insertCmd.Parameters.AddWithValue("@ComputerName", computerName);
@@ -112,7 +114,6 @@ namespace ComlabSystem
                     insertCmd.Parameters.AddWithValue("@Storage", storage);
                     insertCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
                     insertCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
-                    insertCmd.Parameters.AddWithValue("@Status", status);
 
                     insertCmd.ExecuteNonQuery();
                 }
@@ -122,7 +123,7 @@ namespace ComlabSystem
                     SqlCommand updateCmd = new SqlCommand(
                         @"UPDATE UnitList 
                   SET Ram = @Ram, Processor = @Processor, Storage = @Storage, 
-                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress, Status = @Status 
+                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress
                   WHERE ComputerName = @ComputerName",
                         connection);
 
@@ -132,7 +133,6 @@ namespace ComlabSystem
                     updateCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
                     updateCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
                     updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
-                    updateCmd.Parameters.AddWithValue("@Status", status);
 
                     updateCmd.ExecuteNonQuery();
                 }
@@ -297,6 +297,18 @@ namespace ComlabSystem
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
         //Student Login
         private int retryAttempts = 5;
         private int delayTimeInSeconds = 30; // Starts with 30 seconds
@@ -339,6 +351,8 @@ namespace ComlabSystem
 
                         if (storedPassword == password)
                         {
+
+
                             if (archiveStatus == "Archived")
                             {
                                 AccountRemovedMsgBox.Caption = "Account Removed";
@@ -347,37 +361,53 @@ namespace ComlabSystem
                                 return;
                             }
 
+
+
                             retryAttempts = 5;
                             delayTimeInSeconds = 30;
                             retryTimer.Stop();
                             RetryAttemptTimeLabel.Text = "";
 
+
+
+                            IncrementUserImproperShutdownFrequency();
+
+                            // Update user status and unit usage
                             UpdateUserStatusAndUnit(studentID);
 
-                            string userID = userRow["UserID"].ToString();
-                            
+                            // Increment session count and unit usage frequency
+                            IncrementUserSessionCount();
+                            IncrementUnitUsageFrequency();
 
+
+                            // Get user information for logging
+                            string userID = userRow["UserID"].ToString();
                             string lName = userRow["LastName"].ToString();
                             string fName = userRow["FirstName"].ToString();
-                            InsertLoginAction(studentID, lName, fName);
+
+
+                            IncrementUnitImproperShutdownFrequency();
+                            // Update UnitList with current user
                             UpdateUnitListUserID(lName, fName);
+                            
 
-                            // Create instance of user form and pass Student ID to StudIDLabel
+
+                            // Create and show the user form, passing the LogID for duration tracking
                             user userForm = new user
-                            {
-                                StudentID = studentID, // Pass the Student ID to the user form
-                                LockScreenStudentID = studentID
-                            };
+                                {
+                                    StudentID = studentID,
+                                    LockScreenStudentID = studentID,
 
-                            ResetLoginTimeoutTimer();
+                                };
+                                ResetLoginTimeoutTimer();
 
-                            userIsLoggedIn = true;
-                            loginCheckTimer.Stop(); // Stop the timer after successful login
-                            this.TopMost = false; // Allow other applications to come to the front
+                                userIsLoggedIn = true;
+                                loginCheckTimer.Stop();
+                                this.TopMost = false;
 
-                            // Show the user form and hide the login form
-                            userForm.Show();
-                            this.Hide();
+                                userForm.Show();
+                                this.Hide();
+                            
                         }
                         else
                         {
@@ -401,7 +431,193 @@ namespace ComlabSystem
                 }
             }
         }
+        private void IncrementUserSessionCount()
+        {
+            string studentID = UserIDTextBox.Text.Trim();
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // First, fetch the UserID using the StudentID
+                    SqlCommand getUserIdCmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
+                    getUserIdCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    var result = getUserIdCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        string userID = result.ToString();
+
+                        // Now increment the SessionCount using the UserID
+                        SqlCommand updateCmd = new SqlCommand("UPDATE UserList SET SessionCount = SessionCount + 1 WHERE UserID = @UserID", connection);
+                        updateCmd.Parameters.AddWithValue("@UserID", userID);
+                        updateCmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to increment session count: " + ex.Message);
+                }
+            }
+        }
+        private void IncrementUserImproperShutdownFrequency()
+        {
+            string studentID = UserIDTextBox.Text.Trim(); // Get the User ID from the textbox
+
+            if (string.IsNullOrEmpty(studentID))
+            {
+                MessageBox.Show("User ID is empty. Cannot update improper shutdown frequency.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Query to check the status of the user based on the StudentID
+                    SqlCommand checkUserCmd = new SqlCommand("SELECT Status FROM UserList WHERE StudentID = @StudentID", connection);
+                    checkUserCmd.Parameters.AddWithValue("@StudentID", studentID);
+
+                    // Execute the query and retrieve the status
+                    object result = checkUserCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        string userStatus = result.ToString().Trim(); // Trim to remove any extra spaces
+
+                        // Proceed only if the status is "Online"
+                        if (userStatus == "Online")
+                        {
+                            // Increment the UserImproperShutdownCount if the status is "Online"
+                            SqlCommand updateUserCmd = new SqlCommand("UPDATE UserList SET UserImproperShutdownCount = UserImproperShutdownCount + 1 WHERE StudentID = @StudentID", connection);
+                            updateUserCmd.Parameters.AddWithValue("@StudentID", studentID);
+                            int rowsAffected = updateUserCmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                // Update was successful
+                                MessageBox.Show("Warning.\nWarning: Improper shutdown and using multiple PCs can result in your account being held.");
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No user found with the provided User ID.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update user improper shutdown frequency: " + ex.Message);
+                }
+            }
+        }
+        private void IncrementUnitUsageFrequency()
+        {
+            string computerName = UnitNameLabel.Text.Trim();
+            if (string.IsNullOrEmpty(computerName))
+            {
+                MessageBox.Show("Computer name is empty. Cannot update usage frequency.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Query to check if the computer exists in the UnitList table
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                    checkCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    int count = (int)checkCmd.ExecuteScalar();
+
+                    if (count > 0) // Proceed only if the computer exists in the table
+                    {
+                        // Update the UsageFrequency
+                        SqlCommand updateCmd = new SqlCommand("UPDATE UnitList SET UsageFrequency = UsageFrequency + 1 WHERE ComputerName = @ComputerName", connection);
+                        updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                        updateCmd.ExecuteNonQuery();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update unit usage frequency: " + ex.Message);
+                }
+            }
+        }
+        private void IncrementUnitImproperShutdownFrequency()
+        {
+            string computerName = UnitNameLabel.Text.Trim(); // Get the computer name from the label
+
+            if (string.IsNullOrEmpty(computerName))
+            {
+                MessageBox.Show("Computer name is empty. Cannot update improper shutdown frequency.");
+                return;
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Query to check the status of the unit and get the LastUserID based on the computer name
+                    SqlCommand checkCmd = new SqlCommand("SELECT Status, LastUserID FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                    checkCmd.Parameters.AddWithValue("@ComputerName", computerName);
+
+                    // Execute the query and retrieve the status and LastUserID
+                    SqlDataReader reader = checkCmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string unitStatus = reader["Status"].ToString().Trim(); // Trim to remove any extra spaces
+                        string userID = reader["LastUserID"].ToString().Trim(); // Get the LastUserID
+
+                        // Close the SqlDataReader as it's no longer needed
+                        reader.Close();
+
+
+                        // Proceed only if the status is "Online"
+                        if (unitStatus == "Online")
+                        {
+                            // Increment the ImproperShutdownCount if the status is "Online"
+                            SqlCommand updateCmd = new SqlCommand("UPDATE UnitList SET ImproperShutdownCount = ImproperShutdownCount + 1 WHERE ComputerName = @ComputerName", connection);
+                            updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                            updateCmd.ExecuteNonQuery();
+
+                    
+
+                            // Insert a notification into the Notifications table
+                            SqlCommand insertNotifCmd = new SqlCommand("INSERT INTO Notifications (UserID, NotificationType, NotificationKind, Message, Timestamp) VALUES (@UserID, @NotificationType, @NotificationKind, @Message, @Timestamp)", connection);
+                            insertNotifCmd.Parameters.AddWithValue("@UserID", userID);
+                            insertNotifCmd.Parameters.AddWithValue("@NotificationType", "Warning");
+                            insertNotifCmd.Parameters.AddWithValue("@NotificationKind", "Improper Shutdown/Using multiple units");
+                            insertNotifCmd.Parameters.AddWithValue("@Message", "Warning: This user did not properly shut down a computer or its using multiple units.");
+                            insertNotifCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+
+                            insertNotifCmd.ExecuteNonQuery();
+
+
+                        }
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("No unit found with the provided computer name.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update improper shutdown frequency: " + ex.Message);
+                }
+            }
+        }
         private void HandleFailedLogin()
         {
             if (retryAttempts == 0)
@@ -415,7 +631,6 @@ namespace ComlabSystem
                 RetryAttemptTimeLabel.Text = $"Retry attempts left: {retryAttempts}";
             }
         }
-
         private void StartRetryTimer()
         {
             retryTimer.Start();
@@ -487,10 +702,12 @@ namespace ComlabSystem
             {
                 try
                 {
+
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE UserList SET Status = @Status, LastUnitUsed = @LastUnitUsed WHERE StudentID = @StudentID", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE UserList SET Status = @Status, UnitUsed = @UnitUsed, DateLastLogout = @DateLastLogout WHERE StudentID = @StudentID", connection);
                     cmd.Parameters.AddWithValue("@Status", "Online");
-                    cmd.Parameters.AddWithValue("@LastUnitUsed", $"Current Using ({computerName})");
+                    cmd.Parameters.AddWithValue("@UnitUsed", $"Current Using ({computerName})");
+                    cmd.Parameters.AddWithValue("@DateLastLogout", DBNull.Value);  // NULL initially since it's a new login
                     cmd.Parameters.AddWithValue("@StudentID", studentID);
                     cmd.ExecuteNonQuery();
                 }
@@ -501,55 +718,17 @@ namespace ComlabSystem
             }
         }
 
-        // Updated method name and SQL query to log action in the Logs table
-        private void InsertLoginAction(string studentID, string lastName, string firstName)
-        {
-            string computerName = UnitNameLabel.Text; // Get the current computer unit name
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Retrieve UserID based on the StudentID
-                    SqlCommand userCmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
-                    userCmd.Parameters.AddWithValue("@StudentID", studentID);
-                    int userID = (int)userCmd.ExecuteScalar();
-
-                    // Retrieve UnitID based on the computer name
-                    SqlCommand unitCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
-                    unitCmd.Parameters.AddWithValue("@ComputerName", computerName);
-                    int unitID = (int)unitCmd.ExecuteScalar();
-
-                    // Insert into Logs table
-                    SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp) VALUES (@UnitID, @UserID, @Action, @Timestamp)", connection);
-                    logCmd.Parameters.AddWithValue("@UnitID", unitID);
-                    logCmd.Parameters.AddWithValue("@UserID", userID);
-                    logCmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName} at " + DateTime.Now + ".");
-                    logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    logCmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to log login action: " + ex.Message);
-                }
-            }
-        }
-
         // New method to update UserID in the UnitList table based on the logged-in user's ID
         private void UpdateUnitListUserID(string lastName, string firstName)
         {
-            string computerName = UnitNameLabel.Text; // Current computer unit name
+            string computerName = UnitNameLabel.Text;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE UnitList SET CurrentUser = @CurrentUser, Status = @Status WHERE ComputerName = @ComputerName", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE UnitList SET CurrentUser = @CurrentUser, Status = @Status WHERE ComputerName = @ComputerName", connection);
                     cmd.Parameters.AddWithValue("@CurrentUser", $"{firstName} {lastName}");
                     cmd.Parameters.AddWithValue("@Status", "Online");
                     cmd.Parameters.AddWithValue("@ComputerName", computerName);
@@ -557,11 +736,18 @@ namespace ComlabSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed to update UnitList UserID: " + ex.Message);
-
+                    MessageBox.Show("Failed to update unit with user ID: " + ex.Message);
                 }
             }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -824,7 +1010,7 @@ namespace ComlabSystem
 
         // Timer for the auto-shutdown
         private Timer loginTimeoutTimer;
-        private int countdownTime = 180; // 3 minutes in seconds
+        private int countdownTime = 900; // 3 minutes in seconds
 
 
         private void LoginTimeoutTimer_Tick(object sender, EventArgs e)
@@ -832,9 +1018,17 @@ namespace ComlabSystem
             countdownTime--;
 
             // Show countdown form at 2 minutes (120 seconds)
-            if (countdownTime == 120)
+            if (countdownTime == 850)
             {
-                ShowCountdownForm();
+                CountdownForm countdownForm = new CountdownForm
+                {
+                    TopMost = true // Set CountdownForm as topmost
+                };
+
+                countdownForm.Show(); // Show the countdown form
+
+                // Bring CountdownForm to the front explicitly in case other forms are topmost
+                countdownForm.BringToFront();
             }
 
             // Check if time is up (3 minutes)
@@ -843,13 +1037,6 @@ namespace ComlabSystem
                 loginTimeoutTimer.Stop();
                 InitiateShutdown();
             }
-        }
-
-        // Show the countdown form to warn the user
-        private void ShowCountdownForm()
-        {
-            CountdownForm countdownForm = new CountdownForm();
-            countdownForm.Show();
         }
 
         // Initiate the shutdown process

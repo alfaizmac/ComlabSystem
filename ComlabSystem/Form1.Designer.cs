@@ -687,7 +687,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog AdminFormDialog;
         private Guna.UI2.WinForms.Guna2CircleButton ShowUserPassBtm;
         private Guna.UI2.WinForms.Guna2CircleButton ShowAdminPassBtm;
-        private System.Windows.Forms.Label UnitNameLabel;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label RetryAttemptTimeLabel;
         private Guna.UI2.WinForms.Guna2MessageDialog FailedAttempCountdownMsgBox;
@@ -698,6 +697,7 @@
         private System.Windows.Forms.Label AdminUserLoginL;
         private System.Windows.Forms.Label StudPassLoginL;
         private System.Windows.Forms.Label StudUserLoginL;
+        private System.Windows.Forms.Label UnitNameLabel;
     }
 }
 

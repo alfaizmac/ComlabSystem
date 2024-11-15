@@ -120,24 +120,6 @@
   <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>8, 6</value>
   </metadata>
-  <metadata name="guna2DragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>183, 6</value>
-  </metadata>
-  <metadata name="SignOutMSGDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>341, 6</value>
-  </metadata>
-  <metadata name="ShutdownMSGDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>497, 6</value>
-  </metadata>
-  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>664, 6</value>
-  </metadata>
-  <metadata name="SideBarTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>846, 6</value>
-  </metadata>
-  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>969, 6</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SignOutButtom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -157,32 +139,6 @@
         AkO/KQQ5U8rcwbp6MX4Pe01CT8So6O0qpgQQojd0mXLvEzqdo7c8mmLXdG9QQ8L9rRRB7JTc/R/pO0T3
         kRa7lzxFCr8hrAwxhYMZffnSDf0OKIaDwsD4O0qX2LN4OhlCCCGEEEIIIYQQS2a1+geu1EKuG8ilMwAA
         AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="guna2Button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAABNxJREFUeF7t
-        neuR2zAMhK+Me/xJKSklnbgUl5JSXEqy64HmaB1tgiIJQhK+mZ3MZWRQxIoAKefxFgRBEARBEARBEJR5
-        f3//9fn5eX0lXiOXB6MRQ/69UhhiSBjijDDEGWGIM8IQZ4QhHeiZoDCkkY+Pj79I0kV+bMbaEMS7QPs/
-        23ACYkbXJFkagji/l5icS6+45qQTSXTrMSHGyMR+0Mhxvr6+/sgl++CJGYuaS5eVIenqXms3phTMWNRk
-        ioUhmnm4N0Vpxl0tCRttiCb+Irem1JhBsRzIR6sZbQg+zzfG2bg5ce7yUR/UPFFUixlktCH87Kv+kVPL
-        eN2pvPndNHXE4fkjGz+jLjvIZmrM6FVvrQwhiFVjSrfD7yaY4MxNZdWz+VkaQhCPptzS+C80xxRNUhJ1
-        vUlrQwhiqldK77FVYGDtDV7lI92YYQhBXO2cbVeJJiFU627qGbMMIdqeOWr8LMqbusnl3ZlpiIxd7Cej
-        HsYfaJJB4bphh6WZhhDEV5Uuk1M8BtKcYrv3jZTZhhCMUczD8FWiSQQ1OhkeDJF7KJauofeBATRLdfgO
-        w4MhBONo8jGmWmiSAA1r5CleDCEYa84qQWAXq4M4M6TYS4Y0dwQuDmyVBE+GYBzN1w79y1ZmkLVMyhXx
-        ZAjBeLZlS/kUmL0u8GaI5iUrcyiXt4OAxf4hl5rgzRDN/UD9ypbiVYlZuSLeDCEY82XZ6npIzA2wkunb
-        TaeGFDc9cmkbmsmbvLNJ8GiIso+03xOCFBs6r5HLTfBoiFmeNM7LpWZ4NIRg3Jd9pEslQaDSDsu0oZO9
-        GgK191oGWQVdKwwRMO58Q8y+GUvwaojieNB+FmGQVdAHhSHfYNzS1veYhnjFaoW4K1leURjS3kNK294w
-        5BsXhkDmuyyvMBer3DwIfa39YMggueCpZjRQj+Ryk6qXIS53NN4wzVMueKourwR2jukrJgQbfwLdOczB
-        Kidr9eu1DLYK/qDYaake2q6GlNw/dR/R9A+oXxXBgMWd1pn7COZv/8AiaJStJygOhP3Pagjq5g/KecK8
-        XC1oyhZ0ut0W57zKwQ8xd3J5XxC8tJM41SpRro5xr5YQvFi2oNOsEs51NfecxuVDWbZOsUqUq2NcuVrA
-        ILFKgGJnZbPzlCej2EuOfC5xVykwmGaV+PjHWDojD2RuvmvZVQntKoEO978UaEoVJZfbgUE1OwzqMP2E
-        c1nN7ZnmzBkDa1YJtXtTNN93iOZ9pY3BtU8MtVtTKsyYv5nBTRzalBozoP5/uXML2kYnuuyl0eNeNbvJ
-        u0zOHDXgprT95H7z3k2pfMjm9Y1nVGyFF908Hh4xD9WhLxHPW2Nfj2xF6m2NKZSLswrvoXJV3OXWjAXc
-        JJt8rSnUtN6CsdW9IpXHFZ6FTw1ueIsplMmK4RgcazW2Wu5XxhqZ8FZT7o2fT2BvcxhzS2lK5LdnaGic
-        /F0SgyXtNw3SmsTrpa9xJWx+OBbxPiT0vsFkag6PWt2YoEX4+Sq/MvHNyc/oMO/k7mzcgbnQrktUCUyw
-        S/kw0rFWxTPYAzBZz8ac83+bZimQup9LygzRiOOWJy1MApMBzVoxYcQzxJytp/0ahQm1LOYk29lcYrW6
-        jjhonh4mlEZRspXmamK5oy78vSXxkfwgCIIgCIIgCIISb2//Aa5z/yN5esBTAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ChangePasswordButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -229,17 +185,34 @@
         kRBCCCGEEEIIIYQQPlxc/ANv0AON8XoejAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="MenuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAORJREFUeF7t
-        2k0KwjAURtHOXEJ/RiJdSxflBrpq0QQiOgilk8aHPQfuOBChLfh1AAAAAAAAAAB/bZ7nS9/3t2EYrvqU
-        7yTfTbmmNqZpWlOP1FPV8t2s5bqOlQ5avg7Wdku5tuOM43ivHKxK+a7KtR3HD7K/Jj9IOsgja3/HP7Ky
-        dJCX+nbtXupvPnvr/eSzFwAAAAAAAJrzj2E9Q7mYGcoFzVAuUoZywTKUi5ehXJAM5aJkKAcAAAAAAMA5
-        +MewnqFczAzlgmYoFylDuWAZysXLUC5IhnJRMpQDAAAAAAAAAE6g616Jo396lYEfuwAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
+  <metadata name="guna2DragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>183, 6</value>
+  </metadata>
+  <metadata name="SignOutMSGDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>341, 6</value>
+  </metadata>
+  <metadata name="ShutdownMSGDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>497, 6</value>
+  </metadata>
+  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>664, 6</value>
+  </metadata>
+  <metadata name="SideBarTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>846, 6</value>
+  </metadata>
+  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>969, 6</value>
+  </metadata>
   <metadata name="guna2DragControl3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1127, 6</value>
+  </metadata>
+  <metadata name="MenuToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1285, 6</value>
+  </metadata>
+  <metadata name="ShowSignoutButtonAvai.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1408, 6</value>
+  </metadata>
+  <metadata name="SideMenuDialogs.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>11, 39</value>
   </metadata>
 </root>
