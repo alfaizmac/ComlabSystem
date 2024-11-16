@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -20,6 +21,8 @@ namespace ComlabSystem
     {
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+
+
         public string StudentID
         {
             set { StudIDLabel.Text = value; }
@@ -31,11 +34,11 @@ namespace ComlabSystem
             set { LockScreenStudIDLabel.Text = value; }
         }
 
-
         bool SideBarExpand;
         public user()
         {
             InitializeComponent();
+
 
             HideOtherPanel();
 
@@ -86,6 +89,7 @@ namespace ComlabSystem
             sharedTimer.Start();
 
             LockScreenStudPassLoginL.Visible =false;
+            PassNotmatch.Visible = true;
 
 
             this.WindowState = FormWindowState.Normal;
@@ -372,9 +376,6 @@ namespace ComlabSystem
             string timerText = TimerLabel.Text;
             TimeSpan sessionTime = ParseTimeToTimeSpan(timerText);  // Convert TimerLabel text to TimeSpan
 
-            // Calculate the total seconds used
-            int sessionTotalSeconds = (int)sessionTime.TotalSeconds;
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -436,8 +437,16 @@ namespace ComlabSystem
                     insertLogCmd.Parameters.AddWithValue("@UserID", userID);
                     insertLogCmd.Parameters.AddWithValue("@UnitID", unitID);  // Use the retrieved UnitID here
                     insertLogCmd.Parameters.AddWithValue("@TimeDuration", sessionTime);  // Insert the session time as TimeDuration
-                    insertLogCmd.Parameters.AddWithValue("@ActionType", "Signout");
+                    insertLogCmd.Parameters.AddWithValue("@ActionType", "Sign out");
                     insertLogCmd.ExecuteNonQuery();
+
+                    // Calculate and update AverageSessionDuration in UserList
+                    TimeSpan averageDuration = CalculateAverageSessionDuration(connection, userID);
+                    SqlCommand updateAverageCmd = new SqlCommand(
+                        "UPDATE UserList SET AverageSessionDuration = @AverageSessionDuration WHERE UserID = @UserID", connection);
+                    updateAverageCmd.Parameters.AddWithValue("@AverageSessionDuration", averageDuration.ToString(@"hh\:mm\:ss"));
+                    updateAverageCmd.Parameters.AddWithValue("@UserID", userID);
+                    updateAverageCmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
@@ -445,6 +454,32 @@ namespace ComlabSystem
                 }
             }
         }
+
+        // Method to calculate the average session duration for a user
+        private TimeSpan CalculateAverageSessionDuration(SqlConnection connection, int userID)
+        {
+            string query = "SELECT TimeDuration FROM Logs WHERE UserID = @UserID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@UserID", userID);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<TimeSpan> durations = new List<TimeSpan>();
+            while (reader.Read())
+            {
+                durations.Add(TimeSpan.Parse(reader["TimeDuration"].ToString()));
+            }
+            reader.Close();
+
+            if (durations.Count == 0)
+            {
+                return TimeSpan.Zero;
+            }
+
+            // Calculate average duration
+            double totalSeconds = durations.Sum(duration => duration.TotalSeconds);
+            return TimeSpan.FromSeconds(totalSeconds / durations.Count);
+        }
+
 
 
 
@@ -601,10 +636,7 @@ namespace ComlabSystem
             // Step 1: Verify if New Password and Confirm New Password match
             if (NewPassTB.Text != ConfirmNewPassTB.Text)
             {
-                SideMenuDialogs.Icon = MessageDialogIcon.Error;
-                SideMenuDialogs.Caption = "Password Mismatch";
-                SideMenuDialogs.Text = "The new passwords do not match. Please try again.";
-                SideMenuDialogs.Show();
+                PassNotmatch.Visible = true;
                 return;
             }
 
@@ -866,9 +898,14 @@ namespace ComlabSystem
             AllowSignOutL.Text = $"{minutes:D2}:{seconds:D2}";
 
             // When time reaches zero, show the buttons
-            if (signOutTimeLeft <= 0)
+            if (signOutTimeLeft <= 0)   
             {
                 signOutTimer.Stop();
+                ShowSignoutButtonAvai.Caption = "Sign Out Now Available";
+                ShowSignoutButtonAvai.Text =
+                    "The **Sign Out** button is now accessible after the screen was locked for an extended period. " +
+                    "To sign out, simply click the **Sign Out** button located at the top-right corner of your screen. " +
+                    "This ensures the security of your session and helps manage computer usage effectively.";
                 ShowSignoutButtonAvai.Show();
                 SignOutBtm.Visible = true;
                 ShutDownBtm.Visible = true;
@@ -1034,13 +1071,14 @@ namespace ComlabSystem
 
                     // Insert the login action into the Logs table
                     SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType)", connection);
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType, UserType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType, @UserType)", connection);
                     logCmd.Parameters.AddWithValue("@UnitID", unitID);
                     logCmd.Parameters.AddWithValue("@UserID", userID);
                     logCmd.Parameters.AddWithValue("@Action", $"{fName} has logged in on {computerName} at " + DateTime.Now + ".");
                     logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
                     logCmd.Parameters.AddWithValue("@TimeDuration", TimeSpan.Zero);  // Set initial duration to 0
                     logCmd.Parameters.AddWithValue("@ActionType", "Login");
+                    logCmd.Parameters.AddWithValue("@UserType", "Student");
 
                     // Get the inserted LogID for future updates
                     int logId = (int)logCmd.ExecuteScalar();
@@ -1087,5 +1125,79 @@ namespace ComlabSystem
         }
 
 
+
+        //Shutdown btm
+        private void ShutDownBtmNonlock_Click(object sender, EventArgs e)
+        {
+            // Assuming SignOutMSGDialog is already a defined Guna2MessageDialog
+            SignOutMSGDialog.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
+            SignOutMSGDialog.Icon = MessageDialogIcon.Question;     // Question icon
+            SignOutMSGDialog.Caption = "Shutdown";
+            SignOutMSGDialog.Text = "Are you sure you want to shutdown?";
+            SignOutMSGDialog.Style = MessageDialogStyle.Light;
+
+            // Show the dialog and get the result
+            DialogResult result = SignOutMSGDialog.Show();
+
+            if (result == DialogResult.Yes)
+            {
+                sessionTimer.Stop();
+                UpdateSignOutStatus();
+
+                allowClose = true;
+
+                seconds = 0;
+                minutes = 0;
+                hours = 0;
+                sharedTimer.Stop();
+
+                // You can use the Process.Start method to run a shutdown command
+                System.Diagnostics.Process.Start("shutdown", "/s /f /t 0"); ;
+            }
+        }
+
+        private void ShutDownBtm_Click(object sender, EventArgs e)
+        {
+            // Assuming SignOutMSGDialog is already a defined Guna2MessageDialog
+            SignOutMSGDialog.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
+            SignOutMSGDialog.Icon = MessageDialogIcon.Question;     // Question icon
+            SignOutMSGDialog.Caption = "Shutdown";
+            SignOutMSGDialog.Text = "Are you sure you want to shutdown?";
+            SignOutMSGDialog.Style = MessageDialogStyle.Light;
+
+            // Show the dialog and get the result
+            DialogResult result = SignOutMSGDialog.Show();
+
+            if (result == DialogResult.Yes)
+            {
+                sessionTimer.Stop();
+                UpdateSignOutStatus();
+
+                allowClose = true;
+
+                seconds = 0;
+                minutes = 0;
+                hours = 0;
+                sharedTimer.Stop();
+
+                // You can use the Process.Start method to run a shutdown command
+                System.Diagnostics.Process.Start("shutdown", "/s /f /t 0"); ;
+            }
+        }
+
+        private void d_Click(object sender, EventArgs e)
+        {
+            ReportRadioButton.Checked = true;
+        }
+
+        private void f_Click(object sender, EventArgs e)
+        {
+            FeedbackRadioBtm.Checked = true;
+        }
+
+        private void ConfirmNewPassTB_TextChanged(object sender, EventArgs e)
+        {
+            PassNotmatch.Visible = false;
+        }
     }
 }

@@ -48,13 +48,21 @@
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.PauseBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.SignOutButtom = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.ChangePasswordButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.ReportButton = new Guna.UI2.WinForms.Guna2Button();
             this.MenuButtonPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.MenuButton = new Guna.UI2.WinForms.Guna2Button();
+            this.S = new Guna.UI2.WinForms.Guna2Panel();
+            this.ShutDownBtmNonlock = new Guna.UI2.WinForms.Guna2Button();
             this.ReportPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.f = new System.Windows.Forms.Label();
+            this.FeedbackRadioBtm = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.d = new System.Windows.Forms.Label();
+            this.ReportRadioButton = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.SendReportFeedbackBtm = new Guna.UI2.WinForms.Guna2Button();
             this.SendReportFeedbackTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.ChangePasswordPNL = new Guna.UI2.WinForms.Guna2Panel();
@@ -84,8 +92,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.StudIDLabel = new System.Windows.Forms.Label();
             this.FLNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.UserPnL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPausePnL = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
@@ -116,15 +124,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.MenuToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ShowSignoutButtonAvai = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ReportRadioButton = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.d = new System.Windows.Forms.Label();
-            this.f = new System.Windows.Forms.Label();
-            this.FeedbackRadioBtm = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.SideMenuDialogs = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.SignOutButtom = new Guna.UI2.WinForms.Guna2Button();
-            this.S = new Guna.UI2.WinForms.Guna2Panel();
-            this.ShutDownBtmNonlock = new Guna.UI2.WinForms.Guna2Button();
+            this.PassNotmatch = new System.Windows.Forms.Label();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -134,6 +135,7 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.MenuButtonPNL.SuspendLayout();
+            this.S.SuspendLayout();
             this.ReportPnl.SuspendLayout();
             this.ChangePasswordPNL.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
@@ -150,7 +152,6 @@
             this.guna2Panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             this.guna2Panel15.SuspendLayout();
-            this.S.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -351,6 +352,28 @@
             this.guna2Panel6.Size = new System.Drawing.Size(44, 43);
             this.guna2Panel6.TabIndex = 9;
             // 
+            // SignOutButtom
+            // 
+            this.SignOutButtom.Animated = true;
+            this.SignOutButtom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.SignOutButtom.BorderThickness = 2;
+            this.SignOutButtom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SignOutButtom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SignOutButtom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SignOutButtom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SignOutButtom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.SignOutButtom.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SignOutButtom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.SignOutButtom.Image = ((System.Drawing.Image)(resources.GetObject("SignOutButtom.Image")));
+            this.SignOutButtom.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SignOutButtom.ImageOffset = new System.Drawing.Point(2, 0);
+            this.SignOutButtom.Location = new System.Drawing.Point(0, 0);
+            this.SignOutButtom.Name = "SignOutButtom";
+            this.SignOutButtom.Size = new System.Drawing.Size(181, 45);
+            this.SignOutButtom.TabIndex = 0;
+            this.SignOutButtom.Text = "    Sign Out";
+            this.SignOutButtom.Click += new System.EventHandler(this.SignOutButtom_Click);
+            // 
             // guna2Panel4
             // 
             this.guna2Panel4.BorderColor = System.Drawing.Color.RosyBrown;
@@ -458,12 +481,44 @@
             this.MenuButton.Text = "    Menu";
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
+            // S
+            // 
+            this.S.Controls.Add(this.ShutDownBtmNonlock);
+            this.S.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.S.Location = new System.Drawing.Point(0, 273);
+            this.S.Name = "S";
+            this.S.Size = new System.Drawing.Size(44, 43);
+            this.S.TabIndex = 11;
+            // 
+            // ShutDownBtmNonlock
+            // 
+            this.ShutDownBtmNonlock.Animated = true;
+            this.ShutDownBtmNonlock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.ShutDownBtmNonlock.BorderThickness = 2;
+            this.ShutDownBtmNonlock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ShutDownBtmNonlock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ShutDownBtmNonlock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ShutDownBtmNonlock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ShutDownBtmNonlock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.ShutDownBtmNonlock.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ShutDownBtmNonlock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.ShutDownBtmNonlock.Image = global::ComlabSystem.Properties.Resources.shut_down;
+            this.ShutDownBtmNonlock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ShutDownBtmNonlock.ImageOffset = new System.Drawing.Point(2, 0);
+            this.ShutDownBtmNonlock.Location = new System.Drawing.Point(0, 0);
+            this.ShutDownBtmNonlock.Name = "ShutDownBtmNonlock";
+            this.ShutDownBtmNonlock.Size = new System.Drawing.Size(181, 45);
+            this.ShutDownBtmNonlock.TabIndex = 0;
+            this.ShutDownBtmNonlock.Text = "    Shut down";
+            this.ShutDownBtmNonlock.Click += new System.EventHandler(this.ShutDownBtmNonlock_Click);
+            // 
             // ReportPnl
             // 
             this.ReportPnl.BackColor = System.Drawing.Color.White;
             this.ReportPnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.ReportPnl.BorderRadius = 15;
             this.ReportPnl.BorderThickness = 1;
+            this.ReportPnl.Controls.Add(this.guna2Panel8);
             this.ReportPnl.Controls.Add(this.f);
             this.ReportPnl.Controls.Add(this.FeedbackRadioBtm);
             this.ReportPnl.Controls.Add(this.d);
@@ -471,12 +526,81 @@
             this.ReportPnl.Controls.Add(this.label6);
             this.ReportPnl.Controls.Add(this.SendReportFeedbackBtm);
             this.ReportPnl.Controls.Add(this.SendReportFeedbackTB);
-            this.ReportPnl.Controls.Add(this.guna2Panel8);
             this.ReportPnl.FillColor = System.Drawing.Color.Transparent;
             this.ReportPnl.Location = new System.Drawing.Point(142, 12);
             this.ReportPnl.Name = "ReportPnl";
             this.ReportPnl.Size = new System.Drawing.Size(320, 322);
             this.ReportPnl.TabIndex = 38;
+            // 
+            // f
+            // 
+            this.f.AutoSize = true;
+            this.f.BackColor = System.Drawing.Color.Transparent;
+            this.f.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.f.Location = new System.Drawing.Point(54, 115);
+            this.f.Name = "f";
+            this.f.Size = new System.Drawing.Size(82, 21);
+            this.f.TabIndex = 43;
+            this.f.Text = "Feedback";
+            this.f.Click += new System.EventHandler(this.f_Click);
+            // 
+            // FeedbackRadioBtm
+            // 
+            this.FeedbackRadioBtm.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.FeedbackRadioBtm.CheckedState.BorderThickness = 0;
+            this.FeedbackRadioBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.FeedbackRadioBtm.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.FeedbackRadioBtm.Location = new System.Drawing.Point(28, 115);
+            this.FeedbackRadioBtm.Name = "FeedbackRadioBtm";
+            this.FeedbackRadioBtm.Size = new System.Drawing.Size(20, 20);
+            this.FeedbackRadioBtm.TabIndex = 42;
+            this.FeedbackRadioBtm.Text = "guna2CustomRadioButton2";
+            this.FeedbackRadioBtm.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.FeedbackRadioBtm.UncheckedState.BorderThickness = 2;
+            this.FeedbackRadioBtm.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.FeedbackRadioBtm.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // d
+            // 
+            this.d.AutoSize = true;
+            this.d.BackColor = System.Drawing.Color.Transparent;
+            this.d.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.d.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.d.Location = new System.Drawing.Point(54, 86);
+            this.d.Name = "d";
+            this.d.Size = new System.Drawing.Size(61, 21);
+            this.d.TabIndex = 41;
+            this.d.Text = "Report";
+            this.d.Click += new System.EventHandler(this.d_Click);
+            // 
+            // ReportRadioButton
+            // 
+            this.ReportRadioButton.Checked = true;
+            this.ReportRadioButton.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.ReportRadioButton.CheckedState.BorderThickness = 0;
+            this.ReportRadioButton.CheckedState.FillColor = System.Drawing.Color.Maroon;
+            this.ReportRadioButton.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.ReportRadioButton.Location = new System.Drawing.Point(28, 86);
+            this.ReportRadioButton.Name = "ReportRadioButton";
+            this.ReportRadioButton.Size = new System.Drawing.Size(20, 20);
+            this.ReportRadioButton.TabIndex = 17;
+            this.ReportRadioButton.Text = "guna2CustomRadioButton1";
+            this.ReportRadioButton.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ReportRadioButton.UncheckedState.BorderThickness = 2;
+            this.ReportRadioButton.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.ReportRadioButton.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label6.Location = new System.Drawing.Point(19, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(261, 34);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Please select the type of input you\'d like to \r\nprovide: ";
             // 
             // SendReportFeedbackBtm
             // 
@@ -535,6 +659,7 @@
             this.ChangePasswordPNL.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.ChangePasswordPNL.BorderRadius = 15;
             this.ChangePasswordPNL.BorderThickness = 1;
+            this.ChangePasswordPNL.Controls.Add(this.PassNotmatch);
             this.ChangePasswordPNL.Controls.Add(this.StudPassLoginL);
             this.ChangePasswordPNL.Controls.Add(this.ShowUserCurrentPassBtm);
             this.ChangePasswordPNL.Controls.Add(this.ShowUserPassBtm);
@@ -662,6 +787,7 @@
             this.ConfirmNewPassTB.TabIndex = 16;
             this.ConfirmNewPassTB.TextOffset = new System.Drawing.Point(5, 0);
             this.ConfirmNewPassTB.UseSystemPasswordChar = true;
+            this.ConfirmNewPassTB.TextChanged += new System.EventHandler(this.ConfirmNewPassTB_TextChanged);
             // 
             // NewPassTB
             // 
@@ -936,18 +1062,6 @@
             this.FLNameLabel.TabIndex = 39;
             this.FLNameLabel.Text = "Mohamm";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label1.Location = new System.Drawing.Point(32, 323);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 17);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Please shutdown the computer properly.";
-            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.White;
@@ -960,6 +1074,18 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 37;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label1.Location = new System.Drawing.Point(32, 323);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(230, 17);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Please shutdown the computer properly.";
             // 
             // UserPnL
             // 
@@ -1062,11 +1188,11 @@
             // 
             this.AllowShutDownL.AutoSize = true;
             this.AllowShutDownL.BackColor = System.Drawing.Color.Transparent;
-            this.AllowShutDownL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.AllowShutDownL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllowShutDownL.ForeColor = System.Drawing.Color.White;
             this.AllowShutDownL.Location = new System.Drawing.Point(597, 447);
             this.AllowShutDownL.Name = "AllowShutDownL";
-            this.AllowShutDownL.Size = new System.Drawing.Size(49, 21);
+            this.AllowShutDownL.Size = new System.Drawing.Size(50, 21);
             this.AllowShutDownL.TabIndex = 24;
             this.AllowShutDownL.Text = "00:00";
             // 
@@ -1086,11 +1212,11 @@
             // 
             this.AllowSignOutL.AutoSize = true;
             this.AllowSignOutL.BackColor = System.Drawing.Color.Transparent;
-            this.AllowSignOutL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.AllowSignOutL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllowSignOutL.ForeColor = System.Drawing.Color.White;
             this.AllowSignOutL.Location = new System.Drawing.Point(568, 421);
             this.AllowSignOutL.Name = "AllowSignOutL";
-            this.AllowSignOutL.Size = new System.Drawing.Size(49, 21);
+            this.AllowSignOutL.Size = new System.Drawing.Size(50, 21);
             this.AllowSignOutL.TabIndex = 22;
             this.AllowSignOutL.Text = "00:00";
             // 
@@ -1233,6 +1359,7 @@
             this.ShutDownBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.ShutDownBtm.Size = new System.Drawing.Size(30, 30);
             this.ShutDownBtm.TabIndex = 4;
+            this.ShutDownBtm.Click += new System.EventHandler(this.ShutDownBtm_Click);
             // 
             // UserLockScreenShowPassBtm
             // 
@@ -1378,74 +1505,6 @@
             this.ShowSignoutButtonAvai.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.ShowSignoutButtonAvai.Text = "SIgn out available";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(9, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(221, 34);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Please select the type of input you\'d \r\nlike to provide: ";
-            // 
-            // ReportRadioButton
-            // 
-            this.ReportRadioButton.Checked = true;
-            this.ReportRadioButton.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.ReportRadioButton.CheckedState.BorderThickness = 0;
-            this.ReportRadioButton.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.ReportRadioButton.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.ReportRadioButton.Location = new System.Drawing.Point(19, 86);
-            this.ReportRadioButton.Name = "ReportRadioButton";
-            this.ReportRadioButton.Size = new System.Drawing.Size(20, 20);
-            this.ReportRadioButton.TabIndex = 17;
-            this.ReportRadioButton.Text = "guna2CustomRadioButton1";
-            this.ReportRadioButton.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ReportRadioButton.UncheckedState.BorderThickness = 2;
-            this.ReportRadioButton.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.ReportRadioButton.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // d
-            // 
-            this.d.AutoSize = true;
-            this.d.BackColor = System.Drawing.Color.Transparent;
-            this.d.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.d.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.d.Location = new System.Drawing.Point(45, 86);
-            this.d.Name = "d";
-            this.d.Size = new System.Drawing.Size(61, 21);
-            this.d.TabIndex = 41;
-            this.d.Text = "Report";
-            // 
-            // f
-            // 
-            this.f.AutoSize = true;
-            this.f.BackColor = System.Drawing.Color.Transparent;
-            this.f.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.f.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.f.Location = new System.Drawing.Point(45, 115);
-            this.f.Name = "f";
-            this.f.Size = new System.Drawing.Size(82, 21);
-            this.f.TabIndex = 43;
-            this.f.Text = "Feedback";
-            // 
-            // FeedbackRadioBtm
-            // 
-            this.FeedbackRadioBtm.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FeedbackRadioBtm.CheckedState.BorderThickness = 0;
-            this.FeedbackRadioBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
-            this.FeedbackRadioBtm.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.FeedbackRadioBtm.Location = new System.Drawing.Point(19, 115);
-            this.FeedbackRadioBtm.Name = "FeedbackRadioBtm";
-            this.FeedbackRadioBtm.Size = new System.Drawing.Size(20, 20);
-            this.FeedbackRadioBtm.TabIndex = 42;
-            this.FeedbackRadioBtm.Text = "guna2CustomRadioButton2";
-            this.FeedbackRadioBtm.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.FeedbackRadioBtm.UncheckedState.BorderThickness = 2;
-            this.FeedbackRadioBtm.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.FeedbackRadioBtm.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
             // SideMenuDialogs
             // 
             this.SideMenuDialogs.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -1455,57 +1514,16 @@
             this.SideMenuDialogs.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.SideMenuDialogs.Text = null;
             // 
-            // SignOutButtom
+            // PassNotmatch
             // 
-            this.SignOutButtom.Animated = true;
-            this.SignOutButtom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.SignOutButtom.BorderThickness = 2;
-            this.SignOutButtom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SignOutButtom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SignOutButtom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SignOutButtom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SignOutButtom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.SignOutButtom.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.SignOutButtom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.SignOutButtom.Image = ((System.Drawing.Image)(resources.GetObject("SignOutButtom.Image")));
-            this.SignOutButtom.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.SignOutButtom.ImageOffset = new System.Drawing.Point(2, 0);
-            this.SignOutButtom.Location = new System.Drawing.Point(0, 0);
-            this.SignOutButtom.Name = "SignOutButtom";
-            this.SignOutButtom.Size = new System.Drawing.Size(181, 45);
-            this.SignOutButtom.TabIndex = 0;
-            this.SignOutButtom.Text = "    Sign Out";
-            this.SignOutButtom.Click += new System.EventHandler(this.SignOutButtom_Click);
-            // 
-            // S
-            // 
-            this.S.Controls.Add(this.ShutDownBtmNonlock);
-            this.S.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.S.Location = new System.Drawing.Point(0, 273);
-            this.S.Name = "S";
-            this.S.Size = new System.Drawing.Size(44, 43);
-            this.S.TabIndex = 11;
-            // 
-            // ShutDownBtmNonlock
-            // 
-            this.ShutDownBtmNonlock.Animated = true;
-            this.ShutDownBtmNonlock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.ShutDownBtmNonlock.BorderThickness = 2;
-            this.ShutDownBtmNonlock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ShutDownBtmNonlock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ShutDownBtmNonlock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ShutDownBtmNonlock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ShutDownBtmNonlock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.ShutDownBtmNonlock.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ShutDownBtmNonlock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ShutDownBtmNonlock.Image = global::ComlabSystem.Properties.Resources.shut_down;
-            this.ShutDownBtmNonlock.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ShutDownBtmNonlock.ImageOffset = new System.Drawing.Point(2, 0);
-            this.ShutDownBtmNonlock.Location = new System.Drawing.Point(0, 0);
-            this.ShutDownBtmNonlock.Name = "ShutDownBtmNonlock";
-            this.ShutDownBtmNonlock.Size = new System.Drawing.Size(181, 45);
-            this.ShutDownBtmNonlock.TabIndex = 0;
-            this.ShutDownBtmNonlock.Text = "    Shut down";
+            this.PassNotmatch.AutoSize = true;
+            this.PassNotmatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PassNotmatch.ForeColor = System.Drawing.Color.Maroon;
+            this.PassNotmatch.Location = new System.Drawing.Point(149, 187);
+            this.PassNotmatch.Name = "PassNotmatch";
+            this.PassNotmatch.Size = new System.Drawing.Size(126, 13);
+            this.PassNotmatch.TabIndex = 22;
+            this.PassNotmatch.Text = "Passwords do not match!";
             // 
             // user
             // 
@@ -1532,6 +1550,7 @@
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.MenuButtonPNL.ResumeLayout(false);
+            this.S.ResumeLayout(false);
             this.ReportPnl.ResumeLayout(false);
             this.ReportPnl.PerformLayout();
             this.ChangePasswordPNL.ResumeLayout(false);
@@ -1558,7 +1577,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             this.guna2Panel15.ResumeLayout(false);
             this.guna2Panel15.PerformLayout();
-            this.S.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1660,5 +1678,6 @@
         private Guna.UI2.WinForms.Guna2Button SignOutButtom;
         private Guna.UI2.WinForms.Guna2Panel S;
         private Guna.UI2.WinForms.Guna2Button ShutDownBtmNonlock;
+        private System.Windows.Forms.Label PassNotmatch;
     }
 }

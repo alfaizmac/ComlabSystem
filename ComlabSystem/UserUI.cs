@@ -22,6 +22,8 @@ namespace ComlabSystem
     {
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+
+
         public UserUI()
         {
             InitializeComponent();
@@ -104,6 +106,7 @@ namespace ComlabSystem
             // Associate the tooltip with the Student ID field
             EditStudentIDTBTT.SetToolTip(EditStudentIDTip, tooltipMessage2);
 
+
         }
 
 
@@ -126,6 +129,8 @@ namespace ComlabSystem
             PrintToogleBtm.BringToFront();
 
         }
+
+
 
         private void hideallpanel()
         {
@@ -234,9 +239,9 @@ SELECT
     u.Email,
     u.ContactNo AS [Contact],
     u.DateRegistered AS [Date Registered],
-    u.LastLogin AS [Last Login],
+    u.DateLastLogout AS [Date Last Logout],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Unit Used]
+    u.UnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -986,9 +991,9 @@ SELECT
     u.Email,
     u.ContactNo AS [Contact],
     u.DateRegistered AS [Date Registered],
-    u.LastLogin AS [Last Login],
+    u.DateLastLogout AS [Date Last Logout,
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Unit Used]
+    u.UnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -1091,9 +1096,9 @@ SELECT
     u.Email,
     u.ContactNo AS [Contact],
     u.DateRegistered AS [Date Registered],
-    u.LastLogin AS [Last Login],
+    u.DateLastLogout AS [Date Last Logout],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Unit Used]
+    u.UnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -2002,9 +2007,9 @@ SELECT
     u.Email,
     u.ContactNo AS [Contact],
     u.DateRegistered AS [Date Registered],
-    u.LastLogin AS [Last Login],
+    u.DateLastLogout AS [Date Last Logout],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Unit Used]
+    u.UnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -2078,9 +2083,9 @@ SELECT
     u.Email,
     u.ContactNo AS [Contact],
     u.DateRegistered AS [Date Registered],
-    u.LastLogin AS [Last Login],
+    u.DateLastLogout AS [Date Last Logout],
     u.TotalHoursUsed AS [Total Hours Used],
-    u.LastUnitUsed AS [Unit Used]
+    u.UnitUsed AS [Unit Used]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -2249,6 +2254,8 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
                 }
             }
         }
+
+
 
 
     }  

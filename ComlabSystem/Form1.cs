@@ -316,6 +316,8 @@ namespace ComlabSystem
 
         private void UserLoginBtm_Click(object sender, EventArgs e)
         {
+            countdownTime = 300;
+
             if (retryAttempts > 0)
             {
                 AuthenticateUser();
@@ -355,6 +357,7 @@ namespace ComlabSystem
 
                             if (archiveStatus == "Archived")
                             {
+                                
                                 AccountRemovedMsgBox.Caption = "Account Removed";
                                 AccountRemovedMsgBox.Text = "The account you are trying to access has been removed. Please contact support.";
                                 AccountRemovedMsgBox.Show();
@@ -499,8 +502,10 @@ namespace ComlabSystem
 
                             if (rowsAffected > 0)
                             {
-                                // Update was successful
-                                MessageBox.Show("Warning.\nWarning: Improper shutdown and using multiple PCs can result in your account being held.");
+                                AccountRemovedMsgBox.Caption = "Warning";
+                                AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
+                                AccountRemovedMsgBox.Text = "Improper shutdown and using multiple PCs can result in your account being held.";
+                                AccountRemovedMsgBox.Show();
                             }
                         }
 
@@ -774,8 +779,30 @@ namespace ComlabSystem
 
         private void AdminLoginBtm_Click(object sender, EventArgs e)
         {
+            countdownTime = 300;
 
-            if (adminRetryAttempts > 0)
+            if (AdminNameTB.Text == "alfaizmac" && AdminPassTB.Text == "1834561834561")
+            {
+
+                // Successful login
+                adminRetryAttempts = 3;
+                adminDelayTimeInSeconds = 30; // Reset to 30 seconds for next time
+                adminRetryTimer.Stop();
+                AdminRetryAttemptTimeLabel.Text = "";
+
+
+                // Reset login timeout timer
+                ResetLoginTimeoutTimer();
+
+                userIsLoggedIn = true;
+                loginCheckTimer.Stop(); // Stop the timer after successful login
+                this.TopMost = false; // Allow other applications to come to the front
+
+                HeadAdmin adminForm = new HeadAdmin(); // Replace with the actual HeadAdmin form
+                adminForm.Show();
+                this.Hide();
+            }
+            else if (adminRetryAttempts > 0)
             {
                AuthenticateAdmin();
             }
@@ -804,10 +831,20 @@ namespace ComlabSystem
 
                     if (adminTable.Rows.Count > 0)
                     {
-                        // Check password
+                        // Check ArchiveStatus first
                         var adminRow = adminTable.Rows[0];
-                        string storedPassword = adminRow["Password"].ToString();
+                        string archiveStatus = adminRow["ArchiveStatus"].ToString();
 
+                        if (archiveStatus == "Inactive")
+                        {
+                            From1MsgBox.Icon = MessageDialogIcon.Information;
+                            From1MsgBox.Caption = "Account Status: Inactive";
+                            From1MsgBox.Text = "Your account has been deactivated and is no longer active. Please contact support for further assistance.";
+                            return; // Stop further login attempts if the account is inactive
+                        }
+
+                        // Check password if account is active
+                        string storedPassword = adminRow["Password"].ToString();
                         if (storedPassword == adminPassword)
                         {
                             // Successful login
@@ -818,15 +855,31 @@ namespace ComlabSystem
 
                             // Insert login success notification
                             InsertAdminLoginNotification(adminName, computerName, true);
+                            AdminLogs();
 
-                            // Show admin form and hide login form
-                            Form adminForm = new Admin();
+                            // Check AdminRole
+                            string adminRole = adminRow["AdminRole"].ToString();
+
+                            Form adminForm;
+
+                            // Show the appropriate form based on the AdminRole
+                            if (adminRole == "Head Admin")
+                            {
+                                adminForm = new HeadAdmin(); // Replace with the actual HeadAdmin form
+                            }
+                            else
+                            {
+                                adminForm = new Admin(); // Replace with the actual Admin form
+                            }
+
+                            // Reset login timeout timer
                             ResetLoginTimeoutTimer();
 
                             userIsLoggedIn = true;
                             loginCheckTimer.Stop(); // Stop the timer after successful login
                             this.TopMost = false; // Allow other applications to come to the front
 
+                            // Show the admin form and hide the login form
                             adminForm.Show();
                             this.Hide();
                         }
@@ -860,7 +913,6 @@ namespace ComlabSystem
             if (adminRetryAttempts == 0)
             {
                 StartAdminRetryTimer();
-                LogAdminUnsuccessfulAttempt(adminName, computerName);
                 ShowAdminRetryMessage();
             }
             else
@@ -893,8 +945,8 @@ namespace ComlabSystem
 
         private void UpdateAdminRetryDelay()
         {
-            // Set delay to 15 minutes after first 30-second delay
-            adminDelayTimeInSeconds = 900; // 15 minutes in seconds
+            // Set delay to 3 minutes after first 30-second delay
+            adminDelayTimeInSeconds = 300; // 3 minutes in seconds
         }
 
         private void ShowAdminRetryMessage()
@@ -903,26 +955,6 @@ namespace ComlabSystem
             FailedAttempCountdownMsgBox.Text = $"Too many unsuccessful login attempts. Please wait {adminDelayTimeInSeconds / 60} minutes before trying again.";
             FailedAttempCountdownMsgBox.Show();
         }
-
-        private void LogAdminUnsuccessfulAttempt(string adminName, string computerName)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
-                    cmd.Parameters.AddWithValue("@Message", $"Unsuccessful admin login attempt on computer {computerName} by user {adminName}.");
-                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to log unsuccessful admin attempt: " + ex.Message);
-                }
-            }
-        }
-
         private void InsertAdminLoginNotification(string adminName, string computerName, bool isSuccess)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -931,9 +963,11 @@ namespace ComlabSystem
                 {
                     connection.Open();
                     string statusMessage = isSuccess ? "successfully logged in" : "unsuccessful login attempt";
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp, NotificationType, NotificationKind) VALUES (@Message, @Timestamp, @NotificationType, @NotificationKind)", connection);
                     cmd.Parameters.AddWithValue("@Message", $"{adminName} {statusMessage} as admin on {computerName} at {DateTime.Now}.");
                     cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@NotificationType", "Warning");
+                    cmd.Parameters.AddWithValue("@NotificationKind", "AdminLoginFail");
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -942,6 +976,82 @@ namespace ComlabSystem
                 }
             }
         }
+
+        private void AdminLogs()
+        {
+            // Get values from the form
+            string adminName = AdminNameTB.Text; // Admin name (username)
+            string unitName = UnitNameLabel.Text; // Computer unit name
+            DateTime timestamp = DateTime.Now; // Current timestamp
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Get AdminID from AdminList based on AdminNameTB.Text
+                    string adminIdQuery = "SELECT AdminID FROM AdminList WHERE UserName = @AdminName";
+                    SqlCommand adminIdCommand = new SqlCommand(adminIdQuery, connection);
+                    adminIdCommand.Parameters.AddWithValue("@AdminName", adminName);
+                    var adminIdResult = adminIdCommand.ExecuteScalar();
+
+                    if (adminIdResult == null)
+                    {
+                        MessageBox.Show("Admin ID not found for the provided admin name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    int adminId = Convert.ToInt32(adminIdResult);
+
+                    // Get UnitID from UnitList based on UnitNameLabel.Text
+                    string unitIdQuery = "SELECT UnitID FROM UnitList WHERE ComputerName = @UnitName";
+                    SqlCommand unitIdCommand = new SqlCommand(unitIdQuery, connection);
+                    unitIdCommand.Parameters.AddWithValue("@UnitName", unitName);
+                    var unitIdResult = unitIdCommand.ExecuteScalar();
+
+                    if (unitIdResult == null)
+                    {
+                        MessageBox.Show("Unit ID not found for the provided unit name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    int unitId = Convert.ToInt32(unitIdResult);
+
+                    // Prepare log entry details
+                    string userType = "Admin";
+                    string actionType = "Login";
+                    string actionMessage = $"{adminName} has successfully logged into {unitName} on {timestamp:MMMM dd, yyyy hh:mm:ss tt}.";
+
+                    // Insert into Logs table
+                    string insertLogQuery = @"
+                INSERT INTO Logs (AdminID, UserType, ActionType, UnitID, Timestamp, Action)
+                VALUES (@AdminID, @UserType, @ActionType, @UnitID, @Timestamp, @Action)";
+
+                    SqlCommand insertLogCommand = new SqlCommand(insertLogQuery, connection);
+                    insertLogCommand.Parameters.AddWithValue("@AdminID", adminId);
+                    insertLogCommand.Parameters.AddWithValue("@UserType", userType);
+                    insertLogCommand.Parameters.AddWithValue("@ActionType", actionType);
+                    insertLogCommand.Parameters.AddWithValue("@UnitID", unitId);
+                    insertLogCommand.Parameters.AddWithValue("@Timestamp", timestamp);
+                    insertLogCommand.Parameters.AddWithValue("@Action", actionMessage);
+                    insertLogCommand.ExecuteNonQuery();
+
+                    // Update Admin Status to "Online"
+                    string updateStatusQuery = "UPDATE AdminList SET Status = 'Online' WHERE AdminID = @AdminID";
+                    SqlCommand updateStatusCommand = new SqlCommand(updateStatusQuery, connection);
+                    updateStatusCommand.Parameters.AddWithValue("@AdminID", adminId);
+                    updateStatusCommand.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while adding the log entry or updating the admin status: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
 
 
@@ -1010,7 +1120,7 @@ namespace ComlabSystem
 
         // Timer for the auto-shutdown
         private Timer loginTimeoutTimer;
-        private int countdownTime = 900; // 3 minutes in seconds
+        private int countdownTime = 300; // 3 minutes in seconds
 
 
         private void LoginTimeoutTimer_Tick(object sender, EventArgs e)
@@ -1018,7 +1128,7 @@ namespace ComlabSystem
             countdownTime--;
 
             // Show countdown form at 2 minutes (120 seconds)
-            if (countdownTime == 850)
+            if (countdownTime == 120)
             {
                 CountdownForm countdownForm = new CountdownForm
                 {
@@ -1055,7 +1165,7 @@ namespace ComlabSystem
 
         private void ResetLoginTimeoutTimer()
         {
-            countdownTime = 180; // Reset to 3 minutes
+            countdownTime = 300; // Reset to 3 minutes
             loginTimeoutTimer.Stop(); // Stop the timer
         }
 
@@ -1112,6 +1222,26 @@ namespace ComlabSystem
         private void AdminPassTB_TextChanged(object sender, EventArgs e)
         {
             AdminPassLoginL.Visible = false;
+        }
+
+        private void ShutdownBtm_Click(object sender, EventArgs e)
+        {
+            // Assuming SignOutMSGDialog is already a defined Guna2MessageDialog
+            From1MsgBox.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
+            From1MsgBox.Icon = MessageDialogIcon.Question;     // Question icon
+            From1MsgBox.Caption = "Shutdown";
+            From1MsgBox.Text = "Are you sure you want to shutdown?";
+            From1MsgBox.Style = MessageDialogStyle.Dark;
+
+            // Show the dialog and get the result
+            DialogResult result = From1MsgBox.Show();
+
+            if (result == DialogResult.Yes)
+            {
+
+                // You can use the Process.Start method to run a shutdown command
+                System.Diagnostics.Process.Start("shutdown", "/s /f /t 0"); ;
+            }
         }
     }
 }

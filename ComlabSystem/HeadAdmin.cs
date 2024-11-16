@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ComlabSystem
 {
-    public partial class Admin : Form
+    public partial class HeadAdmin : Form
     {
-        public Admin()
+        public HeadAdmin()
         {
             InitializeComponent();
 

@@ -86,7 +86,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 34);
             this.label2.TabIndex = 3;
-            this.label2.Text = "This computer will automatically \r\nshut down if no one logs in";
+            this.label2.Text = "This computer will automatically \r\nshut down if no one login.";
             // 
             // UserLoginBtm
             // 
@@ -102,7 +102,7 @@
             this.UserLoginBtm.Name = "UserLoginBtm";
             this.UserLoginBtm.Size = new System.Drawing.Size(95, 45);
             this.UserLoginBtm.TabIndex = 9;
-            this.UserLoginBtm.Text = "OK";
+            this.UserLoginBtm.Text = "Cancel";
             this.UserLoginBtm.Click += new System.EventHandler(this.UserLoginBtm_Click);
             // 
             // guna2CustomGradientPanel1
