@@ -75,7 +75,7 @@ namespace ComlabSystem
             AdminUserLoginL.Visible = false;
             AdminPassLoginL.Visible = false;
 
-
+            UserIDTextBox.Focus();
         }
         public void InsertOrUpdateUnitInfo()
         {
@@ -104,8 +104,8 @@ namespace ComlabSystem
                 {
                     // Insert new record if not found
                     SqlCommand insertCmd = new SqlCommand(
-                        @"INSERT INTO UnitList (ComputerName, Ram, Processor, Storage, AvailableStorage, IPAddress, ) 
-                  VALUES (@ComputerName, @Ram, @Processor, @Storage, @AvailableStorage, @IPAddress )",
+                        @"INSERT INTO UnitList (ComputerName, Ram, Processor, Storage, AvailableStorage, IPAddress, DateRegistered)
+                  VALUES (@ComputerName, @Ram, @Processor, @Storage, @AvailableStorage, @IPAddress, @DateRegistered )",
                         connection);
 
                     insertCmd.Parameters.AddWithValue("@ComputerName", computerName);
@@ -114,6 +114,7 @@ namespace ComlabSystem
                     insertCmd.Parameters.AddWithValue("@Storage", storage);
                     insertCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
                     insertCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
+                    insertCmd.Parameters.AddWithValue("@DateRegistered", DateTime.Now);
 
                     insertCmd.ExecuteNonQuery();
                 }
@@ -123,7 +124,7 @@ namespace ComlabSystem
                     SqlCommand updateCmd = new SqlCommand(
                         @"UPDATE UnitList 
                   SET Ram = @Ram, Processor = @Processor, Storage = @Storage, 
-                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress
+                      AvailableStorage = @AvailableStorage, IPAddress = @IPAddress, ArchiveStatus = @ArchiveStatus
                   WHERE ComputerName = @ComputerName",
                         connection);
 
@@ -133,6 +134,7 @@ namespace ComlabSystem
                     updateCmd.Parameters.AddWithValue("@AvailableStorage", availableStorage);
                     updateCmd.Parameters.AddWithValue("@IPAddress", ipAddress);
                     updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    updateCmd.Parameters.AddWithValue("@ArchiveStatus", "Active");
 
                     updateCmd.ExecuteNonQuery();
                 }
@@ -231,15 +233,11 @@ namespace ComlabSystem
         {
             UserFormPNL.BringToFront();
             AdminShowBtm.BringToFront();
+            UserIDTextBox.Focus();
 
         }
 
         private void AdminShowBtm_Click(object sender, EventArgs e)
-        {
-            AdminShowForm();
-        }
-
-        private void AdminShowForm()
         {
             // Assuming SignOutMSGDialog is already a defined Guna2MessageDialog
             AdminFormDialog.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
@@ -257,9 +255,11 @@ namespace ComlabSystem
             {
                 AdminFormPNL.BringToFront();
                 UserShowBtm.BringToFront();
+                AdminNameTB.Focus();
             }
             // No need to handle No as the MessageDialog will automatically disappear
         }
+
 
         private void ShowUserPassBtm_Click(object sender, EventArgs e)
         {
@@ -733,10 +733,11 @@ namespace ComlabSystem
                 try
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE UnitList SET CurrentUser = @CurrentUser, Status = @Status WHERE ComputerName = @ComputerName", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE UnitList SET CurrentUser = @CurrentUser, Status = @Status, DateNewLogin = @DateNewLogin WHERE ComputerName = @ComputerName", connection);
                     cmd.Parameters.AddWithValue("@CurrentUser", $"{firstName} {lastName}");
                     cmd.Parameters.AddWithValue("@Status", "Online");
                     cmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    cmd.Parameters.AddWithValue("@DateNewLogin", DateTime.Now);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
@@ -1154,7 +1155,25 @@ namespace ComlabSystem
         {
             try
             {
-                // Command to shut down the computer
+
+                // Increment AutoShutdownCount in the UnitList table where ComputerName matches UnitNameLabel.Text
+                string unitName = UnitNameLabel.Text; // Get the computer unit name from the label
+                string updateCountQuery = "UPDATE UnitList SET AutoShutdownCount = AutoShutdownCount + 1 WHERE ComputerName = @UnitName";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand updateCountCommand = new SqlCommand(updateCountQuery, connection);
+                    updateCountCommand.Parameters.AddWithValue("@UnitName", unitName);
+                    int rowsAffected = updateCountCommand.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        MessageBox.Show("No matching unit found to update the AutoShutdownCount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
                 System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
             }
             catch (Exception ex)
@@ -1162,6 +1181,7 @@ namespace ComlabSystem
                 MessageBox.Show("Failed to initiate shutdown: " + ex.Message);
             }
         }
+
 
         private void ResetLoginTimeoutTimer()
         {

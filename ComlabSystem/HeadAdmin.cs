@@ -42,7 +42,7 @@ namespace ComlabSystem
 
         private void ComBtm_Click(object sender, EventArgs e)
         {
-            UnitUI myControl = new UnitUI();
+            ZUnitListUI myControl = new ZUnitListUI();
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();

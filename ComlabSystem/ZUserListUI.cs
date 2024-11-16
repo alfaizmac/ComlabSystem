@@ -71,7 +71,6 @@ namespace ComlabSystem
             FilterStatusCKB.CheckedChanged += FilterStatusCKB_CheckedChanged;
             FilterLastLoginCKB.CheckedChanged += FilterLastLoginCKB_CheckedChanged;
             FilterDateRegisteredCKB.CheckedChanged += FilterDateRegisteredCKB_CheckedChanged;
-            FilterTotalHourCKB.CheckedChanged += FilterTotalHourCKB_CheckedChanged;
             FilterLastUnitCKB.CheckedChanged += FilterLastUnitCKB_CheckedChanged;
             FilterPasswordCBK.CheckedChanged += FilterPasswordCBK_CheckedChanged;
 
@@ -126,7 +125,11 @@ namespace ComlabSystem
             LoadUserCountFromDatabase();
             UserListPrintDGVFUnc();
 
+            //Print
+            PrintExcel.BringToFront();
             PrintLink.BringToFront();
+            guna2Panel2.BringToFront();
+
 
         }
 
@@ -232,16 +235,15 @@ SELECT
     u.UPassword AS [Password], 
     u.LastName AS [Last Name],
     u.FirstName AS [First Name],
+    u.Status,
+    u.UnitUsed AS [Unit Used],
+    u.DateLastLogout AS [Date Last Logout],
     d.DepartmentName AS [Department],
     p.ProgramName AS [Program],
     y.YearLevelName AS [Year/Grade Level],
-    u.Status,
     u.Email,
     u.ContactNo AS [Contact],
-    u.DateRegistered AS [Date Registered],
-    u.DateLastLogout AS [Date Last Logout],
-    u.TotalHoursUsed AS [Total Hours Used],
-    u.UnitUsed AS [Unit Used]
+    u.DateRegistered AS [Date Registered]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -285,8 +287,8 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                             DataGridViewImageColumn editColumn = new DataGridViewImageColumn
                             {
                                 Name = "EditBC",
-                                HeaderText = "", // Empty header
-                                Image = ResizeImage(Properties.Resources.pencil, 20, 20), // Resized image
+                                HeaderText = "Edit", // Empty header
+                                Image = ResizeImage(Properties.Resources.ColoredEditICON2, 30, 30), // Resized image
                                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
                                 Width = 25
                             };
@@ -299,8 +301,8 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                             DataGridViewImageColumn archiveColumn = new DataGridViewImageColumn
                             {
                                 Name = "ArchiveBC",
-                                HeaderText = "", // Empty header
-                                Image = ResizeImage(Properties.Resources.archive, 20, 20), // Resized image
+                                HeaderText = "Archive", // Empty header
+                                Image = ResizeImage(Properties.Resources.ColoredArchiveICON2, 30, 30), // Resized image
                                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
                                 Width = 25
                             };
@@ -421,7 +423,11 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         {
 
             UserStatusTBTM.Enabled = false;
+
+            //Prints
             ArchivePrintLink.BringToFront();
+            PrintExcelArchive.BringToFront();
+
             hideUserManagePnl();
             UserFilterToggleBtm.Checked = false;
             uncheckedBtm();
@@ -439,7 +445,11 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         private void UserListPanelShow_Click(object sender, EventArgs e)
         {
             UserStatusTBTM.Enabled = true;
+
+            //Prints
             PrintLink.BringToFront();
+            PrintExcel.BringToFront();
+
             NoArchiveListLabel.Visible = false;
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
@@ -517,11 +527,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
 
 
-    //PRINT FUNCTIONS
-    private void PrintToogleBtm_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
 
 
@@ -829,6 +835,10 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         }
         private void AddDraftBtm_Click(object sender, EventArgs e)
         {
+            AddUserBtm.Checked = false;
+            UserAddPanel.Visible = false;
+            uncheckedBtm();
+            UserAddPanel.Hide();
             cancelAddingUser();
 
         }
@@ -944,8 +954,9 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
         private void ArchiveUser(string archiveStudentID)
         {
-            // Confirmation message box
-            DialogResult result = MessageBox.Show("Are you sure you want to archive this user?", "Confirm Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            DialogResult result = MessageBox.Show($"Are you sure you want to archive this user?", "Confirm Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (result == DialogResult.Yes)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -981,19 +992,18 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 string query = @"
 SELECT 
     u.StudentID AS [Student ID],
-    u.UPassword AS [Password],
+    u.UPassword AS [Password], 
     u.LastName AS [Last Name],
     u.FirstName AS [First Name],
+    u.Status,
+    u.UnitUsed AS [Unit Used],
+    u.DateLastLogout AS [Date Last Logout],
     d.DepartmentName AS [Department],
     p.ProgramName AS [Program],
     y.YearLevelName AS [Year/Grade Level],
-    u.Status AS [Status],
     u.Email,
     u.ContactNo AS [Contact],
-    u.DateRegistered AS [Date Registered],
-    u.DateLastLogout AS [Date Last Logout,
-    u.TotalHoursUsed AS [Total Hours Used],
-    u.UnitUsed AS [Unit Used]
+    u.DateRegistered AS [Date Registered]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -1045,8 +1055,8 @@ WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
                                 DataGridViewImageColumn editColumn = new DataGridViewImageColumn
                                 {
                                     Name = "EditBC",
-                                    HeaderText = "",
-                                    Image = ResizeImage(Properties.Resources.pencil, 20, 20),
+                                    HeaderText = "Edit",
+                                    Image = ResizeImage(Properties.Resources.ColoredEditICON2, 30, 30),
                                     AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
                                 };
                                 UserListDGV.Columns.Add(editColumn);
@@ -1058,8 +1068,8 @@ WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
                                 DataGridViewImageColumn archiveColumn = new DataGridViewImageColumn
                                 {
                                     Name = "ArchiveBC",
-                                    HeaderText = "",
-                                    Image = ResizeImage(Properties.Resources.archive, 20, 20),
+                                    HeaderText = "Archive",
+                                    Image = ResizeImage(Properties.Resources.ColoredArchiveICON2, 30, 30),
                                     AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
                                 };
                                 UserListDGV.Columns.Add(archiveColumn);
@@ -1086,19 +1096,18 @@ WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
                 string query = @"
 SELECT 
     u.StudentID AS [Student ID],
-    u.UPassword AS [Password],
+    u.UPassword AS [Password], 
     u.LastName AS [Last Name],
     u.FirstName AS [First Name],
+    u.Status,
+    u.UnitUsed AS [Unit Used],
+    u.DateLastLogout AS [Date Last Logout],
     d.DepartmentName AS [Department],
     p.ProgramName AS [Program],
     y.YearLevelName AS [Year/Grade Level],
-    u.Status AS [Status],
     u.Email,
     u.ContactNo AS [Contact],
-    u.DateRegistered AS [Date Registered],
-    u.DateLastLogout AS [Date Last Logout],
-    u.TotalHoursUsed AS [Total Hours Used],
-    u.UnitUsed AS [Unit Used]
+    u.DateRegistered AS [Date Registered]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -1133,8 +1142,8 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                                 DataGridViewImageColumn unarchiveColumn = new DataGridViewImageColumn
                                 {
                                     Name = "UnArchiveUserList",
-                                    HeaderText = "",
-                                    Image = ResizeImage(Properties.Resources.unarchive, 20, 20),
+                                    HeaderText = "Unarchive",
+                                    Image = ResizeImage(Properties.Resources.ColoredUnArchiveICON2, 30, 30),
                                     AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells // Change to AllCells
                                 };
                                 ArchiveUserListDGV.Columns.Add(unarchiveColumn);
@@ -1578,6 +1587,11 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             FilterYearLevelCB.Items.Clear();
             ApplyFilters();
 
+            FilterDefault();
+        }
+
+        private void FilterDefault()
+        {
             FilterStudentCKB.Checked = true;
             FilterLNameCKB.Checked = true;
             FilterFNameCKB.Checked = true;
@@ -1589,9 +1603,8 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
             FilterStatusCKB.Checked = true;
             FilterLastLoginCKB.Checked = true;
             FilterDateRegisteredCKB.Checked = true;
-            FilterTotalHourCKB.Checked = true;
             FilterLastUnitCKB.Checked = true;
-            FilterPasswordCBK.Checked = true;    
+            FilterPasswordCBK.Checked = true;
         }
 
         private void FilterDepartmentCBClear_Click(object sender, EventArgs e)
@@ -1695,7 +1708,6 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
         private void FilterStatusCKB_CheckedChanged(object sender, EventArgs e) => UpdateColumnVisibility();
         private void FilterLastLoginCKB_CheckedChanged(object sender, EventArgs e) => UpdateColumnVisibility();
         private void FilterDateRegisteredCKB_CheckedChanged(object sender, EventArgs e) => UpdateColumnVisibility();
-        private void FilterTotalHourCKB_CheckedChanged(object sender, EventArgs e) => UpdateColumnVisibility();
         private void FilterLastUnitCKB_CheckedChanged(object sender, EventArgs e) => UpdateColumnVisibility();
         private void FilterPasswordCBK_CheckedChanged(object sender, EventArgs e) => UpdateColumnVisibility();
 
@@ -1719,7 +1731,6 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 UserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
                 UserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
                 UserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-                UserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
                 UserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
                 UserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
             }
@@ -1738,7 +1749,6 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 ArchiveUserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
                 ArchiveUserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
                 ArchiveUserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-                ArchiveUserListDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
                 ArchiveUserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
                 ArchiveUserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
             }
@@ -1757,7 +1767,6 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 UserListPrintDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
                 UserListPrintDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
                 UserListPrintDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-                UserListPrintDGV.Columns["Total Hours Used"].Visible = FilterTotalHourCKB.Checked;
                 UserListPrintDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
                 UserListPrintDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
             }
@@ -2000,16 +2009,15 @@ SELECT
     u.UPassword AS [Password], 
     u.LastName AS [Last Name],
     u.FirstName AS [First Name],
+    u.Status,
+    u.UnitUsed AS [Unit Used],
+    u.DateLastLogout AS [Date Last Logout],
     d.DepartmentName AS [Department],
     p.ProgramName AS [Program],
     y.YearLevelName AS [Year/Grade Level],
-    u.Status,
     u.Email,
     u.ContactNo AS [Contact],
-    u.DateRegistered AS [Date Registered],
-    u.DateLastLogout AS [Date Last Logout],
-    u.TotalHoursUsed AS [Total Hours Used],
-    u.UnitUsed AS [Unit Used]
+    u.DateRegistered AS [Date Registered]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -2073,19 +2081,18 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 string query = @"
 SELECT 
     u.StudentID AS [Student ID],
-    u.UPassword AS [Password],
+    u.UPassword AS [Password], 
     u.LastName AS [Last Name],
     u.FirstName AS [First Name],
+    u.Status,
+    u.UnitUsed AS [Unit Used],
+    u.DateLastLogout AS [Date Last Logout],
     d.DepartmentName AS [Department],
     p.ProgramName AS [Program],
     y.YearLevelName AS [Year/Grade Level],
-    u.Status AS [Status],
     u.Email,
     u.ContactNo AS [Contact],
-    u.DateRegistered AS [Date Registered],
-    u.DateLastLogout AS [Date Last Logout],
-    u.TotalHoursUsed AS [Total Hours Used],
-    u.UnitUsed AS [Unit Used]
+    u.DateRegistered AS [Date Registered]
 FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
@@ -2307,6 +2314,62 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
 
             // Print Preview of DataGridView
             printer.PrintPreviewDataGridView(UserListPrintDGV);
+        }
+
+        private void PrintExcelArchive_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (UserListPrintDGV.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                MExcel.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < UserListPrintDGV.Columns.Count + 1; i++)
+                {
+                    MExcel.Cells[1, i] = UserListPrintDGV.Columns[i - 1].HeaderText;
+                }
+                for (int i = 0; i < UserListPrintDGV.Rows.Count; i++)
+                {
+                    for (int j = 0; j < UserListPrintDGV.Columns.Count; j++)
+                    {
+                        MExcel.Cells[i + 2, j + 1] = UserListPrintDGV.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                MExcel.Columns.AutoFit();
+                MExcel.Rows.AutoFit();
+                MExcel.Columns.Font.Size = 12;
+                MExcel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PrintExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (UserListPrintDGV.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                MExcel.Application.Workbooks.Add(Type.Missing);
+                for (int i = 1; i < UserListPrintDGV.Columns.Count + 1; i++)
+                {
+                    MExcel.Cells[1, i] = UserListPrintDGV.Columns[i - 1].HeaderText;
+                }
+                for (int i = 0; i < UserListPrintDGV.Rows.Count; i++)
+                {
+                    for (int j = 0; j < UserListPrintDGV.Columns.Count; j++)
+                    {
+                        MExcel.Cells[i + 2, j + 1] = UserListPrintDGV.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                MExcel.Columns.AutoFit();
+                MExcel.Rows.AutoFit();
+                MExcel.Columns.Font.Size = 12;
+                MExcel.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }  
 }

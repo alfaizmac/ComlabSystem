@@ -373,6 +373,56 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ColoredArchiveICON {
+            get {
+                object obj = ResourceManager.GetObject("ColoredArchiveICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ColoredArchiveICON2 {
+            get {
+                object obj = ResourceManager.GetObject("ColoredArchiveICON2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ColoredEditICON {
+            get {
+                object obj = ResourceManager.GetObject("ColoredEditICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ColoredEditICON2 {
+            get {
+                object obj = ResourceManager.GetObject("ColoredEditICON2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ColoredUnArchiveICON2 {
+            get {
+                object obj = ResourceManager.GetObject("ColoredUnArchiveICON2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap computer {
             get {
                 object obj = ResourceManager.GetObject("computer", resourceCulture);

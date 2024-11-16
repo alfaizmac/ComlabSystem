@@ -98,6 +98,7 @@
             this.UserPnL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPausePnL = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.LockShutdownBtm = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.SignOutBtm = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -122,11 +123,10 @@
             this.LockScreenPassTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label26 = new System.Windows.Forms.Label();
+            this.ComputerNameL = new System.Windows.Forms.Label();
             this.MenuToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ShowSignoutButtonAvai = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SideMenuDialogs = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.LockShutdownBtm = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -1109,9 +1109,9 @@
             // 
             this.UserPnL.Controls.Add(this.SideBar);
             this.UserPnL.Controls.Add(this.guna2Panel1);
+            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
             this.UserPnL.Controls.Add(this.ReportPnl);
             this.UserPnL.Controls.Add(this.guna2Panel7);
-            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
             this.UserPnL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserPnL.Location = new System.Drawing.Point(0, 0);
             this.UserPnL.Name = "UserPnL";
@@ -1159,6 +1159,25 @@
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.Size = new System.Drawing.Size(960, 350);
             this.guna2Panel13.TabIndex = 1;
+            // 
+            // LockShutdownBtm
+            // 
+            this.LockShutdownBtm.BackColor = System.Drawing.Color.Transparent;
+            this.LockShutdownBtm.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.LockShutdownBtm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LockShutdownBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
+            this.LockShutdownBtm.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.Image = global::ComlabSystem.Properties.Resources.shut_down__2_;
+            this.LockShutdownBtm.ImageOffset = new System.Drawing.Point(0, 0);
+            this.LockShutdownBtm.ImageRotate = 0F;
+            this.LockShutdownBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.Location = new System.Drawing.Point(916, 925);
+            this.LockShutdownBtm.Name = "LockShutdownBtm";
+            this.LockShutdownBtm.PressedState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
+            this.LockShutdownBtm.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.Size = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.TabIndex = 40;
+            this.LockShutdownBtm.Click += new System.EventHandler(this.LockShutdownBtm_Click);
             // 
             // label3
             // 
@@ -1490,24 +1509,24 @@
             // guna2Panel15
             // 
             this.guna2Panel15.BackgroundImage = global::ComlabSystem.Properties.Resources.LlginFOrm;
-            this.guna2Panel15.Controls.Add(this.label26);
+            this.guna2Panel15.Controls.Add(this.ComputerNameL);
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel15.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel15.Name = "guna2Panel15";
             this.guna2Panel15.Size = new System.Drawing.Size(960, 350);
             this.guna2Panel15.TabIndex = 0;
             // 
-            // label26
+            // ComputerNameL
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label26.Location = new System.Drawing.Point(265, 770);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(415, 65);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Comlab 2 - PC 10";
+            this.ComputerNameL.AutoSize = true;
+            this.ComputerNameL.BackColor = System.Drawing.Color.Transparent;
+            this.ComputerNameL.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComputerNameL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ComputerNameL.Location = new System.Drawing.Point(265, 770);
+            this.ComputerNameL.Name = "ComputerNameL";
+            this.ComputerNameL.Size = new System.Drawing.Size(415, 65);
+            this.ComputerNameL.TabIndex = 0;
+            this.ComputerNameL.Text = "Comlab 2 - PC 10";
             // 
             // MenuToolTip
             // 
@@ -1533,25 +1552,6 @@
             this.SideMenuDialogs.Parent = this;
             this.SideMenuDialogs.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.SideMenuDialogs.Text = null;
-            // 
-            // LockShutdownBtm
-            // 
-            this.LockShutdownBtm.BackColor = System.Drawing.Color.Transparent;
-            this.LockShutdownBtm.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.LockShutdownBtm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LockShutdownBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
-            this.LockShutdownBtm.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.Image = global::ComlabSystem.Properties.Resources.shut_down__2_;
-            this.LockShutdownBtm.ImageOffset = new System.Drawing.Point(0, 0);
-            this.LockShutdownBtm.ImageRotate = 0F;
-            this.LockShutdownBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.Location = new System.Drawing.Point(916, 925);
-            this.LockShutdownBtm.Name = "LockShutdownBtm";
-            this.LockShutdownBtm.PressedState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
-            this.LockShutdownBtm.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.Size = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.TabIndex = 40;
-            this.LockShutdownBtm.Click += new System.EventHandler(this.LockShutdownBtm_Click);
             // 
             // user
             // 
@@ -1694,7 +1694,6 @@
         private Guna.UI2.WinForms.Guna2TextBox LockScreenPassTB;
         private System.Windows.Forms.Label label25;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ToolTip MenuToolTip;
         private Guna.UI2.WinForms.Guna2MessageDialog ShowSignoutButtonAvai;
         private System.Windows.Forms.Label label6;
@@ -1708,5 +1707,6 @@
         private Guna.UI2.WinForms.Guna2Button ShutDownBtmNonlock;
         private System.Windows.Forms.Label PassNotmatch;
         private Guna.UI2.WinForms.Guna2ImageButton LockShutdownBtm;
+        private System.Windows.Forms.Label ComputerNameL;
     }
 }

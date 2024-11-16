@@ -382,6 +382,9 @@
   <data name="archive (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archive (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sign-out (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign-out (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -415,6 +418,9 @@
   <data name="asdasdsa23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asdasdsa23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ColoredArchiveICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredArchiveICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -441,6 +447,9 @@
   </data>
   <data name="x-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColoredEditICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredEditICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-plus (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-plus (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -655,7 +664,13 @@
   <data name="user (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sign-out (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sign-out (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ColoredUnArchiveICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredUnArchiveICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColoredEditICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredEditICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColoredArchiveICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredArchiveICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

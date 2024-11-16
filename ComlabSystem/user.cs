@@ -43,6 +43,7 @@ namespace ComlabSystem
             HideOtherPanel();
 
             UnitNameLabel.Text = Environment.MachineName;
+            ComputerNameL.Text = Environment.MachineName;
 
             CurrentPassTB.UseSystemPasswordChar = true;
             NewPassTB.UseSystemPasswordChar = true;
@@ -209,6 +210,7 @@ namespace ComlabSystem
             ReportPnl.BringToFront();
             ReportPnl.Visible = true;
             ChangePasswordPNL.Visible = false;
+            SendReportFeedbackTB.Focus();
         }
 
         private void ChangePasswordButton_Click(object sender, EventArgs e)
@@ -216,6 +218,7 @@ namespace ComlabSystem
             ChangePasswordPNL.BringToFront();
             ChangePasswordPNL.Visible = true;
             ReportPnl.Visible = false;
+            CurrentPassTB.Focus();
 
 
         }
@@ -421,23 +424,27 @@ namespace ComlabSystem
 
                     // Update UnitList table: Set DateLastUsed to DateTime.Now and LastUserID to the retrieved UserID
                     SqlCommand updateUnitListCmd = new SqlCommand(
-                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID, CurrentUser = @CurrentUser, Status = @Status WHERE ComputerName = @ComputerName", connection);
+                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID, CurrentUser = @CurrentUser, Status = @Status, LastUserName = @LastUserName, DateNewLogin = @DateNewLogin WHERE ComputerName = @ComputerName", connection);
                     updateUnitListCmd.Parameters.AddWithValue("@DateLastUsed", currentDateTime);
                     updateUnitListCmd.Parameters.AddWithValue("@LastUserID", userID);
                     updateUnitListCmd.Parameters.AddWithValue("@Status", "Offline");
                     updateUnitListCmd.Parameters.AddWithValue("@CurrentUser", "No Current User");
                     updateUnitListCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    updateUnitListCmd.Parameters.AddWithValue("@LastUserName", FLNameLabel.Text);
+                    updateUnitListCmd.Parameters.AddWithValue("@DateNewLogin", "No Current User");
                     updateUnitListCmd.ExecuteNonQuery();
 
                     // Insert into the Logs table with TimeDuration
                     string logAction = $"{FLNameLabel.Text} sign out on Computer Name {computerName} at {currentDateTime}";
                     SqlCommand insertLogCmd = new SqlCommand(
-                        "INSERT INTO Logs (Action, UserID, UnitID, TimeDuration, ActionType) VALUES (@Action, @UserID, @UnitID, @TimeDuration, @ActionType)", connection);
+                        "INSERT INTO Logs (Action, UserID, UnitID, TimeDuration, ActionType, UserType) VALUES (@Action, @UserID, @UnitID, @TimeDuration, @ActionType, @UserType)", connection);
                     insertLogCmd.Parameters.AddWithValue("@Action", logAction);
                     insertLogCmd.Parameters.AddWithValue("@UserID", userID);
                     insertLogCmd.Parameters.AddWithValue("@UnitID", unitID);  // Use the retrieved UnitID here
                     insertLogCmd.Parameters.AddWithValue("@TimeDuration", sessionTime);  // Insert the session time as TimeDuration
                     insertLogCmd.Parameters.AddWithValue("@ActionType", "Sign out");
+                    insertLogCmd.Parameters.AddWithValue("@UserType", "Student");
+
                     insertLogCmd.ExecuteNonQuery();
 
                     // Calculate and update AverageSessionDuration in UserList
@@ -752,6 +759,7 @@ namespace ComlabSystem
                 TopMost = true;
                 this.WindowState = FormWindowState.Maximized;
                 InitializeTimers();
+                LockScreenPassTB.Focus();
 
             }
             else { return; }
@@ -925,7 +933,7 @@ namespace ComlabSystem
             AllowShutDownL.Text = $"{minutes:D2}:{seconds:D2}";
 
             // When time reaches 14 minutes (1 minute before shutdown), show the CountdownForm
-            if (shutDownTimeLeft == 860)
+            if (shutDownTimeLeft == 840)
             {
                 CountdownForm countdownForm = new CountdownForm
                 {
@@ -952,9 +960,51 @@ namespace ComlabSystem
 
         private void ShutDownComputer()
         {
-            // You can use the Process.Start method to run a shutdown command
-            System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
+            try
+            {
+
+                // Get the ComputerName and StudentID
+                string computerName = ComputerNameL.Text; // Get the computer name from the label
+                string studentId = LockScreenStudIDLabel.Text; // Get the student ID from the label
+
+                // SQL queries to update the AutoShutdownCount for both UnitList and UserList
+                string updateUnitListQuery = "UPDATE UnitList SET AutoShutdownCount = AutoShutdownCount + 1 WHERE ComputerName = @ComputerName";
+                string updateUserListQuery = "UPDATE UserList SET AutoShutdownCount = AutoShutdownCount + 1 WHERE StudentID = @StudentID";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update AutoShutdownCount for the UnitList table
+                    SqlCommand updateUnitListCommand = new SqlCommand(updateUnitListQuery, connection);
+                    updateUnitListCommand.Parameters.AddWithValue("@ComputerName", computerName);
+                    int unitRowsAffected = updateUnitListCommand.ExecuteNonQuery();
+
+                    if (unitRowsAffected == 0)
+                    {
+                        MessageBox.Show("No matching computer found to update the AutoShutdownCount in UnitList.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    // Update AutoShutdownCount for the UserList table
+                    SqlCommand updateUserListCommand = new SqlCommand(updateUserListQuery, connection);
+                    updateUserListCommand.Parameters.AddWithValue("@StudentID", studentId);
+                    int userRowsAffected = updateUserListCommand.ExecuteNonQuery();
+
+                    if (userRowsAffected == 0)
+                    {
+                        MessageBox.Show("No matching student found to update the AutoShutdownCount in UserList.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+                // Command to shut down the computer
+                System.Diagnostics.Process.Start("shutdown", "/s /f /t 0");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to initiate shutdown: " + ex.Message);
+            }
         }
+
 
         private void SignOutBtm_Click(object sender, EventArgs e)
         {
