@@ -1199,5 +1199,34 @@ namespace ComlabSystem
         {
             PassNotmatch.Visible = false;
         }
+
+        private void LockShutdownBtm_Click(object sender, EventArgs e)
+        {
+            // Assuming SignOutMSGDialog is already a defined Guna2MessageDialog
+            SignOutMSGDialog.Buttons = MessageDialogButtons.YesNo;  // YesNo buttons
+            SignOutMSGDialog.Icon = MessageDialogIcon.Question;     // Question icon
+            SignOutMSGDialog.Caption = "Shutdown";
+            SignOutMSGDialog.Text = "Are you sure you want to shutdown?";
+            SignOutMSGDialog.Style = MessageDialogStyle.Light;
+
+            // Show the dialog and get the result
+            DialogResult result = SignOutMSGDialog.Show();
+
+            if (result == DialogResult.Yes)
+            {
+                sessionTimer.Stop();
+                UpdateSignOutStatus();
+
+                allowClose = true;
+
+                seconds = 0;
+                minutes = 0;
+                hours = 0;
+                sharedTimer.Stop();
+
+                // You can use the Process.Start method to run a shutdown command
+                System.Diagnostics.Process.Start("shutdown", "/s /f /t 0"); ;
+            }
+        }
     }
 }

@@ -66,6 +66,7 @@
             this.SendReportFeedbackBtm = new Guna.UI2.WinForms.Guna2Button();
             this.SendReportFeedbackTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.ChangePasswordPNL = new Guna.UI2.WinForms.Guna2Panel();
+            this.PassNotmatch = new System.Windows.Forms.Label();
             this.StudPassLoginL = new System.Windows.Forms.Label();
             this.ShowUserCurrentPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ShowUserPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -125,7 +126,7 @@
             this.MenuToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.ShowSignoutButtonAvai = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SideMenuDialogs = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.PassNotmatch = new System.Windows.Forms.Label();
+            this.LockShutdownBtm = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -326,6 +327,7 @@
             this.PauseBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PauseBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.PauseBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.password__1_1;
+            this.PauseBtm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PauseBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.PauseBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.PauseBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -357,6 +359,7 @@
             this.SignOutButtom.Animated = true;
             this.SignOutButtom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.SignOutButtom.BorderThickness = 2;
+            this.SignOutButtom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignOutButtom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.SignOutButtom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.SignOutButtom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -394,6 +397,7 @@
             this.ChangePasswordButton.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChangePasswordButton.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ChangePasswordButton.CheckedState.Image = global::ComlabSystem.Properties.Resources.password__1_1;
+            this.ChangePasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ChangePasswordButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ChangePasswordButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ChangePasswordButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -429,6 +433,7 @@
             this.ReportButton.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportButton.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ReportButton.CheckedState.Image = global::ComlabSystem.Properties.Resources.flag__3_;
+            this.ReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ReportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ReportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -464,6 +469,7 @@
             this.MenuButton.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuButton.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.MenuButton.CheckedState.Image = global::ComlabSystem.Properties.Resources.house;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.MenuButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.MenuButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -495,6 +501,7 @@
             this.ShutDownBtmNonlock.Animated = true;
             this.ShutDownBtmNonlock.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.ShutDownBtmNonlock.BorderThickness = 2;
+            this.ShutDownBtmNonlock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShutDownBtmNonlock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ShutDownBtmNonlock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ShutDownBtmNonlock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -676,6 +683,17 @@
             this.ChangePasswordPNL.Name = "ChangePasswordPNL";
             this.ChangePasswordPNL.Size = new System.Drawing.Size(300, 306);
             this.ChangePasswordPNL.TabIndex = 39;
+            // 
+            // PassNotmatch
+            // 
+            this.PassNotmatch.AutoSize = true;
+            this.PassNotmatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PassNotmatch.ForeColor = System.Drawing.Color.Maroon;
+            this.PassNotmatch.Location = new System.Drawing.Point(149, 187);
+            this.PassNotmatch.Name = "PassNotmatch";
+            this.PassNotmatch.Size = new System.Drawing.Size(126, 13);
+            this.PassNotmatch.TabIndex = 22;
+            this.PassNotmatch.Text = "Passwords do not match!";
             // 
             // StudPassLoginL
             // 
@@ -1115,6 +1133,7 @@
             // 
             this.guna2Panel13.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel13.BackgroundImage = global::ComlabSystem.Properties.Resources.LockScreeen2;
+            this.guna2Panel13.Controls.Add(this.LockShutdownBtm);
             this.guna2Panel13.Controls.Add(this.label3);
             this.guna2Panel13.Controls.Add(this.guna2CirclePictureBox2);
             this.guna2Panel13.Controls.Add(this.SignOutBtm);
@@ -1170,6 +1189,7 @@
             // 
             this.SignOutBtm.BackColor = System.Drawing.Color.Transparent;
             this.SignOutBtm.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.SignOutBtm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignOutBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.sign_out__3_;
             this.SignOutBtm.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.SignOutBtm.Image = global::ComlabSystem.Properties.Resources.sign_out__2_1;
@@ -1514,16 +1534,24 @@
             this.SideMenuDialogs.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.SideMenuDialogs.Text = null;
             // 
-            // PassNotmatch
+            // LockShutdownBtm
             // 
-            this.PassNotmatch.AutoSize = true;
-            this.PassNotmatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.PassNotmatch.ForeColor = System.Drawing.Color.Maroon;
-            this.PassNotmatch.Location = new System.Drawing.Point(149, 187);
-            this.PassNotmatch.Name = "PassNotmatch";
-            this.PassNotmatch.Size = new System.Drawing.Size(126, 13);
-            this.PassNotmatch.TabIndex = 22;
-            this.PassNotmatch.Text = "Passwords do not match!";
+            this.LockShutdownBtm.BackColor = System.Drawing.Color.Transparent;
+            this.LockShutdownBtm.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.LockShutdownBtm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LockShutdownBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
+            this.LockShutdownBtm.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.Image = global::ComlabSystem.Properties.Resources.shut_down__2_;
+            this.LockShutdownBtm.ImageOffset = new System.Drawing.Point(0, 0);
+            this.LockShutdownBtm.ImageRotate = 0F;
+            this.LockShutdownBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.Location = new System.Drawing.Point(916, 925);
+            this.LockShutdownBtm.Name = "LockShutdownBtm";
+            this.LockShutdownBtm.PressedState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
+            this.LockShutdownBtm.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.Size = new System.Drawing.Size(30, 30);
+            this.LockShutdownBtm.TabIndex = 40;
+            this.LockShutdownBtm.Click += new System.EventHandler(this.LockShutdownBtm_Click);
             // 
             // user
             // 
@@ -1679,5 +1707,6 @@
         private Guna.UI2.WinForms.Guna2Panel S;
         private Guna.UI2.WinForms.Guna2Button ShutDownBtmNonlock;
         private System.Windows.Forms.Label PassNotmatch;
+        private Guna.UI2.WinForms.Guna2ImageButton LockShutdownBtm;
     }
 }

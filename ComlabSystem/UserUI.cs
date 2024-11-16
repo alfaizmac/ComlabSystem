@@ -126,7 +126,7 @@ namespace ComlabSystem
             LoadUserCountFromDatabase();
             UserListPrintDGVFUnc();
 
-            PrintToogleBtm.BringToFront();
+            PrintLink.BringToFront();
 
         }
 
@@ -421,7 +421,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         {
 
             UserStatusTBTM.Enabled = false;
-            ArchivePrintToogleBtm.BringToFront();
+            ArchivePrintLink.BringToFront();
             hideUserManagePnl();
             UserFilterToggleBtm.Checked = false;
             uncheckedBtm();
@@ -439,7 +439,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
         private void UserListPanelShow_Click(object sender, EventArgs e)
         {
             UserStatusTBTM.Enabled = true;
-            PrintToogleBtm.BringToFront();
+            PrintLink.BringToFront();
             NoArchiveListLabel.Visible = false;
             UserFilterToggleBtm.Checked = false;
             UserFilterPnl.Visible = false;
@@ -2134,60 +2134,6 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
             SortToolTip.Show("Click to sort the Last Name column A-Z or Z-A.", SortButton);
         }
 
-        private void ArchivePrintToogleBtm_Click(object sender, EventArgs e)
-        {
-            // Set font for DataGridView headers before printing
-            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
-            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center-align headers
-
-            // Create DGVPrinter instance
-            Font extraBoldFont = new Font("Montserrat ExtraBold", 36);  // Title font
-            Font regularFont = new Font("Segoe UI", 10, FontStyle.Regular);  // Regular font for subtitle and footer
-
-            DGVPrinter printer = new DGVPrinter();
-
-            // Title Settings
-            printer.Title = "ARCHIVED USER LIST";
-            printer.TitleSpacing = 10;
-            printer.TitleFont = extraBoldFont;
-            printer.TitleColor = Color.FromArgb(255, 255, 255);
-            printer.TitleBackground = new SolidBrush(Color.FromArgb(128, 0, 0));
-
-            // Subtitle Settings
-            printer.SubTitle = string.Format("Archived User List Overview\nShowing all archived users in the system\n({0})", DateTime.Now.Date.ToLongDateString());
-            printer.SubTitleFont = regularFont;
-            printer.SubTitleAlignment = StringAlignment.Center;
-            printer.SubTitleColor = Color.DimGray;
-            printer.SubTitleSpacing = 7;
-
-            // Page Number Settings
-            printer.PageNumbers = true;
-            printer.PageNumberInHeader = false;
-            printer.PageNumberAlignment = StringAlignment.Far;
-            printer.PageNumberFont = new Font("Segoe UI", 7, FontStyle.Bold);
-            printer.PageNumberColor = Color.DimGray;
-            printer.ShowTotalPageNumber = true;
-            printer.PageNumberOnSeparateLine = true;
-
-            // Column Proportions
-            printer.PorportionalColumns = true;
-
-            // Footer Settings
-            printer.Footer = "NBSPI COMPUTER LABORATORY MONITORING SYSTEM";
-            printer.FooterFont = regularFont;
-            printer.FooterSpacing = 16;
-            printer.FooterAlignment = StringAlignment.Center;
-            printer.FooterBackground = new SolidBrush(Color.Gray);
-            printer.FooterColor = Color.White;
-
-            // Print Margins
-            printer.PrintMargins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
-
-            // Print Preview of DataGridView
-            printer.PrintPreviewDataGridView(UserListPrintDGV);
-        }
-
-
 
 
         //SHowing the Online and Offline
@@ -2256,7 +2202,111 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
         }
 
 
+        private void PrintLink_Click(object sender, EventArgs e)
+        {
+            // Set font for DataGridView headers before printing
+            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
+            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center-align headers
 
+            // Create DGVPrinter instance
+            Font extraBoldFont = new Font("Montserrat ExtraBold", 36);  // Title font
+            Font regularFont = new Font("Segoe UI", 10, FontStyle.Regular);  // Regular font for subtitle and footer
 
+            DGVPrinter printer = new DGVPrinter();
+
+            // Title Settings
+            printer.Title = "USER LIST";
+            printer.TitleSpacing = 10;
+            printer.TitleFont = extraBoldFont;
+            printer.TitleColor = Color.FromArgb(255, 255, 255);
+            printer.TitleBackground = new SolidBrush(Color.FromArgb(128, 0, 0));
+
+            // Subtitle Settings
+            printer.SubTitle = string.Format("User List Overview\nShowing all active users in the system\n({0})", DateTime.Now.Date.ToLongDateString());
+            printer.SubTitleFont = regularFont;
+            printer.SubTitleAlignment = StringAlignment.Center;
+            printer.SubTitleColor = Color.DimGray;
+            printer.SubTitleSpacing = 7;
+
+            // Page Number Settings
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PageNumberAlignment = StringAlignment.Far;
+            printer.PageNumberFont = new Font("Segoe UI", 7, FontStyle.Bold);
+            printer.PageNumberColor = Color.DimGray;
+            printer.ShowTotalPageNumber = true;
+            printer.PageNumberOnSeparateLine = true;
+
+            // Column Proportions
+            printer.PorportionalColumns = true;
+
+            // Footer Settings
+            printer.Footer = "NBSPI COMPUTER LABORATORY MONITORING SYSTEM";
+            printer.FooterFont = regularFont;
+            printer.FooterSpacing = 16;
+            printer.FooterAlignment = StringAlignment.Center;
+            printer.FooterBackground = new SolidBrush(Color.Gray);
+            printer.FooterColor = Color.White;
+
+            // Print Margins
+            printer.PrintMargins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
+
+            // Print Preview of DataGridView
+            printer.PrintPreviewDataGridView(UserListPrintDGV);
+        }
+
+        private void ArchivePrintLink_Click(object sender, EventArgs e)
+        {
+
+            // Set font for DataGridView headers before printing
+            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
+            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center-align headers
+
+            // Create DGVPrinter instance
+            Font extraBoldFont = new Font("Montserrat ExtraBold", 36);  // Title font
+            Font regularFont = new Font("Segoe UI", 10, FontStyle.Regular);  // Regular font for subtitle and footer
+
+            DGVPrinter printer = new DGVPrinter();
+
+            // Title Settings
+            printer.Title = "ARCHIVED USER LIST";
+            printer.TitleSpacing = 10;
+            printer.TitleFont = extraBoldFont;
+            printer.TitleColor = Color.FromArgb(255, 255, 255);
+            printer.TitleBackground = new SolidBrush(Color.FromArgb(128, 0, 0));
+
+            // Subtitle Settings
+            printer.SubTitle = string.Format("Archived User List Overview\nShowing all archived users in the system\n({0})", DateTime.Now.Date.ToLongDateString());
+            printer.SubTitleFont = regularFont;
+            printer.SubTitleAlignment = StringAlignment.Center;
+            printer.SubTitleColor = Color.DimGray;
+            printer.SubTitleSpacing = 7;
+
+            // Page Number Settings
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PageNumberAlignment = StringAlignment.Far;
+            printer.PageNumberFont = new Font("Segoe UI", 7, FontStyle.Bold);
+            printer.PageNumberColor = Color.DimGray;
+            printer.ShowTotalPageNumber = true;
+            printer.PageNumberOnSeparateLine = true;
+
+            // Column Proportions
+            printer.PorportionalColumns = true;
+
+            // Footer Settings
+            printer.Footer = "NBSPI COMPUTER LABORATORY MONITORING SYSTEM";
+            printer.FooterFont = regularFont;
+            printer.FooterSpacing = 16;
+            printer.FooterAlignment = StringAlignment.Center;
+            printer.FooterBackground = new SolidBrush(Color.Gray);
+            printer.FooterColor = Color.White;
+
+            // Print Margins
+            printer.PrintMargins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
+
+            // Print Preview of DataGridView
+            printer.PrintPreviewDataGridView(UserListPrintDGV);
+        }
     }  
 }
