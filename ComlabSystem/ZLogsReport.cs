@@ -18,7 +18,7 @@ using DGVPrinterHelper;
 
 namespace ComlabSystem
 {
-    public partial class ZUnitListUI : UserControl
+    public partial class ZLogsReport : UserControl
     {
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
@@ -31,7 +31,7 @@ namespace ComlabSystem
 
 
 
-        public ZUnitListUI()
+        public ZLogsReport()
         {
             InitializeComponent();
 ;
@@ -1163,8 +1163,8 @@ private void FilterDateRegisteredCKB_CheckedChanged(object sender, EventArgs e) 
             int buttompadding = 140;
 
             // Resize the DataGridView to fill the panel with padding
-            UserListsGridPNL.Width = UserPNL.Width - leftpadding; // Right padding
-            UserListsGridPNL.Height = UserPNL.Height - buttompadding;
+            UserListsGridPNL.Width = ZReportPnl.Width - leftpadding; // Right padding
+            UserListsGridPNL.Height = ZReportPnl.Height - buttompadding;
         }
 
 

@@ -2022,6 +2022,7 @@ namespace DGVPrinterHelper //AllocationRequest
                 buildstringformat(ref columnheadercellformat, dgv.Columns[0].HeaderCell.InheritedStyle,
                     headercellalignment, StringAlignment.Near, headercellformatflags,
                     StringTrimming.Word);
+
             if (null == rowheadercellformat)
                 buildstringformat(ref rowheadercellformat, RowHeaderCellStyle,
                     headercellalignment, StringAlignment.Near, headercellformatflags,
@@ -2141,7 +2142,7 @@ namespace DGVPrinterHelper //AllocationRequest
                 {
                     fixedcolumns.Add(GetColumnIndex(colname));
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // missing column, so add it to print list and retry
                     colstoprint.Add(dgv.Columns[colname]);

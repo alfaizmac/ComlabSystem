@@ -407,7 +407,7 @@ namespace ComlabSystem
                         "UPDATE UserList SET Status = @Status, UnitUsed = @UnitUsed, DateLastLogout = @DateLastLogout " +
                         "WHERE StudentID = @StudentID", connection);
                     updateUserListCmd.Parameters.AddWithValue("@Status", "Offline");
-                    updateUserListCmd.Parameters.AddWithValue("@UnitUsed", $"Last Unit Used {computerName}");
+                    updateUserListCmd.Parameters.AddWithValue("@UnitUsed", $"Last Unit Used '{computerName}'");
                     updateUserListCmd.Parameters.AddWithValue("@StudentID", studentID);
                     updateUserListCmd.Parameters.AddWithValue("@DateLastLogout", currentDateTime);
                     updateUserListCmd.ExecuteNonQuery();

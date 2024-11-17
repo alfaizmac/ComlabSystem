@@ -23,6 +23,11 @@ namespace ComlabSystem
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
 
+        public string AdminName
+        {
+            set { AdminNameLabel.Text = value; }
+
+        }
 
         public UserUI()
         {
@@ -118,11 +123,9 @@ namespace ComlabSystem
 
             UserFilterPnl.Visible = false;
             LoadDepartments();
-            LoadUserListData();
             LoadEditDepartments();
             LoadFilterDepartments();
             UserListDGV.BringToFront();
-            LoadUserCountFromDatabase();
             UserListPrintDGVFUnc();
 
             //Print
@@ -130,6 +133,9 @@ namespace ComlabSystem
             PrintLink.BringToFront();
             guna2Panel2.BringToFront();
 
+
+            LoadUserListData();
+            LoadUserCountFromDatabase();
 
         }
 
@@ -248,7 +254,7 @@ FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
 JOIN YearLevels y ON u.YearLevelID = y.YearLevelID
-WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
+WHERE u.ArchiveStatus = 'Active'"; // Exclude archived users
 
                 // Query to count the total number of non-archived users
                 string countQuery = "SELECT COUNT(*) FROM UserList WHERE ArchiveStatus <> 'Archived'";
@@ -324,6 +330,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                             }
                         }
 
+
                         // Refresh layout after setting modes
                         UserListDGV.AutoResizeColumns();
                     }
@@ -334,35 +341,135 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 }
             }
         }
+        //ARCHIVE A USER
+        private void UserListDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the row is valid and clicked on a cell, not a header
+            if (e.RowIndex >= 0)
+            {
+                // Handle Edit button click
+                if (e.ColumnIndex == UserListDGV.Columns["EditBC"].Index)
+                {
+                    UserEditPnl.Visible = true; // Make the UserEditPnl visible
+                    UserEditPnl.BringToFront(); // Bring it to the front of the UI
+                }
+            }
 
+            // Check if the clicked column is the ArchiveBC button column
+            if (e.RowIndex >= 0 && UserListDGV.Columns.Contains("ArchiveBC") && UserListDGV.Columns[e.ColumnIndex].Name == "ArchiveBC")
+            {
+                hideallpanel();
+                cancelAddingUser();
+
+                // Get the StudentID of the user being archived
+                string studentID = UserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
+
+                // Get the FirstName and LastName of the user
+                string firstName = UserListDGV.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
+                string lastName = UserListDGV.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
+                    
+                // Get the AdminName from the label
+                string adminName = AdminNameLabel.Text;
+
+                // Call the ArchiveUser function to set ArchiveStatus to 'Inactive' and insert notification
+                ArchiveUserToInactive(studentID, firstName, lastName, adminName);
+            }
+        }
+        private void ArchiveUserToInactive(string studentID, string firstName, string lastName, string adminName)
+        {
+            // Confirmation message box
+            DialogResult result = MessageBox.Show($"Are you sure you want to archive this user?", "Confirm Inactivation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update user ArchiveStatus to Inactive
+                    string query = "UPDATE UserList SET ArchiveStatus = 'Inactive' WHERE StudentID = @StudentID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StudentID", studentID);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            // Insert a notification into the Notifications table
+                            InsertNotification(adminName, studentID, firstName, lastName);
+
+                            MessageBox.Show("User marked as Inactive successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadUserListData(); // Reload the user list
+                            LoadUserCountFromDatabase();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to mark user as Inactive.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void InsertNotification(string adminName, string studentID, string firstName, string lastName)
+        {
+            // Get current timestamp
+            DateTime timestamp = DateTime.Now;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Get the AdminID from AdminList table based on AdminName
+                string getAdminIDQuery = "SELECT AdminID FROM AdminList WHERE UserName = @AdminName";
+                int adminID = 0;
+                using (SqlCommand cmd = new SqlCommand(getAdminIDQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@AdminName", adminName);
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        adminID = Convert.ToInt32(result);
+                    }
+                }
+
+                // Insert the notification into Notifications table
+                string insertQuery = @"INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind) 
+                               VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
+
+                using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
+                {
+                    string message = $"{adminName} archived user with Student ID {studentID} ({firstName} {lastName}) at {timestamp.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    cmd.Parameters.AddWithValue("@Message", message);
+                    cmd.Parameters.AddWithValue("@Timestamp", timestamp);
+                    cmd.Parameters.AddWithValue("@AdminID", adminID);
+                    cmd.Parameters.AddWithValue("@NotificationType", "Information");
+                    cmd.Parameters.AddWithValue("@NotificationKind", "ArchiveUser");
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Notification inserted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to insert notification.");
+                    }
+                }
+            }
+        }
 
 
 
         private void RefreshUserListData()
         {
-            // Clear existing columns
-            //UserListDGV.Columns.Clear();
+            //Clear existing columns
+            UserListDGV.Columns.Clear();
 
             // Reload the user data
             LoadUserListData();
         }
         //adding tool tip to column buttons
-        private void UserListDGV_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
-        {
-            // Check if the hovered cell is in the EditBC or ArchiveBC column
-            if (e.ColumnIndex == UserListDGV.Columns["EditBC"].Index && e.RowIndex >= 0)
-            {
-                e.ToolTipText = "Click to edit this user.";
-            }
-            else if (e.ColumnIndex == UserListDGV.Columns["ArchiveBC"].Index && e.RowIndex >= 0)
-            {
-                e.ToolTipText = "Click to archive this user.";
-            }
-            else
-            {
-                e.ToolTipText = string.Empty; // Clear tooltip for other cells
-            }
-        }
 
 
         //IMAGE CODE
@@ -434,12 +541,13 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
             UserFilterPnl.Visible = false;
             ArchiveUserListDGV.BringToFront();
             UserListManageBtmsPL.Visible= false;
-            unLoadUserListData(); // Reload the active user list
+            LoadUserListData(); // Reload the active user list
             LoadArchivedUserListData(); // Reload the archived user list
             ArchiveUserListPrintDGVFUnc();
             cancelAddingUser();
             ApplyFilters();
 
+            LoadUserCountFromDatabase();
         }
 
         private void UserListPanelShow_Click(object sender, EventArgs e)
@@ -456,22 +564,10 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
             UserListManageBtmsPL.Visible = true;
             UserListDGV.BringToFront();
             UserListPrintDGVFUnc();
+            LoadUserListData();
             ApplyFilters();
-        }
 
-        private void UserListDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Ensure the row is valid and clicked on a cell, not a header
-            if (e.RowIndex >= 0)
-            {
-
-                // Handle Edit button click
-                if (e.ColumnIndex == UserListDGV.Columns["EditBC"].Index)
-                {
-                    UserEditPnl.Visible = true; // Make the UserEditPnl visible
-                    UserEditPnl.BringToFront(); // Bring it to the front of the UI
-                }
-            }
+            LoadUserCountFromDatabase();
         }
 
 
@@ -712,6 +808,33 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                     command.ExecuteNonQuery();
                     MessageBox.Show("User added successfully!");
 
+                    // Fetch AdminID from AdminList based on AdminNameLabel.Text
+                    string adminUserName = AdminNameLabel.Text; // Assuming AdminNameLabel.Text contains the admin username
+                    int adminID = GetAdminID(connection, adminUserName);
+                    if (adminID == -1)
+                    {
+                        MessageBox.Show("Admin not found.");
+                        return;
+                    }
+
+                    // Insert a new record into Notifications table
+                    string notificationQuery = @"
+INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind) 
+VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
+                    using (SqlCommand notificationCommand = new SqlCommand(notificationQuery, connection))
+                    {
+                        string message = $"Admin {adminUserName} added new user {FNameTB.Text} {LNameTB.Text}, Student ID: {StudIDTB.Text} at {DateTime.Now}";
+
+                        notificationCommand.Parameters.AddWithValue("@Message", message);
+                        notificationCommand.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                        notificationCommand.Parameters.AddWithValue("@AdminID", adminID);
+                        notificationCommand.Parameters.AddWithValue("@NotificationType", "Information");
+                        notificationCommand.Parameters.AddWithValue("@NotificationKind", "AddUser");
+
+                        notificationCommand.ExecuteNonQuery();
+                    }
+
+                    // Refresh User list and UI components
                     RefreshUserListData();
                     LoadUserListData();
                     AddUserBtm.Checked = false;
@@ -731,7 +854,18 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                 }
             }
         }
+        // Method to get AdminID based on the admin's username
+        private int GetAdminID(SqlConnection connection, string adminUserName)
+        {
+            string query = "SELECT AdminID FROM AdminList WHERE UserName = @UserName";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@UserName", adminUserName);
 
+                object result = command.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : -1;
+            }
+        }
         private int GetDepartmentID(SqlConnection connection, string departmentName)
         {
             string query = "SELECT DepartmentID FROM Department WHERE DepartmentName = @DepartmentName";
@@ -929,13 +1063,7 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
                     EditContactTB.Text = row.Cells["Contact"].Value?.ToString();
                     EditStudentPasswordTB.Text = row.Cells["Password"].Value?.ToString();
                 }
-                // Check if the Archive button was clicked
-                if (UserListDGV.Columns[e.ColumnIndex].Name == "ArchiveBC")
-                {
-                    string archiveStudentID = UserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
-                    ArchiveUser(archiveStudentID);
-                    return; // Exit after archiving
-                }
+
             }
         }
 
@@ -950,21 +1078,20 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
 
 
-        // ARCHIVE CODES
+        // UNARCHIVE CODES
 
-        private void ArchiveUser(string archiveStudentID)
+        private void UnarchiveUser(string archiveStudentID, string firstName, string lastName)
         {
-
-            DialogResult result = MessageBox.Show($"Are you sure you want to archive this user?", "Confirm Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            // Confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to unarchive this user?", "Confirm Unarchive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    // Update user ArchiveStatus to Archived
-                    string query = "UPDATE UserList SET ArchiveStatus = 'Archived' WHERE StudentID = @StudentID";
+                    // Update user ArchiveStatus back to Active
+                    string query = "UPDATE UserList SET ArchiveStatus = 'Active' WHERE StudentID = @StudentID";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@StudentID", archiveStudentID);
@@ -972,121 +1099,54 @@ WHERE u.ArchiveStatus <> 'Archived'"; // Exclude archived users
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("User archived successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            unLoadUserListData(); // Reload the active user list
+                            // Fetch the AdminID based on the admin's username (from AdminNameLabel)
+                            int adminID = GetAdminID(connection, AdminNameLabel.Text);
+
+                            // Construct the message for the notification
+                            string message = $"{AdminNameLabel.Text} unarchived a user. Student ID: {archiveStudentID}, Name: {firstName} {lastName} at {DateTime.Now}.";
+
+                            // Insert into the Notifications table
+                            string notificationQuery = "INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind) " +
+                                                       "VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
+
+                            using (SqlCommand notificationCommand = new SqlCommand(notificationQuery, connection))
+                            {
+                                notificationCommand.Parameters.AddWithValue("@Message", message);
+                                notificationCommand.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                                notificationCommand.Parameters.AddWithValue("@AdminID", adminID);
+                                notificationCommand.Parameters.AddWithValue("@NotificationType", "Information");
+                                notificationCommand.Parameters.AddWithValue("@NotificationKind", "UnarchiveUser");
+
+                                notificationCommand.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("User unarchived successfully and notification recorded.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadUserListData(); // Reload the active user list
                             LoadArchivedUserListData(); // Reload the archived user list
+                            LoadUserCountFromDatabase();
                         }
                         else
                         {
-                            MessageBox.Show("Failed to archive user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Failed to unarchive user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
         }
-
-        private void unLoadUserListData()
+        private void ArchiveUserListDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (e.RowIndex >= 0 && ArchiveUserListDGV.Columns[e.ColumnIndex].Name == "UnArchiveUserList")
             {
-                string query = @"
-SELECT 
-    u.StudentID AS [Student ID],
-    u.UPassword AS [Password], 
-    u.LastName AS [Last Name],
-    u.FirstName AS [First Name],
-    u.Status,
-    u.UnitUsed AS [Unit Used],
-    u.DateLastLogout AS [Date Last Logout],
-    d.DepartmentName AS [Department],
-    p.ProgramName AS [Program],
-    y.YearLevelName AS [Year/Grade Level],
-    u.Email,
-    u.ContactNo AS [Contact],
-    u.DateRegistered AS [Date Registered]
-FROM UserList u
-JOIN Department d ON u.DepartmentID = d.DepartmentID
-JOIN Programs p ON u.ProgramID = p.ProgramID
-JOIN YearLevels y ON u.YearLevelID = y.YearLevelID
-WHERE u.ArchiveStatus = 'Active'";  // Filter to show only active users
+                hideallpanel();
+                cancelAddingUser();
+                string archiveStudentID = ArchiveUserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
+                string firstName = ArchiveUserListDGV.Rows[e.RowIndex].Cells["First Name"].Value.ToString();
+                string lastName = ArchiveUserListDGV.Rows[e.RowIndex].Cells["Last Name"].Value.ToString();
 
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-
-                    try
-                    {
-                        connection.Open();
-                        adapter.Fill(dataTable);
-
-                        if (dataTable.Rows.Count > 0)
-                        {
-                            UserListDGV.DataSource = dataTable;
-
-                            // Set all columns to use AllCells mode and wrap text
-                            foreach (DataGridViewColumn column in UserListDGV.Columns)
-                            {
-                                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                                column.HeaderCell.Style.WrapMode = DataGridViewTriState.True;
-                            }
-
-                            // Change the font color of the "Status" column cells based on the status
-                            foreach (DataGridViewRow row in UserListDGV.Rows)
-                            {
-                                string status = row.Cells["Status"].Value.ToString(); // Get status value
-
-                                if (status == "Online")
-                                {
-                                    // Set font color to RGB (45, 198, 109) for Online
-                                    row.Cells["Status"].Style.ForeColor = Color.FromArgb(45, 198, 109);
-                                }
-                                else if (status == "Offline")
-                                {
-                                    // Set font color to RGB (60, 60, 60) for Offline
-                                    row.Cells["Status"].Style.ForeColor = Color.FromArgb(60, 60, 60);
-                                }
-                            }
-
-                            // Add Edit button column if not present
-                            if (UserListDGV.Columns["EditBC"] == null)
-                            {
-                                DataGridViewImageColumn editColumn = new DataGridViewImageColumn
-                                {
-                                    Name = "EditBC",
-                                    HeaderText = "Edit",
-                                    Image = ResizeImage(Properties.Resources.ColoredEditICON2, 30, 30),
-                                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                                };
-                                UserListDGV.Columns.Add(editColumn);
-                            }
-
-                            // Add Archive button column if not present
-                            if (UserListDGV.Columns["ArchiveBC"] == null)
-                            {
-                                DataGridViewImageColumn archiveColumn = new DataGridViewImageColumn
-                                {
-                                    Name = "ArchiveBC",
-                                    HeaderText = "Archive",
-                                    Image = ResizeImage(Properties.Resources.ColoredArchiveICON2, 30, 30),
-                                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                                };
-                                UserListDGV.Columns.Add(archiveColumn);
-                            }
-                        }
-                        else
-                        {
-                            UserListDGV.DataSource = null; // Clear the DataGridView if no data
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error loading user data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                UnarchiveUser(archiveStudentID, firstName, lastName);
             }
         }
+       
 
 
         private void LoadArchivedUserListData()
@@ -1112,7 +1172,7 @@ FROM UserList u
 JOIN Department d ON u.DepartmentID = d.DepartmentID
 JOIN Programs p ON u.ProgramID = p.ProgramID
 JOIN YearLevels y ON u.YearLevelID = y.YearLevelID
-WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
+WHERE u.ArchiveStatus = 'Inactive'"; // Filter to show only archived users
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -1167,53 +1227,8 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 }
             }
         }
-        private void ArchiveUserListDGV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && ArchiveUserListDGV.Columns[e.ColumnIndex].Name == "UnArchiveUserList")
-            {
-                hideallpanel();
-                cancelAddingUser();
-                string archiveStudentID = ArchiveUserListDGV.Rows[e.RowIndex].Cells["Student ID"].Value.ToString();
 
 
-                
-                    UnarchiveUser(archiveStudentID);
-                
-            }
-        }
-        private void UnarchiveUser(string archiveStudentID)
-        {
-            // Confirmation message box
-            DialogResult result = MessageBox.Show("Are you sure you want to unarchive this user?", "Confirm Unarchive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    // Update user ArchiveStatus back to Active
-                    string query = "UPDATE UserList SET ArchiveStatus = 'Active' WHERE StudentID = @StudentID";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@StudentID", archiveStudentID);
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("User unarchived successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            unLoadUserListData(); // Reload the active user list
-                            LoadArchivedUserListData(); // Reload the archived user list
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to unarchive user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-        }
-  
-        
 
 
 
@@ -1338,7 +1353,28 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("User information updated successfully.", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Fetch the AdminID based on the admin's username (from AdminNameLabel)
+                        int adminID = GetAdminID(connection, AdminNameLabel.Text);
+
+                        // Prepare the message for the notification
+                        string message = $"{AdminNameLabel.Text} edited a user. Student ID: {EditStudentIDTB.Text} at {DateTime.Now}.";
+
+                        // Insert into the Notifications table
+                        string notificationQuery = "INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind) " +
+                                                   "VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
+
+                        using (SqlCommand notificationCommand = new SqlCommand(notificationQuery, connection))
+                        {
+                            notificationCommand.Parameters.AddWithValue("@Message", message);
+                            notificationCommand.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                            notificationCommand.Parameters.AddWithValue("@AdminID", adminID);
+                            notificationCommand.Parameters.AddWithValue("@NotificationType", "Information");
+                            notificationCommand.Parameters.AddWithValue("@NotificationKind", "EditUser");
+
+                            notificationCommand.ExecuteNonQuery();
+                        }
+
+                        MessageBox.Show("User information updated successfully and notification recorded.", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         RefreshUserListData();
                         EditUserBtm.Checked = false;
@@ -1354,8 +1390,9 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                         EditEmailTB.Clear();
                         EditContactTB.Clear();
                         EditStudentPasswordTB.Clear();
-                        LoadUserCountFromDatabase();
+                        LoadUserListData();
 
+                        LoadUserCountFromDatabase();
                     }
                     else
                     {
@@ -1729,9 +1766,9 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 UserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
                 UserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
                 UserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
-                UserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+                UserListDGV.Columns["Date Last Logout"].Visible = FilterLastLoginCKB.Checked;
                 UserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-                UserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+                UserListDGV.Columns["Unit Used"].Visible = FilterLastUnitCKB.Checked;
                 UserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
             }
 
@@ -1747,9 +1784,9 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 ArchiveUserListDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
                 ArchiveUserListDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
                 ArchiveUserListDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
-                ArchiveUserListDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+                ArchiveUserListDGV.Columns["Date Last Logout"].Visible = FilterLastLoginCKB.Checked;
                 ArchiveUserListDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-                ArchiveUserListDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+                ArchiveUserListDGV.Columns["Unit Used"].Visible = FilterLastUnitCKB.Checked;
                 ArchiveUserListDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
             }
 
@@ -1765,9 +1802,9 @@ WHERE u.ArchiveStatus = 'Archived'"; // Filter to show only archived users
                 UserListPrintDGV.Columns["Program"].Visible = FilterProgramCKB.Checked;
                 UserListPrintDGV.Columns["Year/Grade Level"].Visible = FilterYearLevelCKB.Checked;
                 UserListPrintDGV.Columns["Status"].Visible = FilterStatusCKB.Checked;
-                UserListPrintDGV.Columns["Last Login"].Visible = FilterLastLoginCKB.Checked;
+                UserListPrintDGV.Columns["Date Last Logout"].Visible = FilterLastLoginCKB.Checked;
                 UserListPrintDGV.Columns["Date Registered"].Visible = FilterDateRegisteredCKB.Checked;
-                UserListPrintDGV.Columns["Last Unit Used"].Visible = FilterLastUnitCKB.Checked;
+                UserListPrintDGV.Columns["Unit Used"].Visible = FilterLastUnitCKB.Checked;
                 UserListPrintDGV.Columns["Password"].Visible = FilterPasswordCBK.Checked;
             }
         }
@@ -2171,16 +2208,25 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
 
         private void ApplySortingToDataGridView(DataGridView dgv, string status)
         {
-            // Assuming the "Status" column is named "Status" in all DataGridViews
-            if (status == "Online")
+            if (dgv.Columns.Contains("Status"))
             {
-                // Sort "Online" first
-                dgv.Sort(dgv.Columns["Status"], ListSortDirection.Descending); // Online first
+                // Assuming the "Status" column is named "Status" in all DataGridViews
+                if (status == "Online")
+                {
+                    // Sort "Online" first
+                    dgv.Sort(dgv.Columns["Status"], ListSortDirection.Descending); // Online first
+                }
+                else
+                {
+                    // Sort "Offline" first
+                    dgv.Sort(dgv.Columns["Status"], ListSortDirection.Ascending); // Offline first
+                }
+
             }
             else
             {
-                // Sort "Offline" first
-                dgv.Sort(dgv.Columns["Status"], ListSortDirection.Ascending); // Offline first
+                // Handle the case where the "Status" column does not exist
+                MessageBox.Show("The 'Status' column does not exist in the DataGridView.");
             }
         }
 
@@ -2211,8 +2257,9 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
 
         private void PrintLink_Click(object sender, EventArgs e)
         {
-            // Set font for DataGridView headers before printing
-            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
+            if (UserListPrintDGV.Rows.Count > 0) { 
+                // Set font for DataGridView headers before printing
+                UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
             UserListPrintDGV.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center-align headers
 
             // Create DGVPrinter instance
@@ -2261,12 +2308,18 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
             // Print Preview of DataGridView
             printer.PrintPreviewDataGridView(UserListPrintDGV);
         }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+}
 
         private void ArchivePrintLink_Click(object sender, EventArgs e)
         {
-
-            // Set font for DataGridView headers before printing
-            UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
+            if (UserListPrintDGV.Rows.Count > 0)
+            {
+                // Set font for DataGridView headers before printing
+                UserListPrintDGV.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);  // Set bold font for column headers
             UserListPrintDGV.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center-align headers
 
             // Create DGVPrinter instance
@@ -2314,6 +2367,11 @@ WHERE u.ArchiveStatus = 'Archived'";  // Filter to show only active users
 
             // Print Preview of DataGridView
             printer.PrintPreviewDataGridView(UserListPrintDGV);
+            }
+            else
+            {
+                MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void PrintExcelArchive_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

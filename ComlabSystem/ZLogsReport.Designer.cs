@@ -1,6 +1,6 @@
 ﻿namespace ComlabSystem
 {
-    partial class ZUnitListUI
+    partial class ZLogsReport
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.AdminNameLabel = new System.Windows.Forms.Label();
@@ -49,14 +49,13 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.UserListPanelShow = new Guna.UI2.WinForms.Guna2Button();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
-            this.UserPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.ComLabCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ZReportPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label45 = new System.Windows.Forms.Label();
-            this.PrintExcel = new System.Windows.Forms.LinkLabel();
             this.PrintLink = new System.Windows.Forms.LinkLabel();
             this.ArchivePrintLink = new System.Windows.Forms.LinkLabel();
             this.PrintExcelArchive = new System.Windows.Forms.LinkLabel();
+            this.PrintExcel = new System.Windows.Forms.LinkLabel();
             this.UnitStatusTBTM = new Guna.UI2.WinForms.Guna2Button();
             this.UnitFilterPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.FilterLoginStartCBK = new Guna.UI2.WinForms.Guna2CustomCheckBox();
@@ -90,20 +89,21 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
+            this.NoArchiveListLabel = new System.Windows.Forms.Label();
             this.ArchiveUnitListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UnitListPrintDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UnitListDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ComLabCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ArchiveComLabCB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
             this.SortToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.UnitMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.ArchiveComLabCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.NoArchiveListLabel = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.UserListPNL.SuspendLayout();
-            this.UserPNL.SuspendLayout();
+            this.ZReportPnl.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.UnitFilterPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -238,7 +238,7 @@
             this.ArchiveUnitListBtm.PressedColor = System.Drawing.Color.Maroon;
             this.ArchiveUnitListBtm.Size = new System.Drawing.Size(149, 45);
             this.ArchiveUnitListBtm.TabIndex = 15;
-            this.ArchiveUnitListBtm.Text = "ARCHIVE";
+            this.ArchiveUnitListBtm.Text = "REPORT";
             this.ArchiveUnitListBtm.TextOffset = new System.Drawing.Point(15, 0);
             this.ArchiveUnitListBtm.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.ArchiveUnitListBtm.Click += new System.EventHandler(this.UserStatisticPanelShow_Click);
@@ -282,66 +282,47 @@
             this.UserListPanelShow.PressedColor = System.Drawing.Color.Maroon;
             this.UserListPanelShow.Size = new System.Drawing.Size(149, 45);
             this.UserListPanelShow.TabIndex = 13;
-            this.UserListPanelShow.Text = "User List";
+            this.UserListPanelShow.Text = "LOGS";
             this.UserListPanelShow.TextOffset = new System.Drawing.Point(25, 0);
             this.UserListPanelShow.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.UserListPanelShow.Click += new System.EventHandler(this.UserListPanelShow_Click);
             // 
             // UserListPNL
             // 
-            this.UserListPNL.Controls.Add(this.UserPNL);
+            this.UserListPNL.Controls.Add(this.ZReportPnl);
             this.UserListPNL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserListPNL.Location = new System.Drawing.Point(0, 0);
             this.UserListPNL.Name = "UserListPNL";
             this.UserListPNL.Size = new System.Drawing.Size(1679, 1044);
             this.UserListPNL.TabIndex = 14;
             // 
-            // UserPNL
+            // ZReportPnl
             // 
-            this.UserPNL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ZReportPnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserPNL.BackColor = System.Drawing.Color.Transparent;
-            this.UserPNL.Controls.Add(this.guna2Panel2);
-            this.UserPNL.Controls.Add(this.UnitStatusTBTM);
-            this.UserPNL.Controls.Add(this.UnitFilterPnl);
-            this.UserPNL.Controls.Add(this.UnitFilterToggleBtm);
-            this.UserPNL.Controls.Add(this.guna2Separator2);
-            this.UserPNL.Controls.Add(this.guna2CirclePictureBox2);
-            this.UserPNL.Controls.Add(this.UserSearchBar);
-            this.UserPNL.Controls.Add(this.UserListsGridPNL);
-            this.UserPNL.Controls.Add(this.ComLabCB);
-            this.UserPNL.Controls.Add(this.ArchiveComLabCB);
-            this.UserPNL.FillColor = System.Drawing.Color.White;
-            this.UserPNL.Location = new System.Drawing.Point(28, 73);
-            this.UserPNL.MaximumSize = new System.Drawing.Size(1627, 958);
-            this.UserPNL.MinimumSize = new System.Drawing.Size(1308, 763);
-            this.UserPNL.Name = "UserPNL";
-            this.UserPNL.Radius = 10;
-            this.UserPNL.ShadowColor = System.Drawing.Color.Black;
-            this.UserPNL.ShadowDepth = 200;
-            this.UserPNL.ShadowShift = 10;
-            this.UserPNL.Size = new System.Drawing.Size(1627, 958);
-            this.UserPNL.TabIndex = 12;
-            // 
-            // ComLabCB
-            // 
-            this.ComLabCB.BackColor = System.Drawing.Color.Transparent;
-            this.ComLabCB.BorderRadius = 10;
-            this.ComLabCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ComLabCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComLabCB.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.ComLabCB.FocusedColor = System.Drawing.Color.Maroon;
-            this.ComLabCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.ComLabCB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.ComLabCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.ComLabCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.ComLabCB.ItemHeight = 40;
-            this.ComLabCB.Location = new System.Drawing.Point(530, 36);
-            this.ComLabCB.Name = "ComLabCB";
-            this.ComLabCB.Size = new System.Drawing.Size(122, 46);
-            this.ComLabCB.TabIndex = 65;
-            this.ComLabCB.SelectedIndexChanged += new System.EventHandler(this.ComLabCB_SelectedIndexChanged);
+            this.ZReportPnl.BackColor = System.Drawing.Color.Transparent;
+            this.ZReportPnl.Controls.Add(this.guna2Panel2);
+            this.ZReportPnl.Controls.Add(this.UnitStatusTBTM);
+            this.ZReportPnl.Controls.Add(this.UnitFilterPnl);
+            this.ZReportPnl.Controls.Add(this.UnitFilterToggleBtm);
+            this.ZReportPnl.Controls.Add(this.guna2Separator2);
+            this.ZReportPnl.Controls.Add(this.guna2CirclePictureBox2);
+            this.ZReportPnl.Controls.Add(this.UserSearchBar);
+            this.ZReportPnl.Controls.Add(this.UserListsGridPNL);
+            this.ZReportPnl.Controls.Add(this.ComLabCB);
+            this.ZReportPnl.Controls.Add(this.ArchiveComLabCB);
+            this.ZReportPnl.FillColor = System.Drawing.Color.White;
+            this.ZReportPnl.Location = new System.Drawing.Point(28, 73);
+            this.ZReportPnl.MaximumSize = new System.Drawing.Size(1627, 958);
+            this.ZReportPnl.MinimumSize = new System.Drawing.Size(1308, 763);
+            this.ZReportPnl.Name = "ZReportPnl";
+            this.ZReportPnl.Radius = 10;
+            this.ZReportPnl.ShadowColor = System.Drawing.Color.Black;
+            this.ZReportPnl.ShadowDepth = 200;
+            this.ZReportPnl.ShadowShift = 10;
+            this.ZReportPnl.Size = new System.Drawing.Size(1627, 958);
+            this.ZReportPnl.TabIndex = 12;
             // 
             // guna2Panel2
             // 
@@ -366,23 +347,6 @@
             this.label45.Size = new System.Drawing.Size(60, 21);
             this.label45.TabIndex = 60;
             this.label45.Text = "Export";
-            // 
-            // PrintExcel
-            // 
-            this.PrintExcel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
-            this.PrintExcel.AutoSize = true;
-            this.PrintExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintExcel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintExcel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.PrintExcel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(186)))), ((int)(((byte)(180)))));
-            this.PrintExcel.Location = new System.Drawing.Point(109, -3);
-            this.PrintExcel.Name = "PrintExcel";
-            this.PrintExcel.Size = new System.Drawing.Size(40, 21);
-            this.PrintExcel.TabIndex = 62;
-            this.PrintExcel.TabStop = true;
-            this.PrintExcel.Text = "CSV";
-            this.PrintExcel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
-            this.PrintExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcel_LinkClicked);
             // 
             // PrintLink
             // 
@@ -434,6 +398,23 @@
             this.PrintExcelArchive.Text = "CSV";
             this.PrintExcelArchive.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
             this.PrintExcelArchive.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcelArchive_LinkClicked);
+            // 
+            // PrintExcel
+            // 
+            this.PrintExcel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
+            this.PrintExcel.AutoSize = true;
+            this.PrintExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintExcel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintExcel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.PrintExcel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(186)))), ((int)(((byte)(180)))));
+            this.PrintExcel.Location = new System.Drawing.Point(109, -3);
+            this.PrintExcel.Name = "PrintExcel";
+            this.PrintExcel.Size = new System.Drawing.Size(40, 21);
+            this.PrintExcel.TabIndex = 62;
+            this.PrintExcel.TabStop = true;
+            this.PrintExcel.Text = "CSV";
+            this.PrintExcel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
+            this.PrintExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcel_LinkClicked);
             // 
             // UnitStatusTBTM
             // 
@@ -952,34 +933,46 @@
             this.UserListsGridPNL.Size = new System.Drawing.Size(1561, 795);
             this.UserListsGridPNL.TabIndex = 16;
             // 
+            // NoArchiveListLabel
+            // 
+            this.NoArchiveListLabel.AutoSize = true;
+            this.NoArchiveListLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.NoArchiveListLabel.Font = new System.Drawing.Font("Segoe UI Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoArchiveListLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.NoArchiveListLabel.Location = new System.Drawing.Point(506, 307);
+            this.NoArchiveListLabel.Name = "NoArchiveListLabel";
+            this.NoArchiveListLabel.Size = new System.Drawing.Size(542, 86);
+            this.NoArchiveListLabel.TabIndex = 18;
+            this.NoArchiveListLabel.Text = "No Archive Unit";
+            // 
             // ArchiveUnitListDGV
             // 
             this.ArchiveUnitListDGV.AllowUserToAddRows = false;
             this.ArchiveUnitListDGV.AllowUserToDeleteRows = false;
             this.ArchiveUnitListDGV.AllowUserToResizeColumns = false;
             this.ArchiveUnitListDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.White;
-            this.ArchiveUnitListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.ArchiveUnitListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ArchiveUnitListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.ArchiveUnitListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle83.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle83.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArchiveUnitListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArchiveUnitListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ArchiveUnitListDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle84.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle84.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArchiveUnitListDGV.DefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArchiveUnitListDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.ArchiveUnitListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArchiveUnitListDGV.GridColor = System.Drawing.Color.White;
             this.ArchiveUnitListDGV.Location = new System.Drawing.Point(0, 0);
@@ -1034,28 +1027,28 @@
             this.UnitListPrintDGV.AllowUserToDeleteRows = false;
             this.UnitListPrintDGV.AllowUserToResizeColumns = false;
             this.UnitListPrintDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle85.BackColor = System.Drawing.Color.White;
-            this.UnitListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle85;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.UnitListPrintDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.UnitListPrintDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.UnitListPrintDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle86.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle86.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle86.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle86.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UnitListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle86;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UnitListPrintDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.UnitListPrintDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle87.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle87.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle87.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UnitListPrintDGV.DefaultCellStyle = dataGridViewCellStyle87;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UnitListPrintDGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.UnitListPrintDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnitListPrintDGV.GridColor = System.Drawing.Color.White;
             this.UnitListPrintDGV.Location = new System.Drawing.Point(0, 0);
@@ -1109,28 +1102,28 @@
             this.UnitListDGV.AllowUserToDeleteRows = false;
             this.UnitListDGV.AllowUserToResizeColumns = false;
             this.UnitListDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle88.BackColor = System.Drawing.Color.White;
-            this.UnitListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle88;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.UnitListDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.UnitListDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.UnitListDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle89.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle89.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle89.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle89.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UnitListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle89;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UnitListDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.UnitListDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle90.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle90.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle90.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UnitListDGV.DefaultCellStyle = dataGridViewCellStyle90;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UnitListDGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.UnitListDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnitListDGV.GridColor = System.Drawing.Color.White;
             this.UnitListDGV.Location = new System.Drawing.Point(0, 0);
@@ -1180,24 +1173,24 @@
             this.UnitListDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UnitListDGV_CellContentClick);
             this.UnitListDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.UserListDGV_CellFormatting);
             // 
-            // SortToolTip
+            // ComLabCB
             // 
-            this.SortToolTip.AutomaticDelay = 200;
-            this.SortToolTip.AutoPopDelay = 5000;
-            this.SortToolTip.InitialDelay = 200;
-            this.SortToolTip.ReshowDelay = 40;
-            this.SortToolTip.ShowAlways = true;
-            this.SortToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.SortToolTip.ToolTipTitle = "Sort Column";
-            // 
-            // UnitMessageDialog
-            // 
-            this.UnitMessageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.UnitMessageDialog.Caption = null;
-            this.UnitMessageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.UnitMessageDialog.Parent = null;
-            this.UnitMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.UnitMessageDialog.Text = null;
+            this.ComLabCB.BackColor = System.Drawing.Color.Transparent;
+            this.ComLabCB.BorderRadius = 10;
+            this.ComLabCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComLabCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComLabCB.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.ComLabCB.FocusedColor = System.Drawing.Color.Maroon;
+            this.ComLabCB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.ComLabCB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.ComLabCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.ComLabCB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.ComLabCB.ItemHeight = 40;
+            this.ComLabCB.Location = new System.Drawing.Point(530, 36);
+            this.ComLabCB.Name = "ComLabCB";
+            this.ComLabCB.Size = new System.Drawing.Size(122, 46);
+            this.ComLabCB.TabIndex = 65;
+            this.ComLabCB.SelectedIndexChanged += new System.EventHandler(this.ComLabCB_SelectedIndexChanged);
             // 
             // ArchiveComLabCB
             // 
@@ -1218,19 +1211,26 @@
             this.ArchiveComLabCB.TabIndex = 66;
             this.ArchiveComLabCB.SelectedIndexChanged += new System.EventHandler(this.ArchiveComLabCB_SelectedIndexChanged);
             // 
-            // NoArchiveListLabel
+            // SortToolTip
             // 
-            this.NoArchiveListLabel.AutoSize = true;
-            this.NoArchiveListLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.NoArchiveListLabel.Font = new System.Drawing.Font("Segoe UI Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoArchiveListLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.NoArchiveListLabel.Location = new System.Drawing.Point(506, 307);
-            this.NoArchiveListLabel.Name = "NoArchiveListLabel";
-            this.NoArchiveListLabel.Size = new System.Drawing.Size(542, 86);
-            this.NoArchiveListLabel.TabIndex = 18;
-            this.NoArchiveListLabel.Text = "No Archive Unit";
+            this.SortToolTip.AutomaticDelay = 200;
+            this.SortToolTip.AutoPopDelay = 5000;
+            this.SortToolTip.InitialDelay = 200;
+            this.SortToolTip.ReshowDelay = 40;
+            this.SortToolTip.ShowAlways = true;
+            this.SortToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.SortToolTip.ToolTipTitle = "Sort Column";
             // 
-            // ZUnitListUI
+            // UnitMessageDialog
+            // 
+            this.UnitMessageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.UnitMessageDialog.Caption = null;
+            this.UnitMessageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.UnitMessageDialog.Parent = null;
+            this.UnitMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.UnitMessageDialog.Text = null;
+            // 
+            // ZLogsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1239,7 +1239,7 @@
             this.Controls.Add(this.UserListPNL);
             this.MaximumSize = new System.Drawing.Size(1679, 1044);
             this.MinimumSize = new System.Drawing.Size(1359, 864);
-            this.Name = "ZUnitListUI";
+            this.Name = "ZLogsReport";
             this.Size = new System.Drawing.Size(1679, 1044);
             this.Load += new System.EventHandler(this.UserUI_Load);
             this.Resize += new System.EventHandler(this.UserUI_Resize);
@@ -1249,7 +1249,7 @@
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.UserListPNL.ResumeLayout(false);
-            this.UserPNL.ResumeLayout(false);
+            this.ZReportPnl.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.UnitFilterPnl.ResumeLayout(false);
@@ -1271,7 +1271,7 @@
         private Guna.UI2.WinForms.Guna2Button UserListPanelShow;
         private Guna.UI2.WinForms.Guna2Button ArchiveUnitListBtm;
         private Guna.UI2.WinForms.Guna2Panel UserListPNL;
-        private Guna.UI2.WinForms.Guna2ShadowPanel UserPNL;
+        private Guna.UI2.WinForms.Guna2ShadowPanel ZReportPnl;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

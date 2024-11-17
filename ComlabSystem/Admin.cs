@@ -12,6 +12,12 @@ namespace ComlabSystem
 {
     public partial class Admin : Form
     {
+
+        public string AdminName
+        {
+            set { AdminUserName.Text = value; }
+
+        }
         public Admin()
         {
             InitializeComponent();
@@ -22,13 +28,14 @@ namespace ComlabSystem
 
         private void DashBoardBtm_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void UserBtm_Click(object sender, EventArgs e)
         {
+            string AdminName = AdminUserName.Text;
             // Create an instance of your UserControl
-            UserUI myControl = new UserUI();
+            UserUI myControl = new UserUI { AdminName = AdminName };
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();
@@ -42,7 +49,8 @@ namespace ComlabSystem
 
         private void ComBtm_Click(object sender, EventArgs e)
         {
-            ZUnitListUI myControl = new ZUnitListUI();
+            string AdminName = AdminUserName.Text;
+            ZUnitListUI myControl = new ZUnitListUI { AdminName = AdminName };
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();
@@ -67,7 +75,7 @@ namespace ComlabSystem
 
         private void LogBtm_Click(object sender, EventArgs e)
         {
-            LogsReportUI myControl = new LogsReportUI();
+            ZLogsReport myControl = new ZLogsReport();
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();
@@ -78,5 +86,6 @@ namespace ComlabSystem
             // Add the UserControl to the panel
             MainPNL.Controls.Add(myControl);
         }
+
     }
 }

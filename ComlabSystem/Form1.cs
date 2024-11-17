@@ -145,14 +145,16 @@ namespace ComlabSystem
                 {
                     // Insert notification if storage is low
                     SqlCommand notificationCmd = new SqlCommand(
-                        @"INSERT INTO Notifications (Message, Timestamp) 
-                  VALUES (@Message, @Timestamp)",
+                        @"INSERT INTO Notifications (Message, Timestamp, NotificationType, NotificationKind) 
+                  VALUES (@Message, @Timestamp, @NotificationType, @NotificationKind)",
                         connection);
 
                     string notificationMessage = $"Warning: Storage on {computerName} is running low. " +
                                                  $"Available storage is {availableStorageValue} GB. Please take action to free up space.";
                     notificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
                     notificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    notificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
+                    notificationCmd.Parameters.AddWithValue("@NotificationKind", "Low Storage");
 
                     notificationCmd.ExecuteNonQuery();
                 }
@@ -839,8 +841,8 @@ namespace ComlabSystem
                         if (archiveStatus == "Inactive")
                         {
                             From1MsgBox.Icon = MessageDialogIcon.Information;
-                            From1MsgBox.Caption = "Account Status: Inactive";
-                            From1MsgBox.Text = "Your account has been deactivated and is no longer active. Please contact support for further assistance.";
+                            From1MsgBox.Caption = "Account Status: Hold";
+                            From1MsgBox.Text = "Your account has been hold. Please contact support for further assistance.";
                             return; // Stop further login attempts if the account is inactive
                         }
 
@@ -855,7 +857,6 @@ namespace ComlabSystem
                             AdminRetryAttemptTimeLabel.Text = "";
 
                             // Insert login success notification
-                            InsertAdminLoginNotification(adminName, computerName, true);
                             AdminLogs();
 
                             // Check AdminRole
@@ -866,11 +867,13 @@ namespace ComlabSystem
                             // Show the appropriate form based on the AdminRole
                             if (adminRole == "Head Admin")
                             {
-                                adminForm = new HeadAdmin(); // Replace with the actual HeadAdmin form
+                                adminForm = new HeadAdmin(
+                                    
+                                    ); // Replace with the actual HeadAdmin form
                             }
                             else
                             {
-                                adminForm = new Admin(); // Replace with the actual Admin form
+                                adminForm = new Admin { AdminName = adminName }; // Replace with the actual Admin form
                             }
 
                             // Reset login timeout timer
@@ -955,27 +958,6 @@ namespace ComlabSystem
             FailedAttempCountdownMsgBox.Caption = "Too many attempts.";
             FailedAttempCountdownMsgBox.Text = $"Too many unsuccessful login attempts. Please wait {adminDelayTimeInSeconds / 60} minutes before trying again.";
             FailedAttempCountdownMsgBox.Show();
-        }
-        private void InsertAdminLoginNotification(string adminName, string computerName, bool isSuccess)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    string statusMessage = isSuccess ? "successfully logged in" : "unsuccessful login attempt";
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp, NotificationType, NotificationKind) VALUES (@Message, @Timestamp, @NotificationType, @NotificationKind)", connection);
-                    cmd.Parameters.AddWithValue("@Message", $"{adminName} {statusMessage} as admin on {computerName} at {DateTime.Now}.");
-                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@NotificationType", "Warning");
-                    cmd.Parameters.AddWithValue("@NotificationKind", "AdminLoginFail");
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to log admin login notification: " + ex.Message);
-                }
-            }
         }
 
         private void AdminLogs()

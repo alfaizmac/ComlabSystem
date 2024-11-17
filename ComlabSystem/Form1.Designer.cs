@@ -30,8 +30,6 @@
         {
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.ShutdownBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.AdminShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.UserShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.UserFormPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.StudPassLoginL = new System.Windows.Forms.Label();
             this.StudUserLoginL = new System.Windows.Forms.Label();
@@ -60,6 +58,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.AdminShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.UserShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.AdminFormDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.FailedAttempCountdownMsgBox = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.AccountRemovedMsgBox = new Guna.UI2.WinForms.Guna2MessageDialog();
@@ -79,10 +79,10 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel2.Controls.Add(this.ShutdownBtm);
-            this.guna2Panel2.Controls.Add(this.UserFormPNL);
-            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Controls.Add(this.AdminShowBtm);
             this.guna2Panel2.Controls.Add(this.UserShowBtm);
+            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
+            this.guna2Panel2.Controls.Add(this.UserFormPNL);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(960, 0);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -110,47 +110,6 @@
             this.ShutdownBtm.Size = new System.Drawing.Size(35, 35);
             this.ShutdownBtm.TabIndex = 4;
             this.ShutdownBtm.Click += new System.EventHandler(this.ShutdownBtm_Click);
-            // 
-            // AdminShowBtm
-            // 
-            this.AdminShowBtm.Animated = true;
-            this.AdminShowBtm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AdminShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AdminShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AdminShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AdminShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AdminShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.AdminShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AdminShowBtm.ForeColor = System.Drawing.Color.White;
-            this.AdminShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings__1_;
-            this.AdminShowBtm.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings;
-            this.AdminShowBtm.ImageSize = new System.Drawing.Size(45, 45);
-            this.AdminShowBtm.Location = new System.Drawing.Point(898, 12);
-            this.AdminShowBtm.Name = "AdminShowBtm";
-            this.AdminShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.AdminShowBtm.Size = new System.Drawing.Size(50, 50);
-            this.AdminShowBtm.TabIndex = 2;
-            this.AdminShowBtm.Click += new System.EventHandler(this.AdminShowBtm_Click);
-            // 
-            // UserShowBtm
-            // 
-            this.UserShowBtm.Animated = true;
-            this.UserShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UserShowBtm.ForeColor = System.Drawing.Color.White;
-            this.UserShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.user_circle__3_;
-            this.UserShowBtm.Image = global::ComlabSystem.Properties.Resources.user_circle__2_;
-            this.UserShowBtm.ImageSize = new System.Drawing.Size(45, 45);
-            this.UserShowBtm.Location = new System.Drawing.Point(898, 12);
-            this.UserShowBtm.Name = "UserShowBtm";
-            this.UserShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.UserShowBtm.Size = new System.Drawing.Size(50, 50);
-            this.UserShowBtm.TabIndex = 1;
-            this.UserShowBtm.Click += new System.EventHandler(this.UserShowBtm_Click);
             // 
             // UserFormPNL
             // 
@@ -579,6 +538,47 @@
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox2.TabIndex = 0;
             this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // AdminShowBtm
+            // 
+            this.AdminShowBtm.Animated = true;
+            this.AdminShowBtm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AdminShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AdminShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AdminShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AdminShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AdminShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.AdminShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AdminShowBtm.ForeColor = System.Drawing.Color.White;
+            this.AdminShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings__1_;
+            this.AdminShowBtm.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings;
+            this.AdminShowBtm.ImageSize = new System.Drawing.Size(45, 45);
+            this.AdminShowBtm.Location = new System.Drawing.Point(898, 12);
+            this.AdminShowBtm.Name = "AdminShowBtm";
+            this.AdminShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.AdminShowBtm.Size = new System.Drawing.Size(50, 50);
+            this.AdminShowBtm.TabIndex = 2;
+            this.AdminShowBtm.Click += new System.EventHandler(this.AdminShowBtm_Click);
+            // 
+            // UserShowBtm
+            // 
+            this.UserShowBtm.Animated = true;
+            this.UserShowBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserShowBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserShowBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserShowBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserShowBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserShowBtm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UserShowBtm.ForeColor = System.Drawing.Color.White;
+            this.UserShowBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.user_circle__3_;
+            this.UserShowBtm.Image = global::ComlabSystem.Properties.Resources.user_circle__2_;
+            this.UserShowBtm.ImageSize = new System.Drawing.Size(45, 45);
+            this.UserShowBtm.Location = new System.Drawing.Point(898, 12);
+            this.UserShowBtm.Name = "UserShowBtm";
+            this.UserShowBtm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.UserShowBtm.Size = new System.Drawing.Size(50, 50);
+            this.UserShowBtm.TabIndex = 1;
+            this.UserShowBtm.Click += new System.EventHandler(this.UserShowBtm_Click);
             // 
             // AdminFormDialog
             // 
