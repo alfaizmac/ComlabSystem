@@ -63,7 +63,7 @@ namespace ComlabSystem
 
             InitializeComboBox();
 
-            ComLabCB.BringToFront();
+            
 
 
             AdjustNoArchiveListLabelPosition();
@@ -85,6 +85,8 @@ namespace ComlabSystem
             //should always last
             NoArchiveListLabel.Visible = false;
             LoadUnitCountFromDatabase();
+
+            ComLabCB.BringToFront();
         }
 
 

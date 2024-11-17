@@ -67,7 +67,7 @@ namespace ComlabSystem
 
         private void LogBtm_Click(object sender, EventArgs e)
         {
-            LogsReportUI myControl = new LogsReportUI();
+            ZLogsReport myControl = new ZLogsReport();
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();

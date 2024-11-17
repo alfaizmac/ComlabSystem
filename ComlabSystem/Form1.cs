@@ -145,8 +145,8 @@ namespace ComlabSystem
                 {
                     // Insert notification if storage is low
                     SqlCommand notificationCmd = new SqlCommand(
-                        @"INSERT INTO Notifications (Message, Timestamp, NotificationType, NotificationKind) 
-                  VALUES (@Message, @Timestamp, @NotificationType, @NotificationKind)",
+                        @"INSERT INTO Notifications (Message, Timestamp, NotificationType, NotificationKind, UnitName) 
+                  VALUES (@Message, @Timestamp, @NotificationType, @NotificationKind, @UnitName)",
                         connection);
 
                     string notificationMessage = $"Warning: Storage on {computerName} is running low. " +
@@ -155,6 +155,7 @@ namespace ComlabSystem
                     notificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
                     notificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
                     notificationCmd.Parameters.AddWithValue("@NotificationKind", "Low Storage");
+                    notificationCmd.Parameters.AddWithValue("@UnitName", computerName);
 
                     notificationCmd.ExecuteNonQuery();
                 }
@@ -598,17 +599,7 @@ namespace ComlabSystem
                             updateCmd.Parameters.AddWithValue("@ComputerName", computerName);
                             updateCmd.ExecuteNonQuery();
 
-                    
-
-                            // Insert a notification into the Notifications table
-                            SqlCommand insertNotifCmd = new SqlCommand("INSERT INTO Notifications (UserID, NotificationType, NotificationKind, Message, Timestamp) VALUES (@UserID, @NotificationType, @NotificationKind, @Message, @Timestamp)", connection);
-                            insertNotifCmd.Parameters.AddWithValue("@UserID", userID);
-                            insertNotifCmd.Parameters.AddWithValue("@NotificationType", "Warning");
-                            insertNotifCmd.Parameters.AddWithValue("@NotificationKind", "Improper Shutdown/Using multiple units");
-                            insertNotifCmd.Parameters.AddWithValue("@Message", "Warning: This user did not properly shut down a computer or its using multiple units.");
-                            insertNotifCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-
-                            insertNotifCmd.ExecuteNonQuery();
+                   
 
 
                         }
@@ -630,7 +621,6 @@ namespace ComlabSystem
             if (retryAttempts == 0)
             {
                 StartRetryTimer();
-                LogUnsuccessfulAttempt(UserIDTextBox.Text.Trim());
                 ShowRetryMessage();
             }
             else
@@ -680,26 +670,6 @@ namespace ComlabSystem
             FailedAttempCountdownMsgBox.Show();
         }
 
-        private void LogUnsuccessfulAttempt(string studentID)
-        {
-            string computerName = UnitNameLabel.Text; // Assuming UnitName label has been initialized
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (Message, Timestamp) VALUES (@Message, @Timestamp)", connection);
-                    cmd.Parameters.AddWithValue("@Message", $"Unsuccessful login attempt on computer unit name {computerName} by a user using a Student ID: {studentID}");
-                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to log unsuccessful attempt: " + ex.Message);
-                }
-            }
-        }
 
         private void UpdateUserStatusAndUnit(string studentID)
         {
@@ -1008,8 +978,8 @@ namespace ComlabSystem
 
                     // Insert into Logs table
                     string insertLogQuery = @"
-                INSERT INTO Logs (AdminID, UserType, ActionType, UnitID, Timestamp, Action)
-                VALUES (@AdminID, @UserType, @ActionType, @UnitID, @Timestamp, @Action)";
+                INSERT INTO Logs (AdminID, UserType, ActionType, UnitID, Timestamp, Action, AdminName)
+                VALUES (@AdminID, @UserType, @ActionType, @UnitID, @Timestamp, @Action, @AdminName)";
 
                     SqlCommand insertLogCommand = new SqlCommand(insertLogQuery, connection);
                     insertLogCommand.Parameters.AddWithValue("@AdminID", adminId);
@@ -1018,6 +988,7 @@ namespace ComlabSystem
                     insertLogCommand.Parameters.AddWithValue("@UnitID", unitId);
                     insertLogCommand.Parameters.AddWithValue("@Timestamp", timestamp);
                     insertLogCommand.Parameters.AddWithValue("@Action", actionMessage);
+                    insertLogCommand.Parameters.AddWithValue("@AdminName", adminName);
                     insertLogCommand.ExecuteNonQuery();
 
                     // Update Admin Status to "Online"

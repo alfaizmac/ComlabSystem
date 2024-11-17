@@ -53,6 +53,7 @@
             this.DashBoardBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.UnitName = new System.Windows.Forms.Label();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -69,6 +70,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.guna2Panel3.Controls.Add(this.UnitName);
             this.guna2Panel3.Controls.Add(this.AdminUserName);
             this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel3.Controls.Add(this.label1);
@@ -442,6 +444,16 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // UnitName
+            // 
+            this.UnitName.AutoSize = true;
+            this.UnitName.Location = new System.Drawing.Point(260, 14);
+            this.UnitName.Name = "UnitName";
+            this.UnitName.Size = new System.Drawing.Size(35, 13);
+            this.UnitName.TabIndex = 5;
+            this.UnitName.Text = "label2";
+            this.UnitName.Visible = false;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,5 +504,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label AdminUserName;
+        private System.Windows.Forms.Label UnitName;
     }
 }

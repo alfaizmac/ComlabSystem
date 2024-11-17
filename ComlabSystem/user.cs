@@ -110,7 +110,7 @@ namespace ComlabSystem
             string fName = FLNameLabel.Text;   // Assuming you have FirstNameLabel for the student's first name
 
             // Insert login action into Logs and get the LogID
-            int logId = InsertLoginAction(studentID, fName);
+            int logId = InsertLoginAction(studentID);
 
             // Start the session timer to track duration
             loginTime = DateTime.Now;
@@ -283,13 +283,14 @@ namespace ComlabSystem
 
                     // Insert the report or feedback into the Help_Desk table
                     SqlCommand insertFeedbackCmd = new SqlCommand(
-                        "INSERT INTO Help_Desk (UserID, MessageType, IssueDescription, Timestamp) " +
-                        "VALUES (@UserID, @MessageType, @IssueDescription, @Timestamp)", connection);
+                        "INSERT INTO Help_Desk (UserID, MessageType, IssueDescription, Timestamp, StudID) " +
+                        "VALUES (@UserID, @MessageType, @IssueDescription, @Timestamp, @StudID)", connection);
 
                     insertFeedbackCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
                     insertFeedbackCmd.Parameters.AddWithValue("@MessageType", messageType);  // 'Report' or 'Feedback'
                     insertFeedbackCmd.Parameters.AddWithValue("@IssueDescription", issueDescription);  // The formatted feedback
                     insertFeedbackCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);  // The current timestamp
+                    insertFeedbackCmd.Parameters.AddWithValue("@StudID", studentID);  // The current timestamp
 
                     // Execute the command
                     insertFeedbackCmd.ExecuteNonQuery();
@@ -437,13 +438,14 @@ namespace ComlabSystem
                     // Insert into the Logs table with TimeDuration
                     string logAction = $"{FLNameLabel.Text} sign out on Computer Name {computerName} at {currentDateTime}";
                     SqlCommand insertLogCmd = new SqlCommand(
-                        "INSERT INTO Logs (Action, UserID, UnitID, TimeDuration, ActionType, UserType) VALUES (@Action, @UserID, @UnitID, @TimeDuration, @ActionType, @UserType)", connection);
+                        "INSERT INTO Logs (Action, UserID, UnitID, TimeDuration, ActionType, UserType, UnitName) VALUES (@Action, @UserID, @UnitID, @TimeDuration, @ActionType, @UserType, @UnitName)", connection);
                     insertLogCmd.Parameters.AddWithValue("@Action", logAction);
                     insertLogCmd.Parameters.AddWithValue("@UserID", userID);
                     insertLogCmd.Parameters.AddWithValue("@UnitID", unitID);  // Use the retrieved UnitID here
                     insertLogCmd.Parameters.AddWithValue("@TimeDuration", sessionTime);  // Insert the session time as TimeDuration
                     insertLogCmd.Parameters.AddWithValue("@ActionType", "Sign out");
                     insertLogCmd.Parameters.AddWithValue("@UserType", "Student");
+                    insertLogCmd.Parameters.AddWithValue("@UnitName", computerName);
 
                     insertLogCmd.ExecuteNonQuery();
 
@@ -699,18 +701,6 @@ namespace ComlabSystem
                             CurrentPassTB.Text = "";
                             NewPassTB.Text = "";
                             ConfirmNewPassTB.Text = "";
-
-                            // Step 4: Insert a notification record into the Notifications table
-                            SqlCommand insertNotifCmd = new SqlCommand(
-                                "INSERT INTO Notifications (UserID, NotificationType, NotificationKind, Message, Timestamp) " +
-                                "VALUES (@UserID, @NotificationType, @NotificationKind, @Message, @Timestamp)", connection);
-
-                            insertNotifCmd.Parameters.AddWithValue("@UserID", userID);
-                            insertNotifCmd.Parameters.AddWithValue("@NotificationType", "Info");
-                            insertNotifCmd.Parameters.AddWithValue("@NotificationKind", "ChangePassword");
-                            insertNotifCmd.Parameters.AddWithValue("@Message", fullName + " changed to a new password: " + newPassword);
-                            insertNotifCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                            insertNotifCmd.ExecuteNonQuery();
 
                         }
                         else
@@ -1042,66 +1032,15 @@ namespace ComlabSystem
 
 
 
-
-        // Insert login action into the Logs table
-        private int InsertLoginAction(string studentID, string lastName, string firstName)
-        {
-            string computerName = UnitNameLabel.Text;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
-                    cmd.Parameters.AddWithValue("@StudentID", studentID);
-                    int userID = (int)cmd.ExecuteScalar();
-
-                    SqlCommand unitCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
-                    unitCmd.Parameters.AddWithValue("@ComputerName", computerName);
-                    int unitID = (int)unitCmd.ExecuteScalar();
-
-                    SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType)", connection);
-                    logCmd.Parameters.AddWithValue("@UnitID", unitID);
-                    logCmd.Parameters.AddWithValue("@UserID", userID);
-                    logCmd.Parameters.AddWithValue("@Action", $"{firstName} {lastName} has logged in on {computerName} at " + DateTime.Now + ".");
-                    logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                    logCmd.Parameters.AddWithValue("@TimeDuration", TimeSpan.Zero);  // Set initial duration to 0
-                    logCmd.Parameters.AddWithValue("@ActionType", "Login");
-
-                    // Get the inserted LogID for future updates
-                    int logId = (int)logCmd.ExecuteScalar();
-                    return logId;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to log login action: " + ex.Message);
-                    return -1;
-                }
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Add a Timer to track duration
         private Timer sessionTimer;
         private DateTime loginTime;
 
         // Insert login action into the Logs table
-        private int InsertLoginAction(string studentID, string fName)
+        private int InsertLoginAction(string studentID)
         {
             string computerName = UnitNameLabel.Text;  // Get the computer name label text
+            string Fname = FLNameLabel.Text;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -1114,21 +1053,22 @@ namespace ComlabSystem
                     cmd.Parameters.AddWithValue("@StudentID", studentID);
                     int userID = (int)cmd.ExecuteScalar();
 
-                    // Get the UnitID for the Computer Name
                     SqlCommand unitCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
                     unitCmd.Parameters.AddWithValue("@ComputerName", computerName);
                     int unitID = (int)unitCmd.ExecuteScalar();
 
                     // Insert the login action into the Logs table
                     SqlCommand logCmd = new SqlCommand(
-                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType, UserType) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType, @UserType)", connection);
+                        "INSERT INTO Logs (UnitID, UserID, Action, Timestamp, TimeDuration, ActionType, UserType, StudID, UnitName) OUTPUT INSERTED.LogID VALUES (@UnitID, @UserID, @Action, @Timestamp, @TimeDuration, @ActionType, @UserType, @StudID, @UnitName)", connection);
                     logCmd.Parameters.AddWithValue("@UnitID", unitID);
                     logCmd.Parameters.AddWithValue("@UserID", userID);
-                    logCmd.Parameters.AddWithValue("@Action", $"{fName} has logged in on {computerName} at " + DateTime.Now + ".");
+                    logCmd.Parameters.AddWithValue("@Action", $"{Fname} has logged in on {computerName} at " + DateTime.Now + ".");
                     logCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
                     logCmd.Parameters.AddWithValue("@TimeDuration", TimeSpan.Zero);  // Set initial duration to 0
                     logCmd.Parameters.AddWithValue("@ActionType", "Login");
                     logCmd.Parameters.AddWithValue("@UserType", "Student");
+                    logCmd.Parameters.AddWithValue("@StudID", studentID);  // Set initial duration to 0
+                    logCmd.Parameters.AddWithValue("@UnitName", computerName);
 
                     // Get the inserted LogID for future updates
                     int logId = (int)logCmd.ExecuteScalar();

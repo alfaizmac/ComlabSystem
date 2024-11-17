@@ -832,5 +832,11 @@
   <ItemGroup>
     <None Include="Resources\ColoredArchiveICON2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WarningCOlored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InfoCOlored.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

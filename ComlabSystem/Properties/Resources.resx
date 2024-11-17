@@ -127,17 +127,14 @@
   <data name="info (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LockScreeen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LockScreeen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="user (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="info (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="x-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="warning (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warning (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,9 +147,6 @@
   </data>
   <data name="pencil (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="users (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +226,12 @@
   <data name="warning-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warning-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="password (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\password (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user-plus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-plus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,8 +241,8 @@
   <data name="book (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file-list-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file-list-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -261,6 +261,9 @@
   </data>
   <data name="sign-out1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-out1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shut-down (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shut-down (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,14 +301,11 @@
   <data name="Online User checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Online User checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-circle (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-circle (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="asdasdsa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asdasdsa2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="book (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User BG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User BG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -340,9 +340,6 @@
   <data name="computer-Black21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-Black21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="users (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -375,6 +372,9 @@
   </data>
   <data name="eye (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColoredArchiveICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredArchiveICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="computer-Marroon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-Marroon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -418,9 +418,6 @@
   <data name="asdasdsa23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\asdasdsa23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ColoredArchiveICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColoredArchiveICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -439,20 +436,20 @@
   <data name="minus-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer-Black4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer-Black4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ColoredEditICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColoredEditICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-plus (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-plus (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColoredEditICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredEditICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shut-down (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shut-down (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -466,23 +463,23 @@
   <data name="printer (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LockScreeen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LockScreeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="admin-panel-settings1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin-panel-settings1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="caret-up (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\caret-up (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="computer-Black1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-Black1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ColoredUnArchiveICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredUnArchiveICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -493,6 +490,12 @@
   <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="notifications (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notifications (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="book2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eye (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -502,8 +505,8 @@
   <data name="sign-out2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-out2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file-list-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file-list-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="uNit BG22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uNit BG22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -514,8 +517,8 @@
   <data name="user-list (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-list (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-circle (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-circle (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="book (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="computer-Black22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-Black22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -535,8 +538,8 @@
   <data name="computer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="password (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\password (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ColoredArchiveICON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColoredArchiveICON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="admin-panel-settings (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin-panel-settings (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -550,8 +553,8 @@
   <data name="archive (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archive (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="book2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LockScreeen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LockScreeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x-square (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-square (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -580,6 +583,9 @@
   <data name="info (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="uNit BG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uNit BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="admin-panel-settings (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin-panel-settings (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -601,8 +607,8 @@
   <data name="gear (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notifications (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notifications (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus-circle (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus-circle (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -616,11 +622,11 @@
   <data name="computer-Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer-Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uNit BG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\uNit BG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LockScreeen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LockScreeen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="caret-up (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\caret-up (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="users (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setting-config" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting-config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -655,22 +661,22 @@
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sign-out (3)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-out (3)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer-Black4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer-Black4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ColoredUnArchiveICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColoredUnArchiveICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WarningCOlored" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WarningCOlored.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ColoredEditICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColoredEditICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ColoredArchiveICON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColoredArchiveICON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="InfoCOlored" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InfoCOlored.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

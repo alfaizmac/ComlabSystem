@@ -943,6 +943,16 @@ namespace ComlabSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap InfoCOlored {
+            get {
+                object obj = ResourceManager.GetObject("InfoCOlored", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap list {
             get {
                 object obj = ResourceManager.GetObject("list", resourceCulture);
@@ -1816,6 +1826,16 @@ namespace ComlabSystem.Properties {
         internal static System.Drawing.Bitmap warning_circle {
             get {
                 object obj = ResourceManager.GetObject("warning-circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WarningCOlored {
+            get {
+                object obj = ResourceManager.GetObject("WarningCOlored", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
