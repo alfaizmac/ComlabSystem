@@ -98,7 +98,6 @@
             this.UserPnL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPausePnL = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.LockShutdownBtm = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.SignOutBtm = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -262,7 +261,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(600, 34);
+            this.guna2Panel1.Size = new System.Drawing.Size(1920, 34);
             this.guna2Panel1.TabIndex = 34;
             // 
             // label8
@@ -284,7 +283,7 @@
             this.guna2ControlBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(556, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1876, 0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(44, 34);
             this.guna2ControlBox1.TabIndex = 0;
@@ -300,7 +299,7 @@
             this.SideBar.Controls.Add(this.MenuButtonPNL);
             this.SideBar.Controls.Add(this.S);
             this.SideBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SideBar.Location = new System.Drawing.Point(556, 34);
+            this.SideBar.Location = new System.Drawing.Point(1876, 34);
             this.SideBar.MaximumSize = new System.Drawing.Size(183, 316);
             this.SideBar.MinimumSize = new System.Drawing.Size(44, 316);
             this.SideBar.Name = "SideBar";
@@ -1115,7 +1114,7 @@
             this.UserPnL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserPnL.Location = new System.Drawing.Point(0, 0);
             this.UserPnL.Name = "UserPnL";
-            this.UserPnL.Size = new System.Drawing.Size(600, 350);
+            this.UserPnL.Size = new System.Drawing.Size(1920, 1080);
             this.UserPnL.TabIndex = 44;
             // 
             // UserPausePnL
@@ -1126,14 +1125,13 @@
             this.UserPausePnL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserPausePnL.Location = new System.Drawing.Point(0, 0);
             this.UserPausePnL.Name = "UserPausePnL";
-            this.UserPausePnL.Size = new System.Drawing.Size(600, 350);
+            this.UserPausePnL.Size = new System.Drawing.Size(1920, 1080);
             this.UserPausePnL.TabIndex = 45;
             // 
             // guna2Panel13
             // 
             this.guna2Panel13.BackColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Panel13.BackgroundImage = global::ComlabSystem.Properties.Resources.LockScreeen2;
-            this.guna2Panel13.Controls.Add(this.LockShutdownBtm);
             this.guna2Panel13.Controls.Add(this.label3);
             this.guna2Panel13.Controls.Add(this.guna2CirclePictureBox2);
             this.guna2Panel13.Controls.Add(this.SignOutBtm);
@@ -1155,29 +1153,10 @@
             this.guna2Panel13.Controls.Add(this.LockScreenPassTB);
             this.guna2Panel13.Controls.Add(this.label25);
             this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel13.Location = new System.Drawing.Point(-360, 0);
+            this.guna2Panel13.Location = new System.Drawing.Point(960, 0);
             this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(960, 350);
+            this.guna2Panel13.Size = new System.Drawing.Size(960, 1080);
             this.guna2Panel13.TabIndex = 1;
-            // 
-            // LockShutdownBtm
-            // 
-            this.LockShutdownBtm.BackColor = System.Drawing.Color.Transparent;
-            this.LockShutdownBtm.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.LockShutdownBtm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LockShutdownBtm.HoverState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
-            this.LockShutdownBtm.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.Image = global::ComlabSystem.Properties.Resources.shut_down__2_;
-            this.LockShutdownBtm.ImageOffset = new System.Drawing.Point(0, 0);
-            this.LockShutdownBtm.ImageRotate = 0F;
-            this.LockShutdownBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.Location = new System.Drawing.Point(916, 925);
-            this.LockShutdownBtm.Name = "LockShutdownBtm";
-            this.LockShutdownBtm.PressedState.Image = global::ComlabSystem.Properties.Resources.shut_down__1_;
-            this.LockShutdownBtm.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.Size = new System.Drawing.Size(30, 30);
-            this.LockShutdownBtm.TabIndex = 40;
-            this.LockShutdownBtm.Click += new System.EventHandler(this.LockShutdownBtm_Click);
             // 
             // label3
             // 
@@ -1513,7 +1492,7 @@
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel15.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(960, 350);
+            this.guna2Panel15.Size = new System.Drawing.Size(960, 1080);
             this.guna2Panel15.TabIndex = 0;
             // 
             // ComputerNameL
@@ -1557,9 +1536,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 350);
-            this.Controls.Add(this.UserPnL);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.UserPausePnL);
+            this.Controls.Add(this.UserPnL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(600, 350);
@@ -1706,7 +1685,6 @@
         private Guna.UI2.WinForms.Guna2Panel S;
         private Guna.UI2.WinForms.Guna2Button ShutDownBtmNonlock;
         private System.Windows.Forms.Label PassNotmatch;
-        private Guna.UI2.WinForms.Guna2ImageButton LockShutdownBtm;
         private System.Windows.Forms.Label ComputerNameL;
     }
 }

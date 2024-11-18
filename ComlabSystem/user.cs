@@ -901,7 +901,7 @@ namespace ComlabSystem
                 signOutTimer.Stop();
                 ShowSignoutButtonAvai.Caption = "Sign Out Now Available";
                 ShowSignoutButtonAvai.Text =
-                    "The **Sign Out** button is now accessible after the screen was locked for an extended period. " +
+                    "The **Sign Out** button is now accessible. " +
                     "To sign out, simply click the **Sign Out** button located at the top-right corner of your screen. " +
                     "This ensures the security of your session and helps manage computer usage effectively.";
                 ShowSignoutButtonAvai.Show();
@@ -941,7 +941,6 @@ namespace ComlabSystem
             if (shutDownTimeLeft <= 0)
             {
                 shutDownTimer.Stop();
-                ShutDownBtm.Visible = true;
 
                 // Code to shut down the computer
                 ShutDownComputer();
