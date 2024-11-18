@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.UnitName = new System.Windows.Forms.Label();
             this.AdminUserName = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,9 +42,10 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.MainPNL = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.HelpBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.NotificationsBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.ShutdownBtm = new Guna.UI2.WinForms.Guna2Button();
             this.SignOutBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.SettingsBtm = new Guna.UI2.WinForms.Guna2Button();
@@ -53,9 +55,10 @@
             this.DashBoardBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.UnitName = new System.Windows.Forms.Label();
+            this.AdminDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.MainPNL.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +85,16 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1359, 36);
             this.guna2Panel3.TabIndex = 3;
+            // 
+            // UnitName
+            // 
+            this.UnitName.AutoSize = true;
+            this.UnitName.Location = new System.Drawing.Point(260, 14);
+            this.UnitName.Name = "UnitName";
+            this.UnitName.Size = new System.Drawing.Size(35, 13);
+            this.UnitName.TabIndex = 5;
+            this.UnitName.Text = "label2";
+            this.UnitName.Visible = false;
             // 
             // AdminUserName
             // 
@@ -176,17 +189,29 @@
             // MainPNL
             // 
             this.MainPNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.MainPNL.Controls.Add(this.label2);
             this.MainPNL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPNL.Location = new System.Drawing.Point(241, 36);
             this.MainPNL.Name = "MainPNL";
             this.MainPNL.Size = new System.Drawing.Size(1359, 864);
             this.MainPNL.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label2.Location = new System.Drawing.Point(88, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(832, 172);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "IMAGINE SAH, NA NAAY \r\nVIEWING SA DASHBOARD";
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Maroon;
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.HelpBtm);
+            this.guna2Panel1.Controls.Add(this.NotificationsBtm);
+            this.guna2Panel1.Controls.Add(this.ShutdownBtm);
             this.guna2Panel1.Controls.Add(this.SignOutBtm);
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
             this.guna2Panel1.Controls.Add(this.SettingsBtm);
@@ -202,58 +227,60 @@
             this.guna2Panel1.Size = new System.Drawing.Size(241, 900);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // guna2Button1
+            // NotificationsBtm
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BorderRadius = 29;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2Button1.CheckedState.Image = global::ComlabSystem.Properties.Resources.feedback__1_;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Maroon;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.guna2Button1.Image = global::ComlabSystem.Properties.Resources.notifications_none__1_;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(7, 0);
-            this.guna2Button1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button1.Location = new System.Drawing.Point(15, 282);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(254, 60);
-            this.guna2Button1.TabIndex = 15;
-            this.guna2Button1.Text = "Notifications";
+            this.NotificationsBtm.Animated = true;
+            this.NotificationsBtm.AutoRoundedCorners = true;
+            this.NotificationsBtm.BorderRadius = 29;
+            this.NotificationsBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.NotificationsBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.NotificationsBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.NotificationsBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.notifications1;
+            this.NotificationsBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.NotificationsBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.NotificationsBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.NotificationsBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.NotificationsBtm.FillColor = System.Drawing.Color.Maroon;
+            this.NotificationsBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.NotificationsBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.NotificationsBtm.Image = global::ComlabSystem.Properties.Resources.notifications_none__1_;
+            this.NotificationsBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NotificationsBtm.ImageOffset = new System.Drawing.Point(7, 0);
+            this.NotificationsBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.NotificationsBtm.Location = new System.Drawing.Point(15, 282);
+            this.NotificationsBtm.Name = "NotificationsBtm";
+            this.NotificationsBtm.Size = new System.Drawing.Size(254, 60);
+            this.NotificationsBtm.TabIndex = 15;
+            this.NotificationsBtm.Text = "Notifications";
+            this.NotificationsBtm.Click += new System.EventHandler(this.NotificationsBtm_Click);
             // 
-            // HelpBtm
+            // ShutdownBtm
             // 
-            this.HelpBtm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.HelpBtm.Animated = true;
-            this.HelpBtm.AutoRoundedCorners = true;
-            this.HelpBtm.BorderRadius = 29;
-            this.HelpBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.HelpBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.HelpBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.HelpBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.info__2_;
-            this.HelpBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.HelpBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.HelpBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.HelpBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.HelpBtm.FillColor = System.Drawing.Color.Maroon;
-            this.HelpBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.HelpBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.HelpBtm.Image = global::ComlabSystem.Properties.Resources.info;
-            this.HelpBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.HelpBtm.ImageOffset = new System.Drawing.Point(7, 0);
-            this.HelpBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.HelpBtm.Location = new System.Drawing.Point(15, 826);
-            this.HelpBtm.Name = "HelpBtm";
-            this.HelpBtm.Size = new System.Drawing.Size(254, 60);
-            this.HelpBtm.TabIndex = 14;
-            this.HelpBtm.Text = "Help ?";
+            this.ShutdownBtm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ShutdownBtm.Animated = true;
+            this.ShutdownBtm.AutoRoundedCorners = true;
+            this.ShutdownBtm.BorderRadius = 29;
+            this.ShutdownBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.ShutdownBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ShutdownBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ShutdownBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.power__5_;
+            this.ShutdownBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ShutdownBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ShutdownBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ShutdownBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ShutdownBtm.FillColor = System.Drawing.Color.Maroon;
+            this.ShutdownBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.ShutdownBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ShutdownBtm.Image = global::ComlabSystem.Properties.Resources.power__4_;
+            this.ShutdownBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ShutdownBtm.ImageOffset = new System.Drawing.Point(7, 0);
+            this.ShutdownBtm.ImageSize = new System.Drawing.Size(30, 30);
+            this.ShutdownBtm.Location = new System.Drawing.Point(15, 826);
+            this.ShutdownBtm.Name = "ShutdownBtm";
+            this.ShutdownBtm.Size = new System.Drawing.Size(254, 60);
+            this.ShutdownBtm.TabIndex = 14;
+            this.ShutdownBtm.Text = "Shutdown";
+            this.ShutdownBtm.Click += new System.EventHandler(this.ShutdownBtm_Click);
             // 
             // SignOutBtm
             // 
@@ -264,7 +291,7 @@
             this.SignOutBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.SignOutBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.SignOutBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.SignOutBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.sign_out__2_;
+            this.SignOutBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.sign_out__7_1;
             this.SignOutBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.SignOutBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.SignOutBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -272,7 +299,7 @@
             this.SignOutBtm.FillColor = System.Drawing.Color.Maroon;
             this.SignOutBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.SignOutBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.SignOutBtm.Image = global::ComlabSystem.Properties.Resources.sign_out;
+            this.SignOutBtm.Image = global::ComlabSystem.Properties.Resources.sign_out__7_;
             this.SignOutBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SignOutBtm.ImageOffset = new System.Drawing.Point(7, 0);
             this.SignOutBtm.ImageSize = new System.Drawing.Size(30, 30);
@@ -300,7 +327,7 @@
             this.SettingsBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.SettingsBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.SettingsBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.SettingsBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.gear__2_1;
+            this.SettingsBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.gear_six;
             this.SettingsBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.SettingsBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.SettingsBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -308,7 +335,7 @@
             this.SettingsBtm.FillColor = System.Drawing.Color.Maroon;
             this.SettingsBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.SettingsBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.SettingsBtm.Image = global::ComlabSystem.Properties.Resources.gear__2_;
+            this.SettingsBtm.Image = global::ComlabSystem.Properties.Resources.gear_six__1_;
             this.SettingsBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SettingsBtm.ImageOffset = new System.Drawing.Point(7, 0);
             this.SettingsBtm.ImageSize = new System.Drawing.Size(30, 30);
@@ -317,6 +344,7 @@
             this.SettingsBtm.Size = new System.Drawing.Size(254, 60);
             this.SettingsBtm.TabIndex = 11;
             this.SettingsBtm.Text = "Settings";
+            this.SettingsBtm.Click += new System.EventHandler(this.SettingsBtm_Click);
             // 
             // LogBtm
             // 
@@ -326,7 +354,7 @@
             this.LogBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.LogBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.LogBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.LogBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.file_list_2__1_;
+            this.LogBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.file_list_2__2_;
             this.LogBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.LogBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.LogBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -353,7 +381,7 @@
             this.ComBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ComBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ComBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ComBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.computer_Black2;
+            this.ComBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.computer_Black3;
             this.ComBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ComBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ComBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -379,7 +407,7 @@
             this.UserBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.UserBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.UserBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.UserBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user__2_;
+            this.UserBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.user__6_;
             this.UserBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.UserBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.UserBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -387,7 +415,7 @@
             this.UserBtm.FillColor = System.Drawing.Color.Maroon;
             this.UserBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.UserBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UserBtm.Image = global::ComlabSystem.Properties.Resources.user;
+            this.UserBtm.Image = global::ComlabSystem.Properties.Resources.user__5_;
             this.UserBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.UserBtm.ImageOffset = new System.Drawing.Point(7, 0);
             this.UserBtm.ImageSize = new System.Drawing.Size(30, 30);
@@ -444,15 +472,14 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // UnitName
+            // AdminDialog
             // 
-            this.UnitName.AutoSize = true;
-            this.UnitName.Location = new System.Drawing.Point(260, 14);
-            this.UnitName.Name = "UnitName";
-            this.UnitName.Size = new System.Drawing.Size(35, 13);
-            this.UnitName.TabIndex = 5;
-            this.UnitName.Text = "label2";
-            this.UnitName.Visible = false;
+            this.AdminDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.AdminDialog.Caption = null;
+            this.AdminDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.AdminDialog.Parent = null;
+            this.AdminDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.AdminDialog.Text = null;
             // 
             // Admin
             // 
@@ -472,6 +499,8 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.MainPNL.ResumeLayout(false);
+            this.MainPNL.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -495,15 +524,17 @@
         private Guna.UI2.WinForms.Guna2Button UserBtm;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2Button HelpBtm;
         private Guna.UI2.WinForms.Guna2Button SignOutBtm;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox6;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button NotificationsBtm;
         private System.Windows.Forms.Label AdminUserName;
         private System.Windows.Forms.Label UnitName;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button ShutdownBtm;
+        private Guna.UI2.WinForms.Guna2MessageDialog AdminDialog;
     }
 }

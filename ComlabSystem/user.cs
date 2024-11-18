@@ -52,6 +52,7 @@ namespace ComlabSystem
 
             SignOutBtm.Visible = false;
             ShutDownBtm.Visible = false;
+            PassNotmatch.Visible = false;
 
 
 
@@ -67,8 +68,17 @@ namespace ComlabSystem
             string LockScreenTip = "Lock Screen";
             MenuToolTip.SetToolTip(PauseBtm, LockScreenTip);
 
-            string SignoutTIp = "Lock Screen";
-            MenuToolTip.SetToolTip(SignOutButtom, SignoutTIp);
+            string SignoutTIp = "Sign Out";
+            LockTooltip.SetToolTip(SignOutButtom, SignoutTIp);
+
+            string Shutdwontip = "Shutdown";
+            LockTooltip.SetToolTip(ShutDownBtmNonlock, Shutdwontip);
+
+            string SignoutTip = "SignOut";
+            LockTooltip.SetToolTip(SignOutBtm, SignoutTip);
+
+            string LockShutdown = "Shutdown";
+            LockTooltip.SetToolTip(ShutDownBtm, LockShutdown);
         }
 
         private void user_Load(object sender, EventArgs e)
@@ -78,10 +88,10 @@ namespace ComlabSystem
             StudPassLoginL.Visible = false;
 
             // Get the working area of the screen where the form is displayed
-            Rectangle workingArea = Screen.GetWorkingArea(this);
+            //Rectangle workingArea = Screen.GetWorkingArea(this);
 
             // Set the form's location to the bottom-right corner of the screen
-            this.Location = new Point(workingArea.Right - this.Width, workingArea.Bottom - this.Height);
+            //this.Location = new Point(workingArea.Right - this.Width, workingArea.Bottom - this.Height);
 
 
             sharedTimer = new Timer();
@@ -219,6 +229,7 @@ namespace ComlabSystem
             ChangePasswordPNL.Visible = true;
             ReportPnl.Visible = false;
             CurrentPassTB.Focus();
+            PassNotmatch.Visible = false;
 
 
         }
@@ -298,15 +309,15 @@ namespace ComlabSystem
                     // Insert into Notifications table
                     string notificationMessage = $"{fullName} has sent {messageType}.";
                     SqlCommand insertNotificationCmd = new SqlCommand(
-                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind) " +
-                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind)", connection);
+                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind, UserType) " +
+                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind, @UserType)", connection);
 
                     insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
                     insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);  // The notification message
                     insertNotificationCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);  // The current timestamp
                     insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Info");  // Notification type
                     insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", $"{messageType}");  // Report/Feedback
-
+                    insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");  // Report/Feedback
                     // Execute the command
                     insertNotificationCmd.ExecuteNonQuery();
 

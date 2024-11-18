@@ -210,6 +210,12 @@
     <Compile Include="ZLogsReport.Designer.cs">
       <DependentUpon>ZLogsReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZNotifications.Designer.cs">
+      <DependentUpon>ZNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZUnitListUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ZLogsReport.resx">
       <DependentUpon>ZLogsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZNotifications.resx">
+      <DependentUpon>ZNotifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZUnitListUI.resx">
       <DependentUpon>ZUnitListUI.cs</DependentUpon>
@@ -837,6 +846,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\InfoCOlored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-up %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-up %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out %287%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notifications1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-list-2 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear-six %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear-six.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

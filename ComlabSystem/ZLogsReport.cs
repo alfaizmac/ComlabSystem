@@ -33,7 +33,8 @@ namespace ComlabSystem
         public ZLogsReport()
         {
             InitializeComponent();
-
+            // Attach the resize event to adjust label position on load or resize
+            this.Resize += UserUI_Resize2;
 
 
         }
@@ -46,7 +47,7 @@ namespace ComlabSystem
         private void UserUI_Load(object sender, EventArgs e)
         {
 
-            UserActivityReport();
+            LogsReportAction();
 
             FilterUserActivityPnl.Visible = false;
 
@@ -58,6 +59,27 @@ namespace ComlabSystem
 
         }
 
+        private void UserUI_Resize2(object sender, EventArgs e)
+        {
+            AdjustNoArchiveListLabelPosition();
+        }
+
+
+        private void AdjustNoArchiveListLabelPosition()
+        {
+            if (this.ParentForm != null && this.ParentForm.WindowState == FormWindowState.Maximized)
+            {
+                // Full-screen position
+                FilteruserActivityBtm.Location = new Point(530, 36);
+                UserSearchBar.Size = new Size(481, 46);
+            }
+            else
+            {
+                // Non-full-screen position
+                FilteruserActivityBtm.Location = new Point(449, 36);
+                UserSearchBar.Size = new Size(400, 46);
+            }
+        }
 
 
         private void UserUI_Resize(object sender, EventArgs e)
@@ -188,7 +210,7 @@ namespace ComlabSystem
         {
             // Create the SQL query
             string query = @"SELECT 
-                        StudentID, 
+                        StudentID AS 'Student ID', 
                         CONCAT(FirstName, ' ', LastName) AS Name, 
                         TotalHoursUsed AS 'Overall Time Utilized', 
                         AverageSessionDuration AS 'Average Session Duration', 
@@ -240,6 +262,7 @@ namespace ComlabSystem
                         DateLastUsed AS 'Last Used Date', 
                         UsageFrequency AS 'Usage Frequency', 
                         ImproperShutdownCount AS 'Improper Shutdown Count', 
+                        AutoShutdownCount AS 'System-Initiated Shutdown Count',
                         AvailableStorage AS 'Available Storage'
                      FROM UnitList";
 
@@ -276,17 +299,18 @@ namespace ComlabSystem
 
         private void AdminActionBtm_Click(object sender, EventArgs e)
         {
-            AdminActioReport();
+            AdminActionReport();
 
         }
-        private void AdminActioReport()
+        private void AdminActionReport()
         {
-            // Create the SQL query
+            // Create the SQL query with ORDER BY to sort by Timestamp in descending order
             string query = @"SELECT 
-                        AdminName AS 'Admin', 
                         Message AS 'Action', 
                         Timestamp AS 'Timestamp'
-                     FROM Notifications";
+                     FROM Notifications
+                     WHERE UserType = 'Admin'
+                     ORDER BY Timestamp DESC";
 
             // Set up the connection
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -319,15 +343,20 @@ namespace ComlabSystem
             }
         }
 
+
         private void LogsReportBtm_Click(object sender, EventArgs e)
+        {
+            LogsReportAction();
+        }
+        private void LogsReportAction()
         {
             // Create the SQL query
             string query = @"SELECT 
                         Action AS 'Action', 
-                        TimeDuration AS 'Time Duration', 
+                        CONVERT(VARCHAR(8), TimeDuration, 108) AS 'Time Duration', 
                         Timestamp AS 'Timestamp'
                      FROM Logs
-                     WHERE UserType = 'Student'";
+                     WHERE UserType = 'Student' ORDER BY Timestamp DESC";
 
             // Set up the connection
             using (SqlConnection connection = new SqlConnection(connectionString))

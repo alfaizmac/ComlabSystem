@@ -117,6 +117,21 @@ namespace ComlabSystem
                     insertCmd.Parameters.AddWithValue("@DateRegistered", DateTime.Now);
 
                     insertCmd.ExecuteNonQuery();
+
+                    // Insert notification into Notifications table
+                    SqlCommand notificationCmd = new SqlCommand(
+                        @"INSERT INTO Notifications (Message, Timestamp, NotificationType, NotificationKind, UnitName)
+                        VALUES (@Message, @Timestamp, @NotificationType, @NotificationKind, @UnitName)",
+                        connection);
+
+                    string notificationMessage = $"New unit '{computerName}' has been successfully added to the computer unit list on {DateTime.Now:MMMM dd, yyyy h:mm tt}.";
+                    notificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
+                    notificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    notificationCmd.Parameters.AddWithValue("@NotificationType", "Information");
+                    notificationCmd.Parameters.AddWithValue("@NotificationKind", "NewUnit");
+                    notificationCmd.Parameters.AddWithValue("@UnitName", computerName);
+
+                    notificationCmd.ExecuteNonQuery();
                 }
                 else
                 {
@@ -137,6 +152,8 @@ namespace ComlabSystem
                     updateCmd.Parameters.AddWithValue("@ArchiveStatus", "Active");
 
                     updateCmd.ExecuteNonQuery();
+
+
                 }
 
                 // Check if available storage is below threshold
@@ -154,7 +171,7 @@ namespace ComlabSystem
                     notificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
                     notificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
                     notificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
-                    notificationCmd.Parameters.AddWithValue("@NotificationKind", "Low Storage");
+                    notificationCmd.Parameters.AddWithValue("@NotificationKind", "LowStorage");
                     notificationCmd.Parameters.AddWithValue("@UnitName", computerName);
 
                     notificationCmd.ExecuteNonQuery();
@@ -374,7 +391,7 @@ namespace ComlabSystem
                             retryTimer.Stop();
                             RetryAttemptTimeLabel.Text = "";
 
-
+                            loginTimeoutTimer.Stop();
 
                             IncrementUserImproperShutdownFrequency();
 
@@ -997,6 +1014,22 @@ namespace ComlabSystem
                     updateStatusCommand.Parameters.AddWithValue("@AdminID", adminId);
                     updateStatusCommand.ExecuteNonQuery();
 
+                    // Insert into Notifications table
+                    string insertNotificationQuery = @"
+                INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind, AdminName, UserType)
+                VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind, @AdminName, @UserType)";
+
+                    string notificationMessage = $"{adminName} has successfully logged into {unitName} on {timestamp:MMMM dd, yyyy hh:mm:ss tt}.";
+
+                    SqlCommand insertNotificationCommand = new SqlCommand(insertNotificationQuery, connection);
+                    insertNotificationCommand.Parameters.AddWithValue("@Message", notificationMessage);
+                    insertNotificationCommand.Parameters.AddWithValue("@Timestamp", timestamp);
+                    insertNotificationCommand.Parameters.AddWithValue("@AdminID", adminId);
+                    insertNotificationCommand.Parameters.AddWithValue("@NotificationType", "Information");
+                    insertNotificationCommand.Parameters.AddWithValue("@NotificationKind", "AdminLogin");
+                    insertNotificationCommand.Parameters.AddWithValue("@AdminName", adminName);
+                    insertNotificationCommand.Parameters.AddWithValue("@UserType", userType);
+                    insertNotificationCommand.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
@@ -1004,6 +1037,7 @@ namespace ComlabSystem
                 MessageBox.Show($"An error occurred while adding the log entry or updating the admin status: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

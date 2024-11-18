@@ -41,7 +41,10 @@
             this.UserListPanelShow = new Guna.UI2.WinForms.Guna2Button();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.ZReportPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.FilterUserActivityPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label41 = new System.Windows.Forms.Label();
@@ -78,6 +81,7 @@
             this.guna2Panel3.SuspendLayout();
             this.UserListPNL.SuspendLayout();
             this.ZReportPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.FilterUserActivityPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).BeginInit();
             this.guna2Panel5.SuspendLayout();
@@ -149,7 +153,7 @@
             this.ArchiveUnitListBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.ArchiveUnitListBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ArchiveUnitListBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveUnitListBtm.Image = global::ComlabSystem.Properties.Resources.InfoCOlored;
+            this.ArchiveUnitListBtm.Image = global::ComlabSystem.Properties.Resources.archive__2_;
             this.ArchiveUnitListBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ArchiveUnitListBtm.ImageOffset = new System.Drawing.Point(5, 0);
             this.ArchiveUnitListBtm.ImageSize = new System.Drawing.Size(30, 30);
@@ -158,7 +162,7 @@
             this.ArchiveUnitListBtm.PressedColor = System.Drawing.Color.Maroon;
             this.ArchiveUnitListBtm.Size = new System.Drawing.Size(149, 45);
             this.ArchiveUnitListBtm.TabIndex = 15;
-            this.ArchiveUnitListBtm.Text = "REPORT";
+            this.ArchiveUnitListBtm.Text = "ARCHIVE";
             this.ArchiveUnitListBtm.TextOffset = new System.Drawing.Point(15, 0);
             this.ArchiveUnitListBtm.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
@@ -201,7 +205,7 @@
             this.UserListPanelShow.PressedColor = System.Drawing.Color.Maroon;
             this.UserListPanelShow.Size = new System.Drawing.Size(149, 45);
             this.UserListPanelShow.TabIndex = 13;
-            this.UserListPanelShow.Text = "LOGS";
+            this.UserListPanelShow.Text = "REPORT";
             this.UserListPanelShow.TextOffset = new System.Drawing.Point(25, 0);
             this.UserListPanelShow.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
@@ -220,6 +224,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ZReportPnl.BackColor = System.Drawing.Color.Transparent;
+            this.ZReportPnl.Controls.Add(this.guna2CirclePictureBox2);
+            this.ZReportPnl.Controls.Add(this.UserSearchBar);
             this.ZReportPnl.Controls.Add(this.FilterUserActivityPnl);
             this.ZReportPnl.Controls.Add(this.guna2Separator2);
             this.ZReportPnl.Controls.Add(this.guna2Panel5);
@@ -238,12 +244,52 @@
             this.ZReportPnl.Size = new System.Drawing.Size(1627, 958);
             this.ZReportPnl.TabIndex = 12;
             // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 71;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // UserSearchBar
+            // 
+            this.UserSearchBar.Animated = true;
+            this.UserSearchBar.BackColor = System.Drawing.Color.Transparent;
+            this.UserSearchBar.BorderRadius = 10;
+            this.UserSearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UserSearchBar.DefaultText = "";
+            this.UserSearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserSearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.UserSearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserSearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserSearchBar.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UserSearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserSearchBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.UserSearchBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserSearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserSearchBar.Location = new System.Drawing.Point(37, 36);
+            this.UserSearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserSearchBar.Name = "UserSearchBar";
+            this.UserSearchBar.PasswordChar = '\0';
+            this.UserSearchBar.PlaceholderText = "Search user";
+            this.UserSearchBar.SelectedText = "";
+            this.UserSearchBar.Size = new System.Drawing.Size(481, 46);
+            this.UserSearchBar.TabIndex = 70;
+            this.UserSearchBar.TextOffset = new System.Drawing.Point(35, 0);
+            // 
             // FilterUserActivityPnl
             // 
             this.FilterUserActivityPnl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.FilterUserActivityPnl.BorderColor = System.Drawing.Color.Silver;
             this.FilterUserActivityPnl.BorderRadius = 15;
             this.FilterUserActivityPnl.BorderThickness = 1;
+            this.FilterUserActivityPnl.Controls.Add(this.label2);
             this.FilterUserActivityPnl.Controls.Add(this.guna2DateTimePicker2);
             this.FilterUserActivityPnl.Controls.Add(this.guna2DateTimePicker1);
             this.FilterUserActivityPnl.Controls.Add(this.label41);
@@ -263,6 +309,17 @@
             this.FilterUserActivityPnl.Name = "FilterUserActivityPnl";
             this.FilterUserActivityPnl.Size = new System.Drawing.Size(705, 395);
             this.FilterUserActivityPnl.TabIndex = 55;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label2.Location = new System.Drawing.Point(49, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(457, 195);
+            this.label2.TabIndex = 112;
+            this.label2.Text = "IMAGINE SAH,\r\nNA NAHUMANA\r\nANG FILTER TOOLS";
             // 
             // guna2DateTimePicker2
             // 
@@ -321,11 +378,11 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.guna2Button1.Image = global::ComlabSystem.Properties.Resources.funnel;
-            this.guna2Button1.Location = new System.Drawing.Point(33, 252);
+            this.guna2Button1.Location = new System.Drawing.Point(60, 236);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(103, 61);
             this.guna2Button1.TabIndex = 108;
-            this.guna2Button1.Text = "R";
+            this.guna2Button1.Text = "Rank";
             // 
             // RequiredPicture
             // 
@@ -499,13 +556,14 @@
             // 
             // guna2Panel5
             // 
+            this.guna2Panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel5.BorderRadius = 15;
             this.guna2Panel5.Controls.Add(this.LogsReportBtm);
             this.guna2Panel5.Controls.Add(this.AdminActionBtm);
             this.guna2Panel5.Controls.Add(this.UnitUsageBtm);
             this.guna2Panel5.Controls.Add(this.ReportUserActBtm);
             this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(33, 38);
+            this.guna2Panel5.Location = new System.Drawing.Point(874, 27);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(718, 61);
             this.guna2Panel5.TabIndex = 69;
@@ -513,6 +571,7 @@
             // LogsReportBtm
             // 
             this.LogsReportBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.LogsReportBtm.Checked = true;
             this.LogsReportBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.LogsReportBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.LogsReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -566,7 +625,7 @@
             // 
             this.UnitUsageBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.UnitUsageBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
-            this.UnitUsageBtm.CheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.UnitUsageBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.UnitUsageBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.UnitUsageBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.UnitUsageBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -591,7 +650,6 @@
             // ReportUserActBtm
             // 
             this.ReportUserActBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ReportUserActBtm.Checked = true;
             this.ReportUserActBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.ReportUserActBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ReportUserActBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -674,12 +732,12 @@
             // FilteruserActivityBtm
             // 
             this.FilteruserActivityBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilteruserActivityBtm.BorderRadius = 15;
+            this.FilteruserActivityBtm.BorderRadius = 10;
             this.FilteruserActivityBtm.BorderThickness = 1;
             this.FilteruserActivityBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.FilteruserActivityBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.FilteruserActivityBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilteruserActivityBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.funnel__3_;
+            this.FilteruserActivityBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
             this.FilteruserActivityBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.FilteruserActivityBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.FilteruserActivityBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -687,12 +745,14 @@
             this.FilteruserActivityBtm.FillColor = System.Drawing.Color.WhiteSmoke;
             this.FilteruserActivityBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.FilteruserActivityBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilteruserActivityBtm.Image = global::ComlabSystem.Properties.Resources.funnel;
-            this.FilteruserActivityBtm.Location = new System.Drawing.Point(762, 39);
+            this.FilteruserActivityBtm.Image = global::ComlabSystem.Properties.Resources.caret_down__2_;
+            this.FilteruserActivityBtm.ImageOffset = new System.Drawing.Point(0, 1);
+            this.FilteruserActivityBtm.ImageSize = new System.Drawing.Size(18, 18);
+            this.FilteruserActivityBtm.Location = new System.Drawing.Point(530, 36);
             this.FilteruserActivityBtm.Name = "FilteruserActivityBtm";
-            this.FilteruserActivityBtm.Size = new System.Drawing.Size(103, 61);
+            this.FilteruserActivityBtm.Size = new System.Drawing.Size(78, 46);
             this.FilteruserActivityBtm.TabIndex = 24;
-            this.FilteruserActivityBtm.Text = "More Filter";
+            this.FilteruserActivityBtm.Text = "Filter";
             this.FilteruserActivityBtm.Click += new System.EventHandler(this.FilteruserActivityBtm_Click);
             // 
             // ZListsGridPNL
@@ -816,6 +876,7 @@
             this.guna2Panel3.PerformLayout();
             this.UserListPNL.ResumeLayout(false);
             this.ZReportPnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.FilterUserActivityPnl.ResumeLayout(false);
             this.FilterUserActivityPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).EndInit();
@@ -871,5 +932,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private System.Windows.Forms.Label label41;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2TextBox UserSearchBar;
     }
 }
