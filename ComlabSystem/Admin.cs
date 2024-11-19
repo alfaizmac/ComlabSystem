@@ -215,8 +215,17 @@ namespace ComlabSystem
 
         private void SettingsBtm_Click(object sender, EventArgs e)
         {
-            AdminPanel.Visible = true;
-            AdminPanel.Visible = true;
+            string AdminName = AdminUserName.Text;
+            ZSetting myControl = new ZSetting { AdminName = AdminName };
+
+            // Clear any existing controls in the panel (optional, if you want to replace the contents)
+            MainPNL.Controls.Clear();
+
+            // Set the Dock style of the UserControl to Fill, making it expand to fit the panel
+            myControl.Dock = DockStyle.Fill;
+
+            // Add the UserControl to the panel
+            MainPNL.Controls.Add(myControl);
         }
         private void InsertAdminShutdownLog(string adminUserName, string unitName)
         {

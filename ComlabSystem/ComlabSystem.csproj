@@ -205,6 +205,12 @@
     <Compile Include="ZDashboard.Designer.cs">
       <DependentUpon>ZDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZSetting.Designer.cs">
+      <DependentUpon>ZSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZLogsReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ZDashboard.resx">
       <DependentUpon>ZDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZSetting.resx">
+      <DependentUpon>ZSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZLogsReport.resx">
       <DependentUpon>ZLogsReport.cs</DependentUpon>

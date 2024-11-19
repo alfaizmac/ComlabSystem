@@ -80,11 +80,6 @@
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
@@ -98,6 +93,15 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
             this.MainPNL.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.ZListsGridPNL.SuspendLayout();
@@ -113,17 +117,17 @@
             this.guna2Panel11.SuspendLayout();
             this.guna2Panel12.SuspendLayout();
             this.guna2Panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.guna2Panel14.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurrentOnlineDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userchart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // AdminNameLabel
@@ -214,6 +218,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.NotificationDGV);
+            this.guna2Panel2.Controls.Add(this.guna2Panel19);
+            this.guna2Panel2.Controls.Add(this.guna2Panel18);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.Location = new System.Drawing.Point(20, 0);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -250,7 +256,7 @@
             this.NotificationDGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.NotificationDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NotificationDGV.GridColor = System.Drawing.Color.White;
-            this.NotificationDGV.Location = new System.Drawing.Point(0, 0);
+            this.NotificationDGV.Location = new System.Drawing.Point(0, 16);
             this.NotificationDGV.MultiSelect = false;
             this.NotificationDGV.Name = "NotificationDGV";
             this.NotificationDGV.ReadOnly = true;
@@ -271,7 +277,7 @@
             this.NotificationDGV.ShowCellToolTips = false;
             this.NotificationDGV.ShowEditingIcon = false;
             this.NotificationDGV.ShowRowErrors = false;
-            this.NotificationDGV.Size = new System.Drawing.Size(300, 382);
+            this.NotificationDGV.Size = new System.Drawing.Size(300, 346);
             this.NotificationDGV.TabIndex = 17;
             this.NotificationDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.NotificationDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -639,67 +645,6 @@
             this.label16.TabIndex = 3;
             this.label16.Text = "Computer Unit";
             // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.Image = global::ComlabSystem.Properties.Resources.DashboardComputer;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(49, 12);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(79, 56);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox5.TabIndex = 4;
-            this.guna2PictureBox5.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.Image = global::ComlabSystem.Properties.Resources.DashboardUser;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(49, 12);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(79, 56);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 4;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::ComlabSystem.Properties.Resources.DashboardUsage3;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(49, 12);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(79, 56);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 4;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::ComlabSystem.Properties.Resources.DashboardimproShutdown;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(49, 12);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(79, 56);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 4;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 100;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::ComlabSystem.Properties.Resources.dashboardPerson;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(440, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(387, 248);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 22;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -740,6 +685,8 @@
             // guna2Panel15
             // 
             this.guna2Panel15.Controls.Add(this.CurrentOnlineDGV);
+            this.guna2Panel15.Controls.Add(this.guna2Panel21);
+            this.guna2Panel15.Controls.Add(this.guna2Panel20);
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel15.Location = new System.Drawing.Point(20, 0);
             this.guna2Panel15.Name = "guna2Panel15";
@@ -776,7 +723,7 @@
             this.CurrentOnlineDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.CurrentOnlineDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CurrentOnlineDGV.GridColor = System.Drawing.Color.White;
-            this.CurrentOnlineDGV.Location = new System.Drawing.Point(0, 0);
+            this.CurrentOnlineDGV.Location = new System.Drawing.Point(0, 16);
             this.CurrentOnlineDGV.MultiSelect = false;
             this.CurrentOnlineDGV.Name = "CurrentOnlineDGV";
             this.CurrentOnlineDGV.ReadOnly = true;
@@ -797,7 +744,7 @@
             this.CurrentOnlineDGV.ShowCellToolTips = false;
             this.CurrentOnlineDGV.ShowEditingIcon = false;
             this.CurrentOnlineDGV.ShowRowErrors = false;
-            this.CurrentOnlineDGV.Size = new System.Drawing.Size(300, 324);
+            this.CurrentOnlineDGV.Size = new System.Drawing.Size(300, 288);
             this.CurrentOnlineDGV.TabIndex = 17;
             this.CurrentOnlineDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.CurrentOnlineDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -912,6 +859,107 @@
             this.label19.TabIndex = 34;
             this.label19.Text = "Unit Time Usage";
             // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Image = global::ComlabSystem.Properties.Resources.DashboardComputer;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(49, 12);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(79, 56);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 4;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Image = global::ComlabSystem.Properties.Resources.DashboardUser;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(49, 12);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(79, 56);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 4;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::ComlabSystem.Properties.Resources.DashboardUsage3;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(49, 12);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(79, 56);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 4;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::ComlabSystem.Properties.Resources.DashboardimproShutdown;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(49, 12);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(79, 56);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 4;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BorderRadius = 100;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::ComlabSystem.Properties.Resources.dashboardPerson;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(440, 4);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(387, 248);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 22;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Panel18
+            // 
+            this.guna2Panel18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel18.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel18.Location = new System.Drawing.Point(0, 362);
+            this.guna2Panel18.Name = "guna2Panel18";
+            this.guna2Panel18.Size = new System.Drawing.Size(300, 20);
+            this.guna2Panel18.TabIndex = 25;
+            // 
+            // guna2Panel19
+            // 
+            this.guna2Panel19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel19.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel19.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel19.Name = "guna2Panel19";
+            this.guna2Panel19.Size = new System.Drawing.Size(300, 16);
+            this.guna2Panel19.TabIndex = 26;
+            // 
+            // guna2Panel20
+            // 
+            this.guna2Panel20.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel20.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel20.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel20.Location = new System.Drawing.Point(0, 304);
+            this.guna2Panel20.Name = "guna2Panel20";
+            this.guna2Panel20.Size = new System.Drawing.Size(300, 20);
+            this.guna2Panel20.TabIndex = 26;
+            // 
+            // guna2Panel21
+            // 
+            this.guna2Panel21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel21.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel21.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel21.Name = "guna2Panel21";
+            this.guna2Panel21.Size = new System.Drawing.Size(300, 16);
+            this.guna2Panel21.TabIndex = 27;
+            // 
             // ZDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -950,11 +998,6 @@
             this.guna2Panel12.PerformLayout();
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2Panel14.ResumeLayout(false);
@@ -962,6 +1005,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurrentOnlineDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userchart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1024,5 +1072,9 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel18;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel21;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel20;
     }
 }

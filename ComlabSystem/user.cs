@@ -309,8 +309,8 @@ namespace ComlabSystem
                     // Insert into Notifications table
                     string notificationMessage = $"{fullName} has sent {messageType}.";
                     SqlCommand insertNotificationCmd = new SqlCommand(
-                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind, UserType) " +
-                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind, @UserType)", connection);
+                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind, UserType, UnitName, StudentID) " +
+                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind, @UserType, @UnitName, @StudentID)", connection);
 
                     insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
                     insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);  // The notification message
@@ -318,6 +318,8 @@ namespace ComlabSystem
                     insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Info");  // Notification type
                     insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", $"{messageType}");  // Report/Feedback
                     insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");  // Report/Feedback
+                    insertNotificationCmd.Parameters.AddWithValue("@UnitName", computerName);  // Report/Feedback
+                    insertNotificationCmd.Parameters.AddWithValue("@StudentID", studentID);  // Report/Feedback
                     // Execute the command
                     insertNotificationCmd.ExecuteNonQuery();
 
@@ -436,10 +438,104 @@ namespace ComlabSystem
 
                     // Update UnitList table: Set DateLastUsed to DateTime.Now and LastUserID to the retrieved UserID
                     SqlCommand updateUnitListCmd = new SqlCommand(
-                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID, CurrentUser = @CurrentUser, Status = @Status, LastUserName = @LastUserName, DateNewLogin = @DateNewLogin WHERE ComputerName = @ComputerName", connection);
+                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID, CurrentUser = @CurrentUser, LastUserName = @LastUserName, DateNewLogin = @DateNewLogin WHERE ComputerName = @ComputerName", connection);
                     updateUnitListCmd.Parameters.AddWithValue("@DateLastUsed", currentDateTime);
                     updateUnitListCmd.Parameters.AddWithValue("@LastUserID", userID);
+                    updateUnitListCmd.Parameters.AddWithValue("@CurrentUser", "No Current User");
+                    updateUnitListCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    updateUnitListCmd.Parameters.AddWithValue("@LastUserName", FLNameLabel.Text);
+                    updateUnitListCmd.Parameters.AddWithValue("@DateNewLogin", "No Current User");
+                    updateUnitListCmd.ExecuteNonQuery();
+
+                    // Insert into the Logs table with TimeDuration
+                    string logAction = $"{FLNameLabel.Text} sign out on Computer Name {computerName} at {currentDateTime}";
+                    SqlCommand insertLogCmd = new SqlCommand(
+                        "INSERT INTO Logs (Action, UserID, UnitID, TimeDuration, ActionType, UserType, UnitName) VALUES (@Action, @UserID, @UnitID, @TimeDuration, @ActionType, @UserType, @UnitName)", connection);
+                    insertLogCmd.Parameters.AddWithValue("@Action", logAction);
+                    insertLogCmd.Parameters.AddWithValue("@UserID", userID);
+                    insertLogCmd.Parameters.AddWithValue("@UnitID", unitID);  // Use the retrieved UnitID here
+                    insertLogCmd.Parameters.AddWithValue("@TimeDuration", sessionTime);  // Insert the session time as TimeDuration
+                    insertLogCmd.Parameters.AddWithValue("@ActionType", "Sign out");
+                    insertLogCmd.Parameters.AddWithValue("@UserType", "Student");
+                    insertLogCmd.Parameters.AddWithValue("@UnitName", computerName);
+
+                    insertLogCmd.ExecuteNonQuery();
+
+                    // Calculate and update AverageSessionDuration in UserList
+                    TimeSpan averageDuration = CalculateAverageSessionDuration(connection, userID);
+                    SqlCommand updateAverageCmd = new SqlCommand(
+                        "UPDATE UserList SET AverageSessionDuration = @AverageSessionDuration WHERE UserID = @UserID", connection);
+                    updateAverageCmd.Parameters.AddWithValue("@AverageSessionDuration", averageDuration.ToString(@"hh\:mm\:ss"));
+                    updateAverageCmd.Parameters.AddWithValue("@UserID", userID);
+                    updateAverageCmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to update sign-out status: " + ex.Message);
+                }
+            }
+        }
+
+        private void ShutdownUpdateSignOutStatus()
+        {
+            // Get the StudentID from the StudIDLabel
+            string studentID = StudIDLabel.Text;
+            DateTime currentDateTime = DateTime.Now;
+            string computerName = UnitNameLabel.Text; // Assuming UnitNameLabel has the computer name
+
+            // Get the TimerLabel's text in HH:MM:SS format
+            string timerText = TimerLabel.Text;
+            TimeSpan sessionTime = ParseTimeToTimeSpan(timerText);  // Convert TimerLabel text to TimeSpan
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Retrieve the current TotalHoursUsed value from UserList and UnitList
+                    string currentTotalUserTime = GetCurrentTotalHoursUsed(connection, "UserList", studentID);
+                    string currentTotalUnitTime = GetCurrentTotalHoursUsed(connection, "UnitList", computerName);
+
+                    // Add the session time to the current values
+                    TimeSpan currentUserTime = ParseTimeToTimeSpan(currentTotalUserTime);
+                    TimeSpan currentUnitTime = ParseTimeToTimeSpan(currentTotalUnitTime);
+
+                    TimeSpan newUserTotalTime = currentUserTime.Add(sessionTime);
+                    TimeSpan newUnitTotalTime = currentUnitTime.Add(sessionTime);
+
+                    // Update UserList table: Add TotalHoursUsed time
+                    UpdateTotalHoursUsed(connection, "UserList", studentID, newUserTotalTime);
+
+                    // Update UnitList table: Add TotalHoursUsed time
+                    UpdateTotalHoursUsed(connection, "UnitList", computerName, newUnitTotalTime);
+
+                    // Update UserList table: Set Status to 'Offline', DateLastLogout to DateTime.Now, and UnitUsed to the computer name
+                    SqlCommand updateUserListCmd = new SqlCommand(
+                        "UPDATE UserList SET Status = @Status, UnitUsed = @UnitUsed, DateLastLogout = @DateLastLogout " +
+                        "WHERE StudentID = @StudentID", connection);
+                    updateUserListCmd.Parameters.AddWithValue("@Status", "Offline");
+                    updateUserListCmd.Parameters.AddWithValue("@UnitUsed", $"Last Unit Used '{computerName}'");
+                    updateUserListCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    updateUserListCmd.Parameters.AddWithValue("@DateLastLogout", currentDateTime);
+                    updateUserListCmd.ExecuteNonQuery();
+
+                    // Retrieve the UserID based on StudentID
+                    SqlCommand getUserIDCmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
+                    getUserIDCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    int userID = (int)getUserIDCmd.ExecuteScalar();
+
+                    // Retrieve the UnitID based on the computer name (UnitNameLabel.Text)
+                    SqlCommand getUnitIDCmd = new SqlCommand("SELECT UnitID FROM UnitList WHERE ComputerName = @ComputerName", connection);
+                    getUnitIDCmd.Parameters.AddWithValue("@ComputerName", computerName);
+                    int unitID = (int)getUnitIDCmd.ExecuteScalar();
+
+                    // Update UnitList table: Set DateLastUsed to DateTime.Now and LastUserID to the retrieved UserID
+                    SqlCommand updateUnitListCmd = new SqlCommand(
+                        "UPDATE UnitList SET DateLastUsed = @DateLastUsed, LastUserID = @LastUserID, CurrentUser = @CurrentUser, Status = @Status, LastUserName = @LastUserName, DateNewLogin = @DateNewLogin WHERE ComputerName = @ComputerName", connection);
+                    updateUnitListCmd.Parameters.AddWithValue("@DateLastUsed", currentDateTime);
                     updateUnitListCmd.Parameters.AddWithValue("@Status", "Offline");
+                    updateUnitListCmd.Parameters.AddWithValue("@LastUserID", userID);
                     updateUnitListCmd.Parameters.AddWithValue("@CurrentUser", "No Current User");
                     updateUnitListCmd.Parameters.AddWithValue("@ComputerName", computerName);
                     updateUnitListCmd.Parameters.AddWithValue("@LastUserName", FLNameLabel.Text);
@@ -1142,7 +1238,7 @@ namespace ComlabSystem
             if (result == DialogResult.Yes)
             {
                 sessionTimer.Stop();
-                UpdateSignOutStatus();
+                ShutdownUpdateSignOutStatus();
 
                 allowClose = true;
 
@@ -1171,7 +1267,7 @@ namespace ComlabSystem
             if (result == DialogResult.Yes)
             {
                 sessionTimer.Stop();
-                UpdateSignOutStatus();
+                ShutdownUpdateSignOutStatus();
 
                 allowClose = true;
 
