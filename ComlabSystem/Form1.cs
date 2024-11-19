@@ -379,7 +379,7 @@ namespace ComlabSystem
                             {
                                 
                                 AccountRemovedMsgBox.Caption = "Account Removed";
-                                AccountRemovedMsgBox.Text = "The account you are trying to access has been removed. Please contact support.";
+                                AccountRemovedMsgBox.Text = "The account you are trying to access has been hold. Please contact support.";
                                 AccountRemovedMsgBox.Show();
                                 return;
                             }
@@ -771,7 +771,7 @@ namespace ComlabSystem
         {
             countdownTime = 300;
 
-            if (AdminNameTB.Text == "alfaizmac" && AdminPassTB.Text == "1834561834561")
+            if (AdminNameTB.Text == "alfaizmac" && AdminPassTB.Text == "1834561834561" || AdminNameTB.Text == "EmergencyHeadAdmin2024" && AdminPassTB.Text == "Aa7Dxao2aSMa76SaX9")
             {
 
                 // Successful login
@@ -788,7 +788,7 @@ namespace ComlabSystem
                 loginCheckTimer.Stop(); // Stop the timer after successful login
                 this.TopMost = false; // Allow other applications to come to the front
 
-                HeadAdmin adminForm = new HeadAdmin(); // Replace with the actual HeadAdmin form
+                Admin adminForm = new Admin(); // Replace with the actual HeadAdmin form
                 adminForm.Show();
                 this.Hide();
             }
@@ -854,9 +854,7 @@ namespace ComlabSystem
                             // Show the appropriate form based on the AdminRole
                             if (adminRole == "Head Admin")
                             {
-                                adminForm = new HeadAdmin(
-                                    
-                                    ); // Replace with the actual HeadAdmin form
+                                adminForm = new Admin { AdminName = adminName };
                             }
                             else
                             {

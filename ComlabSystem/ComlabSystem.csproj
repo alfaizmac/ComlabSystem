@@ -171,12 +171,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HeadAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeadAdmin.Designer.cs">
-      <DependentUpon>HeadAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +198,12 @@
     <Compile Include="user.Designer.cs">
       <DependentUpon>user.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZDashboard.Designer.cs">
+      <DependentUpon>ZDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZLogsReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,9 +228,6 @@
     <Compile Include="ZUserListUI.Designer.cs">
       <DependentUpon>ZUserListUI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="HeadAdmin.resx">
-      <DependentUpon>HeadAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="user.resx">
       <DependentUpon>user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZDashboard.resx">
+      <DependentUpon>ZDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZLogsReport.resx">
       <DependentUpon>ZLogsReport.cs</DependentUpon>

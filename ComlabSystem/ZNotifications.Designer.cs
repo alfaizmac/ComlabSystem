@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.UserListCountsL = new System.Windows.Forms.Label();
             this.AdminNameLabel = new System.Windows.Forms.Label();
-            this.ArchiveLogsListBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.NotificationListPanelShow = new Guna.UI2.WinForms.Guna2Button();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -51,10 +49,10 @@
             this.ActivityReportBtm = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label45 = new System.Windows.Forms.Label();
-            this.PrintLink = new System.Windows.Forms.LinkLabel();
-            this.PrintLinkALL = new System.Windows.Forms.LinkLabel();
             this.PrintExcelALL = new System.Windows.Forms.LinkLabel();
+            this.PrintLinkALL = new System.Windows.Forms.LinkLabel();
             this.PrintExcel = new System.Windows.Forms.LinkLabel();
+            this.PrintLink = new System.Windows.Forms.LinkLabel();
             this.UnitFilterPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.ClearFilterCBB = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label42 = new System.Windows.Forms.Label();
@@ -64,12 +62,12 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.NoArchiveListLabel = new System.Windows.Forms.Label();
+            this.AllNotificationDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.NotificationDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
             this.SortToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.UnitMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.AllNotificationDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.UserListPNL.SuspendLayout();
@@ -79,45 +77,43 @@
             this.UnitFilterPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.UserListsGridPNL.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NotificationDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AllNotificationDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // UserSearchBar
+            // SearchBar
             // 
-            this.UserSearchBar.Animated = true;
-            this.UserSearchBar.BackColor = System.Drawing.Color.Transparent;
-            this.UserSearchBar.BorderRadius = 10;
-            this.UserSearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UserSearchBar.DefaultText = "";
-            this.UserSearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserSearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UserSearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserSearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserSearchBar.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserSearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserSearchBar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.UserSearchBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserSearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserSearchBar.Location = new System.Drawing.Point(37, 36);
-            this.UserSearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.UserSearchBar.Name = "UserSearchBar";
-            this.UserSearchBar.PasswordChar = '\0';
-            this.UserSearchBar.PlaceholderText = "Search user";
-            this.UserSearchBar.SelectedText = "";
-            this.UserSearchBar.Size = new System.Drawing.Size(481, 46);
-            this.UserSearchBar.TabIndex = 2;
-            this.UserSearchBar.TextOffset = new System.Drawing.Point(35, 0);
-            this.UserSearchBar.TextChanged += new System.EventHandler(this.UserSearchBar_TextChanged);
-            this.UserSearchBar.Click += new System.EventHandler(this.UserSearchBar_Click);
+            this.SearchBar.Animated = true;
+            this.SearchBar.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBar.BorderRadius = 10;
+            this.SearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchBar.DefaultText = "";
+            this.SearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchBar.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.SearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SearchBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.SearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchBar.Location = new System.Drawing.Point(37, 36);
+            this.SearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchBar.Name = "SearchBar";
+            this.SearchBar.PasswordChar = '\0';
+            this.SearchBar.PlaceholderText = "Search user";
+            this.SearchBar.SelectedText = "";
+            this.SearchBar.Size = new System.Drawing.Size(481, 46);
+            this.SearchBar.TabIndex = 2;
+            this.SearchBar.TextOffset = new System.Drawing.Point(35, 0);
+            this.SearchBar.TextChanged += new System.EventHandler(this.UserSearchBar_TextChanged);
+            this.SearchBar.Click += new System.EventHandler(this.UserSearchBar_Click);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Controls.Add(this.AdminNameLabel);
-            this.guna2Panel1.Controls.Add(this.ArchiveLogsListBtm);
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
-            this.guna2Panel1.Controls.Add(this.NotificationListPanelShow);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -153,41 +149,6 @@
             this.AdminNameLabel.Text = "label38";
             this.AdminNameLabel.Visible = false;
             // 
-            // ArchiveLogsListBtm
-            // 
-            this.ArchiveLogsListBtm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArchiveLogsListBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveLogsListBtm.BorderThickness = -1;
-            this.ArchiveLogsListBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ArchiveLogsListBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
-            this.ArchiveLogsListBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveLogsListBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchiveLogsListBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ArchiveLogsListBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.archive__3_;
-            this.ArchiveLogsListBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.ArchiveLogsListBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ArchiveLogsListBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ArchiveLogsListBtm.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.ArchiveLogsListBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ArchiveLogsListBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ArchiveLogsListBtm.FillColor = System.Drawing.Color.Transparent;
-            this.ArchiveLogsListBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.ArchiveLogsListBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ArchiveLogsListBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveLogsListBtm.Image = global::ComlabSystem.Properties.Resources.archive__2_;
-            this.ArchiveLogsListBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ArchiveLogsListBtm.ImageOffset = new System.Drawing.Point(5, 0);
-            this.ArchiveLogsListBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.ArchiveLogsListBtm.Location = new System.Drawing.Point(1336, 16);
-            this.ArchiveLogsListBtm.Name = "ArchiveLogsListBtm";
-            this.ArchiveLogsListBtm.PressedColor = System.Drawing.Color.Maroon;
-            this.ArchiveLogsListBtm.Size = new System.Drawing.Size(149, 45);
-            this.ArchiveLogsListBtm.TabIndex = 15;
-            this.ArchiveLogsListBtm.Text = "ARCHIVE";
-            this.ArchiveLogsListBtm.TextOffset = new System.Drawing.Point(15, 0);
-            this.ArchiveLogsListBtm.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.ArchiveLogsListBtm.Click += new System.EventHandler(this.UserStatisticPanelShow_Click);
-            // 
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Gainsboro;
@@ -196,42 +157,6 @@
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(1679, 10);
             this.guna2Separator1.TabIndex = 16;
-            // 
-            // NotificationListPanelShow
-            // 
-            this.NotificationListPanelShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NotificationListPanelShow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.NotificationListPanelShow.BorderThickness = -1;
-            this.NotificationListPanelShow.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.NotificationListPanelShow.Checked = true;
-            this.NotificationListPanelShow.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
-            this.NotificationListPanelShow.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.NotificationListPanelShow.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotificationListPanelShow.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.NotificationListPanelShow.CheckedState.Image = global::ComlabSystem.Properties.Resources.bell;
-            this.NotificationListPanelShow.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.NotificationListPanelShow.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.NotificationListPanelShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.NotificationListPanelShow.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.NotificationListPanelShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.NotificationListPanelShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.NotificationListPanelShow.FillColor = System.Drawing.Color.Transparent;
-            this.NotificationListPanelShow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.NotificationListPanelShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.NotificationListPanelShow.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.NotificationListPanelShow.Image = global::ComlabSystem.Properties.Resources.bell__1_;
-            this.NotificationListPanelShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.NotificationListPanelShow.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.NotificationListPanelShow.ImageSize = new System.Drawing.Size(26, 26);
-            this.NotificationListPanelShow.Location = new System.Drawing.Point(1488, 16);
-            this.NotificationListPanelShow.Name = "NotificationListPanelShow";
-            this.NotificationListPanelShow.PressedColor = System.Drawing.Color.Maroon;
-            this.NotificationListPanelShow.Size = new System.Drawing.Size(149, 45);
-            this.NotificationListPanelShow.TabIndex = 13;
-            this.NotificationListPanelShow.Text = "NOTIFICATION";
-            this.NotificationListPanelShow.TextOffset = new System.Drawing.Point(12, 0);
-            this.NotificationListPanelShow.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.NotificationListPanelShow.Click += new System.EventHandler(this.UserListPanelShow_Click);
             // 
             // UserListPNL
             // 
@@ -254,8 +179,8 @@
             this.UserPNL.Controls.Add(this.UnitFilterToggleBtm);
             this.UserPNL.Controls.Add(this.guna2Separator2);
             this.UserPNL.Controls.Add(this.guna2CirclePictureBox2);
-            this.UserPNL.Controls.Add(this.UserSearchBar);
             this.UserPNL.Controls.Add(this.UserListsGridPNL);
+            this.UserPNL.Controls.Add(this.SearchBar);
             this.UserPNL.FillColor = System.Drawing.Color.White;
             this.UserPNL.Location = new System.Drawing.Point(28, 73);
             this.UserPNL.MaximumSize = new System.Drawing.Size(1627, 958);
@@ -287,7 +212,7 @@
             this.AllNotificationBtm.Checked = true;
             this.AllNotificationBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.AllNotificationBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.AllNotificationBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AllNotificationBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.AllNotificationBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.AllNotificationBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.AllNotificationBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -297,7 +222,7 @@
             this.AllNotificationBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.AllNotificationBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.AllNotificationBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.AllNotificationBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AllNotificationBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.AllNotificationBtm.Location = new System.Drawing.Point(359, 0);
             this.AllNotificationBtm.Name = "AllNotificationBtm";
             this.AllNotificationBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -313,7 +238,7 @@
             this.FeedbackReportBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.FeedbackReportBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.FeedbackReportBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.FeedbackReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.FeedbackReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.FeedbackReportBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.FeedbackReportBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.FeedbackReportBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -323,7 +248,7 @@
             this.FeedbackReportBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.FeedbackReportBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.FeedbackReportBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.FeedbackReportBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.FeedbackReportBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.FeedbackReportBtm.Location = new System.Drawing.Point(186, 0);
             this.FeedbackReportBtm.Name = "FeedbackReportBtm";
             this.FeedbackReportBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -339,7 +264,7 @@
             this.ActivityReportBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ActivityReportBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.ActivityReportBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ActivityReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ActivityReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ActivityReportBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.ActivityReportBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ActivityReportBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -349,7 +274,7 @@
             this.ActivityReportBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.ActivityReportBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ActivityReportBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.ActivityReportBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ActivityReportBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.ActivityReportBtm.Location = new System.Drawing.Point(13, 0);
             this.ActivityReportBtm.Name = "ActivityReportBtm";
             this.ActivityReportBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -364,10 +289,10 @@
             // 
             this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel2.Controls.Add(this.label45);
-            this.guna2Panel2.Controls.Add(this.PrintExcel);
-            this.guna2Panel2.Controls.Add(this.PrintLink);
             this.guna2Panel2.Controls.Add(this.PrintExcelALL);
             this.guna2Panel2.Controls.Add(this.PrintLinkALL);
+            this.guna2Panel2.Controls.Add(this.PrintExcel);
+            this.guna2Panel2.Controls.Add(this.PrintLink);
             this.guna2Panel2.Location = new System.Drawing.Point(1431, 94);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(161, 20);
@@ -383,40 +308,6 @@
             this.label45.Size = new System.Drawing.Size(60, 21);
             this.label45.TabIndex = 60;
             this.label45.Text = "Export";
-            // 
-            // PrintLink
-            // 
-            this.PrintLink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
-            this.PrintLink.AutoSize = true;
-            this.PrintLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintLink.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.PrintLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(186)))), ((int)(((byte)(180)))));
-            this.PrintLink.Location = new System.Drawing.Point(69, -3);
-            this.PrintLink.Name = "PrintLink";
-            this.PrintLink.Size = new System.Drawing.Size(40, 21);
-            this.PrintLink.TabIndex = 61;
-            this.PrintLink.TabStop = true;
-            this.PrintLink.Text = "PDF";
-            this.PrintLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
-            this.PrintLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintLink_LinkClicked);
-            // 
-            // PrintLinkALL
-            // 
-            this.PrintLinkALL.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
-            this.PrintLinkALL.AutoSize = true;
-            this.PrintLinkALL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PrintLinkALL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintLinkALL.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.PrintLinkALL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(186)))), ((int)(((byte)(180)))));
-            this.PrintLinkALL.Location = new System.Drawing.Point(69, -3);
-            this.PrintLinkALL.Name = "PrintLinkALL";
-            this.PrintLinkALL.Size = new System.Drawing.Size(40, 21);
-            this.PrintLinkALL.TabIndex = 59;
-            this.PrintLinkALL.TabStop = true;
-            this.PrintLinkALL.Text = "PDF";
-            this.PrintLinkALL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
-            this.PrintLinkALL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintLinkALL_LinkClicked);
             // 
             // PrintExcelALL
             // 
@@ -435,6 +326,23 @@
             this.PrintExcelALL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
             this.PrintExcelALL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcelALL_LinkClicked);
             // 
+            // PrintLinkALL
+            // 
+            this.PrintLinkALL.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
+            this.PrintLinkALL.AutoSize = true;
+            this.PrintLinkALL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintLinkALL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintLinkALL.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.PrintLinkALL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(186)))), ((int)(((byte)(180)))));
+            this.PrintLinkALL.Location = new System.Drawing.Point(69, -3);
+            this.PrintLinkALL.Name = "PrintLinkALL";
+            this.PrintLinkALL.Size = new System.Drawing.Size(40, 21);
+            this.PrintLinkALL.TabIndex = 59;
+            this.PrintLinkALL.TabStop = true;
+            this.PrintLinkALL.Text = "PDF";
+            this.PrintLinkALL.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
+            this.PrintLinkALL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintLinkALL_LinkClicked);
+            // 
             // PrintExcel
             // 
             this.PrintExcel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
@@ -451,6 +359,23 @@
             this.PrintExcel.Text = "CSV";
             this.PrintExcel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
             this.PrintExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcel_LinkClicked);
+            // 
+            // PrintLink
+            // 
+            this.PrintLink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
+            this.PrintLink.AutoSize = true;
+            this.PrintLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrintLink.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.PrintLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(186)))), ((int)(((byte)(180)))));
+            this.PrintLink.Location = new System.Drawing.Point(69, -3);
+            this.PrintLink.Name = "PrintLink";
+            this.PrintLink.Size = new System.Drawing.Size(40, 21);
+            this.PrintLink.TabIndex = 61;
+            this.PrintLink.TabStop = true;
+            this.PrintLink.Text = "PDF";
+            this.PrintLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
+            this.PrintLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintLink_LinkClicked);
             // 
             // UnitFilterPnl
             // 
@@ -566,8 +491,8 @@
             // UserListsGridPNL
             // 
             this.UserListsGridPNL.Controls.Add(this.NoArchiveListLabel);
-            this.UserListsGridPNL.Controls.Add(this.NotificationDGV);
             this.UserListsGridPNL.Controls.Add(this.AllNotificationDGV);
+            this.UserListsGridPNL.Controls.Add(this.NotificationDGV);
             this.UserListsGridPNL.Location = new System.Drawing.Point(33, 120);
             this.UserListsGridPNL.Name = "UserListsGridPNL";
             this.UserListsGridPNL.Size = new System.Drawing.Size(1561, 795);
@@ -585,34 +510,110 @@
             this.NoArchiveListLabel.TabIndex = 18;
             this.NoArchiveListLabel.Text = "No Archive Unit";
             // 
+            // AllNotificationDGV
+            // 
+            this.AllNotificationDGV.AllowUserToAddRows = false;
+            this.AllNotificationDGV.AllowUserToDeleteRows = false;
+            this.AllNotificationDGV.AllowUserToResizeColumns = false;
+            this.AllNotificationDGV.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.AllNotificationDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.AllNotificationDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AllNotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.AllNotificationDGV.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AllNotificationDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.AllNotificationDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AllNotificationDGV.GridColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.Location = new System.Drawing.Point(0, 0);
+            this.AllNotificationDGV.MultiSelect = false;
+            this.AllNotificationDGV.Name = "AllNotificationDGV";
+            this.AllNotificationDGV.ReadOnly = true;
+            this.AllNotificationDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AllNotificationDGV.RowHeadersVisible = false;
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AllNotificationDGV.RowTemplate.DividerHeight = 10;
+            this.AllNotificationDGV.RowTemplate.Height = 100;
+            this.AllNotificationDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AllNotificationDGV.ShowCellErrors = false;
+            this.AllNotificationDGV.ShowCellToolTips = false;
+            this.AllNotificationDGV.ShowEditingIcon = false;
+            this.AllNotificationDGV.ShowRowErrors = false;
+            this.AllNotificationDGV.Size = new System.Drawing.Size(1561, 795);
+            this.AllNotificationDGV.TabIndex = 19;
+            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.AllNotificationDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AllNotificationDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AllNotificationDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.AllNotificationDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllNotificationDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.AllNotificationDGV.ThemeStyle.HeaderStyle.Height = 60;
+            this.AllNotificationDGV.ThemeStyle.ReadOnly = true;
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.Height = 100;
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.AllNotificationDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.AllNotificationDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AllNotificationDGV_CellClick);
+            // 
             // NotificationDGV
             // 
             this.NotificationDGV.AllowUserToAddRows = false;
             this.NotificationDGV.AllowUserToDeleteRows = false;
             this.NotificationDGV.AllowUserToResizeColumns = false;
             this.NotificationDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-            this.NotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.NotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.NotificationDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.NotificationDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.NotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.NotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.NotificationDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.NotificationDGV.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.NotificationDGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.NotificationDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NotificationDGV.GridColor = System.Drawing.Color.White;
             this.NotificationDGV.Location = new System.Drawing.Point(0, 0);
@@ -679,82 +680,6 @@
             this.UnitMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.UnitMessageDialog.Text = null;
             // 
-            // AllNotificationDGV
-            // 
-            this.AllNotificationDGV.AllowUserToAddRows = false;
-            this.AllNotificationDGV.AllowUserToDeleteRows = false;
-            this.AllNotificationDGV.AllowUserToResizeColumns = false;
-            this.AllNotificationDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
-            this.AllNotificationDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.AllNotificationDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AllNotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
-            this.AllNotificationDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AllNotificationDGV.DefaultCellStyle = dataGridViewCellStyle36;
-            this.AllNotificationDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AllNotificationDGV.GridColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.Location = new System.Drawing.Point(0, 0);
-            this.AllNotificationDGV.MultiSelect = false;
-            this.AllNotificationDGV.Name = "AllNotificationDGV";
-            this.AllNotificationDGV.ReadOnly = true;
-            this.AllNotificationDGV.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AllNotificationDGV.RowHeadersVisible = false;
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.AllNotificationDGV.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AllNotificationDGV.RowTemplate.DividerHeight = 10;
-            this.AllNotificationDGV.RowTemplate.Height = 100;
-            this.AllNotificationDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.AllNotificationDGV.ShowCellErrors = false;
-            this.AllNotificationDGV.ShowCellToolTips = false;
-            this.AllNotificationDGV.ShowEditingIcon = false;
-            this.AllNotificationDGV.ShowRowErrors = false;
-            this.AllNotificationDGV.Size = new System.Drawing.Size(1561, 795);
-            this.AllNotificationDGV.TabIndex = 19;
-            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.AllNotificationDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.AllNotificationDGV.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.AllNotificationDGV.ThemeStyle.GridColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.AllNotificationDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.AllNotificationDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllNotificationDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AllNotificationDGV.ThemeStyle.HeaderStyle.Height = 60;
-            this.AllNotificationDGV.ThemeStyle.ReadOnly = true;
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.Height = 100;
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.AllNotificationDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.AllNotificationDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AllNotificationDGV_CellClick);
-            // 
             // ZNotifications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,18 +707,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.UserListsGridPNL.ResumeLayout(false);
             this.UserListsGridPNL.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NotificationDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AllNotificationDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotificationDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox UserSearchBar;
+        private Guna.UI2.WinForms.Guna2TextBox SearchBar;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button NotificationListPanelShow;
-        private Guna.UI2.WinForms.Guna2Button ArchiveLogsListBtm;
         private Guna.UI2.WinForms.Guna2Panel UserListPNL;
         private Guna.UI2.WinForms.Guna2ShadowPanel UserPNL;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;

@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.HeaderPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.UnitName = new System.Windows.Forms.Label();
             this.AdminUserName = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ControlBox4 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox5 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -42,49 +41,49 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.MainPNL = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.AdminDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.NotificationsBtm = new Guna.UI2.WinForms.Guna2Button();
             this.ShutdownBtm = new Guna.UI2.WinForms.Guna2Button();
             this.SignOutBtm = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.SettingsBtm = new Guna.UI2.WinForms.Guna2Button();
             this.LogBtm = new Guna.UI2.WinForms.Guna2Button();
             this.ComBtm = new Guna.UI2.WinForms.Guna2Button();
             this.UserBtm = new Guna.UI2.WinForms.Guna2Button();
             this.DashBoardBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.AdminDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.MainPNL.SuspendLayout();
+            this.AdminPanel = new System.Windows.Forms.Panel();
+            this.HeaderPnl.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.AdminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2DragControl1
             // 
             this.guna2DragControl1.DockForm = true;
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.guna2Panel3;
+            this.guna2DragControl1.TargetControl = this.HeaderPnl;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // guna2Panel3
+            // HeaderPnl
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.guna2Panel3.Controls.Add(this.UnitName);
-            this.guna2Panel3.Controls.Add(this.AdminUserName);
-            this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox1);
-            this.guna2Panel3.Controls.Add(this.label1);
-            this.guna2Panel3.Controls.Add(this.guna2ControlBox4);
-            this.guna2Panel3.Controls.Add(this.guna2ControlBox5);
-            this.guna2Panel3.Controls.Add(this.guna2ControlBox6);
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(241, 0);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1359, 36);
-            this.guna2Panel3.TabIndex = 3;
+            this.HeaderPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.HeaderPnl.Controls.Add(this.AdminPanel);
+            this.HeaderPnl.Controls.Add(this.UnitName);
+            this.HeaderPnl.Controls.Add(this.AdminUserName);
+            this.HeaderPnl.Controls.Add(this.guna2ControlBox4);
+            this.HeaderPnl.Controls.Add(this.guna2ControlBox5);
+            this.HeaderPnl.Controls.Add(this.guna2ControlBox6);
+            this.HeaderPnl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPnl.Location = new System.Drawing.Point(241, 0);
+            this.HeaderPnl.Name = "HeaderPnl";
+            this.HeaderPnl.Size = new System.Drawing.Size(1359, 36);
+            this.HeaderPnl.TabIndex = 3;
             // 
             // UnitName
             // 
@@ -106,23 +105,12 @@
             this.AdminUserName.Text = "AdminUserName";
             this.AdminUserName.Visible = false;
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings1;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(5, 1);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(36, 33);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 8);
+            this.label1.Location = new System.Drawing.Point(39, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 21);
             this.label1.TabIndex = 3;
@@ -131,6 +119,7 @@
             // guna2ControlBox4
             // 
             this.guna2ControlBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox4.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox4.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox4.HoverState.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -144,6 +133,7 @@
             // 
             this.guna2ControlBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox5.Animated = true;
+            this.guna2ControlBox5.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox5.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.guna2ControlBox5.HoverState.FillColor = System.Drawing.Color.Red;
@@ -157,6 +147,7 @@
             // guna2ControlBox6
             // 
             this.guna2ControlBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox6.BackColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox6.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox6.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox6.HoverState.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -189,23 +180,11 @@
             // MainPNL
             // 
             this.MainPNL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.MainPNL.Controls.Add(this.label2);
             this.MainPNL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPNL.Location = new System.Drawing.Point(241, 36);
             this.MainPNL.Name = "MainPNL";
             this.MainPNL.Size = new System.Drawing.Size(1359, 864);
             this.MainPNL.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label2.Location = new System.Drawing.Point(88, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(832, 172);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "IMAGINE SAH, NA NAAY \r\nVIEWING SA DASHBOARD";
             // 
             // guna2Panel1
             // 
@@ -226,6 +205,44 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(241, 900);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2Separator1.Location = new System.Drawing.Point(15, 557);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
+            this.guna2Separator1.TabIndex = 12;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // AdminDialog
+            // 
+            this.AdminDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.AdminDialog.Caption = null;
+            this.AdminDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.AdminDialog.Parent = null;
+            this.AdminDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.AdminDialog.Text = null;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.guna2CirclePictureBox1.Image = global::ComlabSystem.Properties.Resources.admin_panel_settings1;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(36, 33);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // NotificationsBtm
             // 
@@ -309,15 +326,6 @@
             this.SignOutBtm.TabIndex = 13;
             this.SignOutBtm.Text = "Signout";
             this.SignOutBtm.Click += new System.EventHandler(this.SignOutBtm_Click);
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2Separator1.FillStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.guna2Separator1.Location = new System.Drawing.Point(15, 557);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
-            this.guna2Separator1.TabIndex = 12;
             // 
             // SettingsBtm
             // 
@@ -465,21 +473,15 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2BorderlessForm1
+            // AdminPanel
             // 
-            this.guna2BorderlessForm1.BorderRadius = 20;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // AdminDialog
-            // 
-            this.AdminDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.AdminDialog.Caption = null;
-            this.AdminDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.AdminDialog.Parent = null;
-            this.AdminDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.AdminDialog.Text = null;
+            this.AdminPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AdminPanel.Controls.Add(this.guna2CirclePictureBox1);
+            this.AdminPanel.Controls.Add(this.label1);
+            this.AdminPanel.Location = new System.Drawing.Point(0, 2);
+            this.AdminPanel.Name = "AdminPanel";
+            this.AdminPanel.Size = new System.Drawing.Size(109, 36);
+            this.AdminPanel.TabIndex = 6;
             // 
             // Admin
             // 
@@ -488,7 +490,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.ControlBox = false;
             this.Controls.Add(this.MainPNL);
-            this.Controls.Add(this.guna2Panel3);
+            this.Controls.Add(this.HeaderPnl);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
@@ -496,13 +498,14 @@
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.MainPNL.ResumeLayout(false);
-            this.MainPNL.PerformLayout();
+            this.Load += new System.EventHandler(this.Admin_Load);
+            this.HeaderPnl.ResumeLayout(false);
+            this.HeaderPnl.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.AdminPanel.ResumeLayout(false);
+            this.AdminPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -511,7 +514,7 @@
 
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel HeaderPnl;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox4;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox5;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
@@ -533,8 +536,8 @@
         private Guna.UI2.WinForms.Guna2Button NotificationsBtm;
         private System.Windows.Forms.Label AdminUserName;
         private System.Windows.Forms.Label UnitName;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button ShutdownBtm;
         private Guna.UI2.WinForms.Guna2MessageDialog AdminDialog;
+        private System.Windows.Forms.Panel AdminPanel;
     }
 }

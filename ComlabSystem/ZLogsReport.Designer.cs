@@ -36,13 +36,11 @@
             this.AdminNameLabel = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.UserListCountsL = new System.Windows.Forms.Label();
-            this.ArchiveUnitListBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.UserListPanelShow = new Guna.UI2.WinForms.Guna2Button();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.ZReportPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.UserSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.FilterUserActivityPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -94,9 +92,7 @@
             // 
             this.guna2Panel1.Controls.Add(this.AdminNameLabel);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
-            this.guna2Panel1.Controls.Add(this.ArchiveUnitListBtm);
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
-            this.guna2Panel1.Controls.Add(this.UserListPanelShow);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -132,40 +128,6 @@
             this.UserListCountsL.TabIndex = 5;
             this.UserListCountsL.Text = "Laboratory Report";
             // 
-            // ArchiveUnitListBtm
-            // 
-            this.ArchiveUnitListBtm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArchiveUnitListBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveUnitListBtm.BorderThickness = -1;
-            this.ArchiveUnitListBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.ArchiveUnitListBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
-            this.ArchiveUnitListBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveUnitListBtm.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchiveUnitListBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ArchiveUnitListBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.archive__3_;
-            this.ArchiveUnitListBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.ArchiveUnitListBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.ArchiveUnitListBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ArchiveUnitListBtm.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.ArchiveUnitListBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ArchiveUnitListBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ArchiveUnitListBtm.FillColor = System.Drawing.Color.Transparent;
-            this.ArchiveUnitListBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.ArchiveUnitListBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ArchiveUnitListBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ArchiveUnitListBtm.Image = global::ComlabSystem.Properties.Resources.archive__2_;
-            this.ArchiveUnitListBtm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ArchiveUnitListBtm.ImageOffset = new System.Drawing.Point(5, 0);
-            this.ArchiveUnitListBtm.ImageSize = new System.Drawing.Size(30, 30);
-            this.ArchiveUnitListBtm.Location = new System.Drawing.Point(1336, 16);
-            this.ArchiveUnitListBtm.Name = "ArchiveUnitListBtm";
-            this.ArchiveUnitListBtm.PressedColor = System.Drawing.Color.Maroon;
-            this.ArchiveUnitListBtm.Size = new System.Drawing.Size(149, 45);
-            this.ArchiveUnitListBtm.TabIndex = 15;
-            this.ArchiveUnitListBtm.Text = "ARCHIVE";
-            this.ArchiveUnitListBtm.TextOffset = new System.Drawing.Point(15, 0);
-            this.ArchiveUnitListBtm.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            // 
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Gainsboro;
@@ -174,40 +136,6 @@
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(1679, 10);
             this.guna2Separator1.TabIndex = 16;
-            // 
-            // UserListPanelShow
-            // 
-            this.UserListPanelShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserListPanelShow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UserListPanelShow.BorderThickness = -1;
-            this.UserListPanelShow.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.UserListPanelShow.Checked = true;
-            this.UserListPanelShow.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
-            this.UserListPanelShow.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UserListPanelShow.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserListPanelShow.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserListPanelShow.CheckedState.Image = global::ComlabSystem.Properties.Resources.computer_Black23;
-            this.UserListPanelShow.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.UserListPanelShow.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.UserListPanelShow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserListPanelShow.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.UserListPanelShow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserListPanelShow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserListPanelShow.FillColor = System.Drawing.Color.Transparent;
-            this.UserListPanelShow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.UserListPanelShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserListPanelShow.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UserListPanelShow.Image = global::ComlabSystem.Properties.Resources.computer_Black3;
-            this.UserListPanelShow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.UserListPanelShow.ImageSize = new System.Drawing.Size(45, 45);
-            this.UserListPanelShow.Location = new System.Drawing.Point(1488, 16);
-            this.UserListPanelShow.Name = "UserListPanelShow";
-            this.UserListPanelShow.PressedColor = System.Drawing.Color.Maroon;
-            this.UserListPanelShow.Size = new System.Drawing.Size(149, 45);
-            this.UserListPanelShow.TabIndex = 13;
-            this.UserListPanelShow.Text = "REPORT";
-            this.UserListPanelShow.TextOffset = new System.Drawing.Point(25, 0);
-            this.UserListPanelShow.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             // 
             // UserListPNL
             // 
@@ -225,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ZReportPnl.BackColor = System.Drawing.Color.Transparent;
             this.ZReportPnl.Controls.Add(this.guna2CirclePictureBox2);
-            this.ZReportPnl.Controls.Add(this.UserSearchBar);
+            this.ZReportPnl.Controls.Add(this.SearchBar);
             this.ZReportPnl.Controls.Add(this.FilterUserActivityPnl);
             this.ZReportPnl.Controls.Add(this.guna2Separator2);
             this.ZReportPnl.Controls.Add(this.guna2Panel5);
@@ -257,31 +185,32 @@
             this.guna2CirclePictureBox2.TabIndex = 71;
             this.guna2CirclePictureBox2.TabStop = false;
             // 
-            // UserSearchBar
+            // SearchBar
             // 
-            this.UserSearchBar.Animated = true;
-            this.UserSearchBar.BackColor = System.Drawing.Color.Transparent;
-            this.UserSearchBar.BorderRadius = 10;
-            this.UserSearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UserSearchBar.DefaultText = "";
-            this.UserSearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserSearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UserSearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserSearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserSearchBar.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.UserSearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserSearchBar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.UserSearchBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserSearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserSearchBar.Location = new System.Drawing.Point(37, 36);
-            this.UserSearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.UserSearchBar.Name = "UserSearchBar";
-            this.UserSearchBar.PasswordChar = '\0';
-            this.UserSearchBar.PlaceholderText = "Search user";
-            this.UserSearchBar.SelectedText = "";
-            this.UserSearchBar.Size = new System.Drawing.Size(481, 46);
-            this.UserSearchBar.TabIndex = 70;
-            this.UserSearchBar.TextOffset = new System.Drawing.Point(35, 0);
+            this.SearchBar.Animated = true;
+            this.SearchBar.BackColor = System.Drawing.Color.Transparent;
+            this.SearchBar.BorderRadius = 10;
+            this.SearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchBar.DefaultText = "";
+            this.SearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchBar.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.SearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SearchBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.SearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchBar.Location = new System.Drawing.Point(37, 36);
+            this.SearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchBar.Name = "SearchBar";
+            this.SearchBar.PasswordChar = '\0';
+            this.SearchBar.PlaceholderText = "Search user";
+            this.SearchBar.SelectedText = "";
+            this.SearchBar.Size = new System.Drawing.Size(481, 46);
+            this.SearchBar.TabIndex = 70;
+            this.SearchBar.TextOffset = new System.Drawing.Point(35, 0);
+            this.SearchBar.TextChanged += new System.EventHandler(this.UserSearchBar_TextChanged);
             // 
             // FilterUserActivityPnl
             // 
@@ -574,7 +503,7 @@
             this.LogsReportBtm.Checked = true;
             this.LogsReportBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.LogsReportBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.LogsReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.LogsReportBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.LogsReportBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.LogsReportBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.LogsReportBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -584,7 +513,7 @@
             this.LogsReportBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.LogsReportBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.LogsReportBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.LogsReportBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.LogsReportBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.LogsReportBtm.Location = new System.Drawing.Point(532, 0);
             this.LogsReportBtm.Name = "LogsReportBtm";
             this.LogsReportBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -600,7 +529,7 @@
             this.AdminActionBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.AdminActionBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.AdminActionBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.AdminActionBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AdminActionBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.AdminActionBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.AdminActionBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.AdminActionBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -610,7 +539,7 @@
             this.AdminActionBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.AdminActionBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.AdminActionBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.AdminActionBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AdminActionBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.AdminActionBtm.Location = new System.Drawing.Point(359, 0);
             this.AdminActionBtm.Name = "AdminActionBtm";
             this.AdminActionBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -626,7 +555,7 @@
             this.UnitUsageBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.UnitUsageBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.UnitUsageBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.UnitUsageBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.UnitUsageBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.UnitUsageBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.UnitUsageBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.UnitUsageBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -636,7 +565,7 @@
             this.UnitUsageBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.UnitUsageBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.UnitUsageBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.UnitUsageBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.UnitUsageBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.UnitUsageBtm.Location = new System.Drawing.Point(186, 0);
             this.UnitUsageBtm.Name = "UnitUsageBtm";
             this.UnitUsageBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -652,7 +581,7 @@
             this.ReportUserActBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.ReportUserActBtm.CheckedState.CustomBorderColor = System.Drawing.Color.Maroon;
             this.ReportUserActBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ReportUserActBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ReportUserActBtm.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ReportUserActBtm.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.ReportUserActBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ReportUserActBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -662,7 +591,7 @@
             this.ReportUserActBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.ReportUserActBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ReportUserActBtm.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(80)))), ((int)(((byte)(74)))));
-            this.ReportUserActBtm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ReportUserActBtm.HoverState.FillColor = System.Drawing.Color.White;
             this.ReportUserActBtm.Location = new System.Drawing.Point(13, 0);
             this.ReportUserActBtm.Name = "ReportUserActBtm";
             this.ReportUserActBtm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -891,8 +820,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button UserListPanelShow;
-        private Guna.UI2.WinForms.Guna2Button ArchiveUnitListBtm;
         private Guna.UI2.WinForms.Guna2Panel UserListPNL;
         private Guna.UI2.WinForms.Guna2ShadowPanel ZReportPnl;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
@@ -934,6 +861,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
-        private Guna.UI2.WinForms.Guna2TextBox UserSearchBar;
+        private Guna.UI2.WinForms.Guna2TextBox SearchBar;
     }
 }

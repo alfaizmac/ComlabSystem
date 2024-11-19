@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ExplorerBar;
 
 namespace ComlabSystem
 {
@@ -30,15 +31,47 @@ namespace ComlabSystem
 
         }
 
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            AdminPanel.Visible = false;
+            HeaderPnl.BackColor = Color.White;
+            DashBoardBtmFunction();
+
+
+        }
+
 
 
         private void DashBoardBtm_Click(object sender, EventArgs e)
         {
+            HeaderPnl.BackColor = Color.White;
+            AdminPanel.Visible =false;
 
+
+            DashBoardBtmFunction();
+        }
+        private void DashBoardBtmFunction()
+        {
+            string AdminName = AdminUserName.Text;
+
+            // Create an instance of your UserControl
+            ZDashboard myControl = new ZDashboard { AdminName = AdminName };
+
+            // Clear any existing controls in the panel (optional, if you want to replace the contents)
+            MainPNL.Controls.Clear();
+
+            // Set the Dock style of the UserControl to Fill, making it expand to fit the panel
+            myControl.Dock = DockStyle.Fill;
+
+            // Add the UserControl to the panel
+            MainPNL.Controls.Add(myControl);
         }
 
         private void UserBtm_Click(object sender, EventArgs e)
         {
+            AdminPanel.Visible = true;
+            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
+            AdminPanel.Visible = true;
             string AdminName = AdminUserName.Text;
 
             // Create an instance of your UserControl
@@ -56,6 +89,8 @@ namespace ComlabSystem
 
         private void ComBtm_Click(object sender, EventArgs e)
         {
+            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
+            AdminPanel.Visible = true;
             string AdminName = AdminUserName.Text;
             ZUnitListUI myControl = new ZUnitListUI { AdminName = AdminName };
 
@@ -166,7 +201,10 @@ namespace ComlabSystem
 
         private void LogBtm_Click(object sender, EventArgs e)
         {
+            AdminPanel.Visible = true;
+            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
             string AdminName = AdminUserName.Text;
+           
 
             ZLogsReport myControl = new ZLogsReport { AdminName = AdminName };
 
@@ -182,7 +220,9 @@ namespace ComlabSystem
 
         private void SettingsBtm_Click(object sender, EventArgs e)
         {
-
+            AdminPanel.Visible = true;
+            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
+            AdminPanel.Visible = true;
         }
         private void InsertAdminShutdownLog(string adminUserName, string unitName)
         {
@@ -272,6 +312,9 @@ namespace ComlabSystem
 
         private void NotificationsBtm_Click(object sender, EventArgs e)
         {
+            AdminPanel.Visible = true;
+            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
+            AdminPanel.Visible = true;
             ZNotifications myControl = new ZNotifications();
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
@@ -283,5 +326,7 @@ namespace ComlabSystem
             // Add the UserControl to the panel
             MainPNL.Controls.Add(myControl);
         }
+
+
     }
 }

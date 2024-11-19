@@ -39,15 +39,11 @@ namespace ComlabSystem
 
         }
 
-
-
-
-
-
         private void UserUI_Load(object sender, EventArgs e)
         {
 
             LogsReportAction();
+            SearchBar.Text = "";
 
             FilterUserActivityPnl.Visible = false;
 
@@ -71,13 +67,13 @@ namespace ComlabSystem
             {
                 // Full-screen position
                 FilteruserActivityBtm.Location = new Point(530, 36);
-                UserSearchBar.Size = new Size(481, 46);
+                SearchBar.Size = new Size(481, 46);
             }
             else
             {
                 // Non-full-screen position
                 FilteruserActivityBtm.Location = new Point(449, 36);
-                UserSearchBar.Size = new Size(400, 46);
+                SearchBar.Size = new Size(400, 46);
             }
         }
 
@@ -204,6 +200,7 @@ namespace ComlabSystem
         private void ReportUserActBtm_Click(object sender, EventArgs e)
         {
             UserActivityReport();
+            SearchBar.Text = "";
         }
 
         private void UserActivityReport()
@@ -253,6 +250,7 @@ namespace ComlabSystem
         private void UnitUsageBtm_Click(object sender, EventArgs e)
         {
             UnitUsageReport();
+            SearchBar.Text = "";
         }
         private void UnitUsageReport()
         {
@@ -300,7 +298,7 @@ namespace ComlabSystem
         private void AdminActionBtm_Click(object sender, EventArgs e)
         {
             AdminActionReport();
-
+            SearchBar.Text = "";
         }
         private void AdminActionReport()
         {
@@ -347,6 +345,7 @@ namespace ComlabSystem
         private void LogsReportBtm_Click(object sender, EventArgs e)
         {
             LogsReportAction();
+            SearchBar.Text = "";
         }
         private void LogsReportAction()
         {
@@ -374,6 +373,7 @@ namespace ComlabSystem
 
                     // Bind the DataTable to the DataGridView
                     ReportGDV.DataSource = dataTable;
+                    ReportGDV.Columns["Timestamp"].Visible = false;
 
                     // Set DataGridView AutoSizeMode to Fill for all columns
                     foreach (DataGridViewColumn column in ReportGDV.Columns)
@@ -403,6 +403,60 @@ namespace ComlabSystem
             }
         }
 
+        private void UserSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = SearchBar.Text;
+            ApplySearchFilter(ReportGDV, searchText);
 
+            FilteruserActivityBtm.Checked = false;
+            FilteruserActivityBtm.Visible = false;
+        }
+
+        private void ApplySearchFilter(DataGridView gridView, string searchText)
+        {
+            if (gridView.DataSource is DataTable dataTable)
+            {
+                // Build filter expression for visible columns with valid DataPropertyName
+                var filterExpression = new List<string>();
+
+                foreach (DataGridViewColumn column in gridView.Columns)
+                {
+                    // Only consider visible columns and columns with a valid DataPropertyName for filtering
+                    if (column.Visible && !string.IsNullOrEmpty(column.DataPropertyName))
+                    {
+                        string columnName = column.DataPropertyName; // Get the bound column name
+
+                        // Check the data type of the column
+                        Type columnType = dataTable.Columns[columnName].DataType;
+
+                        // Only use LIKE for string columns
+                        if (columnType == typeof(string))
+                        {
+                            filterExpression.Add($"[{columnName}] LIKE '%{searchText}%'");
+                        }
+                        else if (columnType == typeof(DateTime))
+                        {
+                            // Optionally, you can implement a different filter for DateTime columns,
+                            // but for now we will skip it in this example
+                            continue; // Skip DateTime columns
+                        }
+                        // You can add other types as necessary, but for now we will only filter strings
+                    }
+                }
+
+                // Apply the filter expression to the DataTable
+                string finalFilter = string.Join(" OR ", filterExpression);
+
+                // Apply filter only if there are columns to filter
+                if (filterExpression.Count > 0)
+                {
+                    dataTable.DefaultView.RowFilter = finalFilter;
+                }
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Empty; // Clear filter if no columns
+                }
+            }
+        }
     }
 }  

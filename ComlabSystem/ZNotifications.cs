@@ -15,6 +15,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using DGVPrinterHelper;
+using Guna.UI2.WinForms;
 
 namespace ComlabSystem
 {
@@ -53,6 +54,8 @@ namespace ComlabSystem
 
             AllNotificationDGV.BringToFront();
             AllNotificationFunction();
+            SearchBar.Text = " ";
+
             PrintExcelALL.BringToFront();
             PrintLinkALL.BringToFront();
 
@@ -155,28 +158,6 @@ namespace ComlabSystem
 
         }
 
-        private void UserListPanelShow_Click(object sender, EventArgs e)
-        {
-            HideFilterPanel();
-
-
-            //Prints All
-            PrintExcelALL.BringToFront();
-            PrintLinkALL.BringToFront();
-            AllNotificationFunction();
-
-            NoArchiveListLabel.Visible = false;
-            UnitFilterToggleBtm.Checked = false;
-            UnitFilterPnl.Visible = false;
-            NotificationDGV.BringToFront();
-
-
-
-            
-            NoArchiveListLabel.Visible = false;
-
-            AllNotificationDGV.BringToFront();
-        }
 
         //Clear the filter
         private void ClearFilterCBB_Click(object sender, EventArgs e)
@@ -188,7 +169,8 @@ namespace ComlabSystem
         // Search bar event handler
         private void UserSearchBar_TextChanged(object sender, EventArgs e)
         {
-            string searchText = UserSearchBar.Text;
+            string searchText = SearchBar.Text;
+            ApplySearchFilter(AllNotificationDGV, searchText);
             ApplySearchFilter(NotificationDGV, searchText);
 
             UnitFilterToggleBtm.Checked = false;
@@ -242,7 +224,62 @@ namespace ComlabSystem
                 }
             }
         }
+        private void AllSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = SearchBar.Text;
+            AllApplySearchFilter(AllNotificationDGV, searchText);
 
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+        }
+
+        // Generalized method to apply search filter to any DataGridView
+        private void AllApplySearchFilter(DataGridView gridView, string searchText)
+        {
+            if (gridView.DataSource is DataTable dataTable)
+            {
+                // Build filter expression for visible columns with valid DataPropertyName
+                var filterExpression = new List<string>();
+
+                foreach (DataGridViewColumn column in gridView.Columns)
+                {
+                    // Only consider visible columns and columns with a valid DataPropertyName for filtering
+                    if (column.Visible && !string.IsNullOrEmpty(column.DataPropertyName))
+                    {
+                        string columnName = column.DataPropertyName; // Get the bound column name
+
+                        // Check the data type of the column
+                        Type columnType = dataTable.Columns[columnName].DataType;
+
+                        // Only use LIKE for string columns
+                        if (columnType == typeof(string))
+                        {
+                            filterExpression.Add($"[{columnName}] LIKE '%{searchText}%'");
+                        }
+                        else if (columnType == typeof(DateTime))
+                        {
+                            // Optionally, you can implement a different filter for DateTime columns,
+                            // but for now we will skip it in this example
+                            continue; // Skip DateTime columns
+                        }
+                        // You can add other types as necessary, but for now we will only filter strings
+                    }
+                }
+
+                // Apply the filter expression to the DataTable
+                string finalFilter = string.Join(" OR ", filterExpression);
+
+                // Apply filter only if there are columns to filter
+                if (filterExpression.Count > 0)
+                {
+                    dataTable.DefaultView.RowFilter = finalFilter;
+                }
+                else
+                {
+                    dataTable.DefaultView.RowFilter = string.Empty; // Clear filter if no columns
+                }
+            }
+        }
 
         private void PrintExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -445,9 +482,11 @@ namespace ComlabSystem
 
         private void AllNotificationBtm_Click(object sender, EventArgs e)
         {
-            AllNotificationDGV.BringToFront();
-            PrintExcelALL.BringToFront();
             PrintLinkALL.BringToFront();
+            PrintExcelALL.BringToFront();
+            AllNotificationDGV.BringToFront();
+            SearchBar.Text = " ";
+
             AllNotificationFunction();
         }
         private void AllNotificationFunction()
@@ -559,6 +598,8 @@ namespace ComlabSystem
             NotificationDGV.BringToFront();
             PrintExcel.BringToFront();
             PrintLink.BringToFront();
+            SearchBar.Text = " ";
+
             FeedbackReporFunction();
         }
         private void FeedbackReporFunction()
@@ -608,6 +649,8 @@ namespace ComlabSystem
             NotificationDGV.BringToFront();
             PrintExcel.BringToFront();
             PrintLink.BringToFront();
+            SearchBar.Text = " ";
+
             ActivityReportFunction();
         }
         private void ActivityReportFunction()
@@ -654,6 +697,9 @@ namespace ComlabSystem
                 NotificationDGV.BringToFront();
             }
         }
+
+       
+
 
     }  
 }
