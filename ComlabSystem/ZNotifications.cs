@@ -495,6 +495,7 @@ namespace ComlabSystem
             string query = @"SELECT 
                         NotificationID, -- Add this line to include NotificationID
                         Message AS 'Notification', 
+                        UserType As 'User',
                         Timestamp AS 'Timestamp', 
                         IsRead 
                      FROM Notifications 
@@ -608,10 +609,11 @@ namespace ComlabSystem
 
             string query = @"
         SELECT 
-            IssueDescription AS 'Insights', 
-            Timestamp AS 'Timestamp'
-        FROM Help_Desk
-        WHERE MessageType IN ('Feedback', 'Report') ORDER BY Timestamp DESC";
+            Message AS 'Insights', 
+            Timestamp AS 'Timestamp',
+            Email
+        FROM NOTIFICATIONS
+        WHERE NotificationKind IN ('Feedback', 'Report') ORDER BY Timestamp DESC";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -659,11 +661,11 @@ namespace ComlabSystem
             string query = @"
         SELECT 
             Message AS 'Action', 
+            UserType AS 'User',
             Timestamp AS 'Timestamp'
         FROM Notifications
         WHERE NotificationKind IN 
-            ('Feedback', 'Report', 'AddUser', 'EditUser', 'ArchiveUser', 
-             'UnarchiveUser', 'ArchiveUnit', 'UnarchiveUnit', 'NewUnit', 'LowStorage')
+            ('AddUser', 'EditUser', 'ArchiveUser', 'UnarchiveUser', 'ArchiveUnit', 'UnarchiveUnit', 'NewUnit', 'LowStorage', 'UserChangePassword')
         ORDER BY Timestamp DESC";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

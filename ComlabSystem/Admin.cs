@@ -138,11 +138,11 @@ namespace ComlabSystem
                         command.Parameters.AddWithValue("@AdminUserName", adminUserName);
 
                         // Construct professional descriptions
-                        string actionDescription = $"{adminUserName} signed out on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
+                        string actionDescription = $"Admin name {adminUserName} signed out on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
                         command.Parameters.AddWithValue("@ActionDescription", actionDescription);
 
                         // Construct the notification message
-                        string notificationMessage = $"{adminUserName} sign out on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
+                        string notificationMessage = $"Admin name {adminUserName} sign out on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
                         command.Parameters.AddWithValue("@NotificationMessage", notificationMessage);
 
                         // Add timestamp, action type, and other details
@@ -262,11 +262,11 @@ namespace ComlabSystem
                         command.Parameters.AddWithValue("@AdminUserName", adminUserName);
 
                         // Construct professional descriptions
-                        string actionDescription = $"{adminUserName} shutdown on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
+                        string actionDescription = $"Admin name {adminUserName} shutdown on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
                         command.Parameters.AddWithValue("@ActionDescription", actionDescription);
 
                         // Construct the notification message
-                        string notificationMessage = $"{adminUserName} shutdown on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
+                        string notificationMessage = $"Admin name {adminUserName} shutdown on {unitName} at {DateTime.Now:MMMM dd, yyyy hh:mm tt}";
                         command.Parameters.AddWithValue("@NotificationMessage", notificationMessage);
 
                         // Add timestamp, action type, and other details

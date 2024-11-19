@@ -1110,9 +1110,9 @@
             // 
             this.UserPnL.Controls.Add(this.SideBar);
             this.UserPnL.Controls.Add(this.guna2Panel1);
+            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
             this.UserPnL.Controls.Add(this.ReportPnl);
             this.UserPnL.Controls.Add(this.guna2Panel7);
-            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
             this.UserPnL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserPnL.Location = new System.Drawing.Point(0, 0);
             this.UserPnL.Name = "UserPnL";

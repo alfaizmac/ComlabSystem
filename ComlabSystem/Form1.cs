@@ -521,60 +521,72 @@ namespace ComlabSystem
                     connection.Open();
 
                     // Query to check the status of the user based on the StudentID
-                    SqlCommand checkUserCmd = new SqlCommand("SELECT Status, UserID, FirstName, LastName FROM UserList WHERE StudentID = @StudentID", connection);
+                    SqlCommand checkUserCmd = new SqlCommand(
+                        "SELECT Status, UserID, FirstName, LastName FROM UserList WHERE StudentID = @StudentID",
+                        connection);
                     checkUserCmd.Parameters.AddWithValue("@StudentID", studentID);
 
+                    string userStatus = string.Empty;
+                    string userID = string.Empty;
+                    string firstName = string.Empty;
+                    string lastName = string.Empty;
+
+                    // Use a SqlDataReader to fetch the user details
                     using (SqlDataReader reader = checkUserCmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            string userStatus = reader["Status"].ToString().Trim(); // Trim to remove any extra spaces
-                            string userID = reader["UserID"].ToString();
-                            string firstName = reader["FirstName"].ToString();
-                            string lastName = reader["LastName"].ToString();
-                            string studentName = $"{firstName} {lastName}";
-
-                            // Proceed only if the status is "Online"
-                            if (userStatus == "Online")
-                            {
-                                // Increment the UserImproperShutdownCount
-                                SqlCommand updateUserCmd = new SqlCommand("UPDATE UserList SET UserImproperShutdownCount = UserImproperShutdownCount + 1 WHERE StudentID = @StudentID", connection);
-                                updateUserCmd.Parameters.AddWithValue("@StudentID", studentID);
-                                int rowsAffected = updateUserCmd.ExecuteNonQuery();
-
-                                if (rowsAffected > 0)
-                                {
-                                    // Insert a notification into the Notifications table
-                                    SqlCommand insertNotificationCmd = new SqlCommand(
-                                        @"INSERT INTO Notifications 
-                                (Message, Timestamp, UserID, NotificationType, NotificationKind, StudName, UserType, UnitName) 
-                                VALUES (@Message, @Timestamp, @UserID, @NotificationType, @NotificationKind, @StudName, @UserType, @UnitName)",
-                                        connection);
-
-                                    string notificationMessage = $"{studentName} ({studentID}) did not properly shut down the computer '{UnitNameLabel.Text}' on {DateTime.Now:MMMM dd, yyyy h:mm tt}. Please investigate.";
-
-                                    insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
-                                    insertNotificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                                    insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);
-                                    insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
-                                    insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", "UserNotProperShutdow");
-                                    insertNotificationCmd.Parameters.AddWithValue("@StudName", studentName);
-                                    insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");
-                                    insertNotificationCmd.Parameters.AddWithValue("@UnitName", UnitNameLabel.Text);
-
-                                    insertNotificationCmd.ExecuteNonQuery();
-
-                                    // Show a warning message to the user
-                                    AccountRemovedMsgBox.Caption = "Warning";
-                                    AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
-                                    AccountRemovedMsgBox.Text = "Improper shutdown and using multiple PCs can result in your account being held.";
-                                    AccountRemovedMsgBox.Show();
-                                }
-                            }
+                            userStatus = reader["Status"].ToString().Trim();
+                            userID = reader["UserID"].ToString();
+                            firstName = reader["FirstName"].ToString();
+                            lastName = reader["LastName"].ToString();
                         }
                         else
                         {
                             MessageBox.Show("No user found with the provided User ID.");
+                            return;
+                        }
+                    } // The SqlDataReader is now closed.
+
+                    // Proceed only if the user status is "Online"
+                    if (userStatus == "Online")
+                    {
+                        // Increment the UserImproperShutdownCount
+                        SqlCommand updateUserCmd = new SqlCommand(
+                            "UPDATE UserList SET UserImproperShutdownCount = UserImproperShutdownCount + 1 WHERE StudentID = @StudentID",
+                            connection);
+                        updateUserCmd.Parameters.AddWithValue("@StudentID", studentID);
+
+                        int rowsAffected = updateUserCmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            // Insert a notification into the Notifications table
+                            SqlCommand insertNotificationCmd = new SqlCommand(
+                                @"INSERT INTO Notifications 
+                        (Message, Timestamp, UserID, NotificationType, NotificationKind, StudName, UserType, UnitName) 
+                        VALUES (@Message, @Timestamp, @UserID, @NotificationType, @NotificationKind, @StudName, @UserType, @UnitName)",
+                                connection);
+
+                            string studentName = $"{firstName} {lastName}";
+                            string notificationMessage = $"{studentName} ({studentID}) did not properly shut down the computer '{UnitNameLabel.Text}' on {DateTime.Now:MMMM dd, yyyy h:mm tt}. Please investigate.";
+
+                            insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
+                            insertNotificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                            insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);
+                            insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
+                            insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", "UserNotProperShutdow");
+                            insertNotificationCmd.Parameters.AddWithValue("@StudName", studentName);
+                            insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");
+                            insertNotificationCmd.Parameters.AddWithValue("@UnitName", UnitNameLabel.Text);
+
+                            insertNotificationCmd.ExecuteNonQuery();
+
+                            // Show a warning message to the user
+                            AccountRemovedMsgBox.Caption = "Warning";
+                            AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
+                            AccountRemovedMsgBox.Text = "Improper shutdown and using multiple PCs can result in your account being held.";
+                            AccountRemovedMsgBox.Show();
                         }
                     }
                 }
@@ -584,6 +596,7 @@ namespace ComlabSystem
                 }
             }
         }
+
 
         private void IncrementUnitUsageFrequency()
         {
@@ -686,7 +699,7 @@ namespace ComlabSystem
                 {
 
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE UserList SET Status = @Status, UnitUsed = @UnitUsed, DateLastLogout = @DateLastLogout WHERE StudentID = @StudentID, LastUnitUsed = @LastUnitUsed", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE UserList SET Status = @Status, UnitUsed = @UnitUsed, DateLastLogout = @DateLastLogout, LastUnitUsed = @LastUnitUsed WHERE StudentID = @StudentID", connection);
                     cmd.Parameters.AddWithValue("@Status", "Online");
                     cmd.Parameters.AddWithValue("@UnitUsed", $"Current Using ({computerName})");
                     cmd.Parameters.AddWithValue("@DateLastLogout", DBNull.Value);  // NULL initially since it's a new login

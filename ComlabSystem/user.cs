@@ -252,16 +252,13 @@ namespace ComlabSystem
         //sending feedback and report
         private void SendReportFeedbackBtm_Click(object sender, EventArgs e)
         {
-            // Get the user ID (from previous logic, assuming it's retrieved and stored in userID)
-            string studentID = StudIDLabel.Text;  // Assuming userID is the StudentID for now
-
-            // Get the user input from the TextBox
+            // Get the user details
+            string studentID = StudIDLabel.Text;
             string feedback = SendReportFeedbackTB.Text;
-            string fullName = FLNameLabel.Text; // Full name of the user
-            string computerName = UnitNameLabel.Text; // Computer name (UnitNameLabel.Text)
-            DateTime currentDateTime = DateTime.Now; // Get the current timestamp
+            string fullName = FLNameLabel.Text;
+            string computerName = UnitNameLabel.Text;
+            DateTime currentDateTime = DateTime.Now;
 
-            // Determine the message type based on the selected radio button
             string messageType = string.Empty;
             if (ReportRadioButton.Checked)
             {
@@ -278,7 +275,6 @@ namespace ComlabSystem
                 return;
             }
 
-            // Format the issue description
             string issueDescription = $"{fullName} has sent a {messageType}: \"{feedback}\" while using the computer named {computerName}.";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -287,40 +283,43 @@ namespace ComlabSystem
                 {
                     connection.Open();
 
-                    // Retrieve the UserID based on StudentID
-                    SqlCommand getUserIDCmd = new SqlCommand("SELECT UserID FROM UserList WHERE StudentID = @StudentID", connection);
-                    getUserIDCmd.Parameters.AddWithValue("@StudentID", studentID);
-                    int userID = (int)getUserIDCmd.ExecuteScalar();
+                    // Retrieve the UserID and Email based on StudentID
+                    SqlCommand getUserDetailsCmd = new SqlCommand(
+                        "SELECT UserID, Email FROM UserList WHERE StudentID = @StudentID", connection);
+                    getUserDetailsCmd.Parameters.AddWithValue("@StudentID", studentID);
 
-                    // Insert the report or feedback into the Help_Desk table
-                    SqlCommand insertFeedbackCmd = new SqlCommand(
-                        "INSERT INTO Help_Desk (UserID, MessageType, IssueDescription, Timestamp, StudID) " +
-                        "VALUES (@UserID, @MessageType, @IssueDescription, @Timestamp, @StudID)", connection);
+                    int userID = 0;
+                    string email = string.Empty;
 
-                    insertFeedbackCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
-                    insertFeedbackCmd.Parameters.AddWithValue("@MessageType", messageType);  // 'Report' or 'Feedback'
-                    insertFeedbackCmd.Parameters.AddWithValue("@IssueDescription", issueDescription);  // The formatted feedback
-                    insertFeedbackCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);  // The current timestamp
-                    insertFeedbackCmd.Parameters.AddWithValue("@StudID", studentID);  // The current timestamp
-
-                    // Execute the command
-                    insertFeedbackCmd.ExecuteNonQuery();
+                    using (SqlDataReader reader = getUserDetailsCmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            userID = Convert.ToInt32(reader["UserID"]);
+                            email = reader["Email"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No user found with the provided Student ID.");
+                            return;
+                        }
+                    } // Close the reader here
 
                     // Insert into Notifications table
-                    string notificationMessage = $"{fullName} has sent {messageType}.";
                     SqlCommand insertNotificationCmd = new SqlCommand(
-                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind, UserType, UnitName, StudentID) " +
-                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind, @UserType, @UnitName, @StudentID)", connection);
+                        "INSERT INTO Notifications (UserID, Message, Timestamp, NotificationType, NotificationKind, UserType, UnitName, StudentID, Email) " +
+                        "VALUES (@UserID, @Message, @Timestamp, @NotificationType, @NotificationKind, @UserType, @UnitName, @StudentID, @Email)", connection);
 
-                    insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);  // Use the userID
-                    insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);  // The notification message
-                    insertNotificationCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);  // The current timestamp
-                    insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Info");  // Notification type
-                    insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", $"{messageType}");  // Report/Feedback
-                    insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");  // Report/Feedback
-                    insertNotificationCmd.Parameters.AddWithValue("@UnitName", computerName);  // Report/Feedback
-                    insertNotificationCmd.Parameters.AddWithValue("@StudentID", studentID);  // Report/Feedback
-                    // Execute the command
+                    insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);
+                    insertNotificationCmd.Parameters.AddWithValue("@Message", issueDescription);
+                    insertNotificationCmd.Parameters.AddWithValue("@Timestamp", currentDateTime);
+                    insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Information");
+                    insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", messageType);
+                    insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");
+                    insertNotificationCmd.Parameters.AddWithValue("@UnitName", computerName);
+                    insertNotificationCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    insertNotificationCmd.Parameters.AddWithValue("@Email", email);
+
                     insertNotificationCmd.ExecuteNonQuery();
 
                     // Hide the report panel and clear the feedback text box
@@ -334,11 +333,11 @@ namespace ComlabSystem
                 }
                 catch (Exception ex)
                 {
-                    // Handle any errors during the insert operation
                     MessageBox.Show("Failed to send report/feedback: " + ex.Message);
                 }
             }
         }
+
 
 
 
@@ -756,10 +755,10 @@ namespace ComlabSystem
                 return;
             }
 
-            string studentID = StudIDLabel.Text;
-            string currentPasswordInput = CurrentPassTB.Text;
-            string newPassword = NewPassTB.Text;
-            string fullName = FLNameLabel.Text; // Full name of the student (e.g., "John Doe")
+            string studentID = StudIDLabel.Text.Trim();
+            string currentPasswordInput = CurrentPassTB.Text.Trim();
+            string newPassword = NewPassTB.Text.Trim();
+            string fullName = FLNameLabel.Text.Trim(); // Full name of the student (e.g., "John Doe")
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -767,9 +766,10 @@ namespace ComlabSystem
                 {
                     connection.Open();
 
-                    // Step 2: Retrieve the UserID and verify the current password
+                    // Step 2: Retrieve the UserID, current password, and email
                     SqlCommand getUserCmd = new SqlCommand(
-                        "SELECT UserID, UPassword FROM UserList WHERE StudentID = @StudentID", connection);
+                        "SELECT UserID, UPassword, Email FROM UserList WHERE StudentID = @StudentID",
+                        connection);
                     getUserCmd.Parameters.AddWithValue("@StudentID", studentID);
 
                     SqlDataReader reader = getUserCmd.ExecuteReader();
@@ -778,6 +778,7 @@ namespace ComlabSystem
                     {
                         int userID = (int)reader["UserID"];
                         string currentPasswordInDB = reader["UPassword"].ToString();
+                        string email = reader["Email"].ToString(); // Retrieve the email from the database
 
                         // Check if the current password entered matches the one in the database
                         if (currentPasswordInDB != currentPasswordInput)
@@ -788,27 +789,49 @@ namespace ComlabSystem
                         }
                         reader.Close();
 
-
                         // Step 3: Update the password in the database
                         SqlCommand updatePasswordCmd = new SqlCommand(
-                            "UPDATE UserList SET UPassword = @NewPassword WHERE UserID = @UserID", connection);
+                            "UPDATE UserList SET UPassword = @NewPassword WHERE UserID = @UserID",
+                            connection);
                         updatePasswordCmd.Parameters.AddWithValue("@NewPassword", newPassword);
                         updatePasswordCmd.Parameters.AddWithValue("@UserID", userID);
-
-                        SideMenuDialogs.Icon = MessageDialogIcon.Information;
-                        SideMenuDialogs.Caption = "Success";
-                        SideMenuDialogs.Text = "Password changed successfully.";
-                        SideMenuDialogs.Show();
 
                         int rowsAffected = updatePasswordCmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
+                            // Step 4: Insert a notification into the Notifications table
+                            SqlCommand insertNotificationCmd = new SqlCommand(
+                                @"INSERT INTO Notifications 
+                        (Message, Timestamp, UserID, NotificationType, NotificationKind, StudName, UserType, StudentID, Email, UnitName) 
+                        VALUES 
+                        (@Message, @Timestamp, @UserID, @NotificationType, @NotificationKind, @StudName, @UserType, @StudentID, @Email, @UnitName)",
+                                connection);
+
+                            string notificationMessage = $"{fullName} ({studentID}) has changed their password from {currentPasswordInput} to {newPassword} on '{UnitNameLabel.Text}' at {DateTime.Now:MMMM dd, yyyy h:mm tt}.";
+
+                            insertNotificationCmd.Parameters.AddWithValue("@Message", notificationMessage);
+                            insertNotificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                            insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);
+                            insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Information");
+                            insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", "UserChangePassword");
+                            insertNotificationCmd.Parameters.AddWithValue("@StudName", fullName);
+                            insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");
+                            insertNotificationCmd.Parameters.AddWithValue("@StudentID", studentID);
+                            insertNotificationCmd.Parameters.AddWithValue("@Email", email);
+                            insertNotificationCmd.Parameters.AddWithValue("@UnitName", UnitNameLabel.Text);
+
+                            insertNotificationCmd.ExecuteNonQuery();
+
+                            // Step 5: Show success message and clear input fields
+                            SideMenuDialogs.Icon = MessageDialogIcon.Information;
+                            SideMenuDialogs.Caption = "Success";
+                            SideMenuDialogs.Text = "Password changed successfully.";
+                            SideMenuDialogs.Show();
 
                             ChangePasswordPNL.Hide();
                             CurrentPassTB.Text = "";
                             NewPassTB.Text = "";
                             ConfirmNewPassTB.Text = "";
-
                         }
                         else
                         {
