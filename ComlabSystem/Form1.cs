@@ -423,6 +423,7 @@ namespace ComlabSystem
 
                                 };
                                 ResetLoginTimeoutTimer();
+                                loginTimeoutTimer.Stop();
 
                                 userIsLoggedIn = true;
                                 loginCheckTimer.Stop();
@@ -783,6 +784,7 @@ namespace ComlabSystem
 
                 // Reset login timeout timer
                 ResetLoginTimeoutTimer();
+                loginTimeoutTimer.Stop();
 
                 userIsLoggedIn = true;
                 loginCheckTimer.Stop(); // Stop the timer after successful login
@@ -846,6 +848,7 @@ namespace ComlabSystem
                             // Insert login success notification
                             AdminLogs();
 
+
                             // Check AdminRole
                             string adminRole = adminRow["AdminRole"].ToString();
 
@@ -863,6 +866,7 @@ namespace ComlabSystem
 
                             // Reset login timeout timer
                             ResetLoginTimeoutTimer();
+                            loginTimeoutTimer.Stop();
 
                             userIsLoggedIn = true;
                             loginCheckTimer.Stop(); // Stop the timer after successful login

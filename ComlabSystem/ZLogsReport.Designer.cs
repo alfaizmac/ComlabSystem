@@ -39,18 +39,12 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.ZReportPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.FilterUserActivityPnl = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label41 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.RequiredPicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.FilterYearLevelCBClear = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.FilterProgramCBClear = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.FilterDepartmentCBClear = new Guna.UI2.WinForms.Guna2ImageButton();
             this.FilterYearLevelCB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.FilterProgramCB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.FilterDepartmentCB = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -68,24 +62,30 @@
             this.label45 = new System.Windows.Forms.Label();
             this.PrintPDFReport = new System.Windows.Forms.LinkLabel();
             this.PrintExcelReport = new System.Windows.Forms.LinkLabel();
-            this.FilteruserActivityBtm = new Guna.UI2.WinForms.Guna2Button();
             this.ZListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.ReportGDV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
             this.SortToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.UnitMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.RequiredPicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.FilterYearLevelCBClear = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.FilterProgramCBClear = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.FilterDepartmentCBClear = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.FilteruserActivityBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.UserListPNL.SuspendLayout();
             this.ZReportPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.FilterUserActivityPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).BeginInit();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.ZListsGridPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportGDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -171,19 +171,6 @@
             this.ZReportPnl.ShadowShift = 10;
             this.ZReportPnl.Size = new System.Drawing.Size(1627, 958);
             this.ZReportPnl.TabIndex = 12;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 71;
-            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // SearchBar
             // 
@@ -289,89 +276,6 @@
             this.label41.Size = new System.Drawing.Size(62, 21);
             this.label41.TabIndex = 109;
             this.label41.Text = "RANGE";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2Button1.CheckedState.Image = global::ComlabSystem.Properties.Resources.funnel__3_;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2Button1.Image = global::ComlabSystem.Properties.Resources.funnel;
-            this.guna2Button1.Location = new System.Drawing.Point(60, 236);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(103, 61);
-            this.guna2Button1.TabIndex = 108;
-            this.guna2Button1.Text = "Rank";
-            // 
-            // RequiredPicture
-            // 
-            this.RequiredPicture.Image = global::ComlabSystem.Properties.Resources.info__5_;
-            this.RequiredPicture.ImageRotate = 0F;
-            this.RequiredPicture.Location = new System.Drawing.Point(152, 346);
-            this.RequiredPicture.Name = "RequiredPicture";
-            this.RequiredPicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.RequiredPicture.Size = new System.Drawing.Size(21, 21);
-            this.RequiredPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RequiredPicture.TabIndex = 106;
-            this.RequiredPicture.TabStop = false;
-            // 
-            // FilterYearLevelCBClear
-            // 
-            this.FilterYearLevelCBClear.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.FilterYearLevelCBClear.HoverState.Image = global::ComlabSystem.Properties.Resources.x_square__1_;
-            this.FilterYearLevelCBClear.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterYearLevelCBClear.Image = global::ComlabSystem.Properties.Resources.x_square__3_;
-            this.FilterYearLevelCBClear.ImageOffset = new System.Drawing.Point(0, 0);
-            this.FilterYearLevelCBClear.ImageRotate = 0F;
-            this.FilterYearLevelCBClear.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterYearLevelCBClear.Location = new System.Drawing.Point(646, 271);
-            this.FilterYearLevelCBClear.Name = "FilterYearLevelCBClear";
-            this.FilterYearLevelCBClear.PressedState.Image = global::ComlabSystem.Properties.Resources.x_square;
-            this.FilterYearLevelCBClear.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterYearLevelCBClear.Size = new System.Drawing.Size(26, 26);
-            this.FilterYearLevelCBClear.TabIndex = 105;
-            // 
-            // FilterProgramCBClear
-            // 
-            this.FilterProgramCBClear.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.FilterProgramCBClear.HoverState.Image = global::ComlabSystem.Properties.Resources.x_square__1_;
-            this.FilterProgramCBClear.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterProgramCBClear.Image = global::ComlabSystem.Properties.Resources.x_square__3_;
-            this.FilterProgramCBClear.ImageOffset = new System.Drawing.Point(0, 0);
-            this.FilterProgramCBClear.ImageRotate = 0F;
-            this.FilterProgramCBClear.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterProgramCBClear.Location = new System.Drawing.Point(464, 271);
-            this.FilterProgramCBClear.Name = "FilterProgramCBClear";
-            this.FilterProgramCBClear.PressedState.Image = global::ComlabSystem.Properties.Resources.x_square;
-            this.FilterProgramCBClear.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterProgramCBClear.Size = new System.Drawing.Size(26, 26);
-            this.FilterProgramCBClear.TabIndex = 104;
-            // 
-            // FilterDepartmentCBClear
-            // 
-            this.FilterDepartmentCBClear.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.FilterDepartmentCBClear.HoverState.Image = global::ComlabSystem.Properties.Resources.x_square__1_;
-            this.FilterDepartmentCBClear.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterDepartmentCBClear.Image = global::ComlabSystem.Properties.Resources.x_square__3_;
-            this.FilterDepartmentCBClear.ImageOffset = new System.Drawing.Point(0, 0);
-            this.FilterDepartmentCBClear.ImageRotate = 0F;
-            this.FilterDepartmentCBClear.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterDepartmentCBClear.Location = new System.Drawing.Point(278, 271);
-            this.FilterDepartmentCBClear.Name = "FilterDepartmentCBClear";
-            this.FilterDepartmentCBClear.PressedState.Image = global::ComlabSystem.Properties.Resources.x_square;
-            this.FilterDepartmentCBClear.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.FilterDepartmentCBClear.Size = new System.Drawing.Size(26, 26);
-            this.FilterDepartmentCBClear.TabIndex = 103;
             // 
             // FilterYearLevelCB
             // 
@@ -658,32 +562,6 @@
             this.PrintExcelReport.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
             this.PrintExcelReport.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcel_LinkClicked);
             // 
-            // FilteruserActivityBtm
-            // 
-            this.FilteruserActivityBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilteruserActivityBtm.BorderRadius = 10;
-            this.FilteruserActivityBtm.BorderThickness = 1;
-            this.FilteruserActivityBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.FilteruserActivityBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FilteruserActivityBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilteruserActivityBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
-            this.FilteruserActivityBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.FilteruserActivityBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.FilteruserActivityBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.FilteruserActivityBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.FilteruserActivityBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.FilteruserActivityBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FilteruserActivityBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilteruserActivityBtm.Image = global::ComlabSystem.Properties.Resources.caret_down__2_;
-            this.FilteruserActivityBtm.ImageOffset = new System.Drawing.Point(0, 1);
-            this.FilteruserActivityBtm.ImageSize = new System.Drawing.Size(18, 18);
-            this.FilteruserActivityBtm.Location = new System.Drawing.Point(530, 36);
-            this.FilteruserActivityBtm.Name = "FilteruserActivityBtm";
-            this.FilteruserActivityBtm.Size = new System.Drawing.Size(78, 46);
-            this.FilteruserActivityBtm.TabIndex = 24;
-            this.FilteruserActivityBtm.Text = "Filter";
-            this.FilteruserActivityBtm.Click += new System.EventHandler(this.FilteruserActivityBtm_Click);
-            // 
             // ZListsGridPNL
             // 
             this.ZListsGridPNL.Controls.Add(this.ReportGDV);
@@ -786,6 +664,128 @@
             this.UnitMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.UnitMessageDialog.Text = null;
             // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 71;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2Button1.CheckedState.Image = global::ComlabSystem.Properties.Resources.funnel__3_;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2Button1.Image = global::ComlabSystem.Properties.Resources.funnel;
+            this.guna2Button1.Location = new System.Drawing.Point(60, 236);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(103, 61);
+            this.guna2Button1.TabIndex = 108;
+            this.guna2Button1.Text = "Rank";
+            // 
+            // RequiredPicture
+            // 
+            this.RequiredPicture.Image = global::ComlabSystem.Properties.Resources.info__5_;
+            this.RequiredPicture.ImageRotate = 0F;
+            this.RequiredPicture.Location = new System.Drawing.Point(152, 346);
+            this.RequiredPicture.Name = "RequiredPicture";
+            this.RequiredPicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.RequiredPicture.Size = new System.Drawing.Size(21, 21);
+            this.RequiredPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RequiredPicture.TabIndex = 106;
+            this.RequiredPicture.TabStop = false;
+            // 
+            // FilterYearLevelCBClear
+            // 
+            this.FilterYearLevelCBClear.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.FilterYearLevelCBClear.HoverState.Image = global::ComlabSystem.Properties.Resources.x_square__1_;
+            this.FilterYearLevelCBClear.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterYearLevelCBClear.Image = global::ComlabSystem.Properties.Resources.x_square__3_;
+            this.FilterYearLevelCBClear.ImageOffset = new System.Drawing.Point(0, 0);
+            this.FilterYearLevelCBClear.ImageRotate = 0F;
+            this.FilterYearLevelCBClear.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterYearLevelCBClear.Location = new System.Drawing.Point(646, 271);
+            this.FilterYearLevelCBClear.Name = "FilterYearLevelCBClear";
+            this.FilterYearLevelCBClear.PressedState.Image = global::ComlabSystem.Properties.Resources.x_square;
+            this.FilterYearLevelCBClear.PressedState.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterYearLevelCBClear.Size = new System.Drawing.Size(26, 26);
+            this.FilterYearLevelCBClear.TabIndex = 105;
+            // 
+            // FilterProgramCBClear
+            // 
+            this.FilterProgramCBClear.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.FilterProgramCBClear.HoverState.Image = global::ComlabSystem.Properties.Resources.x_square__1_;
+            this.FilterProgramCBClear.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterProgramCBClear.Image = global::ComlabSystem.Properties.Resources.x_square__3_;
+            this.FilterProgramCBClear.ImageOffset = new System.Drawing.Point(0, 0);
+            this.FilterProgramCBClear.ImageRotate = 0F;
+            this.FilterProgramCBClear.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterProgramCBClear.Location = new System.Drawing.Point(464, 271);
+            this.FilterProgramCBClear.Name = "FilterProgramCBClear";
+            this.FilterProgramCBClear.PressedState.Image = global::ComlabSystem.Properties.Resources.x_square;
+            this.FilterProgramCBClear.PressedState.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterProgramCBClear.Size = new System.Drawing.Size(26, 26);
+            this.FilterProgramCBClear.TabIndex = 104;
+            // 
+            // FilterDepartmentCBClear
+            // 
+            this.FilterDepartmentCBClear.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.FilterDepartmentCBClear.HoverState.Image = global::ComlabSystem.Properties.Resources.x_square__1_;
+            this.FilterDepartmentCBClear.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterDepartmentCBClear.Image = global::ComlabSystem.Properties.Resources.x_square__3_;
+            this.FilterDepartmentCBClear.ImageOffset = new System.Drawing.Point(0, 0);
+            this.FilterDepartmentCBClear.ImageRotate = 0F;
+            this.FilterDepartmentCBClear.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterDepartmentCBClear.Location = new System.Drawing.Point(278, 271);
+            this.FilterDepartmentCBClear.Name = "FilterDepartmentCBClear";
+            this.FilterDepartmentCBClear.PressedState.Image = global::ComlabSystem.Properties.Resources.x_square;
+            this.FilterDepartmentCBClear.PressedState.ImageSize = new System.Drawing.Size(25, 25);
+            this.FilterDepartmentCBClear.Size = new System.Drawing.Size(26, 26);
+            this.FilterDepartmentCBClear.TabIndex = 103;
+            // 
+            // FilteruserActivityBtm
+            // 
+            this.FilteruserActivityBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.FilteruserActivityBtm.BorderRadius = 10;
+            this.FilteruserActivityBtm.BorderThickness = 1;
+            this.FilteruserActivityBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.FilteruserActivityBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.FilteruserActivityBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FilteruserActivityBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
+            this.FilteruserActivityBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.FilteruserActivityBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.FilteruserActivityBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.FilteruserActivityBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.FilteruserActivityBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.FilteruserActivityBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FilteruserActivityBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FilteruserActivityBtm.Image = global::ComlabSystem.Properties.Resources.caret_down__2_;
+            this.FilteruserActivityBtm.ImageOffset = new System.Drawing.Point(0, 1);
+            this.FilteruserActivityBtm.ImageSize = new System.Drawing.Size(18, 18);
+            this.FilteruserActivityBtm.Location = new System.Drawing.Point(530, 36);
+            this.FilteruserActivityBtm.Name = "FilteruserActivityBtm";
+            this.FilteruserActivityBtm.Size = new System.Drawing.Size(78, 46);
+            this.FilteruserActivityBtm.TabIndex = 24;
+            this.FilteruserActivityBtm.Text = "Filter";
+            this.FilteruserActivityBtm.Click += new System.EventHandler(this.FilteruserActivityBtm_Click);
+            // 
             // ZLogsReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,15 +805,15 @@
             this.guna2Panel3.PerformLayout();
             this.UserListPNL.ResumeLayout(false);
             this.ZReportPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.FilterUserActivityPnl.ResumeLayout(false);
             this.FilterUserActivityPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).EndInit();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.ZListsGridPNL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportGDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RequiredPicture)).EndInit();
             this.ResumeLayout(false);
 
         }

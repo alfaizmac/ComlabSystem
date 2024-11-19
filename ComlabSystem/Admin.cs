@@ -33,8 +33,6 @@ namespace ComlabSystem
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            AdminPanel.Visible = false;
-            HeaderPnl.BackColor = Color.White;
             DashBoardBtmFunction();
 
 
@@ -44,8 +42,6 @@ namespace ComlabSystem
 
         private void DashBoardBtm_Click(object sender, EventArgs e)
         {
-            HeaderPnl.BackColor = Color.White;
-            AdminPanel.Visible =false;
 
 
             DashBoardBtmFunction();
@@ -202,7 +198,6 @@ namespace ComlabSystem
         private void LogBtm_Click(object sender, EventArgs e)
         {
             AdminPanel.Visible = true;
-            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
             string AdminName = AdminUserName.Text;
            
 
@@ -221,7 +216,6 @@ namespace ComlabSystem
         private void SettingsBtm_Click(object sender, EventArgs e)
         {
             AdminPanel.Visible = true;
-            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
             AdminPanel.Visible = true;
         }
         private void InsertAdminShutdownLog(string adminUserName, string unitName)
@@ -313,7 +307,6 @@ namespace ComlabSystem
         private void NotificationsBtm_Click(object sender, EventArgs e)
         {
             AdminPanel.Visible = true;
-            HeaderPnl.BackColor = Color.FromArgb(240, 240, 240);
             AdminPanel.Visible = true;
             ZNotifications myControl = new ZNotifications();
 

@@ -81,8 +81,8 @@
             this.guna2Panel2.Controls.Add(this.ShutdownBtm);
             this.guna2Panel2.Controls.Add(this.AdminShowBtm);
             this.guna2Panel2.Controls.Add(this.UserShowBtm);
-            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Controls.Add(this.UserFormPNL);
+            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(960, 0);
             this.guna2Panel2.Name = "guna2Panel2";

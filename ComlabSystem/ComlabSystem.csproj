@@ -160,6 +160,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -915,6 +916,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gear-six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboardPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardimproShutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardUsage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardUsage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardUsage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardComputer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
