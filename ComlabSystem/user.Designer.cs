@@ -62,7 +62,6 @@
             this.FeedbackRadioBtm = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.d = new System.Windows.Forms.Label();
             this.ReportRadioButton = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.SendReportFeedbackBtm = new Guna.UI2.WinForms.Guna2Button();
             this.SendReportFeedbackTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.ChangePasswordPNL = new Guna.UI2.WinForms.Guna2Panel();
@@ -128,6 +127,8 @@
             this.SideMenuDialogs = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.LockTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.label13 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -526,12 +527,13 @@
             this.ReportPnl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.ReportPnl.BorderRadius = 15;
             this.ReportPnl.BorderThickness = 1;
+            this.ReportPnl.Controls.Add(this.label13);
+            this.ReportPnl.Controls.Add(this.label20);
             this.ReportPnl.Controls.Add(this.guna2Panel8);
             this.ReportPnl.Controls.Add(this.f);
             this.ReportPnl.Controls.Add(this.FeedbackRadioBtm);
             this.ReportPnl.Controls.Add(this.d);
             this.ReportPnl.Controls.Add(this.ReportRadioButton);
-            this.ReportPnl.Controls.Add(this.label6);
             this.ReportPnl.Controls.Add(this.SendReportFeedbackBtm);
             this.ReportPnl.Controls.Add(this.SendReportFeedbackTB);
             this.ReportPnl.FillColor = System.Drawing.Color.Transparent;
@@ -546,7 +548,7 @@
             this.f.BackColor = System.Drawing.Color.Transparent;
             this.f.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.f.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.f.Location = new System.Drawing.Point(54, 115);
+            this.f.Location = new System.Drawing.Point(43, 157);
             this.f.Name = "f";
             this.f.Size = new System.Drawing.Size(82, 21);
             this.f.TabIndex = 43;
@@ -559,7 +561,7 @@
             this.FeedbackRadioBtm.CheckedState.BorderThickness = 0;
             this.FeedbackRadioBtm.CheckedState.FillColor = System.Drawing.Color.Maroon;
             this.FeedbackRadioBtm.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.FeedbackRadioBtm.Location = new System.Drawing.Point(28, 115);
+            this.FeedbackRadioBtm.Location = new System.Drawing.Point(17, 157);
             this.FeedbackRadioBtm.Name = "FeedbackRadioBtm";
             this.FeedbackRadioBtm.Size = new System.Drawing.Size(20, 20);
             this.FeedbackRadioBtm.TabIndex = 42;
@@ -575,7 +577,7 @@
             this.d.BackColor = System.Drawing.Color.Transparent;
             this.d.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.d.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.d.Location = new System.Drawing.Point(54, 86);
+            this.d.Location = new System.Drawing.Point(43, 128);
             this.d.Name = "d";
             this.d.Size = new System.Drawing.Size(61, 21);
             this.d.TabIndex = 41;
@@ -589,7 +591,7 @@
             this.ReportRadioButton.CheckedState.BorderThickness = 0;
             this.ReportRadioButton.CheckedState.FillColor = System.Drawing.Color.Maroon;
             this.ReportRadioButton.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.ReportRadioButton.Location = new System.Drawing.Point(28, 86);
+            this.ReportRadioButton.Location = new System.Drawing.Point(17, 128);
             this.ReportRadioButton.Name = "ReportRadioButton";
             this.ReportRadioButton.Size = new System.Drawing.Size(20, 20);
             this.ReportRadioButton.TabIndex = 17;
@@ -598,17 +600,6 @@
             this.ReportRadioButton.UncheckedState.BorderThickness = 2;
             this.ReportRadioButton.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.ReportRadioButton.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label6.Location = new System.Drawing.Point(19, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(261, 34);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Please select the type of input you\'d like to \r\nprovide: ";
             // 
             // SendReportFeedbackBtm
             // 
@@ -650,14 +641,14 @@
             this.SendReportFeedbackTB.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.SendReportFeedbackTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.SendReportFeedbackTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.SendReportFeedbackTB.Location = new System.Drawing.Point(16, 143);
+            this.SendReportFeedbackTB.Location = new System.Drawing.Point(16, 186);
             this.SendReportFeedbackTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SendReportFeedbackTB.Multiline = true;
             this.SendReportFeedbackTB.Name = "SendReportFeedbackTB";
             this.SendReportFeedbackTB.PasswordChar = '\0';
             this.SendReportFeedbackTB.PlaceholderText = "What is in your mind?";
             this.SendReportFeedbackTB.SelectedText = "";
-            this.SendReportFeedbackTB.Size = new System.Drawing.Size(287, 121);
+            this.SendReportFeedbackTB.Size = new System.Drawing.Size(287, 78);
             this.SendReportFeedbackTB.TabIndex = 13;
             this.SendReportFeedbackTB.TextOffset = new System.Drawing.Point(5, 0);
             // 
@@ -1110,9 +1101,9 @@
             // 
             this.UserPnL.Controls.Add(this.SideBar);
             this.UserPnL.Controls.Add(this.guna2Panel1);
-            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
             this.UserPnL.Controls.Add(this.ReportPnl);
             this.UserPnL.Controls.Add(this.guna2Panel7);
+            this.UserPnL.Controls.Add(this.ChangePasswordPNL);
             this.UserPnL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserPnL.Location = new System.Drawing.Point(0, 0);
             this.UserPnL.Name = "UserPnL";
@@ -1547,6 +1538,29 @@
             this.LockTooltip.InitialDelay = 500;
             this.LockTooltip.ReshowDelay = 100;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label13.Location = new System.Drawing.Point(13, 57);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(292, 51);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "If you encounter any issues or require immediate \r\nassistance, you may also visit" +
+    " the assigned \r\nadministrative staff on campus for support.";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label20.Location = new System.Drawing.Point(7, 33);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 21);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "Note:";
+            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1691,7 +1705,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private System.Windows.Forms.ToolTip MenuToolTip;
         private Guna.UI2.WinForms.Guna2MessageDialog ShowSignoutButtonAvai;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label f;
         private Guna.UI2.WinForms.Guna2CustomRadioButton FeedbackRadioBtm;
         private System.Windows.Forms.Label d;
@@ -1704,5 +1717,7 @@
         private System.Windows.Forms.Label ComputerNameL;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl4;
         private System.Windows.Forms.ToolTip LockTooltip;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label20;
     }
 }

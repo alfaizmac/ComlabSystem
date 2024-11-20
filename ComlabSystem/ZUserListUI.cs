@@ -439,7 +439,7 @@ WHERE u.ArchiveStatus = 'Active'"; // Exclude archived users
 
                 using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
                 {
-                    string message = $"{adminName} archived user with Student ID {studentID} ({firstName} {lastName}) at {timestamp.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    string message = $"Admin name {adminName} archived user with Student ID {studentID} ({firstName} {lastName}) at {timestamp.ToString("yyyy-MM-dd HH:mm:ss")}";
                     cmd.Parameters.AddWithValue("@Message", message);
                     cmd.Parameters.AddWithValue("@Timestamp", timestamp);
                     cmd.Parameters.AddWithValue("@AdminID", adminID);
@@ -823,7 +823,7 @@ INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, Notifi
 VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
                     using (SqlCommand notificationCommand = new SqlCommand(notificationQuery, connection))
                     {
-                        string message = $"Admin {adminUserName} added new user {FNameTB.Text} {LNameTB.Text}, Student ID: {StudIDTB.Text} at {DateTime.Now}";
+                        string message = $"Admin name {adminUserName} added new user {FNameTB.Text} {LNameTB.Text}, Student ID: {StudIDTB.Text} at {DateTime.Now}";
 
                         notificationCommand.Parameters.AddWithValue("@Message", message);
                         notificationCommand.Parameters.AddWithValue("@Timestamp", DateTime.Now);
@@ -1103,7 +1103,7 @@ VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
                             int adminID = GetAdminID(connection, AdminNameLabel.Text);
 
                             // Construct the message for the notification
-                            string message = $"{AdminNameLabel.Text} unarchived a user. Student ID: {archiveStudentID}, Name: {firstName} {lastName} at {DateTime.Now}.";
+                            string message = $"Admin name {AdminNameLabel.Text} unarchived a user. Student ID: {archiveStudentID}, Name: {firstName} {lastName} at {DateTime.Now}.";
 
                             // Insert into the Notifications table
                             string notificationQuery = "INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind) " +
@@ -1357,7 +1357,7 @@ WHERE u.ArchiveStatus = 'Inactive'"; // Filter to show only archived users
                         int adminID = GetAdminID(connection, AdminNameLabel.Text);
 
                         // Prepare the message for the notification
-                        string message = $"{AdminNameLabel.Text} edited a user. Student ID: {EditStudentIDTB.Text} at {DateTime.Now}.";
+                        string message = $"Admin name {AdminNameLabel.Text} edited a user. Student ID: {EditStudentIDTB.Text} at {DateTime.Now}.";
 
                         // Insert into the Notifications table
                         string notificationQuery = "INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind) " +

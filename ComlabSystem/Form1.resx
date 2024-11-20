@@ -135,4 +135,11 @@
   <metadata name="From1MsgBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>762, 13</value>
   </metadata>
+  <data name="label11.Text" xml:space="preserve">
+    <value>To recover your password, please enter your official 
+NBSPI Gmail account in the field below and confirm. 
+This ensures we can verify your identity and send 
+a report to the administrator. Once confirmed, 
+your request will be processed.</value>
+  </data>
 </root>

@@ -343,7 +343,7 @@ WHERE ArchiveStatus = 'Active'";
 
                 using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
                 {
-                    string message = $"{adminName} archived unit '{computerName}' at {timestamp:yyyy-MM-dd HH:mm:ss}";
+                    string message = $"Admin name {adminName} archived unit '{computerName}' at {timestamp:yyyy-MM-dd HH:mm:ss}";
                     cmd.Parameters.AddWithValue("@Message", message);
                     cmd.Parameters.AddWithValue("@Timestamp", timestamp);
                     cmd.Parameters.AddWithValue("@AdminID", adminID);
@@ -731,7 +731,7 @@ WHERE ArchiveStatus = 'Inactive'";
 
                 using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
                 {
-                    string message = $"{adminName} unarchived unit '{computerName}' at {timestamp:yyyy-MM-dd HH:mm:ss}";
+                    string message = $"Admin name {adminName} unarchived unit '{computerName}' at {timestamp:yyyy-MM-dd HH:mm:ss}";
                     cmd.Parameters.AddWithValue("@Message", message);
                     cmd.Parameters.AddWithValue("@Timestamp", timestamp);
                     cmd.Parameters.AddWithValue("@AdminID", adminID);

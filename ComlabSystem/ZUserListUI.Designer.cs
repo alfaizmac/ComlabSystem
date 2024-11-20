@@ -379,6 +379,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UserPNL.BackColor = System.Drawing.Color.Transparent;
+            this.UserPNL.Controls.Add(this.UserAddPanel);
             this.UserPNL.Controls.Add(this.guna2Panel2);
             this.UserPNL.Controls.Add(this.UserStatusTBTM);
             this.UserPNL.Controls.Add(this.UserFilterPnl);
@@ -390,7 +391,6 @@
             this.UserPNL.Controls.Add(this.UserSearchBar);
             this.UserPNL.Controls.Add(this.UserListsGridPNL);
             this.UserPNL.Controls.Add(this.UserEditPnl);
-            this.UserPNL.Controls.Add(this.UserAddPanel);
             this.UserPNL.FillColor = System.Drawing.Color.White;
             this.UserPNL.Location = new System.Drawing.Point(28, 73);
             this.UserPNL.MaximumSize = new System.Drawing.Size(1627, 958);

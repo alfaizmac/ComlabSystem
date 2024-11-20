@@ -63,6 +63,9 @@ namespace ComlabSystem
             InsertOrUpdateUnitInfo();
             loginTimeoutTimer.Start();
 
+            ForgotPassStudPnl.Visible = false;
+            ForgotPassStudPnl.Hide();
+
 
             loginCheckTimer.Start();
             // Configure form properties to make it unclosable
@@ -993,7 +996,7 @@ namespace ComlabSystem
                     // Prepare log entry details
                     string userType = "Admin";
                     string actionType = "Login";
-                    string actionMessage = $"{adminName} has successfully logged into {unitName} on {timestamp:MMMM dd, yyyy hh:mm:ss tt}.";
+                    string actionMessage = $"Admin name {adminName} has successfully logged into {unitName} on {timestamp:MMMM dd, yyyy hh:mm:ss tt}.";
 
                     // Insert into Logs table
                     string insertLogQuery = @"
@@ -1021,7 +1024,7 @@ namespace ComlabSystem
                 INSERT INTO Notifications (Message, Timestamp, AdminID, NotificationType, NotificationKind, AdminName, UserType)
                 VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind, @AdminName, @UserType)";
 
-                    string notificationMessage = $"{adminName} has successfully logged into {unitName} on {timestamp:MMMM dd, yyyy hh:mm:ss tt}.";
+                    string notificationMessage = $"Admin name {adminName} has successfully logged into {unitName} on {timestamp:MMMM dd, yyyy hh:mm:ss tt}.";
 
                     SqlCommand insertNotificationCommand = new SqlCommand(insertNotificationQuery, connection);
                     insertNotificationCommand.Parameters.AddWithValue("@Message", notificationMessage);
@@ -1251,6 +1254,151 @@ namespace ComlabSystem
                 // You can use the Process.Start method to run a shutdown command
                 System.Diagnostics.Process.Start("shutdown", "/s /f /t 0"); ;
             }
+        }
+
+        private void ForgotCancel_Click(object sender, EventArgs e)
+        {
+            ForgotPassStudPnl.Visible = false;
+            ForgotPassStudPnl.Hide();
+        }
+
+        private void ForgotPassStudLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmailnotOnListLabel.Visible = false;
+            ForgotUserRB.Checked = true;
+            ForgotPassStudPnl.Visible = true;
+            ForgotPassStudPnl.BringToFront();
+            ForgotPassTB.Focus();
+        }
+
+
+        private void ForgotAdminLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmailnotOnListLabel.Visible = false;
+            ForgotAdminRB.Checked = true;
+            ForgotPassStudPnl.Visible = true;
+            ForgotPassStudPnl.BringToFront();
+            ForgotPassTB.Focus();
+        }
+
+        private void ForgotConfirm_Click(object sender, EventArgs e)
+        {
+            string email = ForgotPassTB.Text.Trim();
+            string userType = ForgotAdminRB.Checked ? "Admin" : "Student";
+            string password = "";
+            string message = "";
+            int? userID = null;
+            int? adminID = null;
+            string fullName = "";
+            string adminName = "";
+            string studentID = "";
+            string notificationKind = ForgotAdminRB.Checked ? "ForgotPassword" : "ForgotPassword";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    if (ForgotUserRB.Checked)
+                    {
+                        // Query UserList table for the email
+                        SqlCommand userCmd = new SqlCommand(
+                            "SELECT UserID, FirstName, LastName, StudentID, UPassword FROM UserList WHERE Email = @Email",
+                            connection);
+                        userCmd.Parameters.AddWithValue("@Email", email);
+
+                        SqlDataReader userReader = userCmd.ExecuteReader();
+
+                        if (userReader.Read())
+                        {
+                            userID = (int)userReader["UserID"];
+                            password = userReader["UPassword"].ToString();
+                            fullName = userReader["FirstName"].ToString() + " " + userReader["LastName"].ToString();
+                            studentID = userReader["StudentID"].ToString();
+                        }
+                        else
+                        {
+                            EmailnotOnListLabel.Visible = true;
+                            userReader.Close();
+                            return;
+                        }
+                        userReader.Close();
+                    }
+                    else if (ForgotAdminRB.Checked)
+                    {
+                        // Query AdminList table for the email
+                        SqlCommand adminCmd = new SqlCommand(
+                            "SELECT AdminID, UserName, Password FROM AdminList WHERE Email = @Email",
+                            connection);
+                        adminCmd.Parameters.AddWithValue("@Email", email);
+
+                        SqlDataReader adminReader = adminCmd.ExecuteReader();
+
+                        if (adminReader.Read())
+                        {
+                            adminID = (int)adminReader["AdminID"];
+                            password = adminReader["Password"].ToString();
+                            adminName = adminReader["UserName"].ToString();
+                        }
+                        else
+                        {
+                            EmailnotOnListLabel.Visible = true;
+                            adminReader.Close();
+                            return;
+                        }
+                        adminReader.Close();
+                    }
+
+                    // Generate notification message
+                    message = ForgotAdminRB.Checked
+                        ? $"The admin {adminName} forgot their password and requested it. The current password is {password}."
+                        : $"The student {fullName} ({studentID}) forgot their password and requested it. The current password is {password}.";
+
+                    // Insert into Notifications table
+                    SqlCommand insertNotificationCmd = new SqlCommand(
+                        @"INSERT INTO Notifications 
+                (Message, Timestamp, UserID, AdminID, NotificationType, NotificationKind, StudName, AdminName, UserType, UnitName, StudentID, Email) 
+                VALUES 
+                (@Message, @Timestamp, @UserID, @AdminID, @NotificationType, @NotificationKind, @StudName, @AdminName, @UserType, @UnitName, @StudentID, @Email)",
+                        connection);
+
+                    insertNotificationCmd.Parameters.AddWithValue("@Message", message);
+                    insertNotificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                    insertNotificationCmd.Parameters.AddWithValue("@UserID", userID.HasValue ? (object)userID.Value : DBNull.Value);
+                    insertNotificationCmd.Parameters.AddWithValue("@AdminID", adminID.HasValue ? (object)adminID.Value : DBNull.Value);
+                    insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Information");
+                    insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", notificationKind);
+                    insertNotificationCmd.Parameters.AddWithValue("@StudName", string.IsNullOrEmpty(fullName) ? DBNull.Value : (object)fullName);
+                    insertNotificationCmd.Parameters.AddWithValue("@AdminName", string.IsNullOrEmpty(adminName) ? DBNull.Value : (object)adminName);
+                    insertNotificationCmd.Parameters.AddWithValue("@UserType", userType);
+                    insertNotificationCmd.Parameters.AddWithValue("@UnitName", UnitNameLabel.Text);
+                    insertNotificationCmd.Parameters.AddWithValue("@StudentID", string.IsNullOrEmpty(studentID) ? DBNull.Value : (object)studentID);
+                    insertNotificationCmd.Parameters.AddWithValue("@Email", email);
+
+                    insertNotificationCmd.ExecuteNonQuery();
+
+                    // Success message
+                    From1MsgBox.Icon = MessageDialogIcon.Information;
+                    From1MsgBox.Caption = "Request Sent";
+                    From1MsgBox.Text = "Your request has been successfully recorded.";
+                    From1MsgBox.Show();
+                    ForgotPassStudPnl.Hide();
+
+
+                    // Clear input
+                    ForgotPassTB.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void ForgotPassTB_TextChanged(object sender, EventArgs e)
+        {
+            EmailnotOnListLabel.Visible = false;
         }
     }
 }
