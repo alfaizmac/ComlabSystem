@@ -416,6 +416,7 @@ namespace ComlabSystem
                             loginTimeoutTimer.Stop();
 
                             IncrementUserImproperShutdownFrequency();
+                            DetectMultipleUnitUsage();
 
                             // Update user status and unit usage
                             UpdateUserStatusAndUnit(studentID);
@@ -427,12 +428,13 @@ namespace ComlabSystem
 
                             // Get user information for logging
                             string userID = userRow["UserID"].ToString();
-                            string lName = userRow["LastName"].ToString();
+                            string lName = userRow["StudentID"].ToString();
                             string fName = userRow["FirstName"].ToString();
 
 
+
                             // Update UnitList with current user
-                            UpdateUnitListUserID(lName, fName);
+                            UpdateUnitListUserID(lName, fName, studentID);
                             
 
 
@@ -588,7 +590,7 @@ namespace ComlabSystem
                             // Show a warning message to the user
                             AccountRemovedMsgBox.Caption = "Warning";
                             AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
-                            AccountRemovedMsgBox.Text = "Improper shutdown and using multiple PCs can result in your account being held.";
+                            AccountRemovedMsgBox.Text = "Improper shutdown is prohibited, can result in your account being held.";
                             AccountRemovedMsgBox.Show();
                         }
                     }
@@ -718,7 +720,7 @@ namespace ComlabSystem
         }
 
         // New method to update UserID in the UnitList table based on the logged-in user's ID
-        private void UpdateUnitListUserID(string lastName, string firstName)
+        private void UpdateUnitListUserID(string lastName, string firstName, string studentID)
         {
             string computerName = UnitNameLabel.Text;
 
@@ -727,8 +729,9 @@ namespace ComlabSystem
                 try
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE UnitList SET CurrentUser = @CurrentUser, DateNewLogin = @DateNewLogin WHERE ComputerName = @ComputerName", connection);
+                    SqlCommand cmd = new SqlCommand("UPDATE UnitList SET CurrentUser = @CurrentUser, DateNewLogin = @DateNewLogin, CurrentUserStudentID = @CurrentUserStudentID  WHERE ComputerName = @ComputerName", connection);
                     cmd.Parameters.AddWithValue("@CurrentUser", $"{firstName} {lastName}");
+                    cmd.Parameters.AddWithValue("@CurrentUserStudentID", studentID);
                     cmd.Parameters.AddWithValue("@ComputerName", computerName);
                     cmd.Parameters.AddWithValue("@DateNewLogin", DateTime.Now);
                     cmd.ExecuteNonQuery();
@@ -736,6 +739,90 @@ namespace ComlabSystem
                 catch (Exception ex)
                 {
                     MessageBox.Show("Failed to update unit with user ID: " + ex.Message);
+                }
+            }
+        }
+        private void DetectMultipleUnitUsage()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    string studentID = UserIDTextBox.Text;
+
+                    connection.Open();
+
+                    // Check if the StudentID is already logged in another unit
+                    SqlCommand checkCmd = new SqlCommand(
+                        "SELECT COUNT(*) FROM UnitList WHERE CurrentUserStudentID = @StudentID",
+                        connection);
+                    checkCmd.Parameters.AddWithValue("@StudentID", studentID);
+                    int count = (int)checkCmd.ExecuteScalar();
+
+                    if (count > 0) // Student is already logged in another unit
+                    {
+                        // Increment the MultipleUnitUsedCount in UserList
+                        SqlCommand incrementCmd = new SqlCommand(
+                            "UPDATE UserList SET MultipleUnitUsedCount = MultipleUnitUsedCount + 1 WHERE StudentID = @StudentID",
+                            connection);
+                        incrementCmd.Parameters.AddWithValue("@StudentID", studentID);
+                        incrementCmd.ExecuteNonQuery();
+
+                        // Fetch student details for the notification
+                        SqlCommand userDetailsCmd = new SqlCommand(
+                            "SELECT UserID, FirstName, LastName, Email FROM UserList WHERE StudentID = @StudentID",
+                            connection);
+                        userDetailsCmd.Parameters.AddWithValue("@StudentID", studentID);
+
+                        string userID, firstName, lastName, email;
+                        using (SqlDataReader reader = userDetailsCmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                userID = reader["UserID"].ToString();
+                                firstName = reader["FirstName"].ToString();
+                                lastName = reader["LastName"].ToString();
+                                email = reader["Email"].ToString();
+                            }
+                            else
+                            {
+                                return; // No user details found, exit method.
+                            }
+                        } // Reader is now closed.
+
+                        string studentName = $"{firstName} {lastName}";
+
+                        // Insert notification into Notifications table
+                        SqlCommand insertNotificationCmd = new SqlCommand(
+                            @"INSERT INTO Notifications 
+                    (Message, Timestamp, UserID, NotificationType, NotificationKind, StudName, UserType, UnitName, StudentID, Email) 
+                    VALUES (@Message, @Timestamp, @UserID, @NotificationType, @NotificationKind, @StudName, @UserType, @UnitName, @StudentID, @Email)",
+                            connection);
+
+                        string message = $"Student {studentName} ({studentID}) is using multiple computer units. Please take an action";
+                        insertNotificationCmd.Parameters.AddWithValue("@Message", message);
+                        insertNotificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
+                        insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);
+                        insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
+                        insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", "UserMultipleUnitUsed");
+                        insertNotificationCmd.Parameters.AddWithValue("@StudName", studentName);
+                        insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");
+                        insertNotificationCmd.Parameters.AddWithValue("@UnitName", UnitNameLabel.Text);
+                        insertNotificationCmd.Parameters.AddWithValue("@StudentID", studentID);
+                        insertNotificationCmd.Parameters.AddWithValue("@Email", email);
+
+                        insertNotificationCmd.ExecuteNonQuery();
+
+                        // Show a warning message to the user
+                        AccountRemovedMsgBox.Caption = "Warning";
+                        AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
+                        AccountRemovedMsgBox.Text = "Using multiple units is prohibited. Please log out from other units.";
+                        AccountRemovedMsgBox.Show();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to detect multiple unit usage: " + ex.Message);
                 }
             }
         }
