@@ -416,7 +416,6 @@ namespace ComlabSystem
                             loginTimeoutTimer.Stop();
 
                             IncrementUserImproperShutdownFrequency();
-                            DetectMultipleUnitUsage();
 
                             // Update user status and unit usage
                             UpdateUserStatusAndUnit(studentID);
@@ -742,90 +741,6 @@ namespace ComlabSystem
                 }
             }
         }
-        private void DetectMultipleUnitUsage()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    string studentID = UserIDTextBox.Text;
-
-                    connection.Open();
-
-                    // Check if the StudentID is already logged in another unit
-                    SqlCommand checkCmd = new SqlCommand(
-                        "SELECT COUNT(*) FROM UnitList WHERE CurrentUserStudentID = @StudentID",
-                        connection);
-                    checkCmd.Parameters.AddWithValue("@StudentID", studentID);
-                    int count = (int)checkCmd.ExecuteScalar();
-
-                    if (count > 0) // Student is already logged in another unit
-                    {
-                        // Increment the MultipleUnitUsedCount in UserList
-                        SqlCommand incrementCmd = new SqlCommand(
-                            "UPDATE UserList SET MultipleUnitUsedCount = MultipleUnitUsedCount + 1 WHERE StudentID = @StudentID",
-                            connection);
-                        incrementCmd.Parameters.AddWithValue("@StudentID", studentID);
-                        incrementCmd.ExecuteNonQuery();
-
-                        // Fetch student details for the notification
-                        SqlCommand userDetailsCmd = new SqlCommand(
-                            "SELECT UserID, FirstName, LastName, Email FROM UserList WHERE StudentID = @StudentID",
-                            connection);
-                        userDetailsCmd.Parameters.AddWithValue("@StudentID", studentID);
-
-                        string userID, firstName, lastName, email;
-                        using (SqlDataReader reader = userDetailsCmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                userID = reader["UserID"].ToString();
-                                firstName = reader["FirstName"].ToString();
-                                lastName = reader["LastName"].ToString();
-                                email = reader["Email"].ToString();
-                            }
-                            else
-                            {
-                                return; // No user details found, exit method.
-                            }
-                        } // Reader is now closed.
-
-                        string studentName = $"{firstName} {lastName}";
-
-                        // Insert notification into Notifications table
-                        SqlCommand insertNotificationCmd = new SqlCommand(
-                            @"INSERT INTO Notifications 
-                    (Message, Timestamp, UserID, NotificationType, NotificationKind, StudName, UserType, UnitName, StudentID, Email) 
-                    VALUES (@Message, @Timestamp, @UserID, @NotificationType, @NotificationKind, @StudName, @UserType, @UnitName, @StudentID, @Email)",
-                            connection);
-
-                        string message = $"Student {studentName} ({studentID}) is using multiple computer units. Please take an action";
-                        insertNotificationCmd.Parameters.AddWithValue("@Message", message);
-                        insertNotificationCmd.Parameters.AddWithValue("@Timestamp", DateTime.Now);
-                        insertNotificationCmd.Parameters.AddWithValue("@UserID", userID);
-                        insertNotificationCmd.Parameters.AddWithValue("@NotificationType", "Warning");
-                        insertNotificationCmd.Parameters.AddWithValue("@NotificationKind", "UserMultipleUnitUsed");
-                        insertNotificationCmd.Parameters.AddWithValue("@StudName", studentName);
-                        insertNotificationCmd.Parameters.AddWithValue("@UserType", "Student");
-                        insertNotificationCmd.Parameters.AddWithValue("@UnitName", UnitNameLabel.Text);
-                        insertNotificationCmd.Parameters.AddWithValue("@StudentID", studentID);
-                        insertNotificationCmd.Parameters.AddWithValue("@Email", email);
-
-                        insertNotificationCmd.ExecuteNonQuery();
-
-                        // Show a warning message to the user
-                        AccountRemovedMsgBox.Caption = "Warning";
-                        AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
-                        AccountRemovedMsgBox.Text = "Using multiple units is prohibited. Please log out from other units.";
-                        AccountRemovedMsgBox.Show();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed to detect multiple unit usage: " + ex.Message);
-                }
-            }
-        }
 
 
 
@@ -905,8 +820,8 @@ namespace ComlabSystem
                 try
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM AdminList WHERE UserName = @UserName", connection);
-                    cmd.Parameters.AddWithValue("@UserName", adminName);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM AdminList WHERE UserID = @UserID", connection);
+                    cmd.Parameters.AddWithValue("@UserID", adminName);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     DataTable adminTable = new DataTable();
                     adapter.Fill(adminTable);
@@ -1053,9 +968,9 @@ namespace ComlabSystem
                     connection.Open();
 
                     // Get AdminID from AdminList based on AdminNameTB.Text
-                    string adminIdQuery = "SELECT AdminID FROM AdminList WHERE UserName = @AdminName";
+                    string adminIdQuery = "SELECT AdminID FROM AdminList WHERE UserID = @UserID";
                     SqlCommand adminIdCommand = new SqlCommand(adminIdQuery, connection);
-                    adminIdCommand.Parameters.AddWithValue("@AdminName", adminName);
+                    adminIdCommand.Parameters.AddWithValue("@UserID", adminName);
                     var adminIdResult = adminIdCommand.ExecuteScalar();
 
                     if (adminIdResult == null)
@@ -1416,7 +1331,7 @@ namespace ComlabSystem
                     {
                         // Query AdminList table for the email
                         SqlCommand adminCmd = new SqlCommand(
-                            "SELECT AdminID, UserName, Password FROM AdminList WHERE Email = @Email",
+                            "SELECT AdminID, UserID, Password FROM AdminList WHERE Email = @Email",
                             connection);
                         adminCmd.Parameters.AddWithValue("@Email", email);
 
@@ -1426,7 +1341,7 @@ namespace ComlabSystem
                         {
                             adminID = (int)adminReader["AdminID"];
                             password = adminReader["Password"].ToString();
-                            adminName = adminReader["UserName"].ToString();
+                            adminName = adminReader["UserID"].ToString();
                         }
                         else
                         {

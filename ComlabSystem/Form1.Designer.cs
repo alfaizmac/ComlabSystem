@@ -30,23 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.ForgotAdminRB = new System.Windows.Forms.RadioButton();
             this.ShutdownBtm = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.ForgotUserRB = new System.Windows.Forms.RadioButton();
             this.AdminShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.UserShowBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.UserFormPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.StudPassLoginL = new System.Windows.Forms.Label();
             this.StudUserLoginL = new System.Windows.Forms.Label();
             this.RetryAttemptTimeLabel = new System.Windows.Forms.Label();
+            this.UserIDTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ShowUserPassBtm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.UserLoginBtm = new Guna.UI2.WinForms.Guna2Button();
             this.ForgotPassStudLink = new System.Windows.Forms.LinkLabel();
             this.UserPassTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.UserIDTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ForgotPassStudPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.EmailnotOnListLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ForgotPassTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ForgotConfirm = new Guna.UI2.WinForms.Guna2Button();
+            this.ForgotCancel = new Guna.UI2.WinForms.Guna2Button();
             this.AdminFormPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.AdminPassLoginL = new System.Windows.Forms.Label();
             this.AdminUserLoginL = new System.Windows.Forms.Label();
@@ -68,25 +80,13 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.UnitNameLabel = new System.Windows.Forms.Label();
             this.From1MsgBox = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ForgotConfirm = new Guna.UI2.WinForms.Guna2Button();
-            this.ForgotCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.ForgotPassTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ForgotUserRB = new System.Windows.Forms.RadioButton();
-            this.ForgotAdminRB = new System.Windows.Forms.RadioButton();
-            this.ForgotPassStudPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.EmailnotOnListLabel = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             this.UserFormPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.ForgotPassStudPnl.SuspendLayout();
             this.AdminFormPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            this.ForgotPassStudPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -97,14 +97,26 @@
             this.guna2Panel2.Controls.Add(this.ForgotUserRB);
             this.guna2Panel2.Controls.Add(this.AdminShowBtm);
             this.guna2Panel2.Controls.Add(this.UserShowBtm);
+            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Controls.Add(this.UserFormPNL);
             this.guna2Panel2.Controls.Add(this.ForgotPassStudPnl);
-            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(960, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(960, 1080);
             this.guna2Panel2.TabIndex = 1;
+            // 
+            // ForgotAdminRB
+            // 
+            this.ForgotAdminRB.AutoSize = true;
+            this.ForgotAdminRB.Location = new System.Drawing.Point(76, 356);
+            this.ForgotAdminRB.Name = "ForgotAdminRB";
+            this.ForgotAdminRB.Size = new System.Drawing.Size(85, 17);
+            this.ForgotAdminRB.TabIndex = 13;
+            this.ForgotAdminRB.TabStop = true;
+            this.ForgotAdminRB.Text = "radioButton1";
+            this.ForgotAdminRB.UseVisualStyleBackColor = true;
+            this.ForgotAdminRB.Visible = false;
             // 
             // ShutdownBtm
             // 
@@ -127,6 +139,18 @@
             this.ShutdownBtm.Size = new System.Drawing.Size(35, 35);
             this.ShutdownBtm.TabIndex = 4;
             this.ShutdownBtm.Click += new System.EventHandler(this.ShutdownBtm_Click);
+            // 
+            // ForgotUserRB
+            // 
+            this.ForgotUserRB.AutoSize = true;
+            this.ForgotUserRB.Location = new System.Drawing.Point(76, 407);
+            this.ForgotUserRB.Name = "ForgotUserRB";
+            this.ForgotUserRB.Size = new System.Drawing.Size(85, 17);
+            this.ForgotUserRB.TabIndex = 12;
+            this.ForgotUserRB.TabStop = true;
+            this.ForgotUserRB.Text = "radioButton1";
+            this.ForgotUserRB.UseVisualStyleBackColor = true;
+            this.ForgotUserRB.Visible = false;
             // 
             // AdminShowBtm
             // 
@@ -193,6 +217,17 @@
             this.UserFormPNL.Size = new System.Drawing.Size(487, 603);
             this.UserFormPNL.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label10.Location = new System.Drawing.Point(63, 239);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 21);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Student ID";
+            // 
             // StudPassLoginL
             // 
             this.StudPassLoginL.AutoSize = true;
@@ -225,6 +260,31 @@
             this.RetryAttemptTimeLabel.Size = new System.Drawing.Size(53, 13);
             this.RetryAttemptTimeLabel.TabIndex = 10;
             this.RetryAttemptTimeLabel.Text = "Password";
+            // 
+            // UserIDTextBox
+            // 
+            this.UserIDTextBox.Animated = true;
+            this.UserIDTextBox.BorderRadius = 10;
+            this.UserIDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UserIDTextBox.DefaultText = "";
+            this.UserIDTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.UserIDTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.UserIDTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserIDTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.UserIDTextBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.UserIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.UserIDTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.UserIDTextBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.UserIDTextBox.Location = new System.Drawing.Point(55, 264);
+            this.UserIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserIDTextBox.Name = "UserIDTextBox";
+            this.UserIDTextBox.PasswordChar = '\0';
+            this.UserIDTextBox.PlaceholderText = "e.g. C20210080";
+            this.UserIDTextBox.SelectedText = "";
+            this.UserIDTextBox.Size = new System.Drawing.Size(375, 50);
+            this.UserIDTextBox.TabIndex = 4;
+            this.UserIDTextBox.TextChanged += new System.EventHandler(this.UserIDTextBox_TextChanged);
+            this.UserIDTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserIDTextBox_KeyDown);
             // 
             // ShowUserPassBtm
             // 
@@ -314,42 +374,6 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Password";
             // 
-            // UserIDTextBox
-            // 
-            this.UserIDTextBox.Animated = true;
-            this.UserIDTextBox.BorderRadius = 10;
-            this.UserIDTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.UserIDTextBox.DefaultText = "";
-            this.UserIDTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.UserIDTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.UserIDTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserIDTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.UserIDTextBox.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.UserIDTextBox.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.UserIDTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.UserIDTextBox.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.UserIDTextBox.Location = new System.Drawing.Point(55, 264);
-            this.UserIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.UserIDTextBox.Name = "UserIDTextBox";
-            this.UserIDTextBox.PasswordChar = '\0';
-            this.UserIDTextBox.PlaceholderText = "e.g. C20210080";
-            this.UserIDTextBox.SelectedText = "";
-            this.UserIDTextBox.Size = new System.Drawing.Size(375, 50);
-            this.UserIDTextBox.TabIndex = 4;
-            this.UserIDTextBox.TextChanged += new System.EventHandler(this.UserIDTextBox_TextChanged);
-            this.UserIDTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserIDTextBox_KeyDown);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label3.Location = new System.Drawing.Point(63, 368);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(240, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Enter Your NBSPI Gmail Acount:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -383,6 +407,155 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // ForgotPassStudPnl
+            // 
+            this.ForgotPassStudPnl.BackColor = System.Drawing.Color.Transparent;
+            this.ForgotPassStudPnl.Controls.Add(this.EmailnotOnListLabel);
+            this.ForgotPassStudPnl.Controls.Add(this.label13);
+            this.ForgotPassStudPnl.Controls.Add(this.label12);
+            this.ForgotPassStudPnl.Controls.Add(this.label11);
+            this.ForgotPassStudPnl.Controls.Add(this.label9);
+            this.ForgotPassStudPnl.Controls.Add(this.label3);
+            this.ForgotPassStudPnl.Controls.Add(this.ForgotPassTB);
+            this.ForgotPassStudPnl.Controls.Add(this.ForgotConfirm);
+            this.ForgotPassStudPnl.Controls.Add(this.ForgotCancel);
+            this.ForgotPassStudPnl.FillColor = System.Drawing.Color.White;
+            this.ForgotPassStudPnl.Location = new System.Drawing.Point(263, 205);
+            this.ForgotPassStudPnl.Name = "ForgotPassStudPnl";
+            this.ForgotPassStudPnl.Radius = 15;
+            this.ForgotPassStudPnl.ShadowColor = System.Drawing.Color.Black;
+            this.ForgotPassStudPnl.Size = new System.Drawing.Size(487, 603);
+            this.ForgotPassStudPnl.TabIndex = 6;
+            // 
+            // EmailnotOnListLabel
+            // 
+            this.EmailnotOnListLabel.AutoSize = true;
+            this.EmailnotOnListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.EmailnotOnListLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.EmailnotOnListLabel.Location = new System.Drawing.Point(318, 376);
+            this.EmailnotOnListLabel.Name = "EmailnotOnListLabel";
+            this.EmailnotOnListLabel.Size = new System.Drawing.Size(108, 13);
+            this.EmailnotOnListLabel.TabIndex = 17;
+            this.EmailnotOnListLabel.Text = "Email is not on the list";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label13.Location = new System.Drawing.Point(55, 232);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(356, 63);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "If you encounter any issues or require immediate \r\nassistance, you may also visit" +
+    " the assigned \r\nadministrative staff on campus for support.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label12.Location = new System.Drawing.Point(56, 209);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 21);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Note:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label11.Location = new System.Drawing.Point(51, 85);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(378, 105);
+            this.label11.TabIndex = 14;
+            this.label11.Text = resources.GetString("label11.Text");
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label9.Location = new System.Drawing.Point(46, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(314, 50);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Forgot Password";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label3.Location = new System.Drawing.Point(63, 368);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(240, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Enter Your NBSPI Gmail Acount:";
+            // 
+            // ForgotPassTB
+            // 
+            this.ForgotPassTB.Animated = true;
+            this.ForgotPassTB.BorderRadius = 10;
+            this.ForgotPassTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ForgotPassTB.DefaultText = "";
+            this.ForgotPassTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ForgotPassTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.ForgotPassTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ForgotPassTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ForgotPassTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
+            this.ForgotPassTB.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ForgotPassTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.ForgotPassTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
+            this.ForgotPassTB.Location = new System.Drawing.Point(55, 393);
+            this.ForgotPassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ForgotPassTB.Name = "ForgotPassTB";
+            this.ForgotPassTB.PasswordChar = '\0';
+            this.ForgotPassTB.PlaceholderText = "e.g. Juan.Tamad@newbrighton.edu.ph";
+            this.ForgotPassTB.SelectedText = "";
+            this.ForgotPassTB.Size = new System.Drawing.Size(375, 50);
+            this.ForgotPassTB.TabIndex = 11;
+            this.ForgotPassTB.TextChanged += new System.EventHandler(this.ForgotPassTB_TextChanged);
+            // 
+            // ForgotConfirm
+            // 
+            this.ForgotConfirm.Animated = true;
+            this.ForgotConfirm.AutoRoundedCorners = true;
+            this.ForgotConfirm.BorderRadius = 21;
+            this.ForgotConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ForgotConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ForgotConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ForgotConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ForgotConfirm.FillColor = System.Drawing.Color.Maroon;
+            this.ForgotConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotConfirm.ForeColor = System.Drawing.Color.White;
+            this.ForgotConfirm.Location = new System.Drawing.Point(245, 496);
+            this.ForgotConfirm.Name = "ForgotConfirm";
+            this.ForgotConfirm.Size = new System.Drawing.Size(180, 45);
+            this.ForgotConfirm.TabIndex = 9;
+            this.ForgotConfirm.Text = "Confirm";
+            this.ForgotConfirm.Click += new System.EventHandler(this.ForgotConfirm_Click);
+            // 
+            // ForgotCancel
+            // 
+            this.ForgotCancel.Animated = true;
+            this.ForgotCancel.AutoRoundedCorners = true;
+            this.ForgotCancel.BorderRadius = 21;
+            this.ForgotCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ForgotCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ForgotCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ForgotCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ForgotCancel.FillColor = System.Drawing.Color.Maroon;
+            this.ForgotCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgotCancel.ForeColor = System.Drawing.Color.White;
+            this.ForgotCancel.Location = new System.Drawing.Point(59, 496);
+            this.ForgotCancel.Name = "ForgotCancel";
+            this.ForgotCancel.Size = new System.Drawing.Size(180, 45);
+            this.ForgotCancel.TabIndex = 10;
+            this.ForgotCancel.Text = "Cancel";
+            this.ForgotCancel.Click += new System.EventHandler(this.ForgotCancel_Click);
             // 
             // AdminFormPNL
             // 
@@ -666,179 +839,6 @@
             this.From1MsgBox.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.From1MsgBox.Text = null;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.label9.Location = new System.Drawing.Point(46, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(314, 50);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Forgot Password";
-            // 
-            // ForgotConfirm
-            // 
-            this.ForgotConfirm.Animated = true;
-            this.ForgotConfirm.AutoRoundedCorners = true;
-            this.ForgotConfirm.BorderRadius = 21;
-            this.ForgotConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ForgotConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ForgotConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ForgotConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ForgotConfirm.FillColor = System.Drawing.Color.Maroon;
-            this.ForgotConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgotConfirm.ForeColor = System.Drawing.Color.White;
-            this.ForgotConfirm.Location = new System.Drawing.Point(245, 496);
-            this.ForgotConfirm.Name = "ForgotConfirm";
-            this.ForgotConfirm.Size = new System.Drawing.Size(180, 45);
-            this.ForgotConfirm.TabIndex = 9;
-            this.ForgotConfirm.Text = "Confirm";
-            this.ForgotConfirm.Click += new System.EventHandler(this.ForgotConfirm_Click);
-            // 
-            // ForgotCancel
-            // 
-            this.ForgotCancel.Animated = true;
-            this.ForgotCancel.AutoRoundedCorners = true;
-            this.ForgotCancel.BorderRadius = 21;
-            this.ForgotCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ForgotCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ForgotCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ForgotCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ForgotCancel.FillColor = System.Drawing.Color.Maroon;
-            this.ForgotCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgotCancel.ForeColor = System.Drawing.Color.White;
-            this.ForgotCancel.Location = new System.Drawing.Point(59, 496);
-            this.ForgotCancel.Name = "ForgotCancel";
-            this.ForgotCancel.Size = new System.Drawing.Size(180, 45);
-            this.ForgotCancel.TabIndex = 10;
-            this.ForgotCancel.Text = "Cancel";
-            this.ForgotCancel.Click += new System.EventHandler(this.ForgotCancel_Click);
-            // 
-            // ForgotPassTB
-            // 
-            this.ForgotPassTB.Animated = true;
-            this.ForgotPassTB.BorderRadius = 10;
-            this.ForgotPassTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ForgotPassTB.DefaultText = "";
-            this.ForgotPassTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ForgotPassTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ForgotPassTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ForgotPassTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ForgotPassTB.FocusedState.BorderColor = System.Drawing.Color.Maroon;
-            this.ForgotPassTB.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ForgotPassTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ForgotPassTB.HoverState.BorderColor = System.Drawing.Color.Maroon;
-            this.ForgotPassTB.Location = new System.Drawing.Point(55, 393);
-            this.ForgotPassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ForgotPassTB.Name = "ForgotPassTB";
-            this.ForgotPassTB.PasswordChar = '\0';
-            this.ForgotPassTB.PlaceholderText = "e.g. Juan.Tamad@newbrighton.edu.ph";
-            this.ForgotPassTB.SelectedText = "";
-            this.ForgotPassTB.Size = new System.Drawing.Size(375, 50);
-            this.ForgotPassTB.TabIndex = 11;
-            this.ForgotPassTB.TextChanged += new System.EventHandler(this.ForgotPassTB_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label10.Location = new System.Drawing.Point(63, 239);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 21);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Student ID";
-            // 
-            // ForgotUserRB
-            // 
-            this.ForgotUserRB.AutoSize = true;
-            this.ForgotUserRB.Location = new System.Drawing.Point(76, 407);
-            this.ForgotUserRB.Name = "ForgotUserRB";
-            this.ForgotUserRB.Size = new System.Drawing.Size(85, 17);
-            this.ForgotUserRB.TabIndex = 12;
-            this.ForgotUserRB.TabStop = true;
-            this.ForgotUserRB.Text = "radioButton1";
-            this.ForgotUserRB.UseVisualStyleBackColor = true;
-            this.ForgotUserRB.Visible = false;
-            // 
-            // ForgotAdminRB
-            // 
-            this.ForgotAdminRB.AutoSize = true;
-            this.ForgotAdminRB.Location = new System.Drawing.Point(76, 356);
-            this.ForgotAdminRB.Name = "ForgotAdminRB";
-            this.ForgotAdminRB.Size = new System.Drawing.Size(85, 17);
-            this.ForgotAdminRB.TabIndex = 13;
-            this.ForgotAdminRB.TabStop = true;
-            this.ForgotAdminRB.Text = "radioButton1";
-            this.ForgotAdminRB.UseVisualStyleBackColor = true;
-            this.ForgotAdminRB.Visible = false;
-            // 
-            // ForgotPassStudPnl
-            // 
-            this.ForgotPassStudPnl.BackColor = System.Drawing.Color.Transparent;
-            this.ForgotPassStudPnl.Controls.Add(this.EmailnotOnListLabel);
-            this.ForgotPassStudPnl.Controls.Add(this.label13);
-            this.ForgotPassStudPnl.Controls.Add(this.label12);
-            this.ForgotPassStudPnl.Controls.Add(this.label11);
-            this.ForgotPassStudPnl.Controls.Add(this.label9);
-            this.ForgotPassStudPnl.Controls.Add(this.label3);
-            this.ForgotPassStudPnl.Controls.Add(this.ForgotPassTB);
-            this.ForgotPassStudPnl.Controls.Add(this.ForgotConfirm);
-            this.ForgotPassStudPnl.Controls.Add(this.ForgotCancel);
-            this.ForgotPassStudPnl.FillColor = System.Drawing.Color.White;
-            this.ForgotPassStudPnl.Location = new System.Drawing.Point(263, 205);
-            this.ForgotPassStudPnl.Name = "ForgotPassStudPnl";
-            this.ForgotPassStudPnl.Radius = 15;
-            this.ForgotPassStudPnl.ShadowColor = System.Drawing.Color.Black;
-            this.ForgotPassStudPnl.Size = new System.Drawing.Size(487, 603);
-            this.ForgotPassStudPnl.TabIndex = 6;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label11.Location = new System.Drawing.Point(51, 85);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(378, 105);
-            this.label11.TabIndex = 14;
-            this.label11.Text = resources.GetString("label11.Text");
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label12.Location = new System.Drawing.Point(56, 209);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 21);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Note:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label13.Location = new System.Drawing.Point(55, 232);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(356, 63);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "If you encounter any issues or require immediate \r\nassistance, you may also visit" +
-    " the assigned \r\nadministrative staff on campus for support.";
-            // 
-            // EmailnotOnListLabel
-            // 
-            this.EmailnotOnListLabel.AutoSize = true;
-            this.EmailnotOnListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.EmailnotOnListLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.EmailnotOnListLabel.Location = new System.Drawing.Point(318, 376);
-            this.EmailnotOnListLabel.Name = "EmailnotOnListLabel";
-            this.EmailnotOnListLabel.Size = new System.Drawing.Size(108, 13);
-            this.EmailnotOnListLabel.TabIndex = 17;
-            this.EmailnotOnListLabel.Text = "Email is not on the list";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -856,13 +856,13 @@
             this.UserFormPNL.ResumeLayout(false);
             this.UserFormPNL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.ForgotPassStudPnl.ResumeLayout(false);
+            this.ForgotPassStudPnl.PerformLayout();
             this.AdminFormPNL.ResumeLayout(false);
             this.AdminFormPNL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.ForgotPassStudPnl.ResumeLayout(false);
-            this.ForgotPassStudPnl.PerformLayout();
             this.ResumeLayout(false);
 
         }

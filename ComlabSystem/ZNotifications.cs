@@ -665,7 +665,7 @@ namespace ComlabSystem
             Timestamp AS 'Timestamp'
         FROM Notifications
         WHERE NotificationKind IN 
-            ('AddUser', 'EditUser', 'ArchiveUser', 'UnarchiveUser', 'ArchiveUnit', 'UnarchiveUnit', 'NewUnit', 'LowStorage', 'UserChangePassword', 'MultipleUnitUsedCount')
+            ('AddUser', 'EditUser', 'ArchiveUser', 'UnarchiveUser', 'ArchiveUnit', 'UnarchiveUnit', 'NewUnit', 'LowStorage', 'UserChangePassword')
         ORDER BY Timestamp DESC";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

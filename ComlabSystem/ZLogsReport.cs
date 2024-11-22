@@ -212,7 +212,6 @@ namespace ComlabSystem
                         TotalHoursUsed AS 'Overall Time Utilized', 
                         AverageSessionDuration AS 'Average Session Duration', 
                         SessionCount AS 'Total Sessions', 
-                        MultipleUnitUsedCount AS 'Multi-Unit Access frequency'
                         UserImproperShutdownCount AS 'Improper Power-Offs frequency', 
                         AutoShutdownCount AS 'System-Initiated Shutdown Count frequency'
                      FROM UserList";

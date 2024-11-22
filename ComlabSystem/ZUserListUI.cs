@@ -146,7 +146,6 @@ namespace ComlabSystem
             UserFilterPnl.Visible = false;
             UserFilterToggleBtm.Checked = false;
             AddUserBtm.Checked = false;
-            EditUserBtm.Checked = false;
             hideUserManagePnl();
         }
 
@@ -507,7 +506,6 @@ WHERE u.ArchiveStatus = 'Active'"; // Exclude archived users
 
         private void uncheckedBtm()
         {
-            EditUserBtm.Checked = false;
             AddUserBtm.Checked = false;
         }
 
@@ -517,14 +515,6 @@ WHERE u.ArchiveStatus = 'Active'"; // Exclude archived users
             UserFilterPnl.Visible = false;
         }
 
-
-        private void EditUserBtm_Click(object sender, EventArgs e)
-        {
-            
-            UserFilterToggleBtm.Checked = false;
-            UserFilterPnl.Visible = false;
-            
-        }
 
         private void UserStatisticPanelShow_Click(object sender, EventArgs e)
         {
@@ -948,7 +938,6 @@ VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
                 else if (result == DialogResult.No)
                 {
                     UserFilterToggleBtm.Checked = false;
-                    EditUserBtm.Checked = false;
                     UserListManageBtmsPL.Visible = true;
                     UserListPrintDGV.BringToFront();
 
@@ -956,7 +945,6 @@ VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
                     UserListPrintDGVFUnc();
 
                     hideUserManagePnl();
-                    EditUserBtm.Checked = false;
                     UserFilterPnl.Visible = false;
                     AddUserBtm.Checked = true;
                     UserAddPanel.Visible = true;
@@ -1050,7 +1038,6 @@ VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
                     // Show the UserEditPnl and bring it to front
                     UserEditPnl.Visible = true;
                     UserEditPnl.BringToFront();
-                    EditUserBtm.Checked = true;
 
                     // Populate the edit fields with the data from the selected row
                     EditStudentIDTB.Text = row.Cells["Student ID"].Value?.ToString();
@@ -1377,7 +1364,6 @@ WHERE u.ArchiveStatus = 'Inactive'"; // Filter to show only archived users
                         MessageBox.Show("User information updated successfully and notification recorded.", "Update Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         RefreshUserListData();
-                        EditUserBtm.Checked = false;
                         hideUserManagePnl();
 
                         // Clear input fields
@@ -1456,7 +1442,6 @@ WHERE u.ArchiveStatus = 'Inactive'"; // Filter to show only archived users
 
         private void UserEditCancelBtm_Click(object sender, EventArgs e)
         {
-            EditUserBtm.Checked = false;
             uncheckedBtm();
             hideUserManagePnl();
             EditStudentIDTB.Clear();
@@ -1945,90 +1930,11 @@ WHERE u.ArchiveStatus = 'Inactive'"; // Filter to show only archived users
                 UserFilterPnl.Visible = false;
                 UserAddPanel.Visible = true;
                 UserAddPanel.BringToFront();
-                EditUserBtm.Checked = false;
             }
             else { UserAddPanel.Visible = false; }
         }
 
-        private void EditUserBtm_CheckedChanged(object sender, EventArgs e)
-        {
-            if (EditUserBtm.Checked == true)
-            {
-                hideUserManagePnl();
-                UserEditPnl.Visible = true;
-                UserFilterPnl.Visible = false;
-                UserEditPnl.BringToFront();
-                AddUserBtm.Checked = false;
-
-                // Check if all required fields contain text or selected values
-                if (!string.IsNullOrWhiteSpace(StudIDTB.Text) ||
-                    !string.IsNullOrWhiteSpace(StudentPasswordTB.Text) ||
-                    !string.IsNullOrWhiteSpace(LNameTB.Text) ||
-                    !string.IsNullOrWhiteSpace(FNameTB.Text) ||
-                    !string.IsNullOrWhiteSpace(EmailTB.Text) ||
-                    !string.IsNullOrWhiteSpace(ContactTB.Text) ||
-                    DepartmentCB.SelectedIndex != -1 ||
-                    ProgramCB.SelectedIndex != -1 ||
-                    YearLevelCB.SelectedIndex != -1)
-                {
-                    // Show confirmation dialog
-                    DialogResult result = MessageBox.Show(
-                        "Are you sure you want to cancel adding this user?",
-                        "Confirm Cancel",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning
-                    );
-
-                    // If the user chooses 'Yes', proceed to cancel; otherwise, do nothing
-                    if (result == DialogResult.Yes)
-                    {
-                        // Clear the textboxes and reset combo boxes
-                        StudIDTB.Clear();
-                        StudentPasswordTB.Clear();
-                        LNameTB.Clear();
-                        FNameTB.Clear();
-                        EmailTB.Clear();
-                        ContactTB.Clear();
-                        DepartmentCB.SelectedIndex = -1;
-                        ProgramCB.SelectedIndex = -1;
-                        YearLevelCB.SelectedIndex = -1;
-
-                        AddUserBtm.Checked = false;
-                        UserAddPanel.Visible = false;
-                        uncheckedBtm();
-                        UserAddPanel.Hide();
-
-                        hideUserManagePnl();
-                        UserEditPnl.Visible = true;
-                        UserFilterPnl.Visible = false;
-                        UserEditPnl.BringToFront();
-                        AddUserBtm.Checked = false;
-                        EditUserBtm.Checked = true;
-
-                    }
-                    else if (result == DialogResult.No)
-                    {
-                        UserFilterToggleBtm.Checked = false;
-                        EditUserBtm.Checked = false;
-                        UserListManageBtmsPL.Visible = true;
-                        UserListPrintDGV.BringToFront();
-
-                        UserListDGV.BringToFront();
-                        UserListPrintDGVFUnc();
-
-                        hideUserManagePnl();
-                        EditUserBtm.Checked = false;
-                        UserFilterPnl.Visible = false;
-                        AddUserBtm.Checked = true;
-                        UserAddPanel.Visible = true;
-                        UserAddPanel.BringToFront();
-
-                    }
-
-                }
-            }
-            else { UserEditPnl.Visible = false; }
-        }
+    
 
 
         //to be arrange
