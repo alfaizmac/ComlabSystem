@@ -58,6 +58,8 @@
             this.S = new Guna.UI2.WinForms.Guna2Panel();
             this.ShutDownBtmNonlock = new Guna.UI2.WinForms.Guna2Button();
             this.ReportPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.f = new System.Windows.Forms.Label();
             this.FeedbackRadioBtm = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.d = new System.Windows.Forms.Label();
@@ -127,8 +129,6 @@
             this.SideMenuDialogs = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.LockTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.label13 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -541,6 +541,29 @@
             this.ReportPnl.Name = "ReportPnl";
             this.ReportPnl.Size = new System.Drawing.Size(320, 322);
             this.ReportPnl.TabIndex = 38;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label13.Location = new System.Drawing.Point(13, 57);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(292, 51);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "If you encounter any issues or require immediate \r\nassistance, you may also visit" +
+    " the assigned \r\nadministrative staff on campus for support.";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label20.Location = new System.Drawing.Point(7, 33);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 21);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "Note:";
             // 
             // f
             // 
@@ -1538,29 +1561,6 @@
             this.LockTooltip.InitialDelay = 500;
             this.LockTooltip.ReshowDelay = 100;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label13.Location = new System.Drawing.Point(13, 57);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(292, 51);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "If you encounter any issues or require immediate \r\nassistance, you may also visit" +
-    " the assigned \r\nadministrative staff on campus for support.";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label20.Location = new System.Drawing.Point(7, 33);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 21);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "Note:";
-            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1569,6 +1569,7 @@
             this.Controls.Add(this.UserPnL);
             this.Controls.Add(this.UserPausePnL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(600, 350);
             this.Name = "user";

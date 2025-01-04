@@ -97,9 +97,9 @@
             this.guna2Panel2.Controls.Add(this.ForgotUserRB);
             this.guna2Panel2.Controls.Add(this.AdminShowBtm);
             this.guna2Panel2.Controls.Add(this.UserShowBtm);
-            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Controls.Add(this.UserFormPNL);
             this.guna2Panel2.Controls.Add(this.ForgotPassStudPnl);
+            this.guna2Panel2.Controls.Add(this.AdminFormPNL);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(960, 0);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -847,6 +847,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

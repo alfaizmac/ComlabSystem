@@ -35,7 +35,7 @@ namespace ComlabSystem
         public ZNotifications()
         {
             InitializeComponent();
-;
+            belowfunctions();
 
             // Attach the resize event to adjust label position on load or resize
             this.Resize += UserUI_Resize2;
@@ -59,12 +59,14 @@ namespace ComlabSystem
             PrintExcelALL.BringToFront();
             PrintLinkALL.BringToFront();
 
+            FilterApplyAllNotificationsBtm.BringToFront();
 
             //Print
             PrintExcel.BringToFront();
             PrintLink.BringToFront();
             guna2Panel2.BringToFront();
 
+            
 
 
         }
@@ -480,14 +482,47 @@ namespace ComlabSystem
 
         //Buttons
 
-        private void AllNotificationBtm_Click(object sender, EventArgs e)
+        private void belowfunctions()
         {
+            AllNotificationFunction();
+
             PrintLinkALL.BringToFront();
             PrintExcelALL.BringToFront();
             AllNotificationDGV.BringToFront();
+
+            FilterApplyAllNotificationsBtm.BringToFront();
+
+            UnitFilterToggleBtm.Visible = true;
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+
             SearchBar.Text = " ";
 
+            ResetAllNotifications();
+            UnitFilterPnl.Hide();
+        }
+
+        private void AllNotificationBtm_Click(object sender, EventArgs e)
+        {
             AllNotificationFunction();
+
+            PrintLinkALL.BringToFront();
+            PrintExcelALL.BringToFront();
+            AllNotificationDGV.BringToFront();
+
+            FilterApplyAllNotificationsBtm.BringToFront();
+
+            UnitFilterToggleBtm.Visible = true;
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+
+            SearchBar.Text = " ";
+
+            ResetAllNotifications();
+            UnitFilterPnl.Hide();
+
+
+
         }
         private void AllNotificationFunction()
         {
@@ -495,7 +530,6 @@ namespace ComlabSystem
             string query = @"SELECT 
                         NotificationID, -- Add this line to include NotificationID
                         Message AS 'Notification', 
-                        UserType As 'User',
                         Timestamp AS 'Timestamp', 
                         IsRead 
                      FROM Notifications 
@@ -601,6 +635,10 @@ namespace ComlabSystem
             PrintLink.BringToFront();
             SearchBar.Text = " ";
 
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterToggleBtm.Visible= false;
+            UnitFilterPnl.Visible= false;
+
             FeedbackReporFunction();
         }
         private void FeedbackReporFunction()
@@ -653,6 +691,13 @@ namespace ComlabSystem
             PrintLink.BringToFront();
             SearchBar.Text = " ";
 
+            UnitFilterToggleBtm.Visible = true;
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+
+            FilterApplyActivityReportBtm.BringToFront();
+
+            ResetActivityReport();
             ActivityReportFunction();
         }
         private void ActivityReportFunction()
@@ -661,7 +706,6 @@ namespace ComlabSystem
             string query = @"
         SELECT 
             Message AS 'Action', 
-            UserType AS 'User',
             Timestamp AS 'Timestamp'
         FROM Notifications
         WHERE NotificationKind IN 
@@ -700,8 +744,329 @@ namespace ComlabSystem
             }
         }
 
-       
 
 
-    }  
+
+
+
+
+        //new
+        private void FilterApplyAllNotificationsBtm_Click(object sender, EventArgs e)
+        {
+                // Validate the date range
+                if (FromDateTimePicker.Value > ToDateTimePicker.Value)
+                {
+                    MessageBox.Show("The 'From' date cannot be greater than the 'To' date.", "Invalid Date Range", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Create the SQL query with a date range filter
+                string query = @"SELECT 
+                        NotificationID, 
+                        Message AS 'Notification', 
+                        Timestamp AS 'Timestamp', 
+                        IsRead 
+                     FROM Notifications 
+                     WHERE Timestamp BETWEEN @FromDate AND @ToDate 
+                     ORDER BY Timestamp DESC";
+
+                // Set up the connection
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    // Create the command
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    // Add parameters to prevent SQL injection
+                    command.Parameters.AddWithValue("@FromDate", FromDateTimePicker.Value.Date);
+                    command.Parameters.AddWithValue("@ToDate", ToDateTimePicker.Value.Date.AddDays(1).AddTicks(-1)); // Include the entire day
+
+                    // Create a DataTable to hold the data
+                    DataTable dataTable = new DataTable();
+
+                    try
+                    {
+                        // Open the connection
+                        connection.Open();
+
+                        // Execute the query and load the data into the DataTable
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                        dataAdapter.Fill(dataTable);
+
+                        // Bind the DataTable to the DataGridView
+                        AllNotificationDGV.DataSource = dataTable;
+
+                        // Hide the NotificationID and IsRead columns
+                        AllNotificationDGV.Columns["NotificationID"].Visible = false;
+                        AllNotificationDGV.Columns["IsRead"].Visible = false;
+                        AllNotificationDGV.Columns["Timestamp"].Visible = false;
+
+                        // Set DataGridView AutoSizeMode for other columns to Fill
+                        foreach (DataGridViewColumn column in AllNotificationDGV.Columns)
+                        {
+                            if (column.Name != "NotificationID" && column.Name != "IsRead")
+                            {
+                                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                            }
+                        }
+
+                        // Change row color based on IsRead column
+                        foreach (DataGridViewRow row in AllNotificationDGV.Rows)
+                        {
+                            if (row.Cells["IsRead"].Value != DBNull.Value)
+                            {
+                                bool isRead = Convert.ToBoolean(row.Cells["IsRead"].Value);
+                                if (isRead)
+                                {
+                                    row.DefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245); // Read
+                                }
+                                else
+                                {
+                                    row.DefaultCellStyle.BackColor = Color.FromArgb(230, 245, 255); // Unread
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle any exceptions (e.g., database connection issues)
+                        MessageBox.Show("Error retrieving filtered data: " + ex.Message);
+                    }
+                
+            }
+
+        }
+
+        private void ResetAllNotifications()
+        {
+            // Create the SQL query to retrieve all notifications
+            string query = @"SELECT 
+                        NotificationID, 
+                        Message AS 'Notification', 
+                        Timestamp AS 'Timestamp', 
+                        IsRead 
+                     FROM Notifications 
+                     ORDER BY Timestamp DESC";
+
+            // Set up the connection
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Create the command
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                // Create a DataTable to hold the data
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    // Fill the DataTable with data from the database
+                    dataAdapter.Fill(dataTable);
+
+                    // Bind the DataTable to the DataGridView
+                    AllNotificationDGV.DataSource = dataTable;
+
+                    // Hide the NotificationID and IsRead columns
+                    AllNotificationDGV.Columns["NotificationID"].Visible = false;
+                    AllNotificationDGV.Columns["IsRead"].Visible = false;
+                    AllNotificationDGV.Columns["Timestamp"].Visible = false;
+
+                    // Set DataGridView AutoSizeMode for other columns to Fill
+                    foreach (DataGridViewColumn column in AllNotificationDGV.Columns)
+                    {
+                        if (column.Name != "NotificationID" && column.Name != "IsRead")
+                        {
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        }
+                    }
+
+                    // Change row color based on IsRead column
+                    foreach (DataGridViewRow row in AllNotificationDGV.Rows)
+                    {
+                        if (row.Cells["IsRead"].Value != DBNull.Value)
+                        {
+                            bool isRead = Convert.ToBoolean(row.Cells["IsRead"].Value);
+                            if (isRead)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245); // Read
+                            }
+                            else
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(230, 245, 255); // Unread
+                            }
+                        }
+                    }
+
+                    // Reset DateTimePickers to default values
+                    FromDateTimePicker.Value = DateTime.Now.Date.AddDays(-30); // Example: Default to 30 days ago
+                    ToDateTimePicker.Value = DateTime.Now.Date; // Default to today
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., database connection issues)
+                    MessageBox.Show("Error resetting data: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+        private void FilterApplyActivityReportBtm_Click(object sender, EventArgs e)
+        {
+                // Validate the date range
+                if (FromDateTimePicker.Value > ToDateTimePicker.Value)
+                {
+                    MessageBox.Show("The 'From' date cannot be greater than the 'To' date.", "Invalid Date Range", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // SQL query with date range filter and specific NotificationKind activities
+                string query = @"
+                SELECT 
+                    Message AS 'Action', 
+                    Timestamp AS 'Timestamp'
+                FROM Notifications
+                WHERE NotificationKind IN 
+                    ('AddUser', 'EditUser', 'ArchiveUser', 'UnarchiveUser', 'ArchiveUnit', 'UnarchiveUnit', 'NewUnit', 'LowStorage', 'UserChangePassword')
+                    AND Timestamp BETWEEN @FromDate AND @ToDate
+                ORDER BY Timestamp DESC";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    // Add parameters to prevent SQL injection
+                    command.Parameters.AddWithValue("@FromDate", FromDateTimePicker.Value.Date);
+                    command.Parameters.AddWithValue("@ToDate", ToDateTimePicker.Value.Date.AddDays(1).AddTicks(-1)); // Include the entire day
+
+                    DataTable dataTable = new DataTable();
+
+                    try
+                    {
+                        connection.Open();
+
+                        // Execute the query and load data into the DataTable
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                        dataAdapter.Fill(dataTable);
+
+                        // Bind the filtered data to the DataGridView
+                        NotificationDGV.DataSource = dataTable;
+
+                        NotificationDGV.Columns["Timestamp"].Visible = false;
+
+                        // Set AutoSizeMode for all columns
+                        foreach (DataGridViewColumn column in NotificationDGV.Columns)
+                        {
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        }
+
+                        // Adjust additional styles if needed
+                        NotificationDGV.ClearSelection(); // Clear initial selection
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error retrieving filtered activity reports: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    NotificationDGV.BringToFront();
+                }
+        }
+
+        private void ResetActivityReport()
+        {
+            try
+            {
+                // Call the existing function to load all activity reports
+                ActivityReportFunction();
+
+                // Reset the DateTimePickers to their default values
+                FromDateTimePicker.Value = DateTime.Now.Date.AddDays(-30); // Example: Default to the last 30 days
+                ToDateTimePicker.Value = DateTime.Now.Date; // Default to today
+
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions if any
+                MessageBox.Show($"Error resetting activity report: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+        private void FilterApplyFeebackReportBtm_Click(object sender, EventArgs e)
+        {
+            // Validate the date range
+            if (FromDateTimePicker.Value > ToDateTimePicker.Value)
+            {
+                MessageBox.Show("The 'From' date cannot be greater than the 'To' date.", "Invalid Date Range", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // SQL query to filter Feedback and Report data within the selected date range
+            string query = @"
+SELECT 
+    Message AS 'Insights', 
+    Timestamp AS 'Timestamp',
+    Email
+FROM NOTIFICATIONS
+WHERE NotificationKind IN ('Feedback', 'Report') 
+    AND Timestamp BETWEEN @FromDate AND @ToDate
+ORDER BY Timestamp DESC";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+
+                // Add parameters to prevent SQL injection
+                command.Parameters.AddWithValue("@FromDate", FromDateTimePicker.Value.Date);
+                command.Parameters.AddWithValue("@ToDate", ToDateTimePicker.Value.Date.AddDays(1).AddTicks(-1)); // Include the entire day
+
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+
+                    // Execute the query and load data into the DataTable
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                    dataAdapter.Fill(dataTable);
+
+                    // Bind the filtered data to the DataGridView
+                    NotificationDGV.DataSource = dataTable;
+
+                    NotificationDGV.Columns["Timestamp"].Visible = false;
+
+                    // Set AutoSizeMode for all columns
+                    foreach (DataGridViewColumn column in NotificationDGV.Columns)
+                    {
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+
+                    // Adjust additional styles if needed
+                    NotificationDGV.ClearSelection(); // Clear initial selection
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error retrieving filtered feedback and reports: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void NotificationDGV_Click(object sender, EventArgs e)
+        {
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+        }
+
+        private void AllNotificationDGV_Click(object sender, EventArgs e)
+        {
+            UnitFilterToggleBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+        }
+    }
 }

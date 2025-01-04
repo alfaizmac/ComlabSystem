@@ -474,7 +474,7 @@
             this.UnitFilterPnl.Controls.Add(this.label17);
             this.UnitFilterPnl.Controls.Add(this.FilterUnitNameCKB);
             this.UnitFilterPnl.Controls.Add(this.label15);
-            this.UnitFilterPnl.Location = new System.Drawing.Point(376, 92);
+            this.UnitFilterPnl.Location = new System.Drawing.Point(525, 88);
             this.UnitFilterPnl.Name = "UnitFilterPnl";
             this.UnitFilterPnl.Size = new System.Drawing.Size(556, 236);
             this.UnitFilterPnl.TabIndex = 55;

@@ -45,12 +45,14 @@ namespace ComlabSystem
             LogsReportAction();
             SearchBar.Text = "";
 
-            FilterUserActivityPnl.Visible = false;
+            UnitFilterPnl.Visible = false;
 
 
             //Print
             PrintExcelReport.BringToFront();
             guna2Panel2.BringToFront();
+
+            FilterApplyLogsReport.BringToFront();
 
 
         }
@@ -200,6 +202,7 @@ namespace ComlabSystem
         private void ReportUserActBtm_Click(object sender, EventArgs e)
         {
             UserActivityReport();
+            FilterApplyStudentUsage.BringToFront();
             SearchBar.Text = "";
         }
 
@@ -250,6 +253,7 @@ namespace ComlabSystem
         private void UnitUsageBtm_Click(object sender, EventArgs e)
         {
             UnitUsageReport();
+            FilterApplyUnitUsage.BringToFront();
             SearchBar.Text = "";
         }
         private void UnitUsageReport()
@@ -298,6 +302,7 @@ namespace ComlabSystem
         private void AdminActionBtm_Click(object sender, EventArgs e)
         {
             AdminActionReport();
+            FilterApplyAdminAction.BringToFront();
             SearchBar.Text = "";
         }
         private void AdminActionReport()
@@ -345,6 +350,7 @@ namespace ComlabSystem
         private void LogsReportBtm_Click(object sender, EventArgs e)
         {
             LogsReportAction();
+            FilterApplyLogsReport.BringToFront();
             SearchBar.Text = "";
         }
         private void LogsReportAction()
@@ -394,12 +400,12 @@ namespace ComlabSystem
             if (FilteruserActivityBtm.Checked)
             {
                 // When toggle is on, show the filter panel
-                FilterUserActivityPnl.Visible = true;
+                UnitFilterPnl.Visible = true;
             }
             else
             {
                 // When toggle is off, hide the filter panel
-                FilterUserActivityPnl.Visible = false;
+                UnitFilterPnl.Visible = false;
             }
         }
 

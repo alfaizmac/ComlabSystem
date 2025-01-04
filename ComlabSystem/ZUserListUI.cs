@@ -420,11 +420,11 @@ WHERE u.ArchiveStatus = 'Active'"; // Exclude archived users
                 connection.Open();
 
                 // Get the AdminID from AdminList table based on AdminName
-                string getAdminIDQuery = "SELECT AdminID FROM AdminList WHERE UserName = @AdminName";
+                string getAdminIDQuery = "SELECT AdminID FROM AdminList WHERE UserID = @UserID";
                 int adminID = 0;
                 using (SqlCommand cmd = new SqlCommand(getAdminIDQuery, connection))
                 {
-                    cmd.Parameters.AddWithValue("@AdminName", adminName);
+                    cmd.Parameters.AddWithValue("@UserID", adminName);
                     var result = cmd.ExecuteScalar();
                     if (result != null)
                     {
@@ -847,10 +847,10 @@ VALUES (@Message, @Timestamp, @AdminID, @NotificationType, @NotificationKind)";
         // Method to get AdminID based on the admin's username
         private int GetAdminID(SqlConnection connection, string adminUserName)
         {
-            string query = "SELECT AdminID FROM AdminList WHERE UserName = @UserName";
+            string query = "SELECT AdminID FROM AdminList WHERE UserID = @UserID";
             using (SqlCommand command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@UserName", adminUserName);
+                command.Parameters.AddWithValue("@UserID", adminUserName);
 
                 object result = command.ExecuteScalar();
                 return result != null ? Convert.ToInt32(result) : -1;

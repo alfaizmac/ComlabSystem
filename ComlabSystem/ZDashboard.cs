@@ -33,7 +33,7 @@ namespace ComlabSystem
         public ZDashboard()
         {
             InitializeComponent();
-
+            AllNotificationFunction();
 
         }
 
@@ -42,7 +42,6 @@ namespace ComlabSystem
             MainPNL.BringToFront();
             AllNotificationFunction();
             CurrentOnline();
-            MostUseDUser();
 
         }
 
@@ -52,8 +51,8 @@ namespace ComlabSystem
         {
             // Create the SQL query to retrieve Notification data including NotificationID
             string query = @"SELECT 
-                        NotificationID, 
-                        Message, 
+                        NotificationID, -- Add this line to include NotificationID
+                        Message AS 'Notification', 
                         Timestamp AS 'Timestamp', 
                         IsRead 
                      FROM Notifications 
@@ -81,9 +80,31 @@ namespace ComlabSystem
                     NotificationDGV.Columns["IsRead"].Visible = false;
                     NotificationDGV.Columns["Timestamp"].Visible = false;
 
-                    // Set the header text of the Message column to an empty string
-                    NotificationDGV.Columns["Message"].HeaderText = "";
+                    // Set DataGridView AutoSizeMode for other columns to Fill
+                    foreach (DataGridViewColumn column in NotificationDGV.Columns)
+                    {
+                        if (column.Name != "NotificationID" && column.Name != "IsRead")
+                        {
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        }
+                    }
 
+                    // Change row color based on IsRead column (still checking but column is hidden)
+                    foreach (DataGridViewRow row in NotificationDGV.Rows)
+                    {
+                        if (row.Cells["IsRead"].Value != DBNull.Value)
+                        {
+                            bool isRead = Convert.ToBoolean(row.Cells["IsRead"].Value);
+                            if (isRead)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245); // Read
+                            }
+                            else
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(230, 245, 255); // Unread
+                            }
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -137,63 +158,55 @@ namespace ComlabSystem
             }
         }
 
-        private void MostUseDUser()
-        {
-            // Query to retrieve data from UserList and rank by TotalHoursUsed in descending order
-            string query = @"
-        SELECT 
-            FirstName + ' ' + LastName AS UserName, 
-            TotalHoursUsed 
-        FROM UserList
-        ORDER BY TotalHoursUsed DESC";
 
-            // Set up the connection
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    // Open the connection
-                    connection.Open();
-
-                    // Create a command to execute the query
-                    SqlCommand command = new SqlCommand(query, connection);
-
-                    // Execute the query and read the data
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    // Clear existing data in the chart
-                    userchart.Series.Clear();
-
-                    // Add a new series to the chart
-                    var series = userchart.Series.Add("Total Hours Used");
-                    series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
-
-                    // Populate the series with data from the query
-                    while (reader.Read())
-                    {
-                        string userName = reader["UserName"].ToString();
-                        double totalHours = Convert.ToDouble(reader["TotalHoursUsed"]);
-
-                        // Add data points to the series
-                        series.Points.AddXY(userName, totalHours);
-                    }
-
-                    // Close the reader
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    // Handle any exceptions (e.g., database connection issues)
-                    MessageBox.Show("Error retrieving chart data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
 
 
 
         private void AdminNameLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void userchart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NotificationDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Get the IsRead value of the clicked row
+                var isRead = Convert.ToBoolean(NotificationDGV.Rows[e.RowIndex].Cells["IsRead"].Value);
+
+                if (isRead == false) // Only update if it is not already marked as read
+                {
+                    // Get the NotificationID value of the clicked row (now it exists because it's part of the query)
+                    int notificationId = Convert.ToInt32(NotificationDGV.Rows[e.RowIndex].Cells["NotificationID"].Value);
+
+                    // Update the IsRead field to 1
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        string updateQuery = @"UPDATE Notifications 
+                                       SET IsRead = 1 
+                                       WHERE NotificationID = @NotificationID";
+
+                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                        updateCommand.Parameters.AddWithValue("@NotificationID", notificationId);
+
+                        try
+                        {
+                            connection.Open();
+                            updateCommand.ExecuteNonQuery(); // Execute the update query
+                            NotificationDGV.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245); // Change row color to read
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error updating notification status: " + ex.Message);
+                        }
+                    }
+                }
+            }
         }
     }
 }  

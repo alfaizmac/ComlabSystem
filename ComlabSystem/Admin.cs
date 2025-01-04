@@ -216,7 +216,7 @@ namespace ComlabSystem
         private void SettingsBtm_Click(object sender, EventArgs e)
         {
             string AdminName = AdminUserName.Text;
-            ZSetting myControl = new ZSetting { AdminName = AdminName };
+            Settingss myControl = new Settingss { AdminName = AdminName };
 
             // Clear any existing controls in the panel (optional, if you want to replace the contents)
             MainPNL.Controls.Clear();

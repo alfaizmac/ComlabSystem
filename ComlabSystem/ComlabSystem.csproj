@@ -7,7 +7,7 @@
     <ProjectGuid>{73E984EC-DFCB-4DA5-86FC-29B9AC32F99E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ComlabSystem</RootNamespace>
-    <AssemblyName>ComlabSystem</AssemblyName>
+    <AssemblyName>NBSPI ComLab Monitoring System</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,7 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -59,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sllogs.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
@@ -205,11 +209,11 @@
     <Compile Include="ZDashboard.Designer.cs">
       <DependentUpon>ZDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ZSetting.cs">
+    <Compile Include="Settingss.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ZSetting.Designer.cs">
-      <DependentUpon>ZSetting.cs</DependentUpon>
+    <Compile Include="Settingss.Designer.cs">
+      <DependentUpon>Settingss.cs</DependentUpon>
     </Compile>
     <Compile Include="ZLogsReport.cs">
       <SubType>UserControl</SubType>
@@ -260,8 +264,8 @@
     <EmbeddedResource Include="ZDashboard.resx">
       <DependentUpon>ZDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ZSetting.resx">
-      <DependentUpon>ZSetting.cs</DependentUpon>
+    <EmbeddedResource Include="Settingss.resx">
+      <DependentUpon>Settingss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZLogsReport.resx">
       <DependentUpon>ZLogsReport.cs</DependentUpon>
@@ -946,6 +950,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DashboardComputer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sllogs.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,10 +15,11 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using DGVPrinterHelper;
+using Guna.UI2.WinForms;
 
 namespace ComlabSystem
 {
-    public partial class ZSetting : UserControl
+    public partial class Settingss : UserControl
     {
 
         private string connectionString = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
@@ -30,22 +31,30 @@ namespace ComlabSystem
         }
 
 
-        public ZSetting()
+
+        public Settingss()
         {
             InitializeComponent();
+;
+
 
 
 
         }
+
 
         private void UserUI_Load(object sender, EventArgs e)
         {
 
+         
 
 
         }
 
 
 
-    }
-}  
+
+
+
+    }  
+}
