@@ -43,6 +43,8 @@ namespace ComlabSystem
             UserTimeUsageChart();
             UnitTimeUsageChart();
 
+            LabelLocation();
+
         }
 
         private void UserUI_Load(object sender, EventArgs e)
@@ -333,8 +335,6 @@ namespace ComlabSystem
                         Name = "Hours",
                         IsValueShownAsLabel = true,
                         ChartType = SeriesChartType.Bar,
-                        BorderWidth = 2, // Set border width for the bars
-                        BorderColor = Color.Black // Set border color for the bars
                     };
 
                     // Set the width of the bars (adjust this value to make them bigger or smaller)
@@ -431,8 +431,7 @@ namespace ComlabSystem
                         Name = "Hours",
                         IsValueShownAsLabel = true,
                         ChartType = SeriesChartType.Bar,
-                        BorderWidth = 2, // Set border width for the bars
-                        BorderColor = Color.Black // Set border color for the bars
+
                     };
 
                     // Set the width of the bars (adjust this value to make them bigger or smaller)
@@ -499,7 +498,13 @@ namespace ComlabSystem
 
 
 
-
+        private void LabelLocation()
+        {
+            UpdateImproperShutdownLabelLocation();
+            UpdateUsageFrequencyLabelLocation();
+            UpdateTotalUnitLabelLocation();
+            UpdateTotalComputerLabelLocation();
+        }
 
         private void UpdateImproperShutdownLabelLocation()
         {
@@ -616,6 +621,120 @@ namespace ComlabSystem
             }
         }
 
+
+        private void UpdateTotalUnitLabelLocation()
+        {
+            // SQL query to get the total count of records from UnitList table
+            string query = @"SELECT COUNT(*) FROM UnitList";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create the SQL command to execute the query
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    // Execute the query and get the total count
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int count))
+                    {
+                        TotalComputerLabel.Text = count.ToString("D2"); // Display count as two digits if it's less than 10
+
+                        // Adjust location based on count value
+                        if (count < 10)
+                        {
+                            TotalComputerLabel.Location = new Point(71, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+                        else if (count < 100)
+                        {
+                            TotalComputerLabel.Location = new Point(64, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+                        else if (count < 1000)
+                        {
+                            TotalComputerLabel.Location = new Point(45, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+
+                        else if (count >= 10000)
+                        {
+                            TotalComputerLabel.Location = new Point(36, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+                    }
+                    else
+                    {
+                        // Handle case where the result is null or not an integer
+                        MessageBox.Show("Unable to retrieve the count of records from UnitList.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void UpdateTotalComputerLabelLocation()
+        {
+            // SQL query to get the total count of records from UserList table
+            string query = @"SELECT COUNT(*) FROM UserList";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create the SQL command to execute the query
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    // Execute the query and get the total count
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int count))
+                    {
+                        TotalStudentLabel.Text = count.ToString("D2"); // Display count as two digits if it's less than 10
+
+                        // Adjust location based on count value
+                        if (count < 10)
+                        {
+                            TotalStudentLabel.Location = new Point(71, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+                        else if (count < 100)
+                        {
+                            TotalStudentLabel.Location = new Point(64, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+                        else if (count < 1000)
+                        {
+                            TotalStudentLabel.Location = new Point(45, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+
+                        else if (count >= 10000)
+                        {
+                            TotalStudentLabel.Location = new Point(36, 9);
+                            // Adjust other controls based on count, if necessary
+                        }
+                    }
+                    else
+                    {
+                        // Handle case where the result is null or not an integer
+                        MessageBox.Show("Unable to retrieve the count of records from UserList.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
     }
 }  
