@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -44,6 +44,7 @@
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.UserPNL = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.UnitFilterPnl = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.label2 = new System.Windows.Forms.Label();
             this.ToDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +53,12 @@
             this.label41 = new System.Windows.Forms.Label();
             this.FilterApplyAllNotificationsBtm = new Guna.UI2.WinForms.Guna2Button();
             this.FilterApplyActivityReportBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.AllNotificationBtm = new Guna.UI2.WinForms.Guna2TileButton();
             this.FeedbackReportBtm = new Guna.UI2.WinForms.Guna2TileButton();
@@ -66,8 +73,8 @@
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.UserListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
-            this.NoArchiveListLabel = new System.Windows.Forms.Label();
             this.AllNotificationDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.NoArchiveListLabel = new System.Windows.Forms.Label();
             this.NotificationDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
@@ -78,6 +85,7 @@
             this.UserListPNL.SuspendLayout();
             this.UserPNL.SuspendLayout();
             this.UnitFilterPnl.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -204,6 +212,7 @@
             this.UnitFilterPnl.BorderColor = System.Drawing.Color.Silver;
             this.UnitFilterPnl.BorderRadius = 15;
             this.UnitFilterPnl.BorderThickness = 1;
+            this.UnitFilterPnl.Controls.Add(this.guna2VSeparator1);
             this.UnitFilterPnl.Controls.Add(this.label2);
             this.UnitFilterPnl.Controls.Add(this.ToDateTimePicker);
             this.UnitFilterPnl.Controls.Add(this.label1);
@@ -212,10 +221,20 @@
             this.UnitFilterPnl.Controls.Add(this.label41);
             this.UnitFilterPnl.Controls.Add(this.FilterApplyAllNotificationsBtm);
             this.UnitFilterPnl.Controls.Add(this.FilterApplyActivityReportBtm);
+            this.UnitFilterPnl.Controls.Add(this.guna2Panel4);
             this.UnitFilterPnl.Location = new System.Drawing.Point(429, 88);
+            this.UnitFilterPnl.MaximumSize = new System.Drawing.Size(578, 233);
+            this.UnitFilterPnl.MinimumSize = new System.Drawing.Size(309, 233);
             this.UnitFilterPnl.Name = "UnitFilterPnl";
-            this.UnitFilterPnl.Size = new System.Drawing.Size(313, 233);
+            this.UnitFilterPnl.Size = new System.Drawing.Size(309, 233);
             this.UnitFilterPnl.TabIndex = 71;
+            // 
+            // guna2VSeparator1
+            // 
+            this.guna2VSeparator1.Location = new System.Drawing.Point(308, 17);
+            this.guna2VSeparator1.Name = "guna2VSeparator1";
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 200);
+            this.guna2VSeparator1.TabIndex = 133;
             // 
             // label2
             // 
@@ -281,9 +300,10 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
             this.label13.Location = new System.Drawing.Point(20, 36);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(243, 34);
+            this.label13.Size = new System.Drawing.Size(248, 34);
             this.label13.TabIndex = 113;
-            this.label13.Text = "Select the date range below to filter the \r\nuser list based on your preferences.";
+            this.label13.Text = "Select the date range below to filter the \r\ndata timeline based on your preferenc" +
+    "es.";
             // 
             // label41
             // 
@@ -293,9 +313,9 @@
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.label41.Location = new System.Drawing.Point(19, 12);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(62, 21);
+            this.label41.Size = new System.Drawing.Size(104, 21);
             this.label41.TabIndex = 109;
-            this.label41.Text = "RANGE";
+            this.label41.Text = "DATE RANGE";
             // 
             // FilterApplyAllNotificationsBtm
             // 
@@ -344,6 +364,117 @@
             this.FilterApplyActivityReportBtm.TabIndex = 131;
             this.FilterApplyActivityReportBtm.Text = "Apply";
             this.FilterApplyActivityReportBtm.Click += new System.EventHandler(this.FilterApplyActivityReportBtm_Click);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Controls.Add(this.guna2Button2);
+            this.guna2Panel4.Controls.Add(this.guna2Button1);
+            this.guna2Panel4.Controls.Add(this.label4);
+            this.guna2Panel4.Controls.Add(this.label3);
+            this.guna2Panel4.Controls.Add(this.guna2Button3);
+            this.guna2Panel4.Location = new System.Drawing.Point(319, 7);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(254, 219);
+            this.guna2Panel4.TabIndex = 136;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(255)))));
+            this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.CheckedState.Image = global::ComlabSystem.Properties.Resources.warning__3_;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2Button2.Image = global::ComlabSystem.Properties.Resources.warning__2_;
+            this.guna2Button2.ImageOffset = new System.Drawing.Point(-6, 1);
+            this.guna2Button2.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button2.Location = new System.Drawing.Point(60, 164);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(133, 39);
+            this.guna2Button2.TabIndex = 140;
+            this.guna2Button2.Text = "WARNING";
+            this.guna2Button2.TextOffset = new System.Drawing.Point(-2, 0);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(255)))));
+            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.CheckedState.Image = global::ComlabSystem.Properties.Resources.info__7_;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2Button1.Image = global::ComlabSystem.Properties.Resources.info__2_;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(0, 1);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button1.Location = new System.Drawing.Point(60, 119);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(133, 39);
+            this.guna2Button1.TabIndex = 139;
+            this.guna2Button1.Text = "INFORMATION";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label4.Location = new System.Drawing.Point(4, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(230, 34);
+            this.label4.TabIndex = 138;
+            this.label4.Text = "Select kind of notification to be shown\r\non the data.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.label3.Location = new System.Drawing.Point(3, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 21);
+            this.label3.TabIndex = 137;
+            this.label3.Text = "NOTIFICATION TYPE";
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Button3.BorderRadius = 5;
+            this.guna2Button3.BorderThickness = 1;
+            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button3.Checked = true;
+            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(255)))));
+            this.guna2Button3.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.White;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.guna2Button3.ImageOffset = new System.Drawing.Point(0, 1);
+            this.guna2Button3.ImageSize = new System.Drawing.Size(18, 18);
+            this.guna2Button3.Location = new System.Drawing.Point(60, 74);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(133, 39);
+            this.guna2Button3.TabIndex = 135;
+            this.guna2Button3.Text = "ALL NOTIFICATION";
             // 
             // guna2Panel5
             // 
@@ -550,9 +681,9 @@
             this.UnitFilterToggleBtm.ImageSize = new System.Drawing.Size(18, 18);
             this.UnitFilterToggleBtm.Location = new System.Drawing.Point(530, 36);
             this.UnitFilterToggleBtm.Name = "UnitFilterToggleBtm";
-            this.UnitFilterToggleBtm.Size = new System.Drawing.Size(112, 46);
+            this.UnitFilterToggleBtm.Size = new System.Drawing.Size(87, 46);
             this.UnitFilterToggleBtm.TabIndex = 24;
-            this.UnitFilterToggleBtm.Text = "Filter Date";
+            this.UnitFilterToggleBtm.Text = "Filter";
             this.UnitFilterToggleBtm.Click += new System.EventHandler(this.UserFilterToggleBtm_Click);
             // 
             // guna2Separator2
@@ -590,46 +721,34 @@
             this.UserListsGridPNL.Size = new System.Drawing.Size(1243, 624);
             this.UserListsGridPNL.TabIndex = 16;
             // 
-            // NoArchiveListLabel
-            // 
-            this.NoArchiveListLabel.AutoSize = true;
-            this.NoArchiveListLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.NoArchiveListLabel.Font = new System.Drawing.Font("Segoe UI Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoArchiveListLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.NoArchiveListLabel.Location = new System.Drawing.Point(506, 307);
-            this.NoArchiveListLabel.Name = "NoArchiveListLabel";
-            this.NoArchiveListLabel.Size = new System.Drawing.Size(542, 86);
-            this.NoArchiveListLabel.TabIndex = 18;
-            this.NoArchiveListLabel.Text = "No Archive Unit";
-            // 
             // AllNotificationDGV
             // 
             this.AllNotificationDGV.AllowUserToAddRows = false;
             this.AllNotificationDGV.AllowUserToDeleteRows = false;
             this.AllNotificationDGV.AllowUserToResizeColumns = false;
             this.AllNotificationDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.AllNotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.AllNotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.AllNotificationDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.AllNotificationDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AllNotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AllNotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.AllNotificationDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AllNotificationDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AllNotificationDGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.AllNotificationDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AllNotificationDGV.GridColor = System.Drawing.Color.White;
             this.AllNotificationDGV.Location = new System.Drawing.Point(0, 0);
@@ -679,34 +798,46 @@
             this.AllNotificationDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AllNotificationDGV_CellClick);
             this.AllNotificationDGV.Click += new System.EventHandler(this.AllNotificationDGV_Click);
             // 
+            // NoArchiveListLabel
+            // 
+            this.NoArchiveListLabel.AutoSize = true;
+            this.NoArchiveListLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.NoArchiveListLabel.Font = new System.Drawing.Font("Segoe UI Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoArchiveListLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.NoArchiveListLabel.Location = new System.Drawing.Point(506, 307);
+            this.NoArchiveListLabel.Name = "NoArchiveListLabel";
+            this.NoArchiveListLabel.Size = new System.Drawing.Size(542, 86);
+            this.NoArchiveListLabel.TabIndex = 18;
+            this.NoArchiveListLabel.Text = "No Archive Unit";
+            // 
             // NotificationDGV
             // 
             this.NotificationDGV.AllowUserToAddRows = false;
             this.NotificationDGV.AllowUserToDeleteRows = false;
             this.NotificationDGV.AllowUserToResizeColumns = false;
             this.NotificationDGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.NotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.NotificationDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.NotificationDGV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.NotificationDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.NotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.NotificationDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.NotificationDGV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.NotificationDGV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.NotificationDGV.DefaultCellStyle = dataGridViewCellStyle12;
             this.NotificationDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NotificationDGV.GridColor = System.Drawing.Color.White;
             this.NotificationDGV.Location = new System.Drawing.Point(0, 0);
@@ -795,6 +926,8 @@
             this.UserPNL.ResumeLayout(false);
             this.UnitFilterPnl.ResumeLayout(false);
             this.UnitFilterPnl.PerformLayout();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
@@ -846,5 +979,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label41;
         private Guna.UI2.WinForms.Guna2Button FilterApplyActivityReportBtm;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

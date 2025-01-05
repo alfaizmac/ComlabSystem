@@ -952,6 +952,9 @@
     <None Include="Resources\DashboardComputer.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\warning %282%29.png" />
+    <None Include="Resources\info %287%29.png" />
+    <None Include="Resources\warning %283%29.png" />
     <Content Include="sllogs.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

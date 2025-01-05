@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.AdminNameLabel = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -39,13 +39,16 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.UserListPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.ZReportPnl = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.UnitFilterPnl = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.FilterApplyLogsReport = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ToDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.FromDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
+            this.FilterApplyAdminActionBtm = new Guna.UI2.WinForms.Guna2Button();
+            this.FilterApplyLogsReportBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.LogsReportBtm = new Guna.UI2.WinForms.Guna2TileButton();
@@ -56,29 +59,24 @@
             this.label45 = new System.Windows.Forms.Label();
             this.PrintPDFReport = new System.Windows.Forms.LinkLabel();
             this.PrintExcelReport = new System.Windows.Forms.LinkLabel();
-            this.FilteruserActivityBtm = new Guna.UI2.WinForms.Guna2Button();
             this.ZListsGridPNL = new Guna.UI2.WinForms.Guna2Panel();
             this.ReportGDV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PasswordToolTIp = new System.Windows.Forms.ToolTip(this.components);
             this.EditStudentIDTBTT = new System.Windows.Forms.ToolTip(this.components);
             this.SortToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.UnitMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FilterApplyAdminAction = new Guna.UI2.WinForms.Guna2Button();
-            this.FilterApplyUnitUsage = new Guna.UI2.WinForms.Guna2Button();
-            this.FilterApplyStudentUsage = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.FilterBtm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.UserListPNL.SuspendLayout();
             this.ZReportPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.UnitFilterPnl.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.ZListsGridPNL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReportGDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -147,7 +145,7 @@
             this.ZReportPnl.Controls.Add(this.guna2Separator2);
             this.ZReportPnl.Controls.Add(this.guna2Panel5);
             this.ZReportPnl.Controls.Add(this.guna2Panel2);
-            this.ZReportPnl.Controls.Add(this.FilteruserActivityBtm);
+            this.ZReportPnl.Controls.Add(this.FilterBtm);
             this.ZReportPnl.Controls.Add(this.ZListsGridPNL);
             this.ZReportPnl.FillColor = System.Drawing.Color.White;
             this.ZReportPnl.Location = new System.Drawing.Point(28, 73);
@@ -160,19 +158,6 @@
             this.ZReportPnl.ShadowShift = 10;
             this.ZReportPnl.Size = new System.Drawing.Size(1308, 778);
             this.ZReportPnl.TabIndex = 12;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 71;
-            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // SearchBar
             // 
@@ -207,59 +192,74 @@
             this.UnitFilterPnl.BorderColor = System.Drawing.Color.Silver;
             this.UnitFilterPnl.BorderRadius = 15;
             this.UnitFilterPnl.BorderThickness = 1;
-            this.UnitFilterPnl.Controls.Add(this.FilterApplyStudentUsage);
-            this.UnitFilterPnl.Controls.Add(this.FilterApplyUnitUsage);
             this.UnitFilterPnl.Controls.Add(this.label2);
-            this.UnitFilterPnl.Controls.Add(this.guna2DateTimePicker2);
+            this.UnitFilterPnl.Controls.Add(this.ToDateTimePicker);
             this.UnitFilterPnl.Controls.Add(this.label1);
-            this.UnitFilterPnl.Controls.Add(this.guna2DateTimePicker1);
+            this.UnitFilterPnl.Controls.Add(this.FromDateTimePicker);
             this.UnitFilterPnl.Controls.Add(this.label13);
             this.UnitFilterPnl.Controls.Add(this.label41);
-            this.UnitFilterPnl.Controls.Add(this.FilterApplyAdminAction);
-            this.UnitFilterPnl.Controls.Add(this.FilterApplyLogsReport);
-            this.UnitFilterPnl.Location = new System.Drawing.Point(380, 88);
+            this.UnitFilterPnl.Controls.Add(this.FilterApplyAdminActionBtm);
+            this.UnitFilterPnl.Controls.Add(this.FilterApplyLogsReportBtm);
+            this.UnitFilterPnl.Location = new System.Drawing.Point(319, 88);
             this.UnitFilterPnl.Name = "UnitFilterPnl";
             this.UnitFilterPnl.Size = new System.Drawing.Size(313, 233);
             this.UnitFilterPnl.TabIndex = 55;
             // 
-            // guna2DateTimePicker1
+            // label2
             // 
-            this.guna2DateTimePicker1.BorderRadius = 10;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(84, 88);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 32);
-            this.guna2DateTimePicker1.TabIndex = 126;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 1, 4, 15, 13, 53, 420);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label2.Location = new System.Drawing.Point(42, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 21);
+            this.label2.TabIndex = 130;
+            this.label2.Text = "To :";
             // 
-            // FilterApplyLogsReport
+            // ToDateTimePicker
             // 
-            this.FilterApplyLogsReport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilterApplyLogsReport.BorderRadius = 5;
-            this.FilterApplyLogsReport.BorderThickness = 1;
-            this.FilterApplyLogsReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FilterApplyLogsReport.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilterApplyLogsReport.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
-            this.FilterApplyLogsReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyLogsReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyLogsReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.FilterApplyLogsReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.FilterApplyLogsReport.FillColor = System.Drawing.Color.Maroon;
-            this.FilterApplyLogsReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FilterApplyLogsReport.ForeColor = System.Drawing.Color.White;
-            this.FilterApplyLogsReport.ImageOffset = new System.Drawing.Point(0, 1);
-            this.FilterApplyLogsReport.ImageSize = new System.Drawing.Size(18, 18);
-            this.FilterApplyLogsReport.Location = new System.Drawing.Point(107, 187);
-            this.FilterApplyLogsReport.Name = "FilterApplyLogsReport";
-            this.FilterApplyLogsReport.Size = new System.Drawing.Size(98, 30);
-            this.FilterApplyLogsReport.TabIndex = 125;
-            this.FilterApplyLogsReport.Text = "Apply";
+            this.ToDateTimePicker.BorderRadius = 10;
+            this.ToDateTimePicker.Checked = true;
+            this.ToDateTimePicker.FillColor = System.Drawing.Color.White;
+            this.ToDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ToDateTimePicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.ToDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.ToDateTimePicker.Location = new System.Drawing.Point(86, 133);
+            this.ToDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ToDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ToDateTimePicker.Name = "ToDateTimePicker";
+            this.ToDateTimePicker.Size = new System.Drawing.Size(200, 32);
+            this.ToDateTimePicker.TabIndex = 129;
+            this.ToDateTimePicker.Value = new System.DateTime(2025, 1, 4, 15, 13, 53, 420);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            this.label1.Location = new System.Drawing.Point(19, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.TabIndex = 128;
+            this.label1.Text = "From :";
+            // 
+            // FromDateTimePicker
+            // 
+            this.FromDateTimePicker.BorderRadius = 10;
+            this.FromDateTimePicker.Checked = true;
+            this.FromDateTimePicker.FillColor = System.Drawing.Color.White;
+            this.FromDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FromDateTimePicker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.FromDateTimePicker.Location = new System.Drawing.Point(84, 88);
+            this.FromDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.FromDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.FromDateTimePicker.Name = "FromDateTimePicker";
+            this.FromDateTimePicker.Size = new System.Drawing.Size(200, 32);
+            this.FromDateTimePicker.TabIndex = 126;
+            this.FromDateTimePicker.Value = new System.DateTime(2025, 1, 4, 15, 13, 53, 420);
             // 
             // label13
             // 
@@ -284,6 +284,54 @@
             this.label41.Size = new System.Drawing.Size(62, 21);
             this.label41.TabIndex = 109;
             this.label41.Text = "RANGE";
+            // 
+            // FilterApplyAdminActionBtm
+            // 
+            this.FilterApplyAdminActionBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.FilterApplyAdminActionBtm.BorderRadius = 5;
+            this.FilterApplyAdminActionBtm.BorderThickness = 1;
+            this.FilterApplyAdminActionBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.FilterApplyAdminActionBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FilterApplyAdminActionBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
+            this.FilterApplyAdminActionBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.FilterApplyAdminActionBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.FilterApplyAdminActionBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.FilterApplyAdminActionBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.FilterApplyAdminActionBtm.FillColor = System.Drawing.Color.Maroon;
+            this.FilterApplyAdminActionBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FilterApplyAdminActionBtm.ForeColor = System.Drawing.Color.White;
+            this.FilterApplyAdminActionBtm.ImageOffset = new System.Drawing.Point(0, 1);
+            this.FilterApplyAdminActionBtm.ImageSize = new System.Drawing.Size(18, 18);
+            this.FilterApplyAdminActionBtm.Location = new System.Drawing.Point(107, 187);
+            this.FilterApplyAdminActionBtm.Name = "FilterApplyAdminActionBtm";
+            this.FilterApplyAdminActionBtm.Size = new System.Drawing.Size(98, 30);
+            this.FilterApplyAdminActionBtm.TabIndex = 131;
+            this.FilterApplyAdminActionBtm.Text = "Apply";
+            this.FilterApplyAdminActionBtm.Click += new System.EventHandler(this.FilterApplyAdminActionBtm_Click);
+            // 
+            // FilterApplyLogsReportBtm
+            // 
+            this.FilterApplyLogsReportBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.FilterApplyLogsReportBtm.BorderRadius = 5;
+            this.FilterApplyLogsReportBtm.BorderThickness = 1;
+            this.FilterApplyLogsReportBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.FilterApplyLogsReportBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FilterApplyLogsReportBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
+            this.FilterApplyLogsReportBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.FilterApplyLogsReportBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.FilterApplyLogsReportBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.FilterApplyLogsReportBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.FilterApplyLogsReportBtm.FillColor = System.Drawing.Color.Maroon;
+            this.FilterApplyLogsReportBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FilterApplyLogsReportBtm.ForeColor = System.Drawing.Color.White;
+            this.FilterApplyLogsReportBtm.ImageOffset = new System.Drawing.Point(0, 1);
+            this.FilterApplyLogsReportBtm.ImageSize = new System.Drawing.Size(18, 18);
+            this.FilterApplyLogsReportBtm.Location = new System.Drawing.Point(107, 187);
+            this.FilterApplyLogsReportBtm.Name = "FilterApplyLogsReportBtm";
+            this.FilterApplyLogsReportBtm.Size = new System.Drawing.Size(98, 30);
+            this.FilterApplyLogsReportBtm.TabIndex = 125;
+            this.FilterApplyLogsReportBtm.Text = "Apply";
+            this.FilterApplyLogsReportBtm.Click += new System.EventHandler(this.FilterApplyLogsReportBtm_Click);
             // 
             // guna2Separator2
             // 
@@ -472,32 +520,6 @@
             this.PrintExcelReport.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(255)))), ((int)(((byte)(246)))));
             this.PrintExcelReport.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.PrintExcel_LinkClicked);
             // 
-            // FilteruserActivityBtm
-            // 
-            this.FilteruserActivityBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilteruserActivityBtm.BorderRadius = 10;
-            this.FilteruserActivityBtm.BorderThickness = 1;
-            this.FilteruserActivityBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
-            this.FilteruserActivityBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FilteruserActivityBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilteruserActivityBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
-            this.FilteruserActivityBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.FilteruserActivityBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.FilteruserActivityBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.FilteruserActivityBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.FilteruserActivityBtm.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.FilteruserActivityBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FilteruserActivityBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilteruserActivityBtm.Image = global::ComlabSystem.Properties.Resources.caret_down__2_;
-            this.FilteruserActivityBtm.ImageOffset = new System.Drawing.Point(0, 1);
-            this.FilteruserActivityBtm.ImageSize = new System.Drawing.Size(18, 18);
-            this.FilteruserActivityBtm.Location = new System.Drawing.Point(431, 36);
-            this.FilteruserActivityBtm.Name = "FilteruserActivityBtm";
-            this.FilteruserActivityBtm.Size = new System.Drawing.Size(112, 46);
-            this.FilteruserActivityBtm.TabIndex = 24;
-            this.FilteruserActivityBtm.Text = "Filter Date";
-            this.FilteruserActivityBtm.Click += new System.EventHandler(this.FilteruserActivityBtm_Click);
-            // 
             // ZListsGridPNL
             // 
             this.ZListsGridPNL.Controls.Add(this.ReportGDV);
@@ -512,28 +534,28 @@
             this.ReportGDV.AllowUserToDeleteRows = false;
             this.ReportGDV.AllowUserToResizeColumns = false;
             this.ReportGDV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.ReportGDV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.ReportGDV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ReportGDV.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.ReportGDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ReportGDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ReportGDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ReportGDV.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ReportGDV.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(219)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ReportGDV.DefaultCellStyle = dataGridViewCellStyle3;
             this.ReportGDV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportGDV.GridColor = System.Drawing.Color.White;
             this.ReportGDV.Location = new System.Drawing.Point(0, 0);
@@ -580,6 +602,7 @@
             this.ReportGDV.ThemeStyle.RowsStyle.Height = 100;
             this.ReportGDV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.ReportGDV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.ReportGDV.Click += new System.EventHandler(this.ReportGDV_Click);
             // 
             // SortToolTip
             // 
@@ -600,114 +623,44 @@
             this.UnitMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.UnitMessageDialog.Text = null;
             // 
-            // label1
+            // guna2CirclePictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label1.Location = new System.Drawing.Point(19, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 21);
-            this.label1.TabIndex = 128;
-            this.label1.Text = "From :";
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2CirclePictureBox2.Image = global::ComlabSystem.Properties.Resources.search1;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(44, 44);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 71;
+            this.guna2CirclePictureBox2.TabStop = false;
             // 
-            // guna2DateTimePicker2
+            // FilterBtm
             // 
-            this.guna2DateTimePicker2.BorderRadius = 10;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(86, 133);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(200, 32);
-            this.guna2DateTimePicker2.TabIndex = 129;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2025, 1, 4, 15, 13, 53, 420);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label2.Location = new System.Drawing.Point(42, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 21);
-            this.label2.TabIndex = 130;
-            this.label2.Text = "To :";
-            // 
-            // FilterApplyAdminAction
-            // 
-            this.FilterApplyAdminAction.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilterApplyAdminAction.BorderRadius = 5;
-            this.FilterApplyAdminAction.BorderThickness = 1;
-            this.FilterApplyAdminAction.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FilterApplyAdminAction.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilterApplyAdminAction.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
-            this.FilterApplyAdminAction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyAdminAction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyAdminAction.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.FilterApplyAdminAction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.FilterApplyAdminAction.FillColor = System.Drawing.Color.Maroon;
-            this.FilterApplyAdminAction.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FilterApplyAdminAction.ForeColor = System.Drawing.Color.White;
-            this.FilterApplyAdminAction.ImageOffset = new System.Drawing.Point(0, 1);
-            this.FilterApplyAdminAction.ImageSize = new System.Drawing.Size(18, 18);
-            this.FilterApplyAdminAction.Location = new System.Drawing.Point(107, 187);
-            this.FilterApplyAdminAction.Name = "FilterApplyAdminAction";
-            this.FilterApplyAdminAction.Size = new System.Drawing.Size(98, 30);
-            this.FilterApplyAdminAction.TabIndex = 131;
-            this.FilterApplyAdminAction.Text = "Apply";
-            // 
-            // FilterApplyUnitUsage
-            // 
-            this.FilterApplyUnitUsage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilterApplyUnitUsage.BorderRadius = 5;
-            this.FilterApplyUnitUsage.BorderThickness = 1;
-            this.FilterApplyUnitUsage.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FilterApplyUnitUsage.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilterApplyUnitUsage.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
-            this.FilterApplyUnitUsage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyUnitUsage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyUnitUsage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.FilterApplyUnitUsage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.FilterApplyUnitUsage.FillColor = System.Drawing.Color.Maroon;
-            this.FilterApplyUnitUsage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FilterApplyUnitUsage.ForeColor = System.Drawing.Color.White;
-            this.FilterApplyUnitUsage.ImageOffset = new System.Drawing.Point(0, 1);
-            this.FilterApplyUnitUsage.ImageSize = new System.Drawing.Size(18, 18);
-            this.FilterApplyUnitUsage.Location = new System.Drawing.Point(107, 187);
-            this.FilterApplyUnitUsage.Name = "FilterApplyUnitUsage";
-            this.FilterApplyUnitUsage.Size = new System.Drawing.Size(98, 30);
-            this.FilterApplyUnitUsage.TabIndex = 132;
-            this.FilterApplyUnitUsage.Text = "Apply";
-            // 
-            // FilterApplyStudentUsage
-            // 
-            this.FilterApplyStudentUsage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.FilterApplyStudentUsage.BorderRadius = 5;
-            this.FilterApplyStudentUsage.BorderThickness = 1;
-            this.FilterApplyStudentUsage.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FilterApplyStudentUsage.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FilterApplyStudentUsage.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
-            this.FilterApplyStudentUsage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyStudentUsage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.FilterApplyStudentUsage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.FilterApplyStudentUsage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.FilterApplyStudentUsage.FillColor = System.Drawing.Color.Maroon;
-            this.FilterApplyStudentUsage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.FilterApplyStudentUsage.ForeColor = System.Drawing.Color.White;
-            this.FilterApplyStudentUsage.ImageOffset = new System.Drawing.Point(0, 1);
-            this.FilterApplyStudentUsage.ImageSize = new System.Drawing.Size(18, 18);
-            this.FilterApplyStudentUsage.Location = new System.Drawing.Point(107, 187);
-            this.FilterApplyStudentUsage.Name = "FilterApplyStudentUsage";
-            this.FilterApplyStudentUsage.Size = new System.Drawing.Size(98, 30);
-            this.FilterApplyStudentUsage.TabIndex = 133;
-            this.FilterApplyStudentUsage.Text = "Apply";
+            this.FilterBtm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.FilterBtm.BorderRadius = 10;
+            this.FilterBtm.BorderThickness = 1;
+            this.FilterBtm.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
+            this.FilterBtm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.FilterBtm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FilterBtm.CheckedState.Image = global::ComlabSystem.Properties.Resources.caret_up__6_;
+            this.FilterBtm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.FilterBtm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.FilterBtm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.FilterBtm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.FilterBtm.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.FilterBtm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.FilterBtm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FilterBtm.Image = global::ComlabSystem.Properties.Resources.caret_down__2_;
+            this.FilterBtm.ImageOffset = new System.Drawing.Point(0, 1);
+            this.FilterBtm.ImageSize = new System.Drawing.Size(18, 18);
+            this.FilterBtm.Location = new System.Drawing.Point(431, 36);
+            this.FilterBtm.Name = "FilterBtm";
+            this.FilterBtm.Size = new System.Drawing.Size(87, 46);
+            this.FilterBtm.TabIndex = 24;
+            this.FilterBtm.Text = "Filter";
+            this.FilterBtm.Click += new System.EventHandler(this.FilteruserActivityBtm_Click);
             // 
             // ZLogsReport
             // 
@@ -728,7 +681,6 @@
             this.guna2Panel3.PerformLayout();
             this.UserListPNL.ResumeLayout(false);
             this.ZReportPnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.UnitFilterPnl.ResumeLayout(false);
             this.UnitFilterPnl.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
@@ -736,6 +688,7 @@
             this.guna2Panel2.PerformLayout();
             this.ZListsGridPNL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReportGDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -747,7 +700,7 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label UserListCountsL;
-        private Guna.UI2.WinForms.Guna2Button FilteruserActivityBtm;
+        private Guna.UI2.WinForms.Guna2Button FilterBtm;
         private Guna.UI2.WinForms.Guna2Panel ZListsGridPNL;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel UnitFilterPnl;
@@ -770,13 +723,11 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox SearchBar;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2Button FilterApplyLogsReport;
+        private Guna.UI2.WinForms.Guna2DateTimePicker FromDateTimePicker;
+        private Guna.UI2.WinForms.Guna2Button FilterApplyLogsReportBtm;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker ToDateTimePicker;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button FilterApplyStudentUsage;
-        private Guna.UI2.WinForms.Guna2Button FilterApplyUnitUsage;
-        private Guna.UI2.WinForms.Guna2Button FilterApplyAdminAction;
+        private Guna.UI2.WinForms.Guna2Button FilterApplyAdminActionBtm;
     }
 }

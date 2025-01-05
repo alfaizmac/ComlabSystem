@@ -121,7 +121,7 @@ namespace ComlabSystem
                 -- Retrieve AdminID based on AdminUserName
                 SELECT @AdminID = AdminID
                 FROM AdminList
-                WHERE UserName = @AdminUserName;
+                WHERE UserID = @AdminUserName;
 
                 -- Insert the sign-out log into Logs table
                 INSERT INTO Logs (Action, Timestamp, UnitID, ActionType, AdminID, AdminName)

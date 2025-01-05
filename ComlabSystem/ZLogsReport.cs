@@ -52,7 +52,7 @@ namespace ComlabSystem
             PrintExcelReport.BringToFront();
             guna2Panel2.BringToFront();
 
-            FilterApplyLogsReport.BringToFront();
+            FilterApplyLogsReportBtm.BringToFront();
 
 
         }
@@ -68,13 +68,13 @@ namespace ComlabSystem
             if (this.ParentForm != null && this.ParentForm.WindowState == FormWindowState.Maximized)
             {
                 // Full-screen position
-                FilteruserActivityBtm.Location = new Point(530, 36);
+                FilterBtm.Location = new Point(530, 36);
                 SearchBar.Size = new Size(481, 46);
             }
             else
             {
                 // Non-full-screen position
-                FilteruserActivityBtm.Location = new Point(449, 36);
+                FilterBtm.Location = new Point(449, 36);
                 SearchBar.Size = new Size(400, 46);
             }
         }
@@ -202,8 +202,11 @@ namespace ComlabSystem
         private void ReportUserActBtm_Click(object sender, EventArgs e)
         {
             UserActivityReport();
-            FilterApplyStudentUsage.BringToFront();
             SearchBar.Text = "";
+
+            FilterBtm.Checked = false;
+            FilterBtm.Visible = false;
+            UnitFilterPnl.Visible = false;
         }
 
         private void UserActivityReport()
@@ -253,8 +256,11 @@ namespace ComlabSystem
         private void UnitUsageBtm_Click(object sender, EventArgs e)
         {
             UnitUsageReport();
-            FilterApplyUnitUsage.BringToFront();
             SearchBar.Text = "";
+
+            FilterBtm.Checked = false;
+            FilterBtm.Visible = false;
+            UnitFilterPnl.Visible = false;
         }
         private void UnitUsageReport()
         {
@@ -301,8 +307,14 @@ namespace ComlabSystem
 
         private void AdminActionBtm_Click(object sender, EventArgs e)
         {
+            ResetAdminActionFilter();
             AdminActionReport();
-            FilterApplyAdminAction.BringToFront();
+            FilterApplyAdminActionBtm.BringToFront();
+
+            FilterBtm.Visible = true;
+            FilterBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+
             SearchBar.Text = "";
         }
         private void AdminActionReport()
@@ -349,8 +361,15 @@ namespace ComlabSystem
 
         private void LogsReportBtm_Click(object sender, EventArgs e)
         {
+            ResetLogReport();
+
             LogsReportAction();
-            FilterApplyLogsReport.BringToFront();
+            FilterApplyLogsReportBtm.BringToFront();
+
+            FilterBtm.Visible = true;
+            FilterBtm.Checked = false;
+            UnitFilterPnl.Visible = false;
+
             SearchBar.Text = "";
         }
         private void LogsReportAction()
@@ -397,7 +416,7 @@ namespace ComlabSystem
 
         private void FilteruserActivityBtm_Click(object sender, EventArgs e)
         {
-            if (FilteruserActivityBtm.Checked)
+            if (FilterBtm.Checked)
             {
                 // When toggle is on, show the filter panel
                 UnitFilterPnl.Visible = true;
@@ -414,8 +433,8 @@ namespace ComlabSystem
             string searchText = SearchBar.Text;
             ApplySearchFilter(ReportGDV, searchText);
 
-            FilteruserActivityBtm.Checked = false;
-            FilteruserActivityBtm.Visible = false;
+            FilterBtm.Checked = false;
+            FilterBtm.Visible = false;
         }
 
         private void ApplySearchFilter(DataGridView gridView, string searchText)
@@ -463,6 +482,190 @@ namespace ComlabSystem
                     dataTable.DefaultView.RowFilter = string.Empty; // Clear filter if no columns
                 }
             }
+        }
+
+
+
+
+
+
+
+
+
+        //new
+        private void FilterApplyLogsReportBtm_Click(object sender, EventArgs e)
+        {
+           
+                // Get the selected dates from the DateTimePickers
+                DateTime fromDate = FromDateTimePicker.Value.Date;
+                DateTime toDate = ToDateTimePicker.Value.Date.AddDays(1).AddSeconds(-1); // Include the entire day
+
+                // SQL query with date range filter
+                string query = @"
+                SELECT 
+                    Action AS 'Action', 
+                    CONVERT(VARCHAR(8), TimeDuration, 108) AS 'Time Duration', 
+                    Timestamp AS 'Timestamp'
+                FROM Logs
+                WHERE UserType = 'Student' 
+                    AND Timestamp BETWEEN @FromDate AND @ToDate
+                ORDER BY Timestamp DESC";
+
+                // Set up the connection
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+
+                    // Create a DataTable to hold the filtered data
+                    DataTable dataTable = new DataTable();
+
+                    try
+                    {
+                        // Fill the DataTable with filtered data
+                        dataAdapter.Fill(dataTable);
+
+                        // Bind the DataTable to the DataGridView
+                        ReportGDV.DataSource = dataTable;
+
+                        // Make sure the "Timestamp" column is hidden
+                        if (ReportGDV.Columns.Contains("Timestamp"))
+                            ReportGDV.Columns["Timestamp"].Visible = false;
+
+                        // Set DataGridView AutoSizeMode to Fill for all columns
+                        foreach (DataGridViewColumn column in ReportGDV.Columns)
+                        {
+                            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle any exceptions (e.g., database connection issues)
+                        MessageBox.Show($"Error filtering log data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+           
+        }
+        private void ResetLogReport()
+        {
+            // SQL query to fetch all logs for "Student" user type
+            string query = @"
+SELECT 
+    Action AS 'Action', 
+    CONVERT(VARCHAR(8), TimeDuration, 108) AS 'Time Duration', 
+    Timestamp AS 'Timestamp'
+FROM Logs
+WHERE UserType = 'Student'
+ORDER BY Timestamp DESC";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                // Create a DataTable to hold the data
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    // Fill the DataTable with data from the query
+                    dataAdapter.Fill(dataTable);
+
+                    // Bind the DataTable to the DataGridView
+                    ReportGDV.DataSource = dataTable;
+
+                    // Make sure the "Timestamp" column is hidden
+                    if (ReportGDV.Columns.Contains("Timestamp"))
+                        ReportGDV.Columns["Timestamp"].Visible = false;
+
+                    // Set DataGridView AutoSizeMode to Fill for all columns
+                    foreach (DataGridViewColumn column in ReportGDV.Columns)
+                    {
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+
+                    // Reset the DateTimePickers to today's date
+                    FromDateTimePicker.Value = DateTime.Now;
+                    ToDateTimePicker.Value = DateTime.Now;
+
+                   
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., database connection issues)
+                    MessageBox.Show($"Error resetting log data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void FilterApplyAdminActionBtm_Click(object sender, EventArgs e)
+        {
+            // Get the selected date range from the DateTimePickers
+            DateTime fromDate = FromDateTimePicker.Value;
+            DateTime toDate = ToDateTimePicker.Value;
+
+            // SQL query to fetch data where Timestamp is between the selected date range
+            string query = @"
+    SELECT 
+        Message AS 'Action', 
+        Timestamp AS 'Timestamp'
+    FROM Notifications
+    WHERE UserType = 'Admin' 
+    AND Timestamp >= @FromDate 
+    AND Timestamp <= @ToDate
+    ORDER BY Timestamp DESC";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                // Adding parameters to prevent SQL injection
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@FromDate", fromDate);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@ToDate", toDate);
+
+                // Create a DataTable to hold the data
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    // Fill the DataTable with data from the query
+                    dataAdapter.Fill(dataTable);
+
+                    // Bind the DataTable to the DataGridView
+                    ReportGDV.DataSource = dataTable;
+
+                    // Set DataGridView AutoSizeMode to Fill for all columns
+                    foreach (DataGridViewColumn column in ReportGDV.Columns)
+                    {
+                        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+
+                    // Clear any existing selection
+                    ReportGDV.ClearSelection();
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., database connection issues)
+                    MessageBox.Show($"Error retrieving admin actions: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void ResetAdminActionFilter()
+        {
+            // Reset the DateTimePickers to their default values (you can set the default date if needed)
+            FromDateTimePicker.Value = DateTime.Now; // Set to current date/time or a default value
+            ToDateTimePicker.Value = DateTime.Now; // Set to current date/time or a default value
+
+            // Call the AdminActionReport method to load the full dataset again
+            AdminActionReport(); // This function should load the data without any date filtering
+        }
+
+        private void ReportGDV_Click(object sender, EventArgs e)
+        {
+            FilterBtm.Checked = false;
+            FilterBtm.Visible = false;
+            UnitFilterPnl.Visible = false;
         }
     }
 }  

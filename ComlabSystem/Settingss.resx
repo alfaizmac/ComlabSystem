@@ -129,6 +129,16 @@
   <metadata name="UnitMessageDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>570, 17</value>
   </metadata>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Please enter your current password, followed by your desired new password. 
+Ensure that your new password is strong. Confirm the new password by entering 
+it again, then submit the form to update your password.</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Toggle the Auto Shutdown feature to enable or disable the automatic shutdown 
+of all computer units in the laboratory; enabling ensures systems power down 
+automatically as scheduled, while disabling allows continuous operation.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>84</value>
   </metadata>

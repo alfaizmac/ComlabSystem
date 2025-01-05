@@ -589,7 +589,7 @@ namespace ComlabSystem
                             // Show a warning message to the user
                             AccountRemovedMsgBox.Caption = "Warning";
                             AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
-                            AccountRemovedMsgBox.Text = "Improper shutdown is prohibited, can result in your account being held.";
+                            AccountRemovedMsgBox.Text = "Using multiple units and improper shutdown is prohibited, can result in your account being held.";
                             AccountRemovedMsgBox.Show();
                         }
                     }
