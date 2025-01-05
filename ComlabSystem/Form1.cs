@@ -417,6 +417,8 @@ namespace ComlabSystem
 
                             IncrementUserImproperShutdownFrequency();
 
+                            WeeklyReportUsageFrequency();
+
                             // Update user status and unit usage
                             UpdateUserStatusAndUnit(studentID);
 
@@ -586,13 +588,19 @@ namespace ComlabSystem
 
                             insertNotificationCmd.ExecuteNonQuery();
 
+
                             // Show a warning message to the user
+                            WeeklyReportImproperShutdown();
                             AccountRemovedMsgBox.Caption = "Warning";
                             AccountRemovedMsgBox.Icon = MessageDialogIcon.Warning;
                             AccountRemovedMsgBox.Text = "Using multiple units and improper shutdown is prohibited, can result in your account being held.";
                             AccountRemovedMsgBox.Show();
                         }
+
+                        
                     }
+
+
                 }
                 catch (Exception ex)
                 {
@@ -741,7 +749,131 @@ namespace ComlabSystem
                 }
             }
         }
+        private void WeeklyReportImproperShutdown()
+        {
+            // Get the start and end dates for the current week
+            DateTime today = DateTime.Today;
+            DateTime weekStartDate = today.AddDays(-(int)today.DayOfWeek + 1); // Monday of current week
+            DateTime weekEndDate = weekStartDate.AddDays(6); // Sunday of current week
 
+            // SQL query to check if the current week exists in the WeeklyReports table
+            string checkQuery = @"SELECT ReportID FROM WeeklyReports 
+                          WHERE WeekStartDate = @WeekStartDate AND WeekEndDate = @WeekEndDate";
+
+            // SQL query to increment ImproperShutdownCount if the week exists
+            string updateQuery = @"UPDATE WeeklyReports 
+                           SET ImproperShutdownCount = ImproperShutdownCount + 1 
+                           WHERE ReportID = @ReportID";
+
+            // SQL query to insert a new row if the week doesn't exist
+            string insertQuery = @"INSERT INTO WeeklyReports (WeekStartDate, WeekEndDate, ImproperShutdownCount, UsageFrequency)
+                           VALUES (@WeekStartDate, @WeekEndDate, 1, 0)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Check if a report for the current week exists
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@WeekStartDate", weekStartDate);
+                        checkCommand.Parameters.AddWithValue("@WeekEndDate", weekEndDate);
+
+                        object result = checkCommand.ExecuteScalar();
+
+                        if (result != null) // Report exists
+                        {
+                            int reportId = Convert.ToInt32(result);
+
+                            // Increment ImproperShutdownCount
+                            using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                            {
+                                updateCommand.Parameters.AddWithValue("@ReportID", reportId);
+                                updateCommand.ExecuteNonQuery();
+                            }
+                        }
+                        else // No report exists, create a new one
+                        {
+                            using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@WeekStartDate", weekStartDate);
+                                insertCommand.Parameters.AddWithValue("@WeekEndDate", weekEndDate);
+                                insertCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while updating the WeeklyReports table: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void WeeklyReportUsageFrequency()
+        {
+            // Get the start and end dates for the current week
+            DateTime today = DateTime.Today;
+            DateTime weekStartDate = today.AddDays(-(int)today.DayOfWeek + 1); // Monday of current week
+            DateTime weekEndDate = weekStartDate.AddDays(6); // Sunday of current week
+
+            // SQL query to check if the current week exists in the WeeklyReports table
+            string checkQuery = @"SELECT ReportID FROM WeeklyReports 
+                          WHERE WeekStartDate = @WeekStartDate AND WeekEndDate = @WeekEndDate";
+
+            // SQL query to increment UsageFrequency if the week exists
+            string updateQuery = @"UPDATE WeeklyReports 
+                           SET UsageFrequency = UsageFrequency + 1 
+                           WHERE ReportID = @ReportID";
+
+            // SQL query to insert a new row if the week doesn't exist
+            string insertQuery = @"INSERT INTO WeeklyReports (WeekStartDate, WeekEndDate, ImproperShutdownCount, UsageFrequency)
+                           VALUES (@WeekStartDate, @WeekEndDate, 0, 1)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Check if a report for the current week exists
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@WeekStartDate", weekStartDate);
+                        checkCommand.Parameters.AddWithValue("@WeekEndDate", weekEndDate);
+
+                        object result = checkCommand.ExecuteScalar();
+
+                        if (result != null) // Report exists
+                        {
+                            int reportId = Convert.ToInt32(result);
+
+                            // Increment UsageFrequency
+                            using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                            {
+                                updateCommand.Parameters.AddWithValue("@ReportID", reportId);
+                                updateCommand.ExecuteNonQuery();
+                            }
+                        }
+                        else // No report exists, create a new one
+                        {
+                            using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@WeekStartDate", weekStartDate);
+                                insertCommand.Parameters.AddWithValue("@WeekEndDate", weekEndDate);
+                                insertCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while updating the WeeklyReports table: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
 
 
