@@ -38,6 +38,9 @@ namespace ComlabSystem
 
             LoadAutoShutdown();
 
+            CurrentPassTextBox.UseSystemPasswordChar = true;
+            NewPassTextBox.UseSystemPasswordChar = true;
+            ConfirmPassTextBox.UseSystemPasswordChar = true;
 
         }
 
@@ -218,7 +221,36 @@ namespace ComlabSystem
             }
         }
 
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            // Toggle the visibility of the password
+            if (CurrentPassTextBox.UseSystemPasswordChar)
+            {
+                // Show the password (set to false)
+                CurrentPassTextBox.UseSystemPasswordChar = false;
 
+            }
+            else
+            {
+                // Hide the password (set to true)
+                CurrentPassTextBox.UseSystemPasswordChar = true;
+            }
+        }
 
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            // Toggle the visibility of the password
+            if (NewPassTextBox.UseSystemPasswordChar)
+            {
+                // Show the password (set to false)
+                NewPassTextBox.UseSystemPasswordChar = false;
+
+            }
+            else
+            {
+                // Hide the password (set to true)
+                NewPassTextBox.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
